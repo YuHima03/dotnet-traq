@@ -106,6 +106,13 @@ namespace DotnetTraq.Api
             return messages?.Messages ?? [];
         }
 
+        public async ValueTask<Message> PostDmMessageAsync(Guid userId, PostMessageRequest req, CancellationToken ct)
+        {
+            StringContent requestContent = new(JsonSerializer.Serialize(req), Encoding.UTF8, "application/json");
+            var result = await _client.PostAsync($"/api/v3/users/{userId}/messages", requestContent, ct);
+            return (await result.Content.ReadFromJsonAsync<Message>())!;
+        }
+
         #endregion
 
         #region Users API
