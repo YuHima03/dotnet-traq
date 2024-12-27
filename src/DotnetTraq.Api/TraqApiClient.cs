@@ -122,6 +122,37 @@ namespace DotnetTraq.Api
             return (await _client.GetFromJsonAsync<UserDetail>($"/api/v3/users/{id}", ct))!;
         }
 
+        public async ValueTask<User?> GetUserAsync(string name, bool? includeSuspended, CancellationToken ct)
+        {
+            ArgumentNullException.ThrowIfNull(name);
+
+            DefaultInterpolatedStringHandler uri = new(38, 2);
+            uri.AppendLiteral("/api/v3/users?name=");
+            uri.AppendFormatted(Uri.EscapeDataString(name));
+            if (includeSuspended.HasValue)
+            {
+                uri.AppendLiteral("&include-suspended=");
+                uri.AppendFormatted(includeSuspended.Value.ToString().ToLowerInvariant());
+            }
+
+            var res = await _client.GetAsync(uri.ToStringAndClear(), ct);
+            if (!res.IsSuccessStatusCode)
+            {
+                if (res.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    return null;
+                }
+                throw new Exception($"Unexpected status code: {res.StatusCode} ({(int)res.StatusCode})");
+            }
+
+            var users = await res.Content.ReadFromJsonAsync<User[]>(ct);
+            if (users is not null && users.Length == 1)
+            {
+                return users[0];
+            }
+            return null;
+        }
+
         #endregion
     }
 }
