@@ -110,7 +110,7 @@ namespace DotnetTraq.Api
         {
             StringContent requestContent = new(JsonSerializer.Serialize(req), Encoding.UTF8, "application/json");
             var result = await _client.PostAsync($"/api/v3/users/{userId}/messages", requestContent, ct);
-            return (await result.Content.ReadFromJsonAsync<Message>())!;
+            return (await result.Content.ReadFromJsonAsync<Message>(ct))!;
         }
 
         #endregion
