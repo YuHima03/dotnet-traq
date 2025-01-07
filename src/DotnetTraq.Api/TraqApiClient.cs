@@ -113,6 +113,17 @@ namespace DotnetTraq.Api
             return (await result.Content.ReadFromJsonAsync<Message>(ct))!;
         }
 
+        public async ValueTask PostMessageStampAsync(Guid messageId, Guid stampId, PostStampRequest req, CancellationToken ct)
+        {
+            StringContent requestContent = new(JsonSerializer.Serialize(req), Encoding.UTF8, "application/json");
+            var result = await _client.PostAsync($"/api/v3/messages/{messageId}/stamps/{stampId}", requestContent, ct);
+            if (!result.IsSuccessStatusCode)
+            {
+                throw new Exception("Failed to post stamp.");
+            }
+            return;
+        }
+
         #endregion
 
         #region Users API
