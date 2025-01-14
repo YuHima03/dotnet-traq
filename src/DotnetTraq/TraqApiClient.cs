@@ -6,7 +6,7 @@ namespace DotnetTraq
     /// <summary>
     /// Represents a client used to access the traQ API.
     /// </summary>
-    public interface ITraqApiClient
+    public interface ITraqApiClient : IDisposable
     {
         /// <summary>
         /// Gets the <see cref="HttpClient"/> for API access.
@@ -275,6 +275,13 @@ namespace DotnetTraq
             _userTagApi = new(() => new(client, conf, clientHandler));
             _webhookApi = new(() => new(client, conf, clientHandler));
             _webRtcApi = new(() => new(client, conf, clientHandler));
+        }
+        
+        /// <inheritdoc/>
+        public void Dispose()
+        {
+            Client?.Dispose();
+            ClientHandler?.Dispose();
         }
     }
 }
