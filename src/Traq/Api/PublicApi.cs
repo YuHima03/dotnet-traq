@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using DotnetTraq.Client;
-using DotnetTraq.Model;
+using Traq.Client;
+using Traq.Model;
 
-namespace DotnetTraq.Api
+namespace Traq.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーのアイコン画像を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">ユーザー名</param>
         /// <returns>FileParameter</returns>
         FileParameter GetPublicUserIcon(string username);
@@ -44,7 +44,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーのアイコン画像を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">ユーザー名</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> GetPublicUserIconWithHttpInfo(string username);
@@ -54,7 +54,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// サーバーバージョン及びサーバーフラグ情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ModelVersion</returns>
         ModelVersion GetServerVersion();
 
@@ -64,7 +64,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// サーバーバージョン及びサーバーフラグ情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ModelVersion</returns>
         ApiResponse<ModelVersion> GetServerVersionWithHttpInfo();
         #endregion Synchronous Operations
@@ -82,7 +82,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーのアイコン画像を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">ユーザー名</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
@@ -94,7 +94,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーのアイコン画像を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">ユーザー名</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
@@ -105,7 +105,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// サーバーバージョン及びサーバーフラグ情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ModelVersion</returns>
         System.Threading.Tasks.Task<ModelVersion> GetServerVersionAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -116,7 +116,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// サーバーバージョン及びサーバーフラグ情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ModelVersion)</returns>
         System.Threading.Tasks.Task<ApiResponse<ModelVersion>> GetServerVersionWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -136,7 +136,7 @@ namespace DotnetTraq.Api
     /// </summary>
     public partial class PublicApi : IDisposable, IPublicApi
     {
-        private DotnetTraq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Traq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PublicApi"/> class.
@@ -158,14 +158,14 @@ namespace DotnetTraq.Api
         /// <returns></returns>
         public PublicApi(string basePath)
         {
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -176,18 +176,18 @@ namespace DotnetTraq.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public PublicApi(DotnetTraq.Client.Configuration configuration)
+        public PublicApi(Traq.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -222,14 +222,14 @@ namespace DotnetTraq.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -244,19 +244,19 @@ namespace DotnetTraq.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public PublicApi(HttpClient client, DotnetTraq.Client.Configuration configuration, HttpClientHandler handler = null)
+        public PublicApi(HttpClient client, Traq.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -267,7 +267,7 @@ namespace DotnetTraq.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public PublicApi(DotnetTraq.Client.ISynchronousClient client, DotnetTraq.Client.IAsynchronousClient asyncClient, DotnetTraq.Client.IReadableConfiguration configuration)
+        public PublicApi(Traq.Client.ISynchronousClient client, Traq.Client.IAsynchronousClient asyncClient, Traq.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -276,7 +276,7 @@ namespace DotnetTraq.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -290,17 +290,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public DotnetTraq.Client.ApiClient ApiClient { get; set; } = null;
+        public Traq.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public DotnetTraq.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Traq.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public DotnetTraq.Client.ISynchronousClient Client { get; set; }
+        public Traq.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -315,12 +315,12 @@ namespace DotnetTraq.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public DotnetTraq.Client.IReadableConfiguration Configuration { get; set; }
+        public Traq.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public DotnetTraq.Client.ExceptionFactory ExceptionFactory
+        public Traq.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -336,28 +336,28 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーのアイコン画像を取得 ユーザーのアイコン画像を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">ユーザー名</param>
         /// <returns>FileParameter</returns>
         public FileParameter GetPublicUserIcon(string username)
         {
-            DotnetTraq.Client.ApiResponse<FileParameter> localVarResponse = GetPublicUserIconWithHttpInfo(username);
+            Traq.Client.ApiResponse<FileParameter> localVarResponse = GetPublicUserIconWithHttpInfo(username);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ユーザーのアイコン画像を取得 ユーザーのアイコン画像を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">ユーザー名</param>
         /// <returns>ApiResponse of FileParameter</returns>
-        public DotnetTraq.Client.ApiResponse<FileParameter> GetPublicUserIconWithHttpInfo(string username)
+        public Traq.Client.ApiResponse<FileParameter> GetPublicUserIconWithHttpInfo(string username)
         {
             // verify the required parameter 'username' is set
             if (username == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'username' when calling PublicApi->GetPublicUserIcon");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'username' when calling PublicApi->GetPublicUserIcon");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -369,13 +369,13 @@ namespace DotnetTraq.Api
                 "image/png"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("username", DotnetTraq.Client.ClientUtils.ParameterToString(username)); // path parameter
+            localVarRequestOptions.PathParameters.Add("username", Traq.Client.ClientUtils.ParameterToString(username)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -405,31 +405,31 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーのアイコン画像を取得 ユーザーのアイコン画像を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">ユーザー名</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> GetPublicUserIconAsync(string username, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<FileParameter> localVarResponse = await GetPublicUserIconWithHttpInfoAsync(username, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<FileParameter> localVarResponse = await GetPublicUserIconWithHttpInfoAsync(username, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ユーザーのアイコン画像を取得 ユーザーのアイコン画像を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">ユーザー名</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<FileParameter>> GetPublicUserIconWithHttpInfoAsync(string username, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<FileParameter>> GetPublicUserIconWithHttpInfoAsync(string username, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'username' is set
             if (username == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'username' when calling PublicApi->GetPublicUserIcon");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'username' when calling PublicApi->GetPublicUserIcon");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -442,13 +442,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("username", DotnetTraq.Client.ClientUtils.ParameterToString(username)); // path parameter
+            localVarRequestOptions.PathParameters.Add("username", Traq.Client.ClientUtils.ParameterToString(username)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -479,22 +479,22 @@ namespace DotnetTraq.Api
         /// <summary>
         /// バージョンを取得 サーバーバージョン及びサーバーフラグ情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ModelVersion</returns>
         public ModelVersion GetServerVersion()
         {
-            DotnetTraq.Client.ApiResponse<ModelVersion> localVarResponse = GetServerVersionWithHttpInfo();
+            Traq.Client.ApiResponse<ModelVersion> localVarResponse = GetServerVersionWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// バージョンを取得 サーバーバージョン及びサーバーフラグ情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ModelVersion</returns>
-        public DotnetTraq.Client.ApiResponse<ModelVersion> GetServerVersionWithHttpInfo()
+        public Traq.Client.ApiResponse<ModelVersion> GetServerVersionWithHttpInfo()
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -504,10 +504,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -539,25 +539,25 @@ namespace DotnetTraq.Api
         /// <summary>
         /// バージョンを取得 サーバーバージョン及びサーバーフラグ情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ModelVersion</returns>
         public async System.Threading.Tasks.Task<ModelVersion> GetServerVersionAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<ModelVersion> localVarResponse = await GetServerVersionWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<ModelVersion> localVarResponse = await GetServerVersionWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// バージョンを取得 サーバーバージョン及びサーバーフラグ情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ModelVersion)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<ModelVersion>> GetServerVersionWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<ModelVersion>> GetServerVersionWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -568,10 +568,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 

@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using DotnetTraq.Client;
-using DotnetTraq.Model;
+using Traq.Client;
+using Traq.Model;
 
-namespace DotnetTraq.Api
+namespace Traq.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルをスターチャンネルに追加します。 スター済みのチャンネルIDを指定した場合、204を返します。 不正なチャンネルIDを指定した場合、400を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStarRequest"> (optional)</param>
         /// <returns></returns>
         void AddMyStar(PostStarRequest? postStarRequest = default(PostStarRequest?));
@@ -44,7 +44,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルをスターチャンネルに追加します。 スター済みのチャンネルIDを指定した場合、204を返します。 不正なチャンネルIDを指定した場合、400を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStarRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> AddMyStarWithHttpInfo(PostStarRequest? postStarRequest = default(PostStarRequest?));
@@ -54,7 +54,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分がスターしているチャンネルのUUIDの配列を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Guid&gt;</returns>
         List<Guid> GetMyStars();
 
@@ -64,7 +64,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分がスターしているチャンネルのUUIDの配列を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
         ApiResponse<List<Guid>> GetMyStarsWithHttpInfo();
         /// <summary>
@@ -73,7 +73,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 既にスターから削除されているチャンネルを指定した場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns></returns>
         void RemoveMyStar(Guid channelId);
@@ -84,7 +84,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 既にスターから削除されているチャンネルを指定した場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RemoveMyStarWithHttpInfo(Guid channelId);
@@ -103,7 +103,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルをスターチャンネルに追加します。 スター済みのチャンネルIDを指定した場合、204を返します。 不正なチャンネルIDを指定した場合、400を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStarRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -115,7 +115,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルをスターチャンネルに追加します。 スター済みのチャンネルIDを指定した場合、204を返します。 不正なチャンネルIDを指定した場合、400を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStarRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -126,7 +126,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分がスターしているチャンネルのUUIDの配列を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
         System.Threading.Tasks.Task<List<Guid>> GetMyStarsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -137,7 +137,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分がスターしているチャンネルのUUIDの配列を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Guid>>> GetMyStarsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -147,7 +147,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 既にスターから削除されているチャンネルを指定した場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -159,7 +159,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 既にスターから削除されているチャンネルを指定した場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -180,7 +180,7 @@ namespace DotnetTraq.Api
     /// </summary>
     public partial class StarApi : IDisposable, IStarApi
     {
-        private DotnetTraq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Traq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StarApi"/> class.
@@ -202,14 +202,14 @@ namespace DotnetTraq.Api
         /// <returns></returns>
         public StarApi(string basePath)
         {
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -220,18 +220,18 @@ namespace DotnetTraq.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public StarApi(DotnetTraq.Client.Configuration configuration)
+        public StarApi(Traq.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -266,14 +266,14 @@ namespace DotnetTraq.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -288,19 +288,19 @@ namespace DotnetTraq.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public StarApi(HttpClient client, DotnetTraq.Client.Configuration configuration, HttpClientHandler handler = null)
+        public StarApi(HttpClient client, Traq.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -311,7 +311,7 @@ namespace DotnetTraq.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public StarApi(DotnetTraq.Client.ISynchronousClient client, DotnetTraq.Client.IAsynchronousClient asyncClient, DotnetTraq.Client.IReadableConfiguration configuration)
+        public StarApi(Traq.Client.ISynchronousClient client, Traq.Client.IAsynchronousClient asyncClient, Traq.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -320,7 +320,7 @@ namespace DotnetTraq.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -334,17 +334,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public DotnetTraq.Client.ApiClient ApiClient { get; set; } = null;
+        public Traq.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public DotnetTraq.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Traq.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public DotnetTraq.Client.ISynchronousClient Client { get; set; }
+        public Traq.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -359,12 +359,12 @@ namespace DotnetTraq.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public DotnetTraq.Client.IReadableConfiguration Configuration { get; set; }
+        public Traq.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public DotnetTraq.Client.ExceptionFactory ExceptionFactory
+        public Traq.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -380,7 +380,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルをスターに追加 指定したチャンネルをスターチャンネルに追加します。 スター済みのチャンネルIDを指定した場合、204を返します。 不正なチャンネルIDを指定した場合、400を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStarRequest"> (optional)</param>
         /// <returns></returns>
         public void AddMyStar(PostStarRequest? postStarRequest = default(PostStarRequest?))
@@ -391,12 +391,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルをスターに追加 指定したチャンネルをスターチャンネルに追加します。 スター済みのチャンネルIDを指定した場合、204を返します。 不正なチャンネルIDを指定した場合、400を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStarRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> AddMyStarWithHttpInfo(PostStarRequest? postStarRequest = default(PostStarRequest?))
+        public Traq.Client.ApiResponse<Object> AddMyStarWithHttpInfo(PostStarRequest? postStarRequest = default(PostStarRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -406,10 +406,10 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postStarRequest;
@@ -442,7 +442,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルをスターに追加 指定したチャンネルをスターチャンネルに追加します。 スター済みのチャンネルIDを指定した場合、204を返します。 不正なチャンネルIDを指定した場合、400を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStarRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -454,14 +454,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルをスターに追加 指定したチャンネルをスターチャンネルに追加します。 スター済みのチャンネルIDを指定した場合、204を返します。 不正なチャンネルIDを指定した場合、400を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStarRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> AddMyStarWithHttpInfoAsync(PostStarRequest? postStarRequest = default(PostStarRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> AddMyStarWithHttpInfoAsync(PostStarRequest? postStarRequest = default(PostStarRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -472,10 +472,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postStarRequest;
@@ -509,22 +509,22 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スターチャンネルリストを取得 自分がスターしているチャンネルのUUIDの配列を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Guid&gt;</returns>
         public List<Guid> GetMyStars()
         {
-            DotnetTraq.Client.ApiResponse<List<Guid>> localVarResponse = GetMyStarsWithHttpInfo();
+            Traq.Client.ApiResponse<List<Guid>> localVarResponse = GetMyStarsWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スターチャンネルリストを取得 自分がスターしているチャンネルのUUIDの配列を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<Guid>> GetMyStarsWithHttpInfo()
+        public Traq.Client.ApiResponse<List<Guid>> GetMyStarsWithHttpInfo()
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -534,10 +534,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -569,25 +569,25 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スターチャンネルリストを取得 自分がスターしているチャンネルのUUIDの配列を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
         public async System.Threading.Tasks.Task<List<Guid>> GetMyStarsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<Guid>> localVarResponse = await GetMyStarsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<Guid>> localVarResponse = await GetMyStarsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スターチャンネルリストを取得 自分がスターしているチャンネルのUUIDの配列を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<Guid>>> GetMyStarsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<Guid>>> GetMyStarsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -598,10 +598,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -634,7 +634,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルをスターから削除します 既にスターから削除されているチャンネルを指定した場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns></returns>
         public void RemoveMyStar(Guid channelId)
@@ -645,12 +645,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルをスターから削除します 既にスターから削除されているチャンネルを指定した場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> RemoveMyStarWithHttpInfo(Guid channelId)
+        public Traq.Client.ApiResponse<Object> RemoveMyStarWithHttpInfo(Guid channelId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -659,13 +659,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -695,7 +695,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルをスターから削除します 既にスターから削除されているチャンネルを指定した場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -707,14 +707,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルをスターから削除します 既にスターから削除されているチャンネルを指定した場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> RemoveMyStarWithHttpInfoAsync(Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> RemoveMyStarWithHttpInfoAsync(Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -724,13 +724,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace DotnetTraq
+namespace Traq
 {
     /// <summary>
     /// Provides extension methods for the <see cref="IServiceCollection"/> interface.

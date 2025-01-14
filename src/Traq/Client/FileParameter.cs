@@ -10,7 +10,7 @@
 
 using System.IO;
 
-namespace DotnetTraq.Client
+namespace Traq.Client
 {
 
     /// <summary>

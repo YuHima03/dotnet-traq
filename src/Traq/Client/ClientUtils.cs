@@ -18,7 +18,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace DotnetTraq.Client
+namespace Traq.Client
 {
     /// <summary>
     /// Utility functions providing some benefit to API client consumers.

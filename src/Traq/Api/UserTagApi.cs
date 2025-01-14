@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using DotnetTraq.Client;
-using DotnetTraq.Model;
+using Traq.Client;
+using Traq.Model;
 
-namespace DotnetTraq.Api
+namespace Traq.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分に新しくタグを追加します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <returns>UserTag</returns>
         UserTag AddMyUserTag(PostUserTagRequest? postUserTagRequest = default(PostUserTagRequest?));
@@ -44,7 +44,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分に新しくタグを追加します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <returns>ApiResponse of UserTag</returns>
         ApiResponse<UserTag> AddMyUserTagWithHttpInfo(PostUserTagRequest? postUserTagRequest = default(PostUserTagRequest?));
@@ -54,7 +54,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーに指定したタグを追加します。 Webhookユーザーにタグを追加することは出来ません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <returns>UserTag</returns>
@@ -66,7 +66,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーに指定したタグを追加します。 Webhookユーザーにタグを追加することは出来ません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <returns>ApiResponse of UserTag</returns>
@@ -77,7 +77,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分の指定したタグの状態を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
         /// <returns></returns>
@@ -89,7 +89,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分の指定したタグの状態を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -100,7 +100,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーの指定したタグの状態を変更します。 他人の状態は変更できません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
@@ -113,7 +113,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーの指定したタグの状態を変更します。 他人の状態は変更できません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
@@ -125,7 +125,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分に付けられているタグの配列を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;UserTag&gt;</returns>
         List<UserTag> GetMyUserTags();
 
@@ -135,7 +135,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分に付けられているタグの配列を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;UserTag&gt;</returns>
         ApiResponse<List<UserTag>> GetMyUserTagsWithHttpInfo();
         /// <summary>
@@ -144,7 +144,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したタグの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <returns>Tag</returns>
         Tag GetTag(Guid tagId);
@@ -155,7 +155,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したタグの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <returns>ApiResponse of Tag</returns>
         ApiResponse<Tag> GetTagWithHttpInfo(Guid tagId);
@@ -165,7 +165,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーのタグリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <returns>List&lt;UserTag&gt;</returns>
         List<UserTag> GetUserTags(Guid userId);
@@ -176,7 +176,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーのタグリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <returns>ApiResponse of List&lt;UserTag&gt;</returns>
         ApiResponse<List<UserTag>> GetUserTagsWithHttpInfo(Guid userId);
@@ -186,7 +186,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 既に存在しないタグを削除しようとした場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <returns></returns>
         void RemoveMyUserTag(Guid tagId);
@@ -197,7 +197,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 既に存在しないタグを削除しようとした場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RemoveMyUserTagWithHttpInfo(Guid tagId);
@@ -207,7 +207,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 既に存在しないタグを削除しようとした場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <returns></returns>
@@ -219,7 +219,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 既に存在しないタグを削除しようとした場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -239,7 +239,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分に新しくタグを追加します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserTag</returns>
@@ -251,7 +251,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分に新しくタグを追加します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserTag)</returns>
@@ -262,7 +262,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーに指定したタグを追加します。 Webhookユーザーにタグを追加することは出来ません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -275,7 +275,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーに指定したタグを追加します。 Webhookユーザーにタグを追加することは出来ません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -287,7 +287,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分の指定したタグの状態を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -300,7 +300,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分の指定したタグの状態を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -312,7 +312,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーの指定したタグの状態を変更します。 他人の状態は変更できません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
@@ -326,7 +326,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーの指定したタグの状態を変更します。 他人の状態は変更できません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
@@ -339,7 +339,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分に付けられているタグの配列を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;UserTag&gt;</returns>
         System.Threading.Tasks.Task<List<UserTag>> GetMyUserTagsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -350,7 +350,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分に付けられているタグの配列を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;UserTag&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<UserTag>>> GetMyUserTagsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -360,7 +360,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したタグの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Tag</returns>
@@ -372,7 +372,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したタグの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Tag)</returns>
@@ -383,7 +383,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーのタグリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;UserTag&gt;</returns>
@@ -395,7 +395,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーのタグリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;UserTag&gt;)</returns>
@@ -406,7 +406,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 既に存在しないタグを削除しようとした場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -418,7 +418,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 既に存在しないタグを削除しようとした場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -429,7 +429,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 既に存在しないタグを削除しようとした場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -442,7 +442,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 既に存在しないタグを削除しようとした場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -464,7 +464,7 @@ namespace DotnetTraq.Api
     /// </summary>
     public partial class UserTagApi : IDisposable, IUserTagApi
     {
-        private DotnetTraq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Traq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UserTagApi"/> class.
@@ -486,14 +486,14 @@ namespace DotnetTraq.Api
         /// <returns></returns>
         public UserTagApi(string basePath)
         {
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -504,18 +504,18 @@ namespace DotnetTraq.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public UserTagApi(DotnetTraq.Client.Configuration configuration)
+        public UserTagApi(Traq.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -550,14 +550,14 @@ namespace DotnetTraq.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -572,19 +572,19 @@ namespace DotnetTraq.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public UserTagApi(HttpClient client, DotnetTraq.Client.Configuration configuration, HttpClientHandler handler = null)
+        public UserTagApi(HttpClient client, Traq.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -595,7 +595,7 @@ namespace DotnetTraq.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public UserTagApi(DotnetTraq.Client.ISynchronousClient client, DotnetTraq.Client.IAsynchronousClient asyncClient, DotnetTraq.Client.IReadableConfiguration configuration)
+        public UserTagApi(Traq.Client.ISynchronousClient client, Traq.Client.IAsynchronousClient asyncClient, Traq.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -604,7 +604,7 @@ namespace DotnetTraq.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -618,17 +618,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public DotnetTraq.Client.ApiClient ApiClient { get; set; } = null;
+        public Traq.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public DotnetTraq.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Traq.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public DotnetTraq.Client.ISynchronousClient Client { get; set; }
+        public Traq.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -643,12 +643,12 @@ namespace DotnetTraq.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public DotnetTraq.Client.IReadableConfiguration Configuration { get; set; }
+        public Traq.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public DotnetTraq.Client.ExceptionFactory ExceptionFactory
+        public Traq.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -664,24 +664,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分にタグを追加 自分に新しくタグを追加します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <returns>UserTag</returns>
         public UserTag AddMyUserTag(PostUserTagRequest? postUserTagRequest = default(PostUserTagRequest?))
         {
-            DotnetTraq.Client.ApiResponse<UserTag> localVarResponse = AddMyUserTagWithHttpInfo(postUserTagRequest);
+            Traq.Client.ApiResponse<UserTag> localVarResponse = AddMyUserTagWithHttpInfo(postUserTagRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// 自分にタグを追加 自分に新しくタグを追加します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <returns>ApiResponse of UserTag</returns>
-        public DotnetTraq.Client.ApiResponse<UserTag> AddMyUserTagWithHttpInfo(PostUserTagRequest? postUserTagRequest = default(PostUserTagRequest?))
+        public Traq.Client.ApiResponse<UserTag> AddMyUserTagWithHttpInfo(PostUserTagRequest? postUserTagRequest = default(PostUserTagRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -692,10 +692,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postUserTagRequest;
@@ -728,27 +728,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分にタグを追加 自分に新しくタグを追加します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserTag</returns>
         public async System.Threading.Tasks.Task<UserTag> AddMyUserTagAsync(PostUserTagRequest? postUserTagRequest = default(PostUserTagRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<UserTag> localVarResponse = await AddMyUserTagWithHttpInfoAsync(postUserTagRequest, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<UserTag> localVarResponse = await AddMyUserTagWithHttpInfoAsync(postUserTagRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// 自分にタグを追加 自分に新しくタグを追加します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserTag)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<UserTag>> AddMyUserTagWithHttpInfoAsync(PostUserTagRequest? postUserTagRequest = default(PostUserTagRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<UserTag>> AddMyUserTagWithHttpInfoAsync(PostUserTagRequest? postUserTagRequest = default(PostUserTagRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -760,10 +760,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postUserTagRequest;
@@ -797,26 +797,26 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーにタグを追加 指定したユーザーに指定したタグを追加します。 Webhookユーザーにタグを追加することは出来ません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <returns>UserTag</returns>
         public UserTag AddUserTag(Guid userId, PostUserTagRequest? postUserTagRequest = default(PostUserTagRequest?))
         {
-            DotnetTraq.Client.ApiResponse<UserTag> localVarResponse = AddUserTagWithHttpInfo(userId, postUserTagRequest);
+            Traq.Client.ApiResponse<UserTag> localVarResponse = AddUserTagWithHttpInfo(userId, postUserTagRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ユーザーにタグを追加 指定したユーザーに指定したタグを追加します。 Webhookユーザーにタグを追加することは出来ません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <returns>ApiResponse of UserTag</returns>
-        public DotnetTraq.Client.ApiResponse<UserTag> AddUserTagWithHttpInfo(Guid userId, PostUserTagRequest? postUserTagRequest = default(PostUserTagRequest?))
+        public Traq.Client.ApiResponse<UserTag> AddUserTagWithHttpInfo(Guid userId, PostUserTagRequest? postUserTagRequest = default(PostUserTagRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -827,13 +827,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("userId", DotnetTraq.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", Traq.Client.ClientUtils.ParameterToString(userId)); // path parameter
             localVarRequestOptions.Data = postUserTagRequest;
 
             // authentication (OAuth2) required
@@ -864,29 +864,29 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーにタグを追加 指定したユーザーに指定したタグを追加します。 Webhookユーザーにタグを追加することは出来ません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserTag</returns>
         public async System.Threading.Tasks.Task<UserTag> AddUserTagAsync(Guid userId, PostUserTagRequest? postUserTagRequest = default(PostUserTagRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<UserTag> localVarResponse = await AddUserTagWithHttpInfoAsync(userId, postUserTagRequest, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<UserTag> localVarResponse = await AddUserTagWithHttpInfoAsync(userId, postUserTagRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ユーザーにタグを追加 指定したユーザーに指定したタグを追加します。 Webhookユーザーにタグを追加することは出来ません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="postUserTagRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserTag)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<UserTag>> AddUserTagWithHttpInfoAsync(Guid userId, PostUserTagRequest? postUserTagRequest = default(PostUserTagRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<UserTag>> AddUserTagWithHttpInfoAsync(Guid userId, PostUserTagRequest? postUserTagRequest = default(PostUserTagRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -898,13 +898,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("userId", DotnetTraq.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", Traq.Client.ClientUtils.ParameterToString(userId)); // path parameter
             localVarRequestOptions.Data = postUserTagRequest;
 
             // authentication (OAuth2) required
@@ -936,7 +936,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分のタグを編集 自分の指定したタグの状態を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
         /// <returns></returns>
@@ -948,13 +948,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分のタグを編集 自分の指定したタグの状態を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> EditMyUserTagWithHttpInfo(Guid tagId, PatchUserTagRequest? patchUserTagRequest = default(PatchUserTagRequest?))
+        public Traq.Client.ApiResponse<Object> EditMyUserTagWithHttpInfo(Guid tagId, PatchUserTagRequest? patchUserTagRequest = default(PatchUserTagRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -964,13 +964,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("tagId", DotnetTraq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tagId", Traq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
             localVarRequestOptions.Data = patchUserTagRequest;
 
             // authentication (OAuth2) required
@@ -1001,7 +1001,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分のタグを編集 自分の指定したタグの状態を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1014,15 +1014,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分のタグを編集 自分の指定したタグの状態を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> EditMyUserTagWithHttpInfoAsync(Guid tagId, PatchUserTagRequest? patchUserTagRequest = default(PatchUserTagRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> EditMyUserTagWithHttpInfoAsync(Guid tagId, PatchUserTagRequest? patchUserTagRequest = default(PatchUserTagRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1033,13 +1033,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("tagId", DotnetTraq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tagId", Traq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
             localVarRequestOptions.Data = patchUserTagRequest;
 
             // authentication (OAuth2) required
@@ -1071,7 +1071,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーのタグを編集 指定したユーザーの指定したタグの状態を変更します。 他人の状態は変更できません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
@@ -1084,14 +1084,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーのタグを編集 指定したユーザーの指定したタグの状態を変更します。 他人の状態は変更できません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> EditUserTagWithHttpInfo(Guid userId, Guid tagId, PatchUserTagRequest? patchUserTagRequest = default(PatchUserTagRequest?))
+        public Traq.Client.ApiResponse<Object> EditUserTagWithHttpInfo(Guid userId, Guid tagId, PatchUserTagRequest? patchUserTagRequest = default(PatchUserTagRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1101,14 +1101,14 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("userId", DotnetTraq.Client.ClientUtils.ParameterToString(userId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("tagId", DotnetTraq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", Traq.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tagId", Traq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
             localVarRequestOptions.Data = patchUserTagRequest;
 
             // authentication (OAuth2) required
@@ -1139,7 +1139,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーのタグを編集 指定したユーザーの指定したタグの状態を変更します。 他人の状態は変更できません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
@@ -1153,16 +1153,16 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーのタグを編集 指定したユーザーの指定したタグの状態を変更します。 他人の状態は変更できません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <param name="patchUserTagRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> EditUserTagWithHttpInfoAsync(Guid userId, Guid tagId, PatchUserTagRequest? patchUserTagRequest = default(PatchUserTagRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> EditUserTagWithHttpInfoAsync(Guid userId, Guid tagId, PatchUserTagRequest? patchUserTagRequest = default(PatchUserTagRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1173,14 +1173,14 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("userId", DotnetTraq.Client.ClientUtils.ParameterToString(userId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("tagId", DotnetTraq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", Traq.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tagId", Traq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
             localVarRequestOptions.Data = patchUserTagRequest;
 
             // authentication (OAuth2) required
@@ -1212,22 +1212,22 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分のタグリストを取得 自分に付けられているタグの配列を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;UserTag&gt;</returns>
         public List<UserTag> GetMyUserTags()
         {
-            DotnetTraq.Client.ApiResponse<List<UserTag>> localVarResponse = GetMyUserTagsWithHttpInfo();
+            Traq.Client.ApiResponse<List<UserTag>> localVarResponse = GetMyUserTagsWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// 自分のタグリストを取得 自分に付けられているタグの配列を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;UserTag&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<UserTag>> GetMyUserTagsWithHttpInfo()
+        public Traq.Client.ApiResponse<List<UserTag>> GetMyUserTagsWithHttpInfo()
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1237,10 +1237,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1272,25 +1272,25 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分のタグリストを取得 自分に付けられているタグの配列を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;UserTag&gt;</returns>
         public async System.Threading.Tasks.Task<List<UserTag>> GetMyUserTagsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<UserTag>> localVarResponse = await GetMyUserTagsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<UserTag>> localVarResponse = await GetMyUserTagsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// 自分のタグリストを取得 自分に付けられているタグの配列を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;UserTag&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<UserTag>>> GetMyUserTagsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<UserTag>>> GetMyUserTagsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1301,10 +1301,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1337,24 +1337,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// タグ情報を取得 指定したタグの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <returns>Tag</returns>
         public Tag GetTag(Guid tagId)
         {
-            DotnetTraq.Client.ApiResponse<Tag> localVarResponse = GetTagWithHttpInfo(tagId);
+            Traq.Client.ApiResponse<Tag> localVarResponse = GetTagWithHttpInfo(tagId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// タグ情報を取得 指定したタグの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <returns>ApiResponse of Tag</returns>
-        public DotnetTraq.Client.ApiResponse<Tag> GetTagWithHttpInfo(Guid tagId)
+        public Traq.Client.ApiResponse<Tag> GetTagWithHttpInfo(Guid tagId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1364,13 +1364,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("tagId", DotnetTraq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tagId", Traq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1400,27 +1400,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// タグ情報を取得 指定したタグの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Tag</returns>
         public async System.Threading.Tasks.Task<Tag> GetTagAsync(Guid tagId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<Tag> localVarResponse = await GetTagWithHttpInfoAsync(tagId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<Tag> localVarResponse = await GetTagWithHttpInfoAsync(tagId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// タグ情報を取得 指定したタグの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Tag)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Tag>> GetTagWithHttpInfoAsync(Guid tagId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Tag>> GetTagWithHttpInfoAsync(Guid tagId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1431,13 +1431,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("tagId", DotnetTraq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tagId", Traq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1468,24 +1468,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーのタグリストを取得 指定したユーザーのタグリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <returns>List&lt;UserTag&gt;</returns>
         public List<UserTag> GetUserTags(Guid userId)
         {
-            DotnetTraq.Client.ApiResponse<List<UserTag>> localVarResponse = GetUserTagsWithHttpInfo(userId);
+            Traq.Client.ApiResponse<List<UserTag>> localVarResponse = GetUserTagsWithHttpInfo(userId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ユーザーのタグリストを取得 指定したユーザーのタグリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <returns>ApiResponse of List&lt;UserTag&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<UserTag>> GetUserTagsWithHttpInfo(Guid userId)
+        public Traq.Client.ApiResponse<List<UserTag>> GetUserTagsWithHttpInfo(Guid userId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1495,13 +1495,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("userId", DotnetTraq.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", Traq.Client.ClientUtils.ParameterToString(userId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1531,27 +1531,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーのタグリストを取得 指定したユーザーのタグリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;UserTag&gt;</returns>
         public async System.Threading.Tasks.Task<List<UserTag>> GetUserTagsAsync(Guid userId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<UserTag>> localVarResponse = await GetUserTagsWithHttpInfoAsync(userId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<UserTag>> localVarResponse = await GetUserTagsWithHttpInfoAsync(userId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ユーザーのタグリストを取得 指定したユーザーのタグリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;UserTag&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<UserTag>>> GetUserTagsWithHttpInfoAsync(Guid userId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<UserTag>>> GetUserTagsWithHttpInfoAsync(Guid userId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1562,13 +1562,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("userId", DotnetTraq.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", Traq.Client.ClientUtils.ParameterToString(userId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1599,7 +1599,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分からタグを削除します 既に存在しないタグを削除しようとした場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <returns></returns>
         public void RemoveMyUserTag(Guid tagId)
@@ -1610,12 +1610,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分からタグを削除します 既に存在しないタグを削除しようとした場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> RemoveMyUserTagWithHttpInfo(Guid tagId)
+        public Traq.Client.ApiResponse<Object> RemoveMyUserTagWithHttpInfo(Guid tagId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1624,13 +1624,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("tagId", DotnetTraq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tagId", Traq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1660,7 +1660,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分からタグを削除します 既に存在しないタグを削除しようとした場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -1672,14 +1672,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分からタグを削除します 既に存在しないタグを削除しようとした場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tagId">タグUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> RemoveMyUserTagWithHttpInfoAsync(Guid tagId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> RemoveMyUserTagWithHttpInfoAsync(Guid tagId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1689,13 +1689,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("tagId", DotnetTraq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tagId", Traq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1726,7 +1726,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーからタグを削除します 既に存在しないタグを削除しようとした場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <returns></returns>
@@ -1738,13 +1738,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーからタグを削除します 既に存在しないタグを削除しようとした場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> RemoveUserTagWithHttpInfo(Guid userId, Guid tagId)
+        public Traq.Client.ApiResponse<Object> RemoveUserTagWithHttpInfo(Guid userId, Guid tagId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1753,14 +1753,14 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("userId", DotnetTraq.Client.ClientUtils.ParameterToString(userId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("tagId", DotnetTraq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", Traq.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tagId", Traq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1790,7 +1790,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーからタグを削除します 既に存在しないタグを削除しようとした場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1803,15 +1803,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーからタグを削除します 既に存在しないタグを削除しようとした場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="tagId">タグUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> RemoveUserTagWithHttpInfoAsync(Guid userId, Guid tagId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> RemoveUserTagWithHttpInfoAsync(Guid userId, Guid tagId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1821,14 +1821,14 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("userId", DotnetTraq.Client.ClientUtils.ParameterToString(userId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("tagId", DotnetTraq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", Traq.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tagId", Traq.Client.ClientUtils.ParameterToString(tagId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required

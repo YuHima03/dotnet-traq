@@ -10,7 +10,7 @@
 
 using System;
 
-namespace DotnetTraq.Client
+namespace Traq.Client
 {
     /// <summary>
     /// Represents configuration aspects required to interact with the API endpoints.

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 
-namespace DotnetTraq
+namespace Traq
 {
     /// <summary>
     /// Provides methods to build configured <see cref="ITraqApiClient"/>s.

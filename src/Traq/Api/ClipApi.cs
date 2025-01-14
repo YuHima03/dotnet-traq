@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using DotnetTraq.Client;
-using DotnetTraq.Model;
+using Traq.Client;
+using Traq.Model;
 
-namespace DotnetTraq.Api
+namespace Traq.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージを指定したクリップフォルダに追加します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="postClipFolderMessageRequest"> (optional)</param>
         /// <returns>ClippedMessage</returns>
@@ -45,7 +45,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージを指定したクリップフォルダに追加します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="postClipFolderMessageRequest"> (optional)</param>
         /// <returns>ApiResponse of ClippedMessage</returns>
@@ -56,7 +56,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// クリップフォルダを作成します。 既にあるフォルダと同名のフォルダを作成することは可能です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClipFolderRequest"> (optional)</param>
         /// <returns>ClipFolder</returns>
         ClipFolder CreateClipFolder(PostClipFolderRequest? postClipFolderRequest = default(PostClipFolderRequest?));
@@ -67,7 +67,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// クリップフォルダを作成します。 既にあるフォルダと同名のフォルダを作成することは可能です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClipFolderRequest"> (optional)</param>
         /// <returns>ApiResponse of ClipFolder</returns>
         ApiResponse<ClipFolder> CreateClipFolderWithHttpInfo(PostClipFolderRequest? postClipFolderRequest = default(PostClipFolderRequest?));
@@ -77,7 +77,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクリップフォルダを削除します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <returns></returns>
         void DeleteClipFolder(Guid folderId);
@@ -88,7 +88,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクリップフォルダを削除します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteClipFolderWithHttpInfo(Guid folderId);
@@ -98,7 +98,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクリップフォルダの情報を編集します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="patchClipFolderRequest"> (optional)</param>
         /// <returns></returns>
@@ -110,7 +110,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクリップフォルダの情報を編集します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="patchClipFolderRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -121,7 +121,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクリップフォルダの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <returns>ClipFolder</returns>
         ClipFolder GetClipFolder(Guid folderId);
@@ -132,7 +132,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクリップフォルダの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <returns>ApiResponse of ClipFolder</returns>
         ApiResponse<ClipFolder> GetClipFolderWithHttpInfo(Guid folderId);
@@ -142,7 +142,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身が所有するクリップフォルダのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;ClipFolder&gt;</returns>
         List<ClipFolder> GetClipFolders();
 
@@ -152,7 +152,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身が所有するクリップフォルダのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;ClipFolder&gt;</returns>
         ApiResponse<List<ClipFolder>> GetClipFoldersWithHttpInfo();
         /// <summary>
@@ -161,7 +161,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したフォルダ内のクリップのリストを取得します。 &#x60;order&#x60;を指定しない場合、クリップした日時の新しい順で返されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -175,7 +175,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したフォルダ内のクリップのリストを取得します。 &#x60;order&#x60;を指定しない場合、クリップした日時の新しい順で返されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -188,7 +188,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 対象のメッセージの自分のクリップの一覧を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <returns>List&lt;MessageClip&gt;</returns>
         List<MessageClip> GetMessageClips(Guid messageId);
@@ -199,7 +199,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 対象のメッセージの自分のクリップの一覧を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <returns>ApiResponse of List&lt;MessageClip&gt;</returns>
         ApiResponse<List<MessageClip>> GetMessageClipsWithHttpInfo(Guid messageId);
@@ -209,7 +209,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したフォルダから指定したメッセージのクリップを除外します。 既に外されているメッセージを指定した場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="messageId">メッセージUUID</param>
         /// <returns></returns>
@@ -221,7 +221,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したフォルダから指定したメッセージのクリップを除外します。 既に外されているメッセージを指定した場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="messageId">メッセージUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -241,7 +241,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージを指定したクリップフォルダに追加します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="postClipFolderMessageRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -254,7 +254,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージを指定したクリップフォルダに追加します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="postClipFolderMessageRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -266,7 +266,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// クリップフォルダを作成します。 既にあるフォルダと同名のフォルダを作成することは可能です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClipFolderRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ClipFolder</returns>
@@ -278,7 +278,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// クリップフォルダを作成します。 既にあるフォルダと同名のフォルダを作成することは可能です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClipFolderRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ClipFolder)</returns>
@@ -289,7 +289,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクリップフォルダを削除します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -301,7 +301,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクリップフォルダを削除します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -312,7 +312,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクリップフォルダの情報を編集します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="patchClipFolderRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -325,7 +325,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクリップフォルダの情報を編集します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="patchClipFolderRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -337,7 +337,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクリップフォルダの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ClipFolder</returns>
@@ -349,7 +349,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクリップフォルダの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ClipFolder)</returns>
@@ -360,7 +360,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身が所有するクリップフォルダのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ClipFolder&gt;</returns>
         System.Threading.Tasks.Task<List<ClipFolder>> GetClipFoldersAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -371,7 +371,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身が所有するクリップフォルダのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ClipFolder&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<ClipFolder>>> GetClipFoldersWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -381,7 +381,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したフォルダ内のクリップのリストを取得します。 &#x60;order&#x60;を指定しない場合、クリップした日時の新しい順で返されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -396,7 +396,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したフォルダ内のクリップのリストを取得します。 &#x60;order&#x60;を指定しない場合、クリップした日時の新しい順で返されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -410,7 +410,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 対象のメッセージの自分のクリップの一覧を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MessageClip&gt;</returns>
@@ -422,7 +422,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 対象のメッセージの自分のクリップの一覧を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MessageClip&gt;)</returns>
@@ -433,7 +433,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したフォルダから指定したメッセージのクリップを除外します。 既に外されているメッセージを指定した場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -446,7 +446,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したフォルダから指定したメッセージのクリップを除外します。 既に外されているメッセージを指定した場合は204を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -468,7 +468,7 @@ namespace DotnetTraq.Api
     /// </summary>
     public partial class ClipApi : IDisposable, IClipApi
     {
-        private DotnetTraq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Traq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ClipApi"/> class.
@@ -490,14 +490,14 @@ namespace DotnetTraq.Api
         /// <returns></returns>
         public ClipApi(string basePath)
         {
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -508,18 +508,18 @@ namespace DotnetTraq.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public ClipApi(DotnetTraq.Client.Configuration configuration)
+        public ClipApi(Traq.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -554,14 +554,14 @@ namespace DotnetTraq.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -576,19 +576,19 @@ namespace DotnetTraq.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public ClipApi(HttpClient client, DotnetTraq.Client.Configuration configuration, HttpClientHandler handler = null)
+        public ClipApi(HttpClient client, Traq.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -599,7 +599,7 @@ namespace DotnetTraq.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public ClipApi(DotnetTraq.Client.ISynchronousClient client, DotnetTraq.Client.IAsynchronousClient asyncClient, DotnetTraq.Client.IReadableConfiguration configuration)
+        public ClipApi(Traq.Client.ISynchronousClient client, Traq.Client.IAsynchronousClient asyncClient, Traq.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -608,7 +608,7 @@ namespace DotnetTraq.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -622,17 +622,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public DotnetTraq.Client.ApiClient ApiClient { get; set; } = null;
+        public Traq.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public DotnetTraq.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Traq.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public DotnetTraq.Client.ISynchronousClient Client { get; set; }
+        public Traq.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -647,12 +647,12 @@ namespace DotnetTraq.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public DotnetTraq.Client.IReadableConfiguration Configuration { get; set; }
+        public Traq.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public DotnetTraq.Client.ExceptionFactory ExceptionFactory
+        public Traq.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -668,26 +668,26 @@ namespace DotnetTraq.Api
         /// <summary>
         /// メッセージをクリップフォルダに追加 指定したメッセージを指定したクリップフォルダに追加します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="postClipFolderMessageRequest"> (optional)</param>
         /// <returns>ClippedMessage</returns>
         public ClippedMessage ClipMessage(Guid folderId, PostClipFolderMessageRequest? postClipFolderMessageRequest = default(PostClipFolderMessageRequest?))
         {
-            DotnetTraq.Client.ApiResponse<ClippedMessage> localVarResponse = ClipMessageWithHttpInfo(folderId, postClipFolderMessageRequest);
+            Traq.Client.ApiResponse<ClippedMessage> localVarResponse = ClipMessageWithHttpInfo(folderId, postClipFolderMessageRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// メッセージをクリップフォルダに追加 指定したメッセージを指定したクリップフォルダに追加します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="postClipFolderMessageRequest"> (optional)</param>
         /// <returns>ApiResponse of ClippedMessage</returns>
-        public DotnetTraq.Client.ApiResponse<ClippedMessage> ClipMessageWithHttpInfo(Guid folderId, PostClipFolderMessageRequest? postClipFolderMessageRequest = default(PostClipFolderMessageRequest?))
+        public Traq.Client.ApiResponse<ClippedMessage> ClipMessageWithHttpInfo(Guid folderId, PostClipFolderMessageRequest? postClipFolderMessageRequest = default(PostClipFolderMessageRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -698,13 +698,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("folderId", DotnetTraq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("folderId", Traq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
             localVarRequestOptions.Data = postClipFolderMessageRequest;
 
             // authentication (OAuth2) required
@@ -735,29 +735,29 @@ namespace DotnetTraq.Api
         /// <summary>
         /// メッセージをクリップフォルダに追加 指定したメッセージを指定したクリップフォルダに追加します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="postClipFolderMessageRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ClippedMessage</returns>
         public async System.Threading.Tasks.Task<ClippedMessage> ClipMessageAsync(Guid folderId, PostClipFolderMessageRequest? postClipFolderMessageRequest = default(PostClipFolderMessageRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<ClippedMessage> localVarResponse = await ClipMessageWithHttpInfoAsync(folderId, postClipFolderMessageRequest, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<ClippedMessage> localVarResponse = await ClipMessageWithHttpInfoAsync(folderId, postClipFolderMessageRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// メッセージをクリップフォルダに追加 指定したメッセージを指定したクリップフォルダに追加します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="postClipFolderMessageRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ClippedMessage)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<ClippedMessage>> ClipMessageWithHttpInfoAsync(Guid folderId, PostClipFolderMessageRequest? postClipFolderMessageRequest = default(PostClipFolderMessageRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<ClippedMessage>> ClipMessageWithHttpInfoAsync(Guid folderId, PostClipFolderMessageRequest? postClipFolderMessageRequest = default(PostClipFolderMessageRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -769,13 +769,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("folderId", DotnetTraq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("folderId", Traq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
             localVarRequestOptions.Data = postClipFolderMessageRequest;
 
             // authentication (OAuth2) required
@@ -807,24 +807,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// クリップフォルダを作成 クリップフォルダを作成します。 既にあるフォルダと同名のフォルダを作成することは可能です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClipFolderRequest"> (optional)</param>
         /// <returns>ClipFolder</returns>
         public ClipFolder CreateClipFolder(PostClipFolderRequest? postClipFolderRequest = default(PostClipFolderRequest?))
         {
-            DotnetTraq.Client.ApiResponse<ClipFolder> localVarResponse = CreateClipFolderWithHttpInfo(postClipFolderRequest);
+            Traq.Client.ApiResponse<ClipFolder> localVarResponse = CreateClipFolderWithHttpInfo(postClipFolderRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// クリップフォルダを作成 クリップフォルダを作成します。 既にあるフォルダと同名のフォルダを作成することは可能です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClipFolderRequest"> (optional)</param>
         /// <returns>ApiResponse of ClipFolder</returns>
-        public DotnetTraq.Client.ApiResponse<ClipFolder> CreateClipFolderWithHttpInfo(PostClipFolderRequest? postClipFolderRequest = default(PostClipFolderRequest?))
+        public Traq.Client.ApiResponse<ClipFolder> CreateClipFolderWithHttpInfo(PostClipFolderRequest? postClipFolderRequest = default(PostClipFolderRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -835,10 +835,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postClipFolderRequest;
@@ -871,27 +871,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// クリップフォルダを作成 クリップフォルダを作成します。 既にあるフォルダと同名のフォルダを作成することは可能です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClipFolderRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ClipFolder</returns>
         public async System.Threading.Tasks.Task<ClipFolder> CreateClipFolderAsync(PostClipFolderRequest? postClipFolderRequest = default(PostClipFolderRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<ClipFolder> localVarResponse = await CreateClipFolderWithHttpInfoAsync(postClipFolderRequest, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<ClipFolder> localVarResponse = await CreateClipFolderWithHttpInfoAsync(postClipFolderRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// クリップフォルダを作成 クリップフォルダを作成します。 既にあるフォルダと同名のフォルダを作成することは可能です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClipFolderRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ClipFolder)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<ClipFolder>> CreateClipFolderWithHttpInfoAsync(PostClipFolderRequest? postClipFolderRequest = default(PostClipFolderRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<ClipFolder>> CreateClipFolderWithHttpInfoAsync(PostClipFolderRequest? postClipFolderRequest = default(PostClipFolderRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -903,10 +903,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postClipFolderRequest;
@@ -940,7 +940,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// クリップフォルダを削除 指定したクリップフォルダを削除します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <returns></returns>
         public void DeleteClipFolder(Guid folderId)
@@ -951,12 +951,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// クリップフォルダを削除 指定したクリップフォルダを削除します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> DeleteClipFolderWithHttpInfo(Guid folderId)
+        public Traq.Client.ApiResponse<Object> DeleteClipFolderWithHttpInfo(Guid folderId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -965,13 +965,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("folderId", DotnetTraq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("folderId", Traq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1001,7 +1001,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// クリップフォルダを削除 指定したクリップフォルダを削除します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -1013,14 +1013,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// クリップフォルダを削除 指定したクリップフォルダを削除します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> DeleteClipFolderWithHttpInfoAsync(Guid folderId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> DeleteClipFolderWithHttpInfoAsync(Guid folderId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1030,13 +1030,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("folderId", DotnetTraq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("folderId", Traq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1067,7 +1067,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// クリップフォルダ情報を編集 指定したクリップフォルダの情報を編集します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="patchClipFolderRequest"> (optional)</param>
         /// <returns></returns>
@@ -1079,13 +1079,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// クリップフォルダ情報を編集 指定したクリップフォルダの情報を編集します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="patchClipFolderRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> EditClipFolderWithHttpInfo(Guid folderId, PatchClipFolderRequest? patchClipFolderRequest = default(PatchClipFolderRequest?))
+        public Traq.Client.ApiResponse<Object> EditClipFolderWithHttpInfo(Guid folderId, PatchClipFolderRequest? patchClipFolderRequest = default(PatchClipFolderRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1095,13 +1095,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("folderId", DotnetTraq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("folderId", Traq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
             localVarRequestOptions.Data = patchClipFolderRequest;
 
             // authentication (OAuth2) required
@@ -1132,7 +1132,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// クリップフォルダ情報を編集 指定したクリップフォルダの情報を編集します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="patchClipFolderRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1145,15 +1145,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// クリップフォルダ情報を編集 指定したクリップフォルダの情報を編集します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="patchClipFolderRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> EditClipFolderWithHttpInfoAsync(Guid folderId, PatchClipFolderRequest? patchClipFolderRequest = default(PatchClipFolderRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> EditClipFolderWithHttpInfoAsync(Guid folderId, PatchClipFolderRequest? patchClipFolderRequest = default(PatchClipFolderRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1164,13 +1164,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("folderId", DotnetTraq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("folderId", Traq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
             localVarRequestOptions.Data = patchClipFolderRequest;
 
             // authentication (OAuth2) required
@@ -1202,24 +1202,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// クリップフォルダ情報を取得 指定したクリップフォルダの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <returns>ClipFolder</returns>
         public ClipFolder GetClipFolder(Guid folderId)
         {
-            DotnetTraq.Client.ApiResponse<ClipFolder> localVarResponse = GetClipFolderWithHttpInfo(folderId);
+            Traq.Client.ApiResponse<ClipFolder> localVarResponse = GetClipFolderWithHttpInfo(folderId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// クリップフォルダ情報を取得 指定したクリップフォルダの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <returns>ApiResponse of ClipFolder</returns>
-        public DotnetTraq.Client.ApiResponse<ClipFolder> GetClipFolderWithHttpInfo(Guid folderId)
+        public Traq.Client.ApiResponse<ClipFolder> GetClipFolderWithHttpInfo(Guid folderId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1229,13 +1229,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("folderId", DotnetTraq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("folderId", Traq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1265,27 +1265,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// クリップフォルダ情報を取得 指定したクリップフォルダの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ClipFolder</returns>
         public async System.Threading.Tasks.Task<ClipFolder> GetClipFolderAsync(Guid folderId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<ClipFolder> localVarResponse = await GetClipFolderWithHttpInfoAsync(folderId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<ClipFolder> localVarResponse = await GetClipFolderWithHttpInfoAsync(folderId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// クリップフォルダ情報を取得 指定したクリップフォルダの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ClipFolder)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<ClipFolder>> GetClipFolderWithHttpInfoAsync(Guid folderId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<ClipFolder>> GetClipFolderWithHttpInfoAsync(Guid folderId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1296,13 +1296,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("folderId", DotnetTraq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("folderId", Traq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1333,22 +1333,22 @@ namespace DotnetTraq.Api
         /// <summary>
         /// クリップフォルダのリストを取得 自身が所有するクリップフォルダのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;ClipFolder&gt;</returns>
         public List<ClipFolder> GetClipFolders()
         {
-            DotnetTraq.Client.ApiResponse<List<ClipFolder>> localVarResponse = GetClipFoldersWithHttpInfo();
+            Traq.Client.ApiResponse<List<ClipFolder>> localVarResponse = GetClipFoldersWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// クリップフォルダのリストを取得 自身が所有するクリップフォルダのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;ClipFolder&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<ClipFolder>> GetClipFoldersWithHttpInfo()
+        public Traq.Client.ApiResponse<List<ClipFolder>> GetClipFoldersWithHttpInfo()
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1358,10 +1358,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1393,25 +1393,25 @@ namespace DotnetTraq.Api
         /// <summary>
         /// クリップフォルダのリストを取得 自身が所有するクリップフォルダのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ClipFolder&gt;</returns>
         public async System.Threading.Tasks.Task<List<ClipFolder>> GetClipFoldersAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<ClipFolder>> localVarResponse = await GetClipFoldersWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<ClipFolder>> localVarResponse = await GetClipFoldersWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// クリップフォルダのリストを取得 自身が所有するクリップフォルダのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ClipFolder&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<ClipFolder>>> GetClipFoldersWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<ClipFolder>>> GetClipFoldersWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1422,10 +1422,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1458,7 +1458,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// フォルダ内のクリップのリストを取得 指定したフォルダ内のクリップのリストを取得します。 &#x60;order&#x60;を指定しない場合、クリップした日時の新しい順で返されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -1466,22 +1466,22 @@ namespace DotnetTraq.Api
         /// <returns>List&lt;ClippedMessage&gt;</returns>
         public List<ClippedMessage> GetClips(Guid folderId, int? limit = default(int?), int? offset = default(int?), string? order = default(string?))
         {
-            DotnetTraq.Client.ApiResponse<List<ClippedMessage>> localVarResponse = GetClipsWithHttpInfo(folderId, limit, offset, order);
+            Traq.Client.ApiResponse<List<ClippedMessage>> localVarResponse = GetClipsWithHttpInfo(folderId, limit, offset, order);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// フォルダ内のクリップのリストを取得 指定したフォルダ内のクリップのリストを取得します。 &#x60;order&#x60;を指定しない場合、クリップした日時の新しい順で返されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
         /// <param name="order">昇順か降順か (optional, default to desc)</param>
         /// <returns>ApiResponse of List&lt;ClippedMessage&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<ClippedMessage>> GetClipsWithHttpInfo(Guid folderId, int? limit = default(int?), int? offset = default(int?), string? order = default(string?))
+        public Traq.Client.ApiResponse<List<ClippedMessage>> GetClipsWithHttpInfo(Guid folderId, int? limit = default(int?), int? offset = default(int?), string? order = default(string?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1491,24 +1491,24 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("folderId", DotnetTraq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("folderId", Traq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (offset != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
             }
             if (order != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "order", order));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "order", order));
             }
 
             // authentication (OAuth2) required
@@ -1539,7 +1539,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// フォルダ内のクリップのリストを取得 指定したフォルダ内のクリップのリストを取得します。 &#x60;order&#x60;を指定しない場合、クリップした日時の新しい順で返されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -1548,24 +1548,24 @@ namespace DotnetTraq.Api
         /// <returns>Task of List&lt;ClippedMessage&gt;</returns>
         public async System.Threading.Tasks.Task<List<ClippedMessage>> GetClipsAsync(Guid folderId, int? limit = default(int?), int? offset = default(int?), string? order = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<ClippedMessage>> localVarResponse = await GetClipsWithHttpInfoAsync(folderId, limit, offset, order, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<ClippedMessage>> localVarResponse = await GetClipsWithHttpInfoAsync(folderId, limit, offset, order, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// フォルダ内のクリップのリストを取得 指定したフォルダ内のクリップのリストを取得します。 &#x60;order&#x60;を指定しない場合、クリップした日時の新しい順で返されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
         /// <param name="order">昇順か降順か (optional, default to desc)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ClippedMessage&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<ClippedMessage>>> GetClipsWithHttpInfoAsync(Guid folderId, int? limit = default(int?), int? offset = default(int?), string? order = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<ClippedMessage>>> GetClipsWithHttpInfoAsync(Guid folderId, int? limit = default(int?), int? offset = default(int?), string? order = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1576,24 +1576,24 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("folderId", DotnetTraq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("folderId", Traq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (offset != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
             }
             if (order != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "order", order));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "order", order));
             }
 
             // authentication (OAuth2) required
@@ -1625,24 +1625,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分のクリップを取得 対象のメッセージの自分のクリップの一覧を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <returns>List&lt;MessageClip&gt;</returns>
         public List<MessageClip> GetMessageClips(Guid messageId)
         {
-            DotnetTraq.Client.ApiResponse<List<MessageClip>> localVarResponse = GetMessageClipsWithHttpInfo(messageId);
+            Traq.Client.ApiResponse<List<MessageClip>> localVarResponse = GetMessageClipsWithHttpInfo(messageId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// 自分のクリップを取得 対象のメッセージの自分のクリップの一覧を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <returns>ApiResponse of List&lt;MessageClip&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<MessageClip>> GetMessageClipsWithHttpInfo(Guid messageId)
+        public Traq.Client.ApiResponse<List<MessageClip>> GetMessageClipsWithHttpInfo(Guid messageId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1652,13 +1652,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("messageId", DotnetTraq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("messageId", Traq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1688,27 +1688,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分のクリップを取得 対象のメッセージの自分のクリップの一覧を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MessageClip&gt;</returns>
         public async System.Threading.Tasks.Task<List<MessageClip>> GetMessageClipsAsync(Guid messageId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<MessageClip>> localVarResponse = await GetMessageClipsWithHttpInfoAsync(messageId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<MessageClip>> localVarResponse = await GetMessageClipsWithHttpInfoAsync(messageId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// 自分のクリップを取得 対象のメッセージの自分のクリップの一覧を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MessageClip&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<MessageClip>>> GetMessageClipsWithHttpInfoAsync(Guid messageId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<MessageClip>>> GetMessageClipsWithHttpInfoAsync(Guid messageId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1719,13 +1719,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("messageId", DotnetTraq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("messageId", Traq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1756,7 +1756,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// メッセージをクリップフォルダから除外 指定したフォルダから指定したメッセージのクリップを除外します。 既に外されているメッセージを指定した場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="messageId">メッセージUUID</param>
         /// <returns></returns>
@@ -1768,13 +1768,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// メッセージをクリップフォルダから除外 指定したフォルダから指定したメッセージのクリップを除外します。 既に外されているメッセージを指定した場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="messageId">メッセージUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> UnclipMessageWithHttpInfo(Guid folderId, Guid messageId)
+        public Traq.Client.ApiResponse<Object> UnclipMessageWithHttpInfo(Guid folderId, Guid messageId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1783,14 +1783,14 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("folderId", DotnetTraq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("messageId", DotnetTraq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("folderId", Traq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("messageId", Traq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1820,7 +1820,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// メッセージをクリップフォルダから除外 指定したフォルダから指定したメッセージのクリップを除外します。 既に外されているメッセージを指定した場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1833,15 +1833,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// メッセージをクリップフォルダから除外 指定したフォルダから指定したメッセージのクリップを除外します。 既に外されているメッセージを指定した場合は204を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="folderId">クリップフォルダUUID</param>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> UnclipMessageWithHttpInfoAsync(Guid folderId, Guid messageId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> UnclipMessageWithHttpInfoAsync(Guid folderId, Guid messageId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1851,14 +1851,14 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("folderId", DotnetTraq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("messageId", DotnetTraq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("folderId", Traq.Client.ClientUtils.ParameterToString(folderId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("messageId", Traq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required

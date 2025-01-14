@@ -20,7 +20,7 @@ using System.Text;
 using System.Net.Http;
 using System.Net.Security;
 
-namespace DotnetTraq.Client
+namespace Traq.Client
 {
     /// <summary>
     /// Represents a set of configuration settings

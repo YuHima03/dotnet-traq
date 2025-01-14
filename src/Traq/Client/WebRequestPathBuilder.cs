@@ -10,7 +10,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DotnetTraq.Client
+namespace Traq.Client
 {
     /// <summary>
     /// A URI builder

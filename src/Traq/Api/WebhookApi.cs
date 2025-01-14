@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using DotnetTraq.Client;
-using DotnetTraq.Model;
+using Traq.Client;
+using Traq.Model;
 
-namespace DotnetTraq.Api
+namespace Traq.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookのアイコン画像を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <returns></returns>
@@ -45,7 +45,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookのアイコン画像を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -56,7 +56,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// Webhookを新規作成します。 &#x60;secret&#x60;が空文字の場合、insecureウェブフックが作成されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postWebhookRequest"> (optional)</param>
         /// <returns>Webhook</returns>
         Webhook CreateWebhook(PostWebhookRequest? postWebhookRequest = default(PostWebhookRequest?));
@@ -67,7 +67,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// Webhookを新規作成します。 &#x60;secret&#x60;が空文字の場合、insecureウェブフックが作成されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postWebhookRequest"> (optional)</param>
         /// <returns>ApiResponse of Webhook</returns>
         ApiResponse<Webhook> CreateWebhookWithHttpInfo(PostWebhookRequest? postWebhookRequest = default(PostWebhookRequest?));
@@ -77,7 +77,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookを削除します。 Webhookによって投稿されたメッセージは削除されません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <returns></returns>
         void DeleteWebhook(Guid webhookId);
@@ -88,7 +88,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookを削除します。 Webhookによって投稿されたメッセージは削除されません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteWebhookWithHttpInfo(Guid webhookId);
@@ -98,7 +98,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookの情報を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="patchWebhookRequest"> (optional)</param>
         /// <returns></returns>
@@ -110,7 +110,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookの情報を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="patchWebhookRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -121,7 +121,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookの詳細を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <returns>Webhook</returns>
         Webhook GetWebhook(Guid webhookId);
@@ -132,7 +132,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookの詳細を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <returns>ApiResponse of Webhook</returns>
         ApiResponse<Webhook> GetWebhookWithHttpInfo(Guid webhookId);
@@ -142,7 +142,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookのアイコン画像を取得します
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <returns>FileParameter</returns>
         FileParameter GetWebhookIcon(Guid webhookId);
@@ -153,7 +153,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookのアイコン画像を取得します
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> GetWebhookIconWithHttpInfo(Guid webhookId);
@@ -163,7 +163,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定されたWebhookが投稿したメッセージのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -180,7 +180,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定されたWebhookが投稿したメッセージのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -196,7 +196,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// Webhookのリストを取得します。 allがtrueで無い場合は、自分がオーナーのWebhookのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのWebhookを取得します。権限が必要です。 (optional, default to false)</param>
         /// <returns>List&lt;Webhook&gt;</returns>
         List<Webhook> GetWebhooks(bool? all = default(bool?));
@@ -207,7 +207,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// Webhookのリストを取得します。 allがtrueで無い場合は、自分がオーナーのWebhookのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのWebhookを取得します。権限が必要です。 (optional, default to false)</param>
         /// <returns>ApiResponse of List&lt;Webhook&gt;</returns>
         ApiResponse<List<Webhook>> GetWebhooksWithHttpInfo(bool? all = default(bool?));
@@ -217,7 +217,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// Webhookにメッセージを投稿します。 secureなウェブフックに対しては&#x60;X-TRAQ-Signature&#x60;ヘッダーが必須です。 アーカイブされているチャンネルには投稿できません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="xTRAQSignature">リクエストボディシグネチャ(Secretが設定されている場合は必須) (optional)</param>
         /// <param name="xTRAQChannelId">投稿先のチャンネルID(変更する場合) (optional)</param>
@@ -232,7 +232,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// Webhookにメッセージを投稿します。 secureなウェブフックに対しては&#x60;X-TRAQ-Signature&#x60;ヘッダーが必須です。 アーカイブされているチャンネルには投稿できません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="xTRAQSignature">リクエストボディシグネチャ(Secretが設定されている場合は必須) (optional)</param>
         /// <param name="xTRAQChannelId">投稿先のチャンネルID(変更する場合) (optional)</param>
@@ -255,7 +255,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookのアイコン画像を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -268,7 +268,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookのアイコン画像を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -280,7 +280,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// Webhookを新規作成します。 &#x60;secret&#x60;が空文字の場合、insecureウェブフックが作成されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postWebhookRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Webhook</returns>
@@ -292,7 +292,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// Webhookを新規作成します。 &#x60;secret&#x60;が空文字の場合、insecureウェブフックが作成されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postWebhookRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Webhook)</returns>
@@ -303,7 +303,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookを削除します。 Webhookによって投稿されたメッセージは削除されません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -315,7 +315,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookを削除します。 Webhookによって投稿されたメッセージは削除されません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -326,7 +326,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookの情報を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="patchWebhookRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -339,7 +339,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookの情報を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="patchWebhookRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -351,7 +351,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookの詳細を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Webhook</returns>
@@ -363,7 +363,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookの詳細を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Webhook)</returns>
@@ -374,7 +374,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookのアイコン画像を取得します
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
@@ -386,7 +386,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したWebhookのアイコン画像を取得します
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
@@ -397,7 +397,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定されたWebhookが投稿したメッセージのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -415,7 +415,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定されたWebhookが投稿したメッセージのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -432,7 +432,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// Webhookのリストを取得します。 allがtrueで無い場合は、自分がオーナーのWebhookのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのWebhookを取得します。権限が必要です。 (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Webhook&gt;</returns>
@@ -444,7 +444,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// Webhookのリストを取得します。 allがtrueで無い場合は、自分がオーナーのWebhookのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのWebhookを取得します。権限が必要です。 (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Webhook&gt;)</returns>
@@ -455,7 +455,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// Webhookにメッセージを投稿します。 secureなウェブフックに対しては&#x60;X-TRAQ-Signature&#x60;ヘッダーが必須です。 アーカイブされているチャンネルには投稿できません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="xTRAQSignature">リクエストボディシグネチャ(Secretが設定されている場合は必須) (optional)</param>
         /// <param name="xTRAQChannelId">投稿先のチャンネルID(変更する場合) (optional)</param>
@@ -471,7 +471,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// Webhookにメッセージを投稿します。 secureなウェブフックに対しては&#x60;X-TRAQ-Signature&#x60;ヘッダーが必須です。 アーカイブされているチャンネルには投稿できません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="xTRAQSignature">リクエストボディシグネチャ(Secretが設定されている場合は必須) (optional)</param>
         /// <param name="xTRAQChannelId">投稿先のチャンネルID(変更する場合) (optional)</param>
@@ -496,7 +496,7 @@ namespace DotnetTraq.Api
     /// </summary>
     public partial class WebhookApi : IDisposable, IWebhookApi
     {
-        private DotnetTraq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Traq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookApi"/> class.
@@ -518,14 +518,14 @@ namespace DotnetTraq.Api
         /// <returns></returns>
         public WebhookApi(string basePath)
         {
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -536,18 +536,18 @@ namespace DotnetTraq.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public WebhookApi(DotnetTraq.Client.Configuration configuration)
+        public WebhookApi(Traq.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -582,14 +582,14 @@ namespace DotnetTraq.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -604,19 +604,19 @@ namespace DotnetTraq.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public WebhookApi(HttpClient client, DotnetTraq.Client.Configuration configuration, HttpClientHandler handler = null)
+        public WebhookApi(HttpClient client, Traq.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -627,7 +627,7 @@ namespace DotnetTraq.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public WebhookApi(DotnetTraq.Client.ISynchronousClient client, DotnetTraq.Client.IAsynchronousClient asyncClient, DotnetTraq.Client.IReadableConfiguration configuration)
+        public WebhookApi(Traq.Client.ISynchronousClient client, Traq.Client.IAsynchronousClient asyncClient, Traq.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -636,7 +636,7 @@ namespace DotnetTraq.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -650,17 +650,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public DotnetTraq.Client.ApiClient ApiClient { get; set; } = null;
+        public Traq.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public DotnetTraq.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Traq.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public DotnetTraq.Client.ISynchronousClient Client { get; set; }
+        public Traq.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -675,12 +675,12 @@ namespace DotnetTraq.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public DotnetTraq.Client.IReadableConfiguration Configuration { get; set; }
+        public Traq.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public DotnetTraq.Client.ExceptionFactory ExceptionFactory
+        public Traq.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -696,7 +696,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookのアイコンを変更 指定したWebhookのアイコン画像を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <returns></returns>
@@ -708,17 +708,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookのアイコンを変更 指定したWebhookのアイコン画像を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> ChangeWebhookIconWithHttpInfo(Guid webhookId, FileParameter file)
+        public Traq.Client.ApiResponse<Object> ChangeWebhookIconWithHttpInfo(Guid webhookId, FileParameter file)
         {
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'file' when calling WebhookApi->ChangeWebhookIcon");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'file' when calling WebhookApi->ChangeWebhookIcon");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -728,13 +728,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("webhookId", DotnetTraq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhookId", Traq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
             localVarRequestOptions.FileParameters.Add("file", file);
 
             // authentication (OAuth2) required
@@ -765,7 +765,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookのアイコンを変更 指定したWebhookのアイコン画像を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -778,19 +778,19 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookのアイコンを変更 指定したWebhookのアイコン画像を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> ChangeWebhookIconWithHttpInfoAsync(Guid webhookId, FileParameter file, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> ChangeWebhookIconWithHttpInfoAsync(Guid webhookId, FileParameter file, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'file' when calling WebhookApi->ChangeWebhookIcon");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'file' when calling WebhookApi->ChangeWebhookIcon");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -801,13 +801,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("webhookId", DotnetTraq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhookId", Traq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
             localVarRequestOptions.FileParameters.Add("file", file);
 
             // authentication (OAuth2) required
@@ -839,24 +839,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookを新規作成 Webhookを新規作成します。 &#x60;secret&#x60;が空文字の場合、insecureウェブフックが作成されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postWebhookRequest"> (optional)</param>
         /// <returns>Webhook</returns>
         public Webhook CreateWebhook(PostWebhookRequest? postWebhookRequest = default(PostWebhookRequest?))
         {
-            DotnetTraq.Client.ApiResponse<Webhook> localVarResponse = CreateWebhookWithHttpInfo(postWebhookRequest);
+            Traq.Client.ApiResponse<Webhook> localVarResponse = CreateWebhookWithHttpInfo(postWebhookRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Webhookを新規作成 Webhookを新規作成します。 &#x60;secret&#x60;が空文字の場合、insecureウェブフックが作成されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postWebhookRequest"> (optional)</param>
         /// <returns>ApiResponse of Webhook</returns>
-        public DotnetTraq.Client.ApiResponse<Webhook> CreateWebhookWithHttpInfo(PostWebhookRequest? postWebhookRequest = default(PostWebhookRequest?))
+        public Traq.Client.ApiResponse<Webhook> CreateWebhookWithHttpInfo(PostWebhookRequest? postWebhookRequest = default(PostWebhookRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -867,10 +867,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postWebhookRequest;
@@ -903,27 +903,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookを新規作成 Webhookを新規作成します。 &#x60;secret&#x60;が空文字の場合、insecureウェブフックが作成されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postWebhookRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Webhook</returns>
         public async System.Threading.Tasks.Task<Webhook> CreateWebhookAsync(PostWebhookRequest? postWebhookRequest = default(PostWebhookRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<Webhook> localVarResponse = await CreateWebhookWithHttpInfoAsync(postWebhookRequest, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<Webhook> localVarResponse = await CreateWebhookWithHttpInfoAsync(postWebhookRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Webhookを新規作成 Webhookを新規作成します。 &#x60;secret&#x60;が空文字の場合、insecureウェブフックが作成されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postWebhookRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Webhook)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Webhook>> CreateWebhookWithHttpInfoAsync(PostWebhookRequest? postWebhookRequest = default(PostWebhookRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Webhook>> CreateWebhookWithHttpInfoAsync(PostWebhookRequest? postWebhookRequest = default(PostWebhookRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -935,10 +935,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postWebhookRequest;
@@ -972,7 +972,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookを削除 指定したWebhookを削除します。 Webhookによって投稿されたメッセージは削除されません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <returns></returns>
         public void DeleteWebhook(Guid webhookId)
@@ -983,12 +983,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookを削除 指定したWebhookを削除します。 Webhookによって投稿されたメッセージは削除されません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> DeleteWebhookWithHttpInfo(Guid webhookId)
+        public Traq.Client.ApiResponse<Object> DeleteWebhookWithHttpInfo(Guid webhookId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -997,13 +997,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("webhookId", DotnetTraq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhookId", Traq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1033,7 +1033,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookを削除 指定したWebhookを削除します。 Webhookによって投稿されたメッセージは削除されません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -1045,14 +1045,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookを削除 指定したWebhookを削除します。 Webhookによって投稿されたメッセージは削除されません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> DeleteWebhookWithHttpInfoAsync(Guid webhookId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> DeleteWebhookWithHttpInfoAsync(Guid webhookId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1062,13 +1062,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("webhookId", DotnetTraq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhookId", Traq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1099,7 +1099,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhook情報を変更 指定したWebhookの情報を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="patchWebhookRequest"> (optional)</param>
         /// <returns></returns>
@@ -1111,13 +1111,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhook情報を変更 指定したWebhookの情報を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="patchWebhookRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> EditWebhookWithHttpInfo(Guid webhookId, PatchWebhookRequest? patchWebhookRequest = default(PatchWebhookRequest?))
+        public Traq.Client.ApiResponse<Object> EditWebhookWithHttpInfo(Guid webhookId, PatchWebhookRequest? patchWebhookRequest = default(PatchWebhookRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1127,13 +1127,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("webhookId", DotnetTraq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhookId", Traq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
             localVarRequestOptions.Data = patchWebhookRequest;
 
             // authentication (OAuth2) required
@@ -1164,7 +1164,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhook情報を変更 指定したWebhookの情報を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="patchWebhookRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1177,15 +1177,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhook情報を変更 指定したWebhookの情報を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="patchWebhookRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> EditWebhookWithHttpInfoAsync(Guid webhookId, PatchWebhookRequest? patchWebhookRequest = default(PatchWebhookRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> EditWebhookWithHttpInfoAsync(Guid webhookId, PatchWebhookRequest? patchWebhookRequest = default(PatchWebhookRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1196,13 +1196,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("webhookId", DotnetTraq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhookId", Traq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
             localVarRequestOptions.Data = patchWebhookRequest;
 
             // authentication (OAuth2) required
@@ -1234,24 +1234,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhook情報を取得 指定したWebhookの詳細を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <returns>Webhook</returns>
         public Webhook GetWebhook(Guid webhookId)
         {
-            DotnetTraq.Client.ApiResponse<Webhook> localVarResponse = GetWebhookWithHttpInfo(webhookId);
+            Traq.Client.ApiResponse<Webhook> localVarResponse = GetWebhookWithHttpInfo(webhookId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Webhook情報を取得 指定したWebhookの詳細を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <returns>ApiResponse of Webhook</returns>
-        public DotnetTraq.Client.ApiResponse<Webhook> GetWebhookWithHttpInfo(Guid webhookId)
+        public Traq.Client.ApiResponse<Webhook> GetWebhookWithHttpInfo(Guid webhookId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1261,13 +1261,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("webhookId", DotnetTraq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhookId", Traq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1297,27 +1297,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhook情報を取得 指定したWebhookの詳細を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Webhook</returns>
         public async System.Threading.Tasks.Task<Webhook> GetWebhookAsync(Guid webhookId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<Webhook> localVarResponse = await GetWebhookWithHttpInfoAsync(webhookId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<Webhook> localVarResponse = await GetWebhookWithHttpInfoAsync(webhookId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Webhook情報を取得 指定したWebhookの詳細を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Webhook)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Webhook>> GetWebhookWithHttpInfoAsync(Guid webhookId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Webhook>> GetWebhookWithHttpInfoAsync(Guid webhookId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1328,13 +1328,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("webhookId", DotnetTraq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhookId", Traq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1365,24 +1365,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookのアイコンを取得 指定したWebhookのアイコン画像を取得します
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <returns>FileParameter</returns>
         public FileParameter GetWebhookIcon(Guid webhookId)
         {
-            DotnetTraq.Client.ApiResponse<FileParameter> localVarResponse = GetWebhookIconWithHttpInfo(webhookId);
+            Traq.Client.ApiResponse<FileParameter> localVarResponse = GetWebhookIconWithHttpInfo(webhookId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Webhookのアイコンを取得 指定したWebhookのアイコン画像を取得します
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <returns>ApiResponse of FileParameter</returns>
-        public DotnetTraq.Client.ApiResponse<FileParameter> GetWebhookIconWithHttpInfo(Guid webhookId)
+        public Traq.Client.ApiResponse<FileParameter> GetWebhookIconWithHttpInfo(Guid webhookId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1394,13 +1394,13 @@ namespace DotnetTraq.Api
                 "image/png"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("webhookId", DotnetTraq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhookId", Traq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1430,27 +1430,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookのアイコンを取得 指定したWebhookのアイコン画像を取得します
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> GetWebhookIconAsync(Guid webhookId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<FileParameter> localVarResponse = await GetWebhookIconWithHttpInfoAsync(webhookId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<FileParameter> localVarResponse = await GetWebhookIconWithHttpInfoAsync(webhookId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Webhookのアイコンを取得 指定したWebhookのアイコン画像を取得します
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<FileParameter>> GetWebhookIconWithHttpInfoAsync(Guid webhookId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<FileParameter>> GetWebhookIconWithHttpInfoAsync(Guid webhookId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1463,13 +1463,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("webhookId", DotnetTraq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhookId", Traq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1500,7 +1500,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookの投稿メッセージのリストを取得 指定されたWebhookが投稿したメッセージのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -1511,14 +1511,14 @@ namespace DotnetTraq.Api
         /// <returns>List&lt;Message&gt;</returns>
         public List<Message> GetWebhookMessages(Guid webhookId, int? limit = default(int?), int? offset = default(int?), DateTimeOffset? since = default(DateTimeOffset?), DateTimeOffset? until = default(DateTimeOffset?), bool? inclusive = default(bool?), string? order = default(string?))
         {
-            DotnetTraq.Client.ApiResponse<List<Message>> localVarResponse = GetWebhookMessagesWithHttpInfo(webhookId, limit, offset, since, until, inclusive, order);
+            Traq.Client.ApiResponse<List<Message>> localVarResponse = GetWebhookMessagesWithHttpInfo(webhookId, limit, offset, since, until, inclusive, order);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Webhookの投稿メッセージのリストを取得 指定されたWebhookが投稿したメッセージのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -1527,9 +1527,9 @@ namespace DotnetTraq.Api
         /// <param name="inclusive">範囲の端を含めるかどうか (optional, default to false)</param>
         /// <param name="order">昇順か降順か (optional, default to desc)</param>
         /// <returns>ApiResponse of List&lt;Message&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<Message>> GetWebhookMessagesWithHttpInfo(Guid webhookId, int? limit = default(int?), int? offset = default(int?), DateTimeOffset? since = default(DateTimeOffset?), DateTimeOffset? until = default(DateTimeOffset?), bool? inclusive = default(bool?), string? order = default(string?))
+        public Traq.Client.ApiResponse<List<Message>> GetWebhookMessagesWithHttpInfo(Guid webhookId, int? limit = default(int?), int? offset = default(int?), DateTimeOffset? since = default(DateTimeOffset?), DateTimeOffset? until = default(DateTimeOffset?), bool? inclusive = default(bool?), string? order = default(string?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1539,36 +1539,36 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("webhookId", DotnetTraq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhookId", Traq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (offset != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
             }
             if (since != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "since", since));
             }
             if (until != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "until", until));
             }
             if (inclusive != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "inclusive", inclusive));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "inclusive", inclusive));
             }
             if (order != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "order", order));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "order", order));
             }
 
             // authentication (OAuth2) required
@@ -1599,7 +1599,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookの投稿メッセージのリストを取得 指定されたWebhookが投稿したメッセージのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -1611,14 +1611,14 @@ namespace DotnetTraq.Api
         /// <returns>Task of List&lt;Message&gt;</returns>
         public async System.Threading.Tasks.Task<List<Message>> GetWebhookMessagesAsync(Guid webhookId, int? limit = default(int?), int? offset = default(int?), DateTimeOffset? since = default(DateTimeOffset?), DateTimeOffset? until = default(DateTimeOffset?), bool? inclusive = default(bool?), string? order = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<Message>> localVarResponse = await GetWebhookMessagesWithHttpInfoAsync(webhookId, limit, offset, since, until, inclusive, order, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<Message>> localVarResponse = await GetWebhookMessagesWithHttpInfoAsync(webhookId, limit, offset, since, until, inclusive, order, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Webhookの投稿メッセージのリストを取得 指定されたWebhookが投稿したメッセージのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -1628,10 +1628,10 @@ namespace DotnetTraq.Api
         /// <param name="order">昇順か降順か (optional, default to desc)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Message&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<Message>>> GetWebhookMessagesWithHttpInfoAsync(Guid webhookId, int? limit = default(int?), int? offset = default(int?), DateTimeOffset? since = default(DateTimeOffset?), DateTimeOffset? until = default(DateTimeOffset?), bool? inclusive = default(bool?), string? order = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<Message>>> GetWebhookMessagesWithHttpInfoAsync(Guid webhookId, int? limit = default(int?), int? offset = default(int?), DateTimeOffset? since = default(DateTimeOffset?), DateTimeOffset? until = default(DateTimeOffset?), bool? inclusive = default(bool?), string? order = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1642,36 +1642,36 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("webhookId", DotnetTraq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhookId", Traq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (offset != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
             }
             if (since != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "since", since));
             }
             if (until != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "until", until));
             }
             if (inclusive != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "inclusive", inclusive));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "inclusive", inclusive));
             }
             if (order != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "order", order));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "order", order));
             }
 
             // authentication (OAuth2) required
@@ -1703,24 +1703,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhook情報のリストを取得します Webhookのリストを取得します。 allがtrueで無い場合は、自分がオーナーのWebhookのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのWebhookを取得します。権限が必要です。 (optional, default to false)</param>
         /// <returns>List&lt;Webhook&gt;</returns>
         public List<Webhook> GetWebhooks(bool? all = default(bool?))
         {
-            DotnetTraq.Client.ApiResponse<List<Webhook>> localVarResponse = GetWebhooksWithHttpInfo(all);
+            Traq.Client.ApiResponse<List<Webhook>> localVarResponse = GetWebhooksWithHttpInfo(all);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Webhook情報のリストを取得します Webhookのリストを取得します。 allがtrueで無い場合は、自分がオーナーのWebhookのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのWebhookを取得します。権限が必要です。 (optional, default to false)</param>
         /// <returns>ApiResponse of List&lt;Webhook&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<Webhook>> GetWebhooksWithHttpInfo(bool? all = default(bool?))
+        public Traq.Client.ApiResponse<List<Webhook>> GetWebhooksWithHttpInfo(bool? all = default(bool?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1730,15 +1730,15 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (all != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
             }
 
             // authentication (OAuth2) required
@@ -1769,27 +1769,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhook情報のリストを取得します Webhookのリストを取得します。 allがtrueで無い場合は、自分がオーナーのWebhookのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのWebhookを取得します。権限が必要です。 (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Webhook&gt;</returns>
         public async System.Threading.Tasks.Task<List<Webhook>> GetWebhooksAsync(bool? all = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<Webhook>> localVarResponse = await GetWebhooksWithHttpInfoAsync(all, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<Webhook>> localVarResponse = await GetWebhooksWithHttpInfoAsync(all, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Webhook情報のリストを取得します Webhookのリストを取得します。 allがtrueで無い場合は、自分がオーナーのWebhookのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのWebhookを取得します。権限が必要です。 (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Webhook&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<Webhook>>> GetWebhooksWithHttpInfoAsync(bool? all = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<Webhook>>> GetWebhooksWithHttpInfoAsync(bool? all = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1800,15 +1800,15 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (all != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
             }
 
             // authentication (OAuth2) required
@@ -1840,7 +1840,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookを送信 Webhookにメッセージを投稿します。 secureなウェブフックに対しては&#x60;X-TRAQ-Signature&#x60;ヘッダーが必須です。 アーカイブされているチャンネルには投稿できません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="xTRAQSignature">リクエストボディシグネチャ(Secretが設定されている場合は必須) (optional)</param>
         /// <param name="xTRAQChannelId">投稿先のチャンネルID(変更する場合) (optional)</param>
@@ -1855,16 +1855,16 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookを送信 Webhookにメッセージを投稿します。 secureなウェブフックに対しては&#x60;X-TRAQ-Signature&#x60;ヘッダーが必須です。 アーカイブされているチャンネルには投稿できません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="xTRAQSignature">リクエストボディシグネチャ(Secretが設定されている場合は必須) (optional)</param>
         /// <param name="xTRAQChannelId">投稿先のチャンネルID(変更する場合) (optional)</param>
         /// <param name="embed">メンション・チャンネルリンクを自動埋め込みする場合に1を指定する (optional, default to 0)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> PostWebhookWithHttpInfo(Guid webhookId, string? xTRAQSignature = default(string?), string? xTRAQChannelId = default(string?), int? embed = default(int?), string? body = default(string?))
+        public Traq.Client.ApiResponse<Object> PostWebhookWithHttpInfo(Guid webhookId, string? xTRAQSignature = default(string?), string? xTRAQChannelId = default(string?), int? embed = default(int?), string? body = default(string?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "text/plain"
@@ -1874,24 +1874,24 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("webhookId", DotnetTraq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhookId", Traq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
             if (embed != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "embed", embed));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "embed", embed));
             }
             if (xTRAQSignature != null)
             {
-                localVarRequestOptions.HeaderParameters.Add("X-TRAQ-Signature", DotnetTraq.Client.ClientUtils.ParameterToString(xTRAQSignature)); // header parameter
+                localVarRequestOptions.HeaderParameters.Add("X-TRAQ-Signature", Traq.Client.ClientUtils.ParameterToString(xTRAQSignature)); // header parameter
             }
             if (xTRAQChannelId != null)
             {
-                localVarRequestOptions.HeaderParameters.Add("X-TRAQ-Channel-Id", DotnetTraq.Client.ClientUtils.ParameterToString(xTRAQChannelId)); // header parameter
+                localVarRequestOptions.HeaderParameters.Add("X-TRAQ-Channel-Id", Traq.Client.ClientUtils.ParameterToString(xTRAQChannelId)); // header parameter
             }
             localVarRequestOptions.Data = body;
 
@@ -1923,7 +1923,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookを送信 Webhookにメッセージを投稿します。 secureなウェブフックに対しては&#x60;X-TRAQ-Signature&#x60;ヘッダーが必須です。 アーカイブされているチャンネルには投稿できません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="xTRAQSignature">リクエストボディシグネチャ(Secretが設定されている場合は必須) (optional)</param>
         /// <param name="xTRAQChannelId">投稿先のチャンネルID(変更する場合) (optional)</param>
@@ -1939,7 +1939,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Webhookを送信 Webhookにメッセージを投稿します。 secureなウェブフックに対しては&#x60;X-TRAQ-Signature&#x60;ヘッダーが必須です。 アーカイブされているチャンネルには投稿できません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="webhookId">WebhookUUID</param>
         /// <param name="xTRAQSignature">リクエストボディシグネチャ(Secretが設定されている場合は必須) (optional)</param>
         /// <param name="xTRAQChannelId">投稿先のチャンネルID(変更する場合) (optional)</param>
@@ -1947,10 +1947,10 @@ namespace DotnetTraq.Api
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> PostWebhookWithHttpInfoAsync(Guid webhookId, string? xTRAQSignature = default(string?), string? xTRAQChannelId = default(string?), int? embed = default(int?), string? body = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> PostWebhookWithHttpInfoAsync(Guid webhookId, string? xTRAQSignature = default(string?), string? xTRAQChannelId = default(string?), int? embed = default(int?), string? body = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "text/plain"
@@ -1961,24 +1961,24 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("webhookId", DotnetTraq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("webhookId", Traq.Client.ClientUtils.ParameterToString(webhookId)); // path parameter
             if (embed != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "embed", embed));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "embed", embed));
             }
             if (xTRAQSignature != null)
             {
-                localVarRequestOptions.HeaderParameters.Add("X-TRAQ-Signature", DotnetTraq.Client.ClientUtils.ParameterToString(xTRAQSignature)); // header parameter
+                localVarRequestOptions.HeaderParameters.Add("X-TRAQ-Signature", Traq.Client.ClientUtils.ParameterToString(xTRAQSignature)); // header parameter
             }
             if (xTRAQChannelId != null)
             {
-                localVarRequestOptions.HeaderParameters.Add("X-TRAQ-Channel-Id", DotnetTraq.Client.ClientUtils.ParameterToString(xTRAQChannelId)); // header parameter
+                localVarRequestOptions.HeaderParameters.Add("X-TRAQ-Channel-Id", Traq.Client.ClientUtils.ParameterToString(xTRAQChannelId)); // header parameter
             }
             localVarRequestOptions.Data = body;
 

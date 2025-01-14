@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using DotnetTraq.Client;
-using DotnetTraq.Model;
+using Traq.Client;
+using Traq.Model;
 
-namespace DotnetTraq.Api
+namespace Traq.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// パブリックチャンネルの直近の投稿メッセージを作成日時の降順で取得します。 &#x60;all&#x60;が&#x60;true&#x60;でない場合、購読チャンネルのみのタイムラインを取得します
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">取得する件数 (optional, default to 50)</param>
         /// <param name="all">全てのチャンネルのタイムラインを取得する (optional, default to false)</param>
         /// <param name="perChannel">同じチャンネルのメッセージは最新のもののみ取得するか (optional, default to false)</param>
@@ -46,7 +46,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// パブリックチャンネルの直近の投稿メッセージを作成日時の降順で取得します。 &#x60;all&#x60;が&#x60;true&#x60;でない場合、購読チャンネルのみのタイムラインを取得します
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">取得する件数 (optional, default to 50)</param>
         /// <param name="all">全てのチャンネルのタイムラインを取得する (optional, default to false)</param>
         /// <param name="perChannel">同じチャンネルのメッセージは最新のもののみ取得するか (optional, default to false)</param>
@@ -58,7 +58,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 現在オンラインな(SSEまたはWSが接続中)ユーザーのUUIDのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;string&gt;</returns>
         List<string> GetOnlineUsers();
 
@@ -68,7 +68,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 現在オンラインな(SSEまたはWSが接続中)ユーザーのUUIDのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
         ApiResponse<List<string>> GetOnlineUsersWithHttpInfo();
         #endregion Synchronous Operations
@@ -86,7 +86,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// パブリックチャンネルの直近の投稿メッセージを作成日時の降順で取得します。 &#x60;all&#x60;が&#x60;true&#x60;でない場合、購読チャンネルのみのタイムラインを取得します
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">取得する件数 (optional, default to 50)</param>
         /// <param name="all">全てのチャンネルのタイムラインを取得する (optional, default to false)</param>
         /// <param name="perChannel">同じチャンネルのメッセージは最新のもののみ取得するか (optional, default to false)</param>
@@ -100,7 +100,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// パブリックチャンネルの直近の投稿メッセージを作成日時の降順で取得します。 &#x60;all&#x60;が&#x60;true&#x60;でない場合、購読チャンネルのみのタイムラインを取得します
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">取得する件数 (optional, default to 50)</param>
         /// <param name="all">全てのチャンネルのタイムラインを取得する (optional, default to false)</param>
         /// <param name="perChannel">同じチャンネルのメッセージは最新のもののみ取得するか (optional, default to false)</param>
@@ -113,7 +113,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 現在オンラインな(SSEまたはWSが接続中)ユーザーのUUIDのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
         System.Threading.Tasks.Task<List<string>> GetOnlineUsersAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -124,7 +124,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 現在オンラインな(SSEまたはWSが接続中)ユーザーのUUIDのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<string>>> GetOnlineUsersWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -144,7 +144,7 @@ namespace DotnetTraq.Api
     /// </summary>
     public partial class ActivityApi : IDisposable, IActivityApi
     {
-        private DotnetTraq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Traq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ActivityApi"/> class.
@@ -166,14 +166,14 @@ namespace DotnetTraq.Api
         /// <returns></returns>
         public ActivityApi(string basePath)
         {
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -184,18 +184,18 @@ namespace DotnetTraq.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public ActivityApi(DotnetTraq.Client.Configuration configuration)
+        public ActivityApi(Traq.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -230,14 +230,14 @@ namespace DotnetTraq.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -252,19 +252,19 @@ namespace DotnetTraq.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public ActivityApi(HttpClient client, DotnetTraq.Client.Configuration configuration, HttpClientHandler handler = null)
+        public ActivityApi(HttpClient client, Traq.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -275,7 +275,7 @@ namespace DotnetTraq.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public ActivityApi(DotnetTraq.Client.ISynchronousClient client, DotnetTraq.Client.IAsynchronousClient asyncClient, DotnetTraq.Client.IReadableConfiguration configuration)
+        public ActivityApi(Traq.Client.ISynchronousClient client, Traq.Client.IAsynchronousClient asyncClient, Traq.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -284,7 +284,7 @@ namespace DotnetTraq.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -298,17 +298,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public DotnetTraq.Client.ApiClient ApiClient { get; set; } = null;
+        public Traq.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public DotnetTraq.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Traq.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public DotnetTraq.Client.ISynchronousClient Client { get; set; }
+        public Traq.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -323,12 +323,12 @@ namespace DotnetTraq.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public DotnetTraq.Client.IReadableConfiguration Configuration { get; set; }
+        public Traq.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public DotnetTraq.Client.ExceptionFactory ExceptionFactory
+        public Traq.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -344,28 +344,28 @@ namespace DotnetTraq.Api
         /// <summary>
         /// アクテビティタイムラインを取得 パブリックチャンネルの直近の投稿メッセージを作成日時の降順で取得します。 &#x60;all&#x60;が&#x60;true&#x60;でない場合、購読チャンネルのみのタイムラインを取得します
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">取得する件数 (optional, default to 50)</param>
         /// <param name="all">全てのチャンネルのタイムラインを取得する (optional, default to false)</param>
         /// <param name="perChannel">同じチャンネルのメッセージは最新のもののみ取得するか (optional, default to false)</param>
         /// <returns>List&lt;ActivityTimelineMessage&gt;</returns>
         public List<ActivityTimelineMessage> GetActivityTimeline(int? limit = default(int?), bool? all = default(bool?), bool? perChannel = default(bool?))
         {
-            DotnetTraq.Client.ApiResponse<List<ActivityTimelineMessage>> localVarResponse = GetActivityTimelineWithHttpInfo(limit, all, perChannel);
+            Traq.Client.ApiResponse<List<ActivityTimelineMessage>> localVarResponse = GetActivityTimelineWithHttpInfo(limit, all, perChannel);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// アクテビティタイムラインを取得 パブリックチャンネルの直近の投稿メッセージを作成日時の降順で取得します。 &#x60;all&#x60;が&#x60;true&#x60;でない場合、購読チャンネルのみのタイムラインを取得します
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">取得する件数 (optional, default to 50)</param>
         /// <param name="all">全てのチャンネルのタイムラインを取得する (optional, default to false)</param>
         /// <param name="perChannel">同じチャンネルのメッセージは最新のもののみ取得するか (optional, default to false)</param>
         /// <returns>ApiResponse of List&lt;ActivityTimelineMessage&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<ActivityTimelineMessage>> GetActivityTimelineWithHttpInfo(int? limit = default(int?), bool? all = default(bool?), bool? perChannel = default(bool?))
+        public Traq.Client.ApiResponse<List<ActivityTimelineMessage>> GetActivityTimelineWithHttpInfo(int? limit = default(int?), bool? all = default(bool?), bool? perChannel = default(bool?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -375,23 +375,23 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (all != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
             }
             if (perChannel != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "per_channel", perChannel));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "per_channel", perChannel));
             }
 
             // authentication (OAuth2) required
@@ -422,7 +422,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// アクテビティタイムラインを取得 パブリックチャンネルの直近の投稿メッセージを作成日時の降順で取得します。 &#x60;all&#x60;が&#x60;true&#x60;でない場合、購読チャンネルのみのタイムラインを取得します
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">取得する件数 (optional, default to 50)</param>
         /// <param name="all">全てのチャンネルのタイムラインを取得する (optional, default to false)</param>
         /// <param name="perChannel">同じチャンネルのメッセージは最新のもののみ取得するか (optional, default to false)</param>
@@ -430,23 +430,23 @@ namespace DotnetTraq.Api
         /// <returns>Task of List&lt;ActivityTimelineMessage&gt;</returns>
         public async System.Threading.Tasks.Task<List<ActivityTimelineMessage>> GetActivityTimelineAsync(int? limit = default(int?), bool? all = default(bool?), bool? perChannel = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<ActivityTimelineMessage>> localVarResponse = await GetActivityTimelineWithHttpInfoAsync(limit, all, perChannel, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<ActivityTimelineMessage>> localVarResponse = await GetActivityTimelineWithHttpInfoAsync(limit, all, perChannel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// アクテビティタイムラインを取得 パブリックチャンネルの直近の投稿メッセージを作成日時の降順で取得します。 &#x60;all&#x60;が&#x60;true&#x60;でない場合、購読チャンネルのみのタイムラインを取得します
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">取得する件数 (optional, default to 50)</param>
         /// <param name="all">全てのチャンネルのタイムラインを取得する (optional, default to false)</param>
         /// <param name="perChannel">同じチャンネルのメッセージは最新のもののみ取得するか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ActivityTimelineMessage&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<ActivityTimelineMessage>>> GetActivityTimelineWithHttpInfoAsync(int? limit = default(int?), bool? all = default(bool?), bool? perChannel = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<ActivityTimelineMessage>>> GetActivityTimelineWithHttpInfoAsync(int? limit = default(int?), bool? all = default(bool?), bool? perChannel = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -457,23 +457,23 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (all != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
             }
             if (perChannel != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "per_channel", perChannel));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "per_channel", perChannel));
             }
 
             // authentication (OAuth2) required
@@ -505,22 +505,22 @@ namespace DotnetTraq.Api
         /// <summary>
         /// オンラインユーザーリストを取得 現在オンラインな(SSEまたはWSが接続中)ユーザーのUUIDのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;string&gt;</returns>
         public List<string> GetOnlineUsers()
         {
-            DotnetTraq.Client.ApiResponse<List<string>> localVarResponse = GetOnlineUsersWithHttpInfo();
+            Traq.Client.ApiResponse<List<string>> localVarResponse = GetOnlineUsersWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// オンラインユーザーリストを取得 現在オンラインな(SSEまたはWSが接続中)ユーザーのUUIDのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<string>> GetOnlineUsersWithHttpInfo()
+        public Traq.Client.ApiResponse<List<string>> GetOnlineUsersWithHttpInfo()
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -530,10 +530,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -565,25 +565,25 @@ namespace DotnetTraq.Api
         /// <summary>
         /// オンラインユーザーリストを取得 現在オンラインな(SSEまたはWSが接続中)ユーザーのUUIDのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
         public async System.Threading.Tasks.Task<List<string>> GetOnlineUsersAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<string>> localVarResponse = await GetOnlineUsersWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<string>> localVarResponse = await GetOnlineUsersWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// オンラインユーザーリストを取得 現在オンラインな(SSEまたはWSが接続中)ユーザーのUUIDのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<string>>> GetOnlineUsersWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<string>>> GetOnlineUsersWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -594,10 +594,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 

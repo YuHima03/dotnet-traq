@@ -10,7 +10,7 @@
 
 using System;
 
-namespace DotnetTraq.Client
+namespace Traq.Client
 {
     /// <summary>
     /// API Exception

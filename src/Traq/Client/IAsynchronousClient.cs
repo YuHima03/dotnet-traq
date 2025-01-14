@@ -11,7 +11,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace DotnetTraq.Client
+namespace Traq.Client
 {
     /// <summary>
     /// Contract for Asynchronous RESTful API interactions.

@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using DotnetTraq.Client;
-using DotnetTraq.Model;
+using Traq.Client;
+using Traq.Model;
 
-namespace DotnetTraq.Api
+namespace Traq.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2クライアントを作成します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClientRequest"> (optional)</param>
         /// <returns>OAuth2ClientDetail</returns>
         OAuth2ClientDetail CreateClient(PostClientRequest? postClientRequest = default(PostClientRequest?));
@@ -44,7 +44,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2クライアントを作成します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClientRequest"> (optional)</param>
         /// <returns>ApiResponse of OAuth2ClientDetail</returns>
         ApiResponse<OAuth2ClientDetail> CreateClientWithHttpInfo(PostClientRequest? postClientRequest = default(PostClientRequest?));
@@ -54,7 +54,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したOAuth2クライアントを削除します。 対象のクライアントの管理権限が必要です。正常に削除された場合、このクライアントに対する認可は全て取り消されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <returns></returns>
         void DeleteClient(string clientId);
@@ -65,7 +65,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したOAuth2クライアントを削除します。 対象のクライアントの管理権限が必要です。正常に削除された場合、このクライアントに対する認可は全て取り消されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteClientWithHttpInfo(string clientId);
@@ -75,7 +75,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したOAuth2クライアントの情報を変更します。 対象のクライアントの管理権限が必要です。 クライアント開発者UUIDを変更した場合は、変更先ユーザーにクライアント管理権限が移譲され、自分自身は権限を失います。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="patchClientRequest"> (optional)</param>
         /// <returns></returns>
@@ -87,7 +87,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したOAuth2クライアントの情報を変更します。 対象のクライアントの管理権限が必要です。 クライアント開発者UUIDを変更した場合は、変更先ユーザーにクライアント管理権限が移譲され、自分自身は権限を失います。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="patchClientRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -98,7 +98,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したOAuth2クライアントの情報を取得します。 詳細情報の取得には対象のクライアントの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <returns>GetClient200Response</returns>
@@ -110,7 +110,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したOAuth2クライアントの情報を取得します。 詳細情報の取得には対象のクライアントの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <returns>ApiResponse of GetClient200Response</returns>
@@ -121,7 +121,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身が開発者のOAuth2クライアントのリストを取得します。 &#x60;all&#x60;が&#x60;true&#x60;の場合、全開発者の全クライアントのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのクライアントを取得するかどうか (optional, default to false)</param>
         /// <returns>List&lt;OAuth2Client&gt;</returns>
         List<OAuth2Client> GetClients(bool? all = default(bool?));
@@ -132,7 +132,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身が開発者のOAuth2クライアントのリストを取得します。 &#x60;all&#x60;が&#x60;true&#x60;の場合、全開発者の全クライアントのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのクライアントを取得するかどうか (optional, default to false)</param>
         /// <returns>ApiResponse of List&lt;OAuth2Client&gt;</returns>
         ApiResponse<List<OAuth2Client>> GetClientsWithHttpInfo(bool? all = default(bool?));
@@ -142,7 +142,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 有効な自分に発行されたOAuth2トークンのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;ActiveOAuth2Token&gt;</returns>
         List<ActiveOAuth2Token> GetMyTokens();
 
@@ -152,7 +152,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 有効な自分に発行されたOAuth2トークンのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;ActiveOAuth2Token&gt;</returns>
         ApiResponse<List<ActiveOAuth2Token>> GetMyTokensWithHttpInfo();
         /// <summary>
@@ -161,7 +161,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 認可エンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -180,7 +180,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 認可エンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -198,7 +198,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 認可エンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -217,7 +217,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 認可エンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -235,7 +235,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 認可承諾
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="submit">承諾する場合は\\\&quot;approve\\\&quot;</param>
         /// <returns></returns>
         void PostOAuth2AuthorizeDecide(string submit);
@@ -246,7 +246,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 認可承諾
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="submit">承諾する場合は\\\&quot;approve\\\&quot;</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> PostOAuth2AuthorizeDecideWithHttpInfo(string submit);
@@ -256,7 +256,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 トークンエンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="grantType"></param>
         /// <param name="code"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -276,7 +276,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 トークンエンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="grantType"></param>
         /// <param name="code"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -295,7 +295,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分が許可している指定したOAuthクライアントのアクセストークンを全てRevokeします。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <returns></returns>
         void RevokeClientTokens(string clientId);
@@ -306,7 +306,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分が許可している指定したOAuthクライアントのアクセストークンを全てRevokeします。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RevokeClientTokensWithHttpInfo(string clientId);
@@ -316,7 +316,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分の指定したトークンの認可を取り消します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tokenId">OAuth2トークンUUID</param>
         /// <returns></returns>
         void RevokeMyToken(Guid tokenId);
@@ -327,7 +327,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分の指定したトークンの認可を取り消します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tokenId">OAuth2トークンUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RevokeMyTokenWithHttpInfo(Guid tokenId);
@@ -337,7 +337,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 トークン無効化エンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">無効化するOAuth2トークンまたはOAuth2リフレッシュトークン</param>
         /// <returns></returns>
         void RevokeOAuth2Token(string token);
@@ -348,7 +348,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 トークン無効化エンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">無効化するOAuth2トークンまたはOAuth2リフレッシュトークン</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RevokeOAuth2TokenWithHttpInfo(string token);
@@ -367,7 +367,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2クライアントを作成します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClientRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OAuth2ClientDetail</returns>
@@ -379,7 +379,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2クライアントを作成します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClientRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OAuth2ClientDetail)</returns>
@@ -390,7 +390,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したOAuth2クライアントを削除します。 対象のクライアントの管理権限が必要です。正常に削除された場合、このクライアントに対する認可は全て取り消されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -402,7 +402,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したOAuth2クライアントを削除します。 対象のクライアントの管理権限が必要です。正常に削除された場合、このクライアントに対する認可は全て取り消されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -413,7 +413,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したOAuth2クライアントの情報を変更します。 対象のクライアントの管理権限が必要です。 クライアント開発者UUIDを変更した場合は、変更先ユーザーにクライアント管理権限が移譲され、自分自身は権限を失います。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="patchClientRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -426,7 +426,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したOAuth2クライアントの情報を変更します。 対象のクライアントの管理権限が必要です。 クライアント開発者UUIDを変更した場合は、変更先ユーザーにクライアント管理権限が移譲され、自分自身は権限を失います。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="patchClientRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -438,7 +438,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したOAuth2クライアントの情報を取得します。 詳細情報の取得には対象のクライアントの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -451,7 +451,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したOAuth2クライアントの情報を取得します。 詳細情報の取得には対象のクライアントの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -463,7 +463,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身が開発者のOAuth2クライアントのリストを取得します。 &#x60;all&#x60;が&#x60;true&#x60;の場合、全開発者の全クライアントのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのクライアントを取得するかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OAuth2Client&gt;</returns>
@@ -475,7 +475,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身が開発者のOAuth2クライアントのリストを取得します。 &#x60;all&#x60;が&#x60;true&#x60;の場合、全開発者の全クライアントのリストを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのクライアントを取得するかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OAuth2Client&gt;)</returns>
@@ -486,7 +486,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 有効な自分に発行されたOAuth2トークンのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ActiveOAuth2Token&gt;</returns>
         System.Threading.Tasks.Task<List<ActiveOAuth2Token>> GetMyTokensAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -497,7 +497,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 有効な自分に発行されたOAuth2トークンのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ActiveOAuth2Token&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<ActiveOAuth2Token>>> GetMyTokensWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -507,7 +507,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 認可エンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -527,7 +527,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 認可エンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -546,7 +546,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 認可エンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -566,7 +566,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 認可エンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -585,7 +585,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 認可承諾
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="submit">承諾する場合は\\\&quot;approve\\\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -597,7 +597,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 認可承諾
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="submit">承諾する場合は\\\&quot;approve\\\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -608,7 +608,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 トークンエンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="grantType"></param>
         /// <param name="code"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -629,7 +629,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 トークンエンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="grantType"></param>
         /// <param name="code"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -649,7 +649,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分が許可している指定したOAuthクライアントのアクセストークンを全てRevokeします。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -661,7 +661,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分が許可している指定したOAuthクライアントのアクセストークンを全てRevokeします。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -672,7 +672,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分の指定したトークンの認可を取り消します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tokenId">OAuth2トークンUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -684,7 +684,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分の指定したトークンの認可を取り消します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tokenId">OAuth2トークンUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -695,7 +695,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 トークン無効化エンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">無効化するOAuth2トークンまたはOAuth2リフレッシュトークン</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -707,7 +707,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// OAuth2 トークン無効化エンドポイント
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">無効化するOAuth2トークンまたはOAuth2リフレッシュトークン</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -728,7 +728,7 @@ namespace DotnetTraq.Api
     /// </summary>
     public partial class Oauth2Api : IDisposable, IOauth2Api
     {
-        private DotnetTraq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Traq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Oauth2Api"/> class.
@@ -750,14 +750,14 @@ namespace DotnetTraq.Api
         /// <returns></returns>
         public Oauth2Api(string basePath)
         {
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -768,18 +768,18 @@ namespace DotnetTraq.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public Oauth2Api(DotnetTraq.Client.Configuration configuration)
+        public Oauth2Api(Traq.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -814,14 +814,14 @@ namespace DotnetTraq.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -836,19 +836,19 @@ namespace DotnetTraq.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public Oauth2Api(HttpClient client, DotnetTraq.Client.Configuration configuration, HttpClientHandler handler = null)
+        public Oauth2Api(HttpClient client, Traq.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -859,7 +859,7 @@ namespace DotnetTraq.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public Oauth2Api(DotnetTraq.Client.ISynchronousClient client, DotnetTraq.Client.IAsynchronousClient asyncClient, DotnetTraq.Client.IReadableConfiguration configuration)
+        public Oauth2Api(Traq.Client.ISynchronousClient client, Traq.Client.IAsynchronousClient asyncClient, Traq.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -868,7 +868,7 @@ namespace DotnetTraq.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -882,17 +882,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public DotnetTraq.Client.ApiClient ApiClient { get; set; } = null;
+        public Traq.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public DotnetTraq.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Traq.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public DotnetTraq.Client.ISynchronousClient Client { get; set; }
+        public Traq.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -907,12 +907,12 @@ namespace DotnetTraq.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public DotnetTraq.Client.IReadableConfiguration Configuration { get; set; }
+        public Traq.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public DotnetTraq.Client.ExceptionFactory ExceptionFactory
+        public Traq.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -928,24 +928,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2クライアントを作成 OAuth2クライアントを作成します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClientRequest"> (optional)</param>
         /// <returns>OAuth2ClientDetail</returns>
         public OAuth2ClientDetail CreateClient(PostClientRequest? postClientRequest = default(PostClientRequest?))
         {
-            DotnetTraq.Client.ApiResponse<OAuth2ClientDetail> localVarResponse = CreateClientWithHttpInfo(postClientRequest);
+            Traq.Client.ApiResponse<OAuth2ClientDetail> localVarResponse = CreateClientWithHttpInfo(postClientRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// OAuth2クライアントを作成 OAuth2クライアントを作成します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClientRequest"> (optional)</param>
         /// <returns>ApiResponse of OAuth2ClientDetail</returns>
-        public DotnetTraq.Client.ApiResponse<OAuth2ClientDetail> CreateClientWithHttpInfo(PostClientRequest? postClientRequest = default(PostClientRequest?))
+        public Traq.Client.ApiResponse<OAuth2ClientDetail> CreateClientWithHttpInfo(PostClientRequest? postClientRequest = default(PostClientRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -956,10 +956,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postClientRequest;
@@ -992,27 +992,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2クライアントを作成 OAuth2クライアントを作成します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClientRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OAuth2ClientDetail</returns>
         public async System.Threading.Tasks.Task<OAuth2ClientDetail> CreateClientAsync(PostClientRequest? postClientRequest = default(PostClientRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<OAuth2ClientDetail> localVarResponse = await CreateClientWithHttpInfoAsync(postClientRequest, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<OAuth2ClientDetail> localVarResponse = await CreateClientWithHttpInfoAsync(postClientRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// OAuth2クライアントを作成 OAuth2クライアントを作成します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postClientRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OAuth2ClientDetail)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<OAuth2ClientDetail>> CreateClientWithHttpInfoAsync(PostClientRequest? postClientRequest = default(PostClientRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<OAuth2ClientDetail>> CreateClientWithHttpInfoAsync(PostClientRequest? postClientRequest = default(PostClientRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1024,10 +1024,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postClientRequest;
@@ -1061,7 +1061,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2クライアントを削除 指定したOAuth2クライアントを削除します。 対象のクライアントの管理権限が必要です。正常に削除された場合、このクライアントに対する認可は全て取り消されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <returns></returns>
         public void DeleteClient(string clientId)
@@ -1072,16 +1072,16 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2クライアントを削除 指定したOAuth2クライアントを削除します。 対象のクライアントの管理権限が必要です。正常に削除された場合、このクライアントに対する認可は全て取り消されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> DeleteClientWithHttpInfo(string clientId)
+        public Traq.Client.ApiResponse<Object> DeleteClientWithHttpInfo(string clientId)
         {
             // verify the required parameter 'clientId' is set
             if (clientId == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->DeleteClient");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->DeleteClient");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1090,13 +1090,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("clientId", DotnetTraq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("clientId", Traq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1126,7 +1126,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2クライアントを削除 指定したOAuth2クライアントを削除します。 対象のクライアントの管理権限が必要です。正常に削除された場合、このクライアントに対する認可は全て取り消されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -1138,18 +1138,18 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2クライアントを削除 指定したOAuth2クライアントを削除します。 対象のクライアントの管理権限が必要です。正常に削除された場合、このクライアントに対する認可は全て取り消されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> DeleteClientWithHttpInfoAsync(string clientId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> DeleteClientWithHttpInfoAsync(string clientId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'clientId' is set
             if (clientId == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->DeleteClient");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->DeleteClient");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1159,13 +1159,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("clientId", DotnetTraq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("clientId", Traq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1196,7 +1196,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2クライアント情報を変更 指定したOAuth2クライアントの情報を変更します。 対象のクライアントの管理権限が必要です。 クライアント開発者UUIDを変更した場合は、変更先ユーザーにクライアント管理権限が移譲され、自分自身は権限を失います。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="patchClientRequest"> (optional)</param>
         /// <returns></returns>
@@ -1208,17 +1208,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2クライアント情報を変更 指定したOAuth2クライアントの情報を変更します。 対象のクライアントの管理権限が必要です。 クライアント開発者UUIDを変更した場合は、変更先ユーザーにクライアント管理権限が移譲され、自分自身は権限を失います。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="patchClientRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> EditClientWithHttpInfo(string clientId, PatchClientRequest? patchClientRequest = default(PatchClientRequest?))
+        public Traq.Client.ApiResponse<Object> EditClientWithHttpInfo(string clientId, PatchClientRequest? patchClientRequest = default(PatchClientRequest?))
         {
             // verify the required parameter 'clientId' is set
             if (clientId == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->EditClient");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->EditClient");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1228,13 +1228,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("clientId", DotnetTraq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("clientId", Traq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
             localVarRequestOptions.Data = patchClientRequest;
 
             // authentication (OAuth2) required
@@ -1265,7 +1265,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2クライアント情報を変更 指定したOAuth2クライアントの情報を変更します。 対象のクライアントの管理権限が必要です。 クライアント開発者UUIDを変更した場合は、変更先ユーザーにクライアント管理権限が移譲され、自分自身は権限を失います。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="patchClientRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1278,19 +1278,19 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2クライアント情報を変更 指定したOAuth2クライアントの情報を変更します。 対象のクライアントの管理権限が必要です。 クライアント開発者UUIDを変更した場合は、変更先ユーザーにクライアント管理権限が移譲され、自分自身は権限を失います。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="patchClientRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> EditClientWithHttpInfoAsync(string clientId, PatchClientRequest? patchClientRequest = default(PatchClientRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> EditClientWithHttpInfoAsync(string clientId, PatchClientRequest? patchClientRequest = default(PatchClientRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'clientId' is set
             if (clientId == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->EditClient");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->EditClient");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1301,13 +1301,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("clientId", DotnetTraq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("clientId", Traq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
             localVarRequestOptions.Data = patchClientRequest;
 
             // authentication (OAuth2) required
@@ -1339,30 +1339,30 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2クライアント情報を取得 指定したOAuth2クライアントの情報を取得します。 詳細情報の取得には対象のクライアントの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <returns>GetClient200Response</returns>
         public GetClient200Response GetClient(string clientId, bool? detail = default(bool?))
         {
-            DotnetTraq.Client.ApiResponse<GetClient200Response> localVarResponse = GetClientWithHttpInfo(clientId, detail);
+            Traq.Client.ApiResponse<GetClient200Response> localVarResponse = GetClientWithHttpInfo(clientId, detail);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// OAuth2クライアント情報を取得 指定したOAuth2クライアントの情報を取得します。 詳細情報の取得には対象のクライアントの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <returns>ApiResponse of GetClient200Response</returns>
-        public DotnetTraq.Client.ApiResponse<GetClient200Response> GetClientWithHttpInfo(string clientId, bool? detail = default(bool?))
+        public Traq.Client.ApiResponse<GetClient200Response> GetClientWithHttpInfo(string clientId, bool? detail = default(bool?))
         {
             // verify the required parameter 'clientId' is set
             if (clientId == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->GetClient");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->GetClient");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1372,16 +1372,16 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("clientId", DotnetTraq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("clientId", Traq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
             if (detail != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "detail", detail));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "detail", detail));
             }
 
             // authentication (OAuth2) required
@@ -1412,33 +1412,33 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2クライアント情報を取得 指定したOAuth2クライアントの情報を取得します。 詳細情報の取得には対象のクライアントの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetClient200Response</returns>
         public async System.Threading.Tasks.Task<GetClient200Response> GetClientAsync(string clientId, bool? detail = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<GetClient200Response> localVarResponse = await GetClientWithHttpInfoAsync(clientId, detail, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<GetClient200Response> localVarResponse = await GetClientWithHttpInfoAsync(clientId, detail, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// OAuth2クライアント情報を取得 指定したOAuth2クライアントの情報を取得します。 詳細情報の取得には対象のクライアントの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetClient200Response)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<GetClient200Response>> GetClientWithHttpInfoAsync(string clientId, bool? detail = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<GetClient200Response>> GetClientWithHttpInfoAsync(string clientId, bool? detail = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'clientId' is set
             if (clientId == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->GetClient");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->GetClient");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1449,16 +1449,16 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("clientId", DotnetTraq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("clientId", Traq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
             if (detail != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "detail", detail));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "detail", detail));
             }
 
             // authentication (OAuth2) required
@@ -1490,24 +1490,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2クライアントのリストを取得 自身が開発者のOAuth2クライアントのリストを取得します。 &#x60;all&#x60;が&#x60;true&#x60;の場合、全開発者の全クライアントのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのクライアントを取得するかどうか (optional, default to false)</param>
         /// <returns>List&lt;OAuth2Client&gt;</returns>
         public List<OAuth2Client> GetClients(bool? all = default(bool?))
         {
-            DotnetTraq.Client.ApiResponse<List<OAuth2Client>> localVarResponse = GetClientsWithHttpInfo(all);
+            Traq.Client.ApiResponse<List<OAuth2Client>> localVarResponse = GetClientsWithHttpInfo(all);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// OAuth2クライアントのリストを取得 自身が開発者のOAuth2クライアントのリストを取得します。 &#x60;all&#x60;が&#x60;true&#x60;の場合、全開発者の全クライアントのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのクライアントを取得するかどうか (optional, default to false)</param>
         /// <returns>ApiResponse of List&lt;OAuth2Client&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<OAuth2Client>> GetClientsWithHttpInfo(bool? all = default(bool?))
+        public Traq.Client.ApiResponse<List<OAuth2Client>> GetClientsWithHttpInfo(bool? all = default(bool?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1517,15 +1517,15 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (all != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
             }
 
             // authentication (OAuth2) required
@@ -1556,27 +1556,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2クライアントのリストを取得 自身が開発者のOAuth2クライアントのリストを取得します。 &#x60;all&#x60;が&#x60;true&#x60;の場合、全開発者の全クライアントのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのクライアントを取得するかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;OAuth2Client&gt;</returns>
         public async System.Threading.Tasks.Task<List<OAuth2Client>> GetClientsAsync(bool? all = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<OAuth2Client>> localVarResponse = await GetClientsWithHttpInfoAsync(all, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<OAuth2Client>> localVarResponse = await GetClientsWithHttpInfoAsync(all, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// OAuth2クライアントのリストを取得 自身が開発者のOAuth2クライアントのリストを取得します。 &#x60;all&#x60;が&#x60;true&#x60;の場合、全開発者の全クライアントのリストを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのクライアントを取得するかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;OAuth2Client&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<OAuth2Client>>> GetClientsWithHttpInfoAsync(bool? all = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<OAuth2Client>>> GetClientsWithHttpInfoAsync(bool? all = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1587,15 +1587,15 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (all != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
             }
 
             // authentication (OAuth2) required
@@ -1627,22 +1627,22 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 有効トークンのリストを取得 有効な自分に発行されたOAuth2トークンのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;ActiveOAuth2Token&gt;</returns>
         public List<ActiveOAuth2Token> GetMyTokens()
         {
-            DotnetTraq.Client.ApiResponse<List<ActiveOAuth2Token>> localVarResponse = GetMyTokensWithHttpInfo();
+            Traq.Client.ApiResponse<List<ActiveOAuth2Token>> localVarResponse = GetMyTokensWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// 有効トークンのリストを取得 有効な自分に発行されたOAuth2トークンのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;ActiveOAuth2Token&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<ActiveOAuth2Token>> GetMyTokensWithHttpInfo()
+        public Traq.Client.ApiResponse<List<ActiveOAuth2Token>> GetMyTokensWithHttpInfo()
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1652,10 +1652,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1687,25 +1687,25 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 有効トークンのリストを取得 有効な自分に発行されたOAuth2トークンのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ActiveOAuth2Token&gt;</returns>
         public async System.Threading.Tasks.Task<List<ActiveOAuth2Token>> GetMyTokensAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<ActiveOAuth2Token>> localVarResponse = await GetMyTokensWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<ActiveOAuth2Token>> localVarResponse = await GetMyTokensWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// 有効トークンのリストを取得 有効な自分に発行されたOAuth2トークンのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ActiveOAuth2Token&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<ActiveOAuth2Token>>> GetMyTokensWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<ActiveOAuth2Token>>> GetMyTokensWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1716,10 +1716,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1752,7 +1752,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 認可エンドポイント OAuth2 認可エンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -1771,7 +1771,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 認可エンドポイント OAuth2 認可エンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -1782,13 +1782,13 @@ namespace DotnetTraq.Api
         /// <param name="nonce"> (optional)</param>
         /// <param name="prompt"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> GetOAuth2AuthorizeWithHttpInfo(string clientId, OAuth2ResponseType? responseType = default(OAuth2ResponseType?), string? redirectUri = default(string?), string? scope = default(string?), string? state = default(string?), string? codeChallenge = default(string?), string? codeChallengeMethod = default(string?), string? nonce = default(string?), OAuth2Prompt? prompt = default(OAuth2Prompt?))
+        public Traq.Client.ApiResponse<Object> GetOAuth2AuthorizeWithHttpInfo(string clientId, OAuth2ResponseType? responseType = default(OAuth2ResponseType?), string? redirectUri = default(string?), string? scope = default(string?), string? state = default(string?), string? codeChallenge = default(string?), string? codeChallengeMethod = default(string?), string? nonce = default(string?), OAuth2Prompt? prompt = default(OAuth2Prompt?))
         {
             // verify the required parameter 'clientId' is set
             if (clientId == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->GetOAuth2Authorize");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->GetOAuth2Authorize");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1797,44 +1797,44 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (responseType != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "response_type", responseType));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "response_type", responseType));
             }
-            localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "client_id", clientId));
+            localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "client_id", clientId));
             if (redirectUri != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "redirect_uri", redirectUri));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "redirect_uri", redirectUri));
             }
             if (scope != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "scope", scope));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "scope", scope));
             }
             if (state != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "state", state));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "state", state));
             }
             if (codeChallenge != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "code_challenge", codeChallenge));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "code_challenge", codeChallenge));
             }
             if (codeChallengeMethod != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "code_challenge_method", codeChallengeMethod));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "code_challenge_method", codeChallengeMethod));
             }
             if (nonce != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "nonce", nonce));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "nonce", nonce));
             }
             if (prompt != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "prompt", prompt));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "prompt", prompt));
             }
 
             // authentication (OAuth2) required
@@ -1865,7 +1865,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 認可エンドポイント OAuth2 認可エンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -1885,7 +1885,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 認可エンドポイント OAuth2 認可エンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -1897,14 +1897,14 @@ namespace DotnetTraq.Api
         /// <param name="prompt"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> GetOAuth2AuthorizeWithHttpInfoAsync(string clientId, OAuth2ResponseType? responseType = default(OAuth2ResponseType?), string? redirectUri = default(string?), string? scope = default(string?), string? state = default(string?), string? codeChallenge = default(string?), string? codeChallengeMethod = default(string?), string? nonce = default(string?), OAuth2Prompt? prompt = default(OAuth2Prompt?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> GetOAuth2AuthorizeWithHttpInfoAsync(string clientId, OAuth2ResponseType? responseType = default(OAuth2ResponseType?), string? redirectUri = default(string?), string? scope = default(string?), string? state = default(string?), string? codeChallenge = default(string?), string? codeChallengeMethod = default(string?), string? nonce = default(string?), OAuth2Prompt? prompt = default(OAuth2Prompt?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'clientId' is set
             if (clientId == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->GetOAuth2Authorize");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->GetOAuth2Authorize");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1914,44 +1914,44 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (responseType != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "response_type", responseType));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "response_type", responseType));
             }
-            localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "client_id", clientId));
+            localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "client_id", clientId));
             if (redirectUri != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "redirect_uri", redirectUri));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "redirect_uri", redirectUri));
             }
             if (scope != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "scope", scope));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "scope", scope));
             }
             if (state != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "state", state));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "state", state));
             }
             if (codeChallenge != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "code_challenge", codeChallenge));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "code_challenge", codeChallenge));
             }
             if (codeChallengeMethod != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "code_challenge_method", codeChallengeMethod));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "code_challenge_method", codeChallengeMethod));
             }
             if (nonce != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "nonce", nonce));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "nonce", nonce));
             }
             if (prompt != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "prompt", prompt));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "prompt", prompt));
             }
 
             // authentication (OAuth2) required
@@ -1983,7 +1983,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 認可エンドポイント OAuth2 認可エンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -2002,7 +2002,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 認可エンドポイント OAuth2 認可エンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -2013,13 +2013,13 @@ namespace DotnetTraq.Api
         /// <param name="nonce"> (optional)</param>
         /// <param name="prompt"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> PostOAuth2AuthorizeWithHttpInfo(string clientId, OAuth2ResponseType? responseType = default(OAuth2ResponseType?), string? redirectUri = default(string?), string? scope = default(string?), string? state = default(string?), string? codeChallenge = default(string?), string? codeChallengeMethod = default(string?), string? nonce = default(string?), OAuth2Prompt? prompt = default(OAuth2Prompt?))
+        public Traq.Client.ApiResponse<Object> PostOAuth2AuthorizeWithHttpInfo(string clientId, OAuth2ResponseType? responseType = default(OAuth2ResponseType?), string? redirectUri = default(string?), string? scope = default(string?), string? state = default(string?), string? codeChallenge = default(string?), string? codeChallengeMethod = default(string?), string? nonce = default(string?), OAuth2Prompt? prompt = default(OAuth2Prompt?))
         {
             // verify the required parameter 'clientId' is set
             if (clientId == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->PostOAuth2Authorize");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->PostOAuth2Authorize");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/x-www-form-urlencoded"
@@ -2029,44 +2029,44 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (responseType != null)
             {
-                localVarRequestOptions.FormParameters.Add("response_type", DotnetTraq.Client.ClientUtils.ParameterToString(responseType)); // form parameter
+                localVarRequestOptions.FormParameters.Add("response_type", Traq.Client.ClientUtils.ParameterToString(responseType)); // form parameter
             }
-            localVarRequestOptions.FormParameters.Add("client_id", DotnetTraq.Client.ClientUtils.ParameterToString(clientId)); // form parameter
+            localVarRequestOptions.FormParameters.Add("client_id", Traq.Client.ClientUtils.ParameterToString(clientId)); // form parameter
             if (redirectUri != null)
             {
-                localVarRequestOptions.FormParameters.Add("redirect_uri", DotnetTraq.Client.ClientUtils.ParameterToString(redirectUri)); // form parameter
+                localVarRequestOptions.FormParameters.Add("redirect_uri", Traq.Client.ClientUtils.ParameterToString(redirectUri)); // form parameter
             }
             if (scope != null)
             {
-                localVarRequestOptions.FormParameters.Add("scope", DotnetTraq.Client.ClientUtils.ParameterToString(scope)); // form parameter
+                localVarRequestOptions.FormParameters.Add("scope", Traq.Client.ClientUtils.ParameterToString(scope)); // form parameter
             }
             if (state != null)
             {
-                localVarRequestOptions.FormParameters.Add("state", DotnetTraq.Client.ClientUtils.ParameterToString(state)); // form parameter
+                localVarRequestOptions.FormParameters.Add("state", Traq.Client.ClientUtils.ParameterToString(state)); // form parameter
             }
             if (codeChallenge != null)
             {
-                localVarRequestOptions.FormParameters.Add("code_challenge", DotnetTraq.Client.ClientUtils.ParameterToString(codeChallenge)); // form parameter
+                localVarRequestOptions.FormParameters.Add("code_challenge", Traq.Client.ClientUtils.ParameterToString(codeChallenge)); // form parameter
             }
             if (codeChallengeMethod != null)
             {
-                localVarRequestOptions.FormParameters.Add("code_challenge_method", DotnetTraq.Client.ClientUtils.ParameterToString(codeChallengeMethod)); // form parameter
+                localVarRequestOptions.FormParameters.Add("code_challenge_method", Traq.Client.ClientUtils.ParameterToString(codeChallengeMethod)); // form parameter
             }
             if (nonce != null)
             {
-                localVarRequestOptions.FormParameters.Add("nonce", DotnetTraq.Client.ClientUtils.ParameterToString(nonce)); // form parameter
+                localVarRequestOptions.FormParameters.Add("nonce", Traq.Client.ClientUtils.ParameterToString(nonce)); // form parameter
             }
             if (prompt != null)
             {
-                localVarRequestOptions.FormParameters.Add("prompt", DotnetTraq.Client.ClientUtils.ParameterToString(prompt)); // form parameter
+                localVarRequestOptions.FormParameters.Add("prompt", Traq.Client.ClientUtils.ParameterToString(prompt)); // form parameter
             }
 
             // authentication (OAuth2) required
@@ -2097,7 +2097,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 認可エンドポイント OAuth2 認可エンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -2117,7 +2117,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 認可エンドポイント OAuth2 認可エンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId"></param>
         /// <param name="responseType"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -2129,14 +2129,14 @@ namespace DotnetTraq.Api
         /// <param name="prompt"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> PostOAuth2AuthorizeWithHttpInfoAsync(string clientId, OAuth2ResponseType? responseType = default(OAuth2ResponseType?), string? redirectUri = default(string?), string? scope = default(string?), string? state = default(string?), string? codeChallenge = default(string?), string? codeChallengeMethod = default(string?), string? nonce = default(string?), OAuth2Prompt? prompt = default(OAuth2Prompt?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> PostOAuth2AuthorizeWithHttpInfoAsync(string clientId, OAuth2ResponseType? responseType = default(OAuth2ResponseType?), string? redirectUri = default(string?), string? scope = default(string?), string? state = default(string?), string? codeChallenge = default(string?), string? codeChallengeMethod = default(string?), string? nonce = default(string?), OAuth2Prompt? prompt = default(OAuth2Prompt?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'clientId' is set
             if (clientId == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->PostOAuth2Authorize");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->PostOAuth2Authorize");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/x-www-form-urlencoded"
@@ -2147,44 +2147,44 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (responseType != null)
             {
-                localVarRequestOptions.FormParameters.Add("response_type", DotnetTraq.Client.ClientUtils.ParameterToString(responseType)); // form parameter
+                localVarRequestOptions.FormParameters.Add("response_type", Traq.Client.ClientUtils.ParameterToString(responseType)); // form parameter
             }
-            localVarRequestOptions.FormParameters.Add("client_id", DotnetTraq.Client.ClientUtils.ParameterToString(clientId)); // form parameter
+            localVarRequestOptions.FormParameters.Add("client_id", Traq.Client.ClientUtils.ParameterToString(clientId)); // form parameter
             if (redirectUri != null)
             {
-                localVarRequestOptions.FormParameters.Add("redirect_uri", DotnetTraq.Client.ClientUtils.ParameterToString(redirectUri)); // form parameter
+                localVarRequestOptions.FormParameters.Add("redirect_uri", Traq.Client.ClientUtils.ParameterToString(redirectUri)); // form parameter
             }
             if (scope != null)
             {
-                localVarRequestOptions.FormParameters.Add("scope", DotnetTraq.Client.ClientUtils.ParameterToString(scope)); // form parameter
+                localVarRequestOptions.FormParameters.Add("scope", Traq.Client.ClientUtils.ParameterToString(scope)); // form parameter
             }
             if (state != null)
             {
-                localVarRequestOptions.FormParameters.Add("state", DotnetTraq.Client.ClientUtils.ParameterToString(state)); // form parameter
+                localVarRequestOptions.FormParameters.Add("state", Traq.Client.ClientUtils.ParameterToString(state)); // form parameter
             }
             if (codeChallenge != null)
             {
-                localVarRequestOptions.FormParameters.Add("code_challenge", DotnetTraq.Client.ClientUtils.ParameterToString(codeChallenge)); // form parameter
+                localVarRequestOptions.FormParameters.Add("code_challenge", Traq.Client.ClientUtils.ParameterToString(codeChallenge)); // form parameter
             }
             if (codeChallengeMethod != null)
             {
-                localVarRequestOptions.FormParameters.Add("code_challenge_method", DotnetTraq.Client.ClientUtils.ParameterToString(codeChallengeMethod)); // form parameter
+                localVarRequestOptions.FormParameters.Add("code_challenge_method", Traq.Client.ClientUtils.ParameterToString(codeChallengeMethod)); // form parameter
             }
             if (nonce != null)
             {
-                localVarRequestOptions.FormParameters.Add("nonce", DotnetTraq.Client.ClientUtils.ParameterToString(nonce)); // form parameter
+                localVarRequestOptions.FormParameters.Add("nonce", Traq.Client.ClientUtils.ParameterToString(nonce)); // form parameter
             }
             if (prompt != null)
             {
-                localVarRequestOptions.FormParameters.Add("prompt", DotnetTraq.Client.ClientUtils.ParameterToString(prompt)); // form parameter
+                localVarRequestOptions.FormParameters.Add("prompt", Traq.Client.ClientUtils.ParameterToString(prompt)); // form parameter
             }
 
             // authentication (OAuth2) required
@@ -2216,7 +2216,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 認可承諾API OAuth2 認可承諾
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="submit">承諾する場合は\\\&quot;approve\\\&quot;</param>
         /// <returns></returns>
         public void PostOAuth2AuthorizeDecide(string submit)
@@ -2227,16 +2227,16 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 認可承諾API OAuth2 認可承諾
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="submit">承諾する場合は\\\&quot;approve\\\&quot;</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> PostOAuth2AuthorizeDecideWithHttpInfo(string submit)
+        public Traq.Client.ApiResponse<Object> PostOAuth2AuthorizeDecideWithHttpInfo(string submit)
         {
             // verify the required parameter 'submit' is set
             if (submit == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'submit' when calling Oauth2Api->PostOAuth2AuthorizeDecide");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'submit' when calling Oauth2Api->PostOAuth2AuthorizeDecide");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/x-www-form-urlencoded"
@@ -2246,13 +2246,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.FormParameters.Add("submit", DotnetTraq.Client.ClientUtils.ParameterToString(submit)); // form parameter
+            localVarRequestOptions.FormParameters.Add("submit", Traq.Client.ClientUtils.ParameterToString(submit)); // form parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2282,7 +2282,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 認可承諾API OAuth2 認可承諾
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="submit">承諾する場合は\\\&quot;approve\\\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -2294,18 +2294,18 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 認可承諾API OAuth2 認可承諾
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="submit">承諾する場合は\\\&quot;approve\\\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> PostOAuth2AuthorizeDecideWithHttpInfoAsync(string submit, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> PostOAuth2AuthorizeDecideWithHttpInfoAsync(string submit, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'submit' is set
             if (submit == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'submit' when calling Oauth2Api->PostOAuth2AuthorizeDecide");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'submit' when calling Oauth2Api->PostOAuth2AuthorizeDecide");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/x-www-form-urlencoded"
@@ -2316,13 +2316,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.FormParameters.Add("submit", DotnetTraq.Client.ClientUtils.ParameterToString(submit)); // form parameter
+            localVarRequestOptions.FormParameters.Add("submit", Traq.Client.ClientUtils.ParameterToString(submit)); // form parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2353,7 +2353,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 トークンエンドポイント OAuth2 トークンエンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="grantType"></param>
         /// <param name="code"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -2367,14 +2367,14 @@ namespace DotnetTraq.Api
         /// <returns>OAuth2Token</returns>
         public OAuth2Token PostOAuth2Token(string grantType, string? code = default(string?), string? redirectUri = default(string?), string? clientId = default(string?), string? codeVerifier = default(string?), string? username = default(string?), string? password = default(string?), string? scope = default(string?), string? refreshToken = default(string?), string? clientSecret = default(string?))
         {
-            DotnetTraq.Client.ApiResponse<OAuth2Token> localVarResponse = PostOAuth2TokenWithHttpInfo(grantType, code, redirectUri, clientId, codeVerifier, username, password, scope, refreshToken, clientSecret);
+            Traq.Client.ApiResponse<OAuth2Token> localVarResponse = PostOAuth2TokenWithHttpInfo(grantType, code, redirectUri, clientId, codeVerifier, username, password, scope, refreshToken, clientSecret);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// OAuth2 トークンエンドポイント OAuth2 トークンエンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="grantType"></param>
         /// <param name="code"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -2386,13 +2386,13 @@ namespace DotnetTraq.Api
         /// <param name="refreshToken"> (optional)</param>
         /// <param name="clientSecret"> (optional)</param>
         /// <returns>ApiResponse of OAuth2Token</returns>
-        public DotnetTraq.Client.ApiResponse<OAuth2Token> PostOAuth2TokenWithHttpInfo(string grantType, string? code = default(string?), string? redirectUri = default(string?), string? clientId = default(string?), string? codeVerifier = default(string?), string? username = default(string?), string? password = default(string?), string? scope = default(string?), string? refreshToken = default(string?), string? clientSecret = default(string?))
+        public Traq.Client.ApiResponse<OAuth2Token> PostOAuth2TokenWithHttpInfo(string grantType, string? code = default(string?), string? redirectUri = default(string?), string? clientId = default(string?), string? codeVerifier = default(string?), string? username = default(string?), string? password = default(string?), string? scope = default(string?), string? refreshToken = default(string?), string? clientSecret = default(string?))
         {
             // verify the required parameter 'grantType' is set
             if (grantType == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'grantType' when calling Oauth2Api->PostOAuth2Token");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'grantType' when calling Oauth2Api->PostOAuth2Token");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/x-www-form-urlencoded"
@@ -2403,48 +2403,48 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.FormParameters.Add("grant_type", DotnetTraq.Client.ClientUtils.ParameterToString(grantType)); // form parameter
+            localVarRequestOptions.FormParameters.Add("grant_type", Traq.Client.ClientUtils.ParameterToString(grantType)); // form parameter
             if (code != null)
             {
-                localVarRequestOptions.FormParameters.Add("code", DotnetTraq.Client.ClientUtils.ParameterToString(code)); // form parameter
+                localVarRequestOptions.FormParameters.Add("code", Traq.Client.ClientUtils.ParameterToString(code)); // form parameter
             }
             if (redirectUri != null)
             {
-                localVarRequestOptions.FormParameters.Add("redirect_uri", DotnetTraq.Client.ClientUtils.ParameterToString(redirectUri)); // form parameter
+                localVarRequestOptions.FormParameters.Add("redirect_uri", Traq.Client.ClientUtils.ParameterToString(redirectUri)); // form parameter
             }
             if (clientId != null)
             {
-                localVarRequestOptions.FormParameters.Add("client_id", DotnetTraq.Client.ClientUtils.ParameterToString(clientId)); // form parameter
+                localVarRequestOptions.FormParameters.Add("client_id", Traq.Client.ClientUtils.ParameterToString(clientId)); // form parameter
             }
             if (codeVerifier != null)
             {
-                localVarRequestOptions.FormParameters.Add("code_verifier", DotnetTraq.Client.ClientUtils.ParameterToString(codeVerifier)); // form parameter
+                localVarRequestOptions.FormParameters.Add("code_verifier", Traq.Client.ClientUtils.ParameterToString(codeVerifier)); // form parameter
             }
             if (username != null)
             {
-                localVarRequestOptions.FormParameters.Add("username", DotnetTraq.Client.ClientUtils.ParameterToString(username)); // form parameter
+                localVarRequestOptions.FormParameters.Add("username", Traq.Client.ClientUtils.ParameterToString(username)); // form parameter
             }
             if (password != null)
             {
-                localVarRequestOptions.FormParameters.Add("password", DotnetTraq.Client.ClientUtils.ParameterToString(password)); // form parameter
+                localVarRequestOptions.FormParameters.Add("password", Traq.Client.ClientUtils.ParameterToString(password)); // form parameter
             }
             if (scope != null)
             {
-                localVarRequestOptions.FormParameters.Add("scope", DotnetTraq.Client.ClientUtils.ParameterToString(scope)); // form parameter
+                localVarRequestOptions.FormParameters.Add("scope", Traq.Client.ClientUtils.ParameterToString(scope)); // form parameter
             }
             if (refreshToken != null)
             {
-                localVarRequestOptions.FormParameters.Add("refresh_token", DotnetTraq.Client.ClientUtils.ParameterToString(refreshToken)); // form parameter
+                localVarRequestOptions.FormParameters.Add("refresh_token", Traq.Client.ClientUtils.ParameterToString(refreshToken)); // form parameter
             }
             if (clientSecret != null)
             {
-                localVarRequestOptions.FormParameters.Add("client_secret", DotnetTraq.Client.ClientUtils.ParameterToString(clientSecret)); // form parameter
+                localVarRequestOptions.FormParameters.Add("client_secret", Traq.Client.ClientUtils.ParameterToString(clientSecret)); // form parameter
             }
 
             // authentication (OAuth2) required
@@ -2475,7 +2475,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 トークンエンドポイント OAuth2 トークンエンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="grantType"></param>
         /// <param name="code"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -2490,14 +2490,14 @@ namespace DotnetTraq.Api
         /// <returns>Task of OAuth2Token</returns>
         public async System.Threading.Tasks.Task<OAuth2Token> PostOAuth2TokenAsync(string grantType, string? code = default(string?), string? redirectUri = default(string?), string? clientId = default(string?), string? codeVerifier = default(string?), string? username = default(string?), string? password = default(string?), string? scope = default(string?), string? refreshToken = default(string?), string? clientSecret = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<OAuth2Token> localVarResponse = await PostOAuth2TokenWithHttpInfoAsync(grantType, code, redirectUri, clientId, codeVerifier, username, password, scope, refreshToken, clientSecret, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<OAuth2Token> localVarResponse = await PostOAuth2TokenWithHttpInfoAsync(grantType, code, redirectUri, clientId, codeVerifier, username, password, scope, refreshToken, clientSecret, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// OAuth2 トークンエンドポイント OAuth2 トークンエンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="grantType"></param>
         /// <param name="code"> (optional)</param>
         /// <param name="redirectUri"> (optional)</param>
@@ -2510,14 +2510,14 @@ namespace DotnetTraq.Api
         /// <param name="clientSecret"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OAuth2Token)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<OAuth2Token>> PostOAuth2TokenWithHttpInfoAsync(string grantType, string? code = default(string?), string? redirectUri = default(string?), string? clientId = default(string?), string? codeVerifier = default(string?), string? username = default(string?), string? password = default(string?), string? scope = default(string?), string? refreshToken = default(string?), string? clientSecret = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<OAuth2Token>> PostOAuth2TokenWithHttpInfoAsync(string grantType, string? code = default(string?), string? redirectUri = default(string?), string? clientId = default(string?), string? codeVerifier = default(string?), string? username = default(string?), string? password = default(string?), string? scope = default(string?), string? refreshToken = default(string?), string? clientSecret = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'grantType' is set
             if (grantType == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'grantType' when calling Oauth2Api->PostOAuth2Token");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'grantType' when calling Oauth2Api->PostOAuth2Token");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/x-www-form-urlencoded"
@@ -2529,48 +2529,48 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.FormParameters.Add("grant_type", DotnetTraq.Client.ClientUtils.ParameterToString(grantType)); // form parameter
+            localVarRequestOptions.FormParameters.Add("grant_type", Traq.Client.ClientUtils.ParameterToString(grantType)); // form parameter
             if (code != null)
             {
-                localVarRequestOptions.FormParameters.Add("code", DotnetTraq.Client.ClientUtils.ParameterToString(code)); // form parameter
+                localVarRequestOptions.FormParameters.Add("code", Traq.Client.ClientUtils.ParameterToString(code)); // form parameter
             }
             if (redirectUri != null)
             {
-                localVarRequestOptions.FormParameters.Add("redirect_uri", DotnetTraq.Client.ClientUtils.ParameterToString(redirectUri)); // form parameter
+                localVarRequestOptions.FormParameters.Add("redirect_uri", Traq.Client.ClientUtils.ParameterToString(redirectUri)); // form parameter
             }
             if (clientId != null)
             {
-                localVarRequestOptions.FormParameters.Add("client_id", DotnetTraq.Client.ClientUtils.ParameterToString(clientId)); // form parameter
+                localVarRequestOptions.FormParameters.Add("client_id", Traq.Client.ClientUtils.ParameterToString(clientId)); // form parameter
             }
             if (codeVerifier != null)
             {
-                localVarRequestOptions.FormParameters.Add("code_verifier", DotnetTraq.Client.ClientUtils.ParameterToString(codeVerifier)); // form parameter
+                localVarRequestOptions.FormParameters.Add("code_verifier", Traq.Client.ClientUtils.ParameterToString(codeVerifier)); // form parameter
             }
             if (username != null)
             {
-                localVarRequestOptions.FormParameters.Add("username", DotnetTraq.Client.ClientUtils.ParameterToString(username)); // form parameter
+                localVarRequestOptions.FormParameters.Add("username", Traq.Client.ClientUtils.ParameterToString(username)); // form parameter
             }
             if (password != null)
             {
-                localVarRequestOptions.FormParameters.Add("password", DotnetTraq.Client.ClientUtils.ParameterToString(password)); // form parameter
+                localVarRequestOptions.FormParameters.Add("password", Traq.Client.ClientUtils.ParameterToString(password)); // form parameter
             }
             if (scope != null)
             {
-                localVarRequestOptions.FormParameters.Add("scope", DotnetTraq.Client.ClientUtils.ParameterToString(scope)); // form parameter
+                localVarRequestOptions.FormParameters.Add("scope", Traq.Client.ClientUtils.ParameterToString(scope)); // form parameter
             }
             if (refreshToken != null)
             {
-                localVarRequestOptions.FormParameters.Add("refresh_token", DotnetTraq.Client.ClientUtils.ParameterToString(refreshToken)); // form parameter
+                localVarRequestOptions.FormParameters.Add("refresh_token", Traq.Client.ClientUtils.ParameterToString(refreshToken)); // form parameter
             }
             if (clientSecret != null)
             {
-                localVarRequestOptions.FormParameters.Add("client_secret", DotnetTraq.Client.ClientUtils.ParameterToString(clientSecret)); // form parameter
+                localVarRequestOptions.FormParameters.Add("client_secret", Traq.Client.ClientUtils.ParameterToString(clientSecret)); // form parameter
             }
 
             // authentication (OAuth2) required
@@ -2602,7 +2602,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuthクライアントのトークンを削除 自分が許可している指定したOAuthクライアントのアクセストークンを全てRevokeします。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <returns></returns>
         public void RevokeClientTokens(string clientId)
@@ -2613,16 +2613,16 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuthクライアントのトークンを削除 自分が許可している指定したOAuthクライアントのアクセストークンを全てRevokeします。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> RevokeClientTokensWithHttpInfo(string clientId)
+        public Traq.Client.ApiResponse<Object> RevokeClientTokensWithHttpInfo(string clientId)
         {
             // verify the required parameter 'clientId' is set
             if (clientId == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->RevokeClientTokens");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->RevokeClientTokens");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2631,13 +2631,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("clientId", DotnetTraq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("clientId", Traq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2667,7 +2667,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuthクライアントのトークンを削除 自分が許可している指定したOAuthクライアントのアクセストークンを全てRevokeします。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -2679,18 +2679,18 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuthクライアントのトークンを削除 自分が許可している指定したOAuthクライアントのアクセストークンを全てRevokeします。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="clientId">OAuth2クライアントUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> RevokeClientTokensWithHttpInfoAsync(string clientId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> RevokeClientTokensWithHttpInfoAsync(string clientId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'clientId' is set
             if (clientId == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->RevokeClientTokens");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'clientId' when calling Oauth2Api->RevokeClientTokens");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2700,13 +2700,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("clientId", DotnetTraq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("clientId", Traq.Client.ClientUtils.ParameterToString(clientId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2737,7 +2737,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// トークンの認可を取り消す 自分の指定したトークンの認可を取り消します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tokenId">OAuth2トークンUUID</param>
         /// <returns></returns>
         public void RevokeMyToken(Guid tokenId)
@@ -2748,12 +2748,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// トークンの認可を取り消す 自分の指定したトークンの認可を取り消します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tokenId">OAuth2トークンUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> RevokeMyTokenWithHttpInfo(Guid tokenId)
+        public Traq.Client.ApiResponse<Object> RevokeMyTokenWithHttpInfo(Guid tokenId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2762,13 +2762,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("tokenId", DotnetTraq.Client.ClientUtils.ParameterToString(tokenId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tokenId", Traq.Client.ClientUtils.ParameterToString(tokenId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2798,7 +2798,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// トークンの認可を取り消す 自分の指定したトークンの認可を取り消します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tokenId">OAuth2トークンUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -2810,14 +2810,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// トークンの認可を取り消す 自分の指定したトークンの認可を取り消します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tokenId">OAuth2トークンUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> RevokeMyTokenWithHttpInfoAsync(Guid tokenId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> RevokeMyTokenWithHttpInfoAsync(Guid tokenId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2827,13 +2827,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("tokenId", DotnetTraq.Client.ClientUtils.ParameterToString(tokenId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("tokenId", Traq.Client.ClientUtils.ParameterToString(tokenId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2864,7 +2864,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 トークン無効化エンドポイント OAuth2 トークン無効化エンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">無効化するOAuth2トークンまたはOAuth2リフレッシュトークン</param>
         /// <returns></returns>
         public void RevokeOAuth2Token(string token)
@@ -2875,16 +2875,16 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 トークン無効化エンドポイント OAuth2 トークン無効化エンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">無効化するOAuth2トークンまたはOAuth2リフレッシュトークン</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> RevokeOAuth2TokenWithHttpInfo(string token)
+        public Traq.Client.ApiResponse<Object> RevokeOAuth2TokenWithHttpInfo(string token)
         {
             // verify the required parameter 'token' is set
             if (token == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'token' when calling Oauth2Api->RevokeOAuth2Token");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'token' when calling Oauth2Api->RevokeOAuth2Token");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/x-www-form-urlencoded"
@@ -2894,13 +2894,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.FormParameters.Add("token", DotnetTraq.Client.ClientUtils.ParameterToString(token)); // form parameter
+            localVarRequestOptions.FormParameters.Add("token", Traq.Client.ClientUtils.ParameterToString(token)); // form parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2930,7 +2930,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 トークン無効化エンドポイント OAuth2 トークン無効化エンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">無効化するOAuth2トークンまたはOAuth2リフレッシュトークン</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -2942,18 +2942,18 @@ namespace DotnetTraq.Api
         /// <summary>
         /// OAuth2 トークン無効化エンドポイント OAuth2 トークン無効化エンドポイント
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">無効化するOAuth2トークンまたはOAuth2リフレッシュトークン</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> RevokeOAuth2TokenWithHttpInfoAsync(string token, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> RevokeOAuth2TokenWithHttpInfoAsync(string token, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'token' is set
             if (token == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'token' when calling Oauth2Api->RevokeOAuth2Token");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'token' when calling Oauth2Api->RevokeOAuth2Token");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/x-www-form-urlencoded"
@@ -2964,13 +2964,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.FormParameters.Add("token", DotnetTraq.Client.ClientUtils.ParameterToString(token)); // form parameter
+            localVarRequestOptions.FormParameters.Add("token", Traq.Client.ClientUtils.ParameterToString(token)); // form parameter
 
             // authentication (OAuth2) required
             // oauth required

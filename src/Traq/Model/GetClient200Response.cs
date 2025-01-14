@@ -21,11 +21,11 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using FileParameter = DotnetTraq.Client.FileParameter;
-using OpenAPIDateConverter = DotnetTraq.Client.OpenAPIDateConverter;
+using FileParameter = Traq.Client.FileParameter;
+using OpenAPIDateConverter = Traq.Client.OpenAPIDateConverter;
 using System.Reflection;
 
-namespace DotnetTraq.Model
+namespace Traq.Model
 {
     /// <summary>
     /// GetClient200Response

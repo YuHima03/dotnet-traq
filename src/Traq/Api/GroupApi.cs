@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using DotnetTraq.Client;
-using DotnetTraq.Model;
+using Traq.Client;
+using Traq.Model;
 
-namespace DotnetTraq.Api
+namespace Traq.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループに管理者を追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="postUserGroupAdminRequest"> (optional)</param>
         /// <returns></returns>
@@ -45,7 +45,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループに管理者を追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="postUserGroupAdminRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -56,7 +56,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループにメンバーを追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="addUserGroupMemberRequest"> (optional)</param>
         /// <returns></returns>
@@ -68,7 +68,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループにメンバーを追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="addUserGroupMemberRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -79,7 +79,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーグループのアイコンを変更します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <returns></returns>
@@ -91,7 +91,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーグループのアイコンを変更します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -102,7 +102,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーグループを作成します。 作成者は自動的にグループ管理者になります。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserGroupRequest"> (optional)</param>
         /// <returns>UserGroup</returns>
         UserGroup CreateUserGroup(PostUserGroupRequest? postUserGroupRequest = default(PostUserGroupRequest?));
@@ -113,7 +113,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーグループを作成します。 作成者は自動的にグループ管理者になります。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserGroupRequest"> (optional)</param>
         /// <returns>ApiResponse of UserGroup</returns>
         ApiResponse<UserGroup> CreateUserGroupWithHttpInfo(PostUserGroupRequest? postUserGroupRequest = default(PostUserGroupRequest?));
@@ -123,7 +123,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns></returns>
         void DeleteUserGroup(Guid groupId);
@@ -134,7 +134,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteUserGroupWithHttpInfo(Guid groupId);
@@ -144,7 +144,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループの情報を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="patchUserGroupRequest"> (optional)</param>
         /// <returns></returns>
@@ -156,7 +156,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループの情報を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="patchUserGroupRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -167,7 +167,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループ内の指定したユーザーの属性を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="patchGroupMemberRequest"> (optional)</param>
@@ -180,7 +180,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループ内の指定したユーザーの属性を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="patchGroupMemberRequest"> (optional)</param>
@@ -192,7 +192,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>UserGroup</returns>
         UserGroup GetUserGroup(Guid groupId);
@@ -203,7 +203,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>ApiResponse of UserGroup</returns>
         ApiResponse<UserGroup> GetUserGroupWithHttpInfo(Guid groupId);
@@ -213,7 +213,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループの管理者のリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>List&lt;Guid&gt;</returns>
         List<Guid> GetUserGroupAdmins(Guid groupId);
@@ -224,7 +224,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループの管理者のリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
         ApiResponse<List<Guid>> GetUserGroupAdminsWithHttpInfo(Guid groupId);
@@ -234,7 +234,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループのメンバーのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>List&lt;UserGroupMember&gt;</returns>
         List<UserGroupMember> GetUserGroupMembers(Guid groupId);
@@ -245,7 +245,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループのメンバーのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>ApiResponse of List&lt;UserGroupMember&gt;</returns>
         ApiResponse<List<UserGroupMember>> GetUserGroupMembersWithHttpInfo(Guid groupId);
@@ -255,7 +255,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーグループのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;UserGroup&gt;</returns>
         List<UserGroup> GetUserGroups();
 
@@ -265,7 +265,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーグループのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;UserGroup&gt;</returns>
         ApiResponse<List<UserGroup>> GetUserGroupsWithHttpInfo();
         /// <summary>
@@ -274,7 +274,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループから指定した管理者を削除します。 対象のユーザーグループの管理者権限が必要です。 グループから管理者が存在しなくなる場合は400エラーを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <returns></returns>
@@ -286,7 +286,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループから指定した管理者を削除します。 対象のユーザーグループの管理者権限が必要です。 グループから管理者が存在しなくなる場合は400エラーを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -297,7 +297,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループから指定したユーザーを削除します。 既にグループから削除されているメンバーを指定した場合は204を返します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <returns></returns>
@@ -309,7 +309,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループから指定したユーザーを削除します。 既にグループから削除されているメンバーを指定した場合は204を返します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -320,7 +320,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループから全てのメンバーを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns></returns>
         void RemoveUserGroupMembers(Guid groupId);
@@ -331,7 +331,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループから全てのメンバーを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RemoveUserGroupMembersWithHttpInfo(Guid groupId);
@@ -350,7 +350,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループに管理者を追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="postUserGroupAdminRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -363,7 +363,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループに管理者を追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="postUserGroupAdminRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -375,7 +375,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループにメンバーを追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="addUserGroupMemberRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -388,7 +388,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループにメンバーを追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="addUserGroupMemberRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -400,7 +400,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーグループのアイコンを変更します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -413,7 +413,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーグループのアイコンを変更します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -425,7 +425,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーグループを作成します。 作成者は自動的にグループ管理者になります。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserGroupRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserGroup</returns>
@@ -437,7 +437,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーグループを作成します。 作成者は自動的にグループ管理者になります。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserGroupRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserGroup)</returns>
@@ -448,7 +448,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -460,7 +460,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -471,7 +471,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループの情報を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="patchUserGroupRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -484,7 +484,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループの情報を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="patchUserGroupRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -496,7 +496,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループ内の指定したユーザーの属性を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="patchGroupMemberRequest"> (optional)</param>
@@ -510,7 +510,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループ内の指定したユーザーの属性を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="patchGroupMemberRequest"> (optional)</param>
@@ -523,7 +523,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserGroup</returns>
@@ -535,7 +535,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserGroup)</returns>
@@ -546,7 +546,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループの管理者のリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
@@ -558,7 +558,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループの管理者のリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
@@ -569,7 +569,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループのメンバーのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;UserGroupMember&gt;</returns>
@@ -581,7 +581,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループのメンバーのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;UserGroupMember&gt;)</returns>
@@ -592,7 +592,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーグループのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;UserGroup&gt;</returns>
         System.Threading.Tasks.Task<List<UserGroup>> GetUserGroupsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -603,7 +603,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// ユーザーグループのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;UserGroup&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<UserGroup>>> GetUserGroupsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -613,7 +613,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループから指定した管理者を削除します。 対象のユーザーグループの管理者権限が必要です。 グループから管理者が存在しなくなる場合は400エラーを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -626,7 +626,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループから指定した管理者を削除します。 対象のユーザーグループの管理者権限が必要です。 グループから管理者が存在しなくなる場合は400エラーを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -638,7 +638,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループから指定したユーザーを削除します。 既にグループから削除されているメンバーを指定した場合は204を返します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -651,7 +651,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したユーザーグループから指定したユーザーを削除します。 既にグループから削除されているメンバーを指定した場合は204を返します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -663,7 +663,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループから全てのメンバーを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -675,7 +675,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したグループから全てのメンバーを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -696,7 +696,7 @@ namespace DotnetTraq.Api
     /// </summary>
     public partial class GroupApi : IDisposable, IGroupApi
     {
-        private DotnetTraq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Traq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupApi"/> class.
@@ -718,14 +718,14 @@ namespace DotnetTraq.Api
         /// <returns></returns>
         public GroupApi(string basePath)
         {
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -736,18 +736,18 @@ namespace DotnetTraq.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public GroupApi(DotnetTraq.Client.Configuration configuration)
+        public GroupApi(Traq.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -782,14 +782,14 @@ namespace DotnetTraq.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -804,19 +804,19 @@ namespace DotnetTraq.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public GroupApi(HttpClient client, DotnetTraq.Client.Configuration configuration, HttpClientHandler handler = null)
+        public GroupApi(HttpClient client, Traq.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -827,7 +827,7 @@ namespace DotnetTraq.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public GroupApi(DotnetTraq.Client.ISynchronousClient client, DotnetTraq.Client.IAsynchronousClient asyncClient, DotnetTraq.Client.IReadableConfiguration configuration)
+        public GroupApi(Traq.Client.ISynchronousClient client, Traq.Client.IAsynchronousClient asyncClient, Traq.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -836,7 +836,7 @@ namespace DotnetTraq.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -850,17 +850,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public DotnetTraq.Client.ApiClient ApiClient { get; set; } = null;
+        public Traq.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public DotnetTraq.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Traq.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public DotnetTraq.Client.ISynchronousClient Client { get; set; }
+        public Traq.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -875,12 +875,12 @@ namespace DotnetTraq.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public DotnetTraq.Client.IReadableConfiguration Configuration { get; set; }
+        public Traq.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public DotnetTraq.Client.ExceptionFactory ExceptionFactory
+        public Traq.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -896,7 +896,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループ管理者を追加 指定したグループに管理者を追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="postUserGroupAdminRequest"> (optional)</param>
         /// <returns></returns>
@@ -908,13 +908,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループ管理者を追加 指定したグループに管理者を追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="postUserGroupAdminRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> AddUserGroupAdminWithHttpInfo(Guid groupId, PostUserGroupAdminRequest? postUserGroupAdminRequest = default(PostUserGroupAdminRequest?))
+        public Traq.Client.ApiResponse<Object> AddUserGroupAdminWithHttpInfo(Guid groupId, PostUserGroupAdminRequest? postUserGroupAdminRequest = default(PostUserGroupAdminRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -924,13 +924,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
             localVarRequestOptions.Data = postUserGroupAdminRequest;
 
             // authentication (OAuth2) required
@@ -961,7 +961,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループ管理者を追加 指定したグループに管理者を追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="postUserGroupAdminRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -974,15 +974,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループ管理者を追加 指定したグループに管理者を追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="postUserGroupAdminRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> AddUserGroupAdminWithHttpInfoAsync(Guid groupId, PostUserGroupAdminRequest? postUserGroupAdminRequest = default(PostUserGroupAdminRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> AddUserGroupAdminWithHttpInfoAsync(Guid groupId, PostUserGroupAdminRequest? postUserGroupAdminRequest = default(PostUserGroupAdminRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -993,13 +993,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
             localVarRequestOptions.Data = postUserGroupAdminRequest;
 
             // authentication (OAuth2) required
@@ -1031,7 +1031,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを追加 指定したグループにメンバーを追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="addUserGroupMemberRequest"> (optional)</param>
         /// <returns></returns>
@@ -1043,13 +1043,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを追加 指定したグループにメンバーを追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="addUserGroupMemberRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> AddUserGroupMemberWithHttpInfo(Guid groupId, AddUserGroupMemberRequest? addUserGroupMemberRequest = default(AddUserGroupMemberRequest?))
+        public Traq.Client.ApiResponse<Object> AddUserGroupMemberWithHttpInfo(Guid groupId, AddUserGroupMemberRequest? addUserGroupMemberRequest = default(AddUserGroupMemberRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1059,13 +1059,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
             localVarRequestOptions.Data = addUserGroupMemberRequest;
 
             // authentication (OAuth2) required
@@ -1096,7 +1096,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを追加 指定したグループにメンバーを追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="addUserGroupMemberRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1109,15 +1109,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを追加 指定したグループにメンバーを追加します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="addUserGroupMemberRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> AddUserGroupMemberWithHttpInfoAsync(Guid groupId, AddUserGroupMemberRequest? addUserGroupMemberRequest = default(AddUserGroupMemberRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> AddUserGroupMemberWithHttpInfoAsync(Guid groupId, AddUserGroupMemberRequest? addUserGroupMemberRequest = default(AddUserGroupMemberRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1128,13 +1128,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
             localVarRequestOptions.Data = addUserGroupMemberRequest;
 
             // authentication (OAuth2) required
@@ -1166,7 +1166,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループのアイコンを変更 ユーザーグループのアイコンを変更します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <returns></returns>
@@ -1178,17 +1178,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループのアイコンを変更 ユーザーグループのアイコンを変更します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> ChangeUserGroupIconWithHttpInfo(Guid groupId, FileParameter file)
+        public Traq.Client.ApiResponse<Object> ChangeUserGroupIconWithHttpInfo(Guid groupId, FileParameter file)
         {
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'file' when calling GroupApi->ChangeUserGroupIcon");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'file' when calling GroupApi->ChangeUserGroupIcon");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -1198,13 +1198,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
             localVarRequestOptions.FileParameters.Add("file", file);
 
             // authentication (OAuth2) required
@@ -1235,7 +1235,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループのアイコンを変更 ユーザーグループのアイコンを変更します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1248,19 +1248,19 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループのアイコンを変更 ユーザーグループのアイコンを変更します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> ChangeUserGroupIconWithHttpInfoAsync(Guid groupId, FileParameter file, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> ChangeUserGroupIconWithHttpInfoAsync(Guid groupId, FileParameter file, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'file' when calling GroupApi->ChangeUserGroupIcon");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'file' when calling GroupApi->ChangeUserGroupIcon");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -1271,13 +1271,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
             localVarRequestOptions.FileParameters.Add("file", file);
 
             // authentication (OAuth2) required
@@ -1309,24 +1309,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループを作成 ユーザーグループを作成します。 作成者は自動的にグループ管理者になります。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserGroupRequest"> (optional)</param>
         /// <returns>UserGroup</returns>
         public UserGroup CreateUserGroup(PostUserGroupRequest? postUserGroupRequest = default(PostUserGroupRequest?))
         {
-            DotnetTraq.Client.ApiResponse<UserGroup> localVarResponse = CreateUserGroupWithHttpInfo(postUserGroupRequest);
+            Traq.Client.ApiResponse<UserGroup> localVarResponse = CreateUserGroupWithHttpInfo(postUserGroupRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ユーザーグループを作成 ユーザーグループを作成します。 作成者は自動的にグループ管理者になります。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserGroupRequest"> (optional)</param>
         /// <returns>ApiResponse of UserGroup</returns>
-        public DotnetTraq.Client.ApiResponse<UserGroup> CreateUserGroupWithHttpInfo(PostUserGroupRequest? postUserGroupRequest = default(PostUserGroupRequest?))
+        public Traq.Client.ApiResponse<UserGroup> CreateUserGroupWithHttpInfo(PostUserGroupRequest? postUserGroupRequest = default(PostUserGroupRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1337,10 +1337,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postUserGroupRequest;
@@ -1373,27 +1373,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループを作成 ユーザーグループを作成します。 作成者は自動的にグループ管理者になります。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserGroupRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserGroup</returns>
         public async System.Threading.Tasks.Task<UserGroup> CreateUserGroupAsync(PostUserGroupRequest? postUserGroupRequest = default(PostUserGroupRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<UserGroup> localVarResponse = await CreateUserGroupWithHttpInfoAsync(postUserGroupRequest, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<UserGroup> localVarResponse = await CreateUserGroupWithHttpInfoAsync(postUserGroupRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ユーザーグループを作成 ユーザーグループを作成します。 作成者は自動的にグループ管理者になります。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postUserGroupRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserGroup)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<UserGroup>> CreateUserGroupWithHttpInfoAsync(PostUserGroupRequest? postUserGroupRequest = default(PostUserGroupRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<UserGroup>> CreateUserGroupWithHttpInfoAsync(PostUserGroupRequest? postUserGroupRequest = default(PostUserGroupRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1405,10 +1405,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postUserGroupRequest;
@@ -1442,7 +1442,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループを削除 指定したユーザーグループを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns></returns>
         public void DeleteUserGroup(Guid groupId)
@@ -1453,12 +1453,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループを削除 指定したユーザーグループを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> DeleteUserGroupWithHttpInfo(Guid groupId)
+        public Traq.Client.ApiResponse<Object> DeleteUserGroupWithHttpInfo(Guid groupId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1467,13 +1467,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1503,7 +1503,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループを削除 指定したユーザーグループを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -1515,14 +1515,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループを削除 指定したユーザーグループを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> DeleteUserGroupWithHttpInfoAsync(Guid groupId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> DeleteUserGroupWithHttpInfoAsync(Guid groupId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1532,13 +1532,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1569,7 +1569,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループを編集 指定したユーザーグループの情報を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="patchUserGroupRequest"> (optional)</param>
         /// <returns></returns>
@@ -1581,13 +1581,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループを編集 指定したユーザーグループの情報を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="patchUserGroupRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> EditUserGroupWithHttpInfo(Guid groupId, PatchUserGroupRequest? patchUserGroupRequest = default(PatchUserGroupRequest?))
+        public Traq.Client.ApiResponse<Object> EditUserGroupWithHttpInfo(Guid groupId, PatchUserGroupRequest? patchUserGroupRequest = default(PatchUserGroupRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1597,13 +1597,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
             localVarRequestOptions.Data = patchUserGroupRequest;
 
             // authentication (OAuth2) required
@@ -1634,7 +1634,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループを編集 指定したユーザーグループの情報を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="patchUserGroupRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1647,15 +1647,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループを編集 指定したユーザーグループの情報を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="patchUserGroupRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> EditUserGroupWithHttpInfoAsync(Guid groupId, PatchUserGroupRequest? patchUserGroupRequest = default(PatchUserGroupRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> EditUserGroupWithHttpInfoAsync(Guid groupId, PatchUserGroupRequest? patchUserGroupRequest = default(PatchUserGroupRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1666,13 +1666,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
             localVarRequestOptions.Data = patchUserGroupRequest;
 
             // authentication (OAuth2) required
@@ -1704,7 +1704,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを編集 指定したユーザーグループ内の指定したユーザーの属性を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="patchGroupMemberRequest"> (optional)</param>
@@ -1717,14 +1717,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを編集 指定したユーザーグループ内の指定したユーザーの属性を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="patchGroupMemberRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> EditUserGroupMemberWithHttpInfo(Guid groupId, Guid userId, PatchGroupMemberRequest? patchGroupMemberRequest = default(PatchGroupMemberRequest?))
+        public Traq.Client.ApiResponse<Object> EditUserGroupMemberWithHttpInfo(Guid groupId, Guid userId, PatchGroupMemberRequest? patchGroupMemberRequest = default(PatchGroupMemberRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1734,14 +1734,14 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("userId", DotnetTraq.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", Traq.Client.ClientUtils.ParameterToString(userId)); // path parameter
             localVarRequestOptions.Data = patchGroupMemberRequest;
 
             // authentication (OAuth2) required
@@ -1772,7 +1772,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを編集 指定したユーザーグループ内の指定したユーザーの属性を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="patchGroupMemberRequest"> (optional)</param>
@@ -1786,16 +1786,16 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを編集 指定したユーザーグループ内の指定したユーザーの属性を編集します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="patchGroupMemberRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> EditUserGroupMemberWithHttpInfoAsync(Guid groupId, Guid userId, PatchGroupMemberRequest? patchGroupMemberRequest = default(PatchGroupMemberRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> EditUserGroupMemberWithHttpInfoAsync(Guid groupId, Guid userId, PatchGroupMemberRequest? patchGroupMemberRequest = default(PatchGroupMemberRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1806,14 +1806,14 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("userId", DotnetTraq.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", Traq.Client.ClientUtils.ParameterToString(userId)); // path parameter
             localVarRequestOptions.Data = patchGroupMemberRequest;
 
             // authentication (OAuth2) required
@@ -1845,24 +1845,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループを取得 指定したユーザーグループの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>UserGroup</returns>
         public UserGroup GetUserGroup(Guid groupId)
         {
-            DotnetTraq.Client.ApiResponse<UserGroup> localVarResponse = GetUserGroupWithHttpInfo(groupId);
+            Traq.Client.ApiResponse<UserGroup> localVarResponse = GetUserGroupWithHttpInfo(groupId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ユーザーグループを取得 指定したユーザーグループの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>ApiResponse of UserGroup</returns>
-        public DotnetTraq.Client.ApiResponse<UserGroup> GetUserGroupWithHttpInfo(Guid groupId)
+        public Traq.Client.ApiResponse<UserGroup> GetUserGroupWithHttpInfo(Guid groupId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1872,13 +1872,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1908,27 +1908,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループを取得 指定したユーザーグループの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserGroup</returns>
         public async System.Threading.Tasks.Task<UserGroup> GetUserGroupAsync(Guid groupId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<UserGroup> localVarResponse = await GetUserGroupWithHttpInfoAsync(groupId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<UserGroup> localVarResponse = await GetUserGroupWithHttpInfoAsync(groupId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ユーザーグループを取得 指定したユーザーグループの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserGroup)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<UserGroup>> GetUserGroupWithHttpInfoAsync(Guid groupId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<UserGroup>> GetUserGroupWithHttpInfoAsync(Guid groupId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1939,13 +1939,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1976,24 +1976,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループ管理者を取得 指定したグループの管理者のリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>List&lt;Guid&gt;</returns>
         public List<Guid> GetUserGroupAdmins(Guid groupId)
         {
-            DotnetTraq.Client.ApiResponse<List<Guid>> localVarResponse = GetUserGroupAdminsWithHttpInfo(groupId);
+            Traq.Client.ApiResponse<List<Guid>> localVarResponse = GetUserGroupAdminsWithHttpInfo(groupId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// グループ管理者を取得 指定したグループの管理者のリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<Guid>> GetUserGroupAdminsWithHttpInfo(Guid groupId)
+        public Traq.Client.ApiResponse<List<Guid>> GetUserGroupAdminsWithHttpInfo(Guid groupId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2003,13 +2003,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2039,27 +2039,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループ管理者を取得 指定したグループの管理者のリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
         public async System.Threading.Tasks.Task<List<Guid>> GetUserGroupAdminsAsync(Guid groupId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<Guid>> localVarResponse = await GetUserGroupAdminsWithHttpInfoAsync(groupId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<Guid>> localVarResponse = await GetUserGroupAdminsWithHttpInfoAsync(groupId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// グループ管理者を取得 指定したグループの管理者のリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<Guid>>> GetUserGroupAdminsWithHttpInfoAsync(Guid groupId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<Guid>>> GetUserGroupAdminsWithHttpInfoAsync(Guid groupId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2070,13 +2070,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2107,24 +2107,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを取得 指定したグループのメンバーのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>List&lt;UserGroupMember&gt;</returns>
         public List<UserGroupMember> GetUserGroupMembers(Guid groupId)
         {
-            DotnetTraq.Client.ApiResponse<List<UserGroupMember>> localVarResponse = GetUserGroupMembersWithHttpInfo(groupId);
+            Traq.Client.ApiResponse<List<UserGroupMember>> localVarResponse = GetUserGroupMembersWithHttpInfo(groupId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// グループメンバーを取得 指定したグループのメンバーのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>ApiResponse of List&lt;UserGroupMember&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<UserGroupMember>> GetUserGroupMembersWithHttpInfo(Guid groupId)
+        public Traq.Client.ApiResponse<List<UserGroupMember>> GetUserGroupMembersWithHttpInfo(Guid groupId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2134,13 +2134,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2170,27 +2170,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを取得 指定したグループのメンバーのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;UserGroupMember&gt;</returns>
         public async System.Threading.Tasks.Task<List<UserGroupMember>> GetUserGroupMembersAsync(Guid groupId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<UserGroupMember>> localVarResponse = await GetUserGroupMembersWithHttpInfoAsync(groupId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<UserGroupMember>> localVarResponse = await GetUserGroupMembersWithHttpInfoAsync(groupId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// グループメンバーを取得 指定したグループのメンバーのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;UserGroupMember&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<UserGroupMember>>> GetUserGroupMembersWithHttpInfoAsync(Guid groupId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<UserGroupMember>>> GetUserGroupMembersWithHttpInfoAsync(Guid groupId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2201,13 +2201,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2238,22 +2238,22 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループのリストを取得 ユーザーグループのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;UserGroup&gt;</returns>
         public List<UserGroup> GetUserGroups()
         {
-            DotnetTraq.Client.ApiResponse<List<UserGroup>> localVarResponse = GetUserGroupsWithHttpInfo();
+            Traq.Client.ApiResponse<List<UserGroup>> localVarResponse = GetUserGroupsWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ユーザーグループのリストを取得 ユーザーグループのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;UserGroup&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<UserGroup>> GetUserGroupsWithHttpInfo()
+        public Traq.Client.ApiResponse<List<UserGroup>> GetUserGroupsWithHttpInfo()
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2263,10 +2263,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -2298,25 +2298,25 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ユーザーグループのリストを取得 ユーザーグループのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;UserGroup&gt;</returns>
         public async System.Threading.Tasks.Task<List<UserGroup>> GetUserGroupsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<UserGroup>> localVarResponse = await GetUserGroupsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<UserGroup>> localVarResponse = await GetUserGroupsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ユーザーグループのリストを取得 ユーザーグループのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;UserGroup&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<UserGroup>>> GetUserGroupsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<UserGroup>>> GetUserGroupsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2327,10 +2327,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -2363,7 +2363,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループ管理者を削除 指定したユーザーグループから指定した管理者を削除します。 対象のユーザーグループの管理者権限が必要です。 グループから管理者が存在しなくなる場合は400エラーを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <returns></returns>
@@ -2375,13 +2375,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループ管理者を削除 指定したユーザーグループから指定した管理者を削除します。 対象のユーザーグループの管理者権限が必要です。 グループから管理者が存在しなくなる場合は400エラーを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> RemoveUserGroupAdminWithHttpInfo(Guid groupId, Guid userId)
+        public Traq.Client.ApiResponse<Object> RemoveUserGroupAdminWithHttpInfo(Guid groupId, Guid userId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2390,14 +2390,14 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("userId", DotnetTraq.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", Traq.Client.ClientUtils.ParameterToString(userId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2427,7 +2427,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループ管理者を削除 指定したユーザーグループから指定した管理者を削除します。 対象のユーザーグループの管理者権限が必要です。 グループから管理者が存在しなくなる場合は400エラーを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -2440,15 +2440,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループ管理者を削除 指定したユーザーグループから指定した管理者を削除します。 対象のユーザーグループの管理者権限が必要です。 グループから管理者が存在しなくなる場合は400エラーを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> RemoveUserGroupAdminWithHttpInfoAsync(Guid groupId, Guid userId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> RemoveUserGroupAdminWithHttpInfoAsync(Guid groupId, Guid userId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2458,14 +2458,14 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("userId", DotnetTraq.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", Traq.Client.ClientUtils.ParameterToString(userId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2496,7 +2496,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを削除 指定したユーザーグループから指定したユーザーを削除します。 既にグループから削除されているメンバーを指定した場合は204を返します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <returns></returns>
@@ -2508,13 +2508,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを削除 指定したユーザーグループから指定したユーザーを削除します。 既にグループから削除されているメンバーを指定した場合は204を返します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> RemoveUserGroupMemberWithHttpInfo(Guid groupId, Guid userId)
+        public Traq.Client.ApiResponse<Object> RemoveUserGroupMemberWithHttpInfo(Guid groupId, Guid userId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2523,14 +2523,14 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("userId", DotnetTraq.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", Traq.Client.ClientUtils.ParameterToString(userId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2560,7 +2560,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを削除 指定したユーザーグループから指定したユーザーを削除します。 既にグループから削除されているメンバーを指定した場合は204を返します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -2573,15 +2573,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを削除 指定したユーザーグループから指定したユーザーを削除します。 既にグループから削除されているメンバーを指定した場合は204を返します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="userId">ユーザーUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> RemoveUserGroupMemberWithHttpInfoAsync(Guid groupId, Guid userId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> RemoveUserGroupMemberWithHttpInfoAsync(Guid groupId, Guid userId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2591,14 +2591,14 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("userId", DotnetTraq.Client.ClientUtils.ParameterToString(userId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("userId", Traq.Client.ClientUtils.ParameterToString(userId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2629,7 +2629,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを一括削除 指定したグループから全てのメンバーを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns></returns>
         public void RemoveUserGroupMembers(Guid groupId)
@@ -2640,12 +2640,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを一括削除 指定したグループから全てのメンバーを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> RemoveUserGroupMembersWithHttpInfo(Guid groupId)
+        public Traq.Client.ApiResponse<Object> RemoveUserGroupMembersWithHttpInfo(Guid groupId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2654,13 +2654,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2690,7 +2690,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを一括削除 指定したグループから全てのメンバーを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -2702,14 +2702,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// グループメンバーを一括削除 指定したグループから全てのメンバーを削除します。 対象のユーザーグループの管理者権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">ユーザーグループUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> RemoveUserGroupMembersWithHttpInfoAsync(Guid groupId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> RemoveUserGroupMembersWithHttpInfoAsync(Guid groupId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2719,13 +2719,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("groupId", DotnetTraq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("groupId", Traq.Client.ClientUtils.ParameterToString(groupId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required

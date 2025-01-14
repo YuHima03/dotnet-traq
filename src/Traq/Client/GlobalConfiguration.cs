@@ -10,7 +10,7 @@
 
 using System.Collections.Generic;
 
-namespace DotnetTraq.Client
+namespace Traq.Client
 {
     /// <summary>
     /// <see cref="GlobalConfiguration"/> provides a compile-time extension point for globally configuring

@@ -30,7 +30,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Polly;
 
-namespace DotnetTraq.Client
+namespace Traq.Client
 {
     /// <summary>
     /// To Serialize/Deserialize JSON using our custom logic, but only when ContentType is JSON.
@@ -70,10 +70,10 @@ namespace DotnetTraq.Client
         /// <returns>A JSON string.</returns>
         public string Serialize(object obj)
         {
-            if (obj != null && obj is DotnetTraq.Model.AbstractOpenAPISchema)
+            if (obj != null && obj is Traq.Model.AbstractOpenAPISchema)
             {
                 // the object to be serialized is an oneOf/anyOf schema
-                return ((DotnetTraq.Model.AbstractOpenAPISchema)obj).ToJson();
+                return ((Traq.Model.AbstractOpenAPISchema)obj).ToJson();
             }
             else
             {
@@ -224,7 +224,7 @@ namespace DotnetTraq.Client
         /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
         public ApiClient() :
-                 this(DotnetTraq.Client.GlobalConfiguration.Instance.BasePath)
+                 this(Traq.Client.GlobalConfiguration.Instance.BasePath)
         {
         }
 
@@ -256,7 +256,7 @@ namespace DotnetTraq.Client
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
         public ApiClient(HttpClient client, HttpClientHandler handler = null) :
-                 this(client, DotnetTraq.Client.GlobalConfiguration.Instance.BasePath, handler)
+                 this(client, Traq.Client.GlobalConfiguration.Instance.BasePath, handler)
         {
         }
 
@@ -542,7 +542,7 @@ namespace DotnetTraq.Client
                 object responseData = await deserializer.Deserialize<T>(response).ConfigureAwait(false);
 
                 // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-                if (typeof(DotnetTraq.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
+                if (typeof(Traq.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
                 {
                     responseData = (T) typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
                 }

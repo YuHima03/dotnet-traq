@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using DotnetTraq.Client;
-using DotnetTraq.Model;
+using Traq.Client;
+using Traq.Model;
 
-namespace DotnetTraq.Api
+namespace Traq.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルの通知購読者を編集します。 リクエストに含めなかったユーザーの通知購読状態は変更しません。 また、存在しないユーザーを指定した場合は無視されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="patchChannelSubscribersRequest"> (optional)</param>
         /// <returns></returns>
@@ -45,7 +45,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルの通知購読者を編集します。 リクエストに含めなかったユーザーの通知購読状態は変更しません。 また、存在しないユーザーを指定した場合は無視されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="patchChannelSubscribersRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -56,7 +56,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルを通知購読しているユーザーのUUIDのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns>List&lt;Guid&gt;</returns>
         List<Guid> GetChannelSubscribers(Guid channelId);
@@ -67,7 +67,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルを通知購読しているユーザーのUUIDのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
         ApiResponse<List<Guid>> GetChannelSubscribersWithHttpInfo(Guid channelId);
@@ -77,7 +77,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身のチャンネル購読状態を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;UserSubscribeState&gt;</returns>
         List<UserSubscribeState> GetMyChannelSubscriptions();
 
@@ -87,7 +87,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身のチャンネル購読状態を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;UserSubscribeState&gt;</returns>
         ApiResponse<List<UserSubscribeState>> GetMyChannelSubscriptionsWithHttpInfo();
         /// <summary>
@@ -96,7 +96,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分が現在未読のチャンネルの未読情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;UnreadChannel&gt;</returns>
         List<UnreadChannel> GetMyUnreadChannels();
 
@@ -106,7 +106,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分が現在未読のチャンネルの未読情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;UnreadChannel&gt;</returns>
         ApiResponse<List<UnreadChannel>> GetMyUnreadChannelsWithHttpInfo();
         /// <summary>
@@ -115,7 +115,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身のチャンネル閲覧状態一覧を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;MyChannelViewState&gt;</returns>
         List<MyChannelViewState> GetMyViewStates();
 
@@ -125,7 +125,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身のチャンネル閲覧状態一覧を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;MyChannelViewState&gt;</returns>
         ApiResponse<List<MyChannelViewState>> GetMyViewStatesWithHttpInfo();
         /// <summary>
@@ -134,7 +134,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分が未読のチャンネルを既読にします。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns></returns>
         void ReadChannel(Guid channelId);
@@ -145,7 +145,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分が未読のチャンネルを既読にします。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ReadChannelWithHttpInfo(Guid channelId);
@@ -155,7 +155,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身のFCMデバイスを登録します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postMyFCMDeviceRequest"> (optional)</param>
         /// <returns></returns>
         void RegisterFCMDevice(PostMyFCMDeviceRequest? postMyFCMDeviceRequest = default(PostMyFCMDeviceRequest?));
@@ -166,7 +166,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身のFCMデバイスを登録します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postMyFCMDeviceRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RegisterFCMDeviceWithHttpInfo(PostMyFCMDeviceRequest? postMyFCMDeviceRequest = default(PostMyFCMDeviceRequest?));
@@ -176,7 +176,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身の指定したチャンネルの購読レベルを設定します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribeLevelRequest"> (optional)</param>
         /// <returns></returns>
@@ -188,7 +188,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身の指定したチャンネルの購読レベルを設定します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribeLevelRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -199,7 +199,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルの通知購読者を設定します。 リクエストに含めなかったユーザーの通知購読状態はオフになります。 また、存在しないユーザーを指定した場合は無視されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribersRequest"> (optional)</param>
         /// <returns></returns>
@@ -211,7 +211,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルの通知購読者を設定します。 リクエストに含めなかったユーザーの通知購読状態はオフになります。 また、存在しないユーザーを指定した場合は無視されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribersRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -222,7 +222,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// # WebSocketプロトコル ## 送信 &#x60;コマンド:引数1:引数2:...&#x60;のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できる。 ### &#x60;viewstate&#x60;コマンド このWebSocketセッションが見ているチャンネル(イベントを受け取るチャンネル)を設定する。 現時点では1つのセッションに対して1つのチャンネルしか設定できない。  &#x60;viewstate:{チャンネルID}:{閲覧状態}&#x60; + チャンネルID: 対象のチャンネルID + 閲覧状態: &#x60;none&#x60;, &#x60;monitoring&#x60;, &#x60;editing&#x60;  最初の&#x60;viewstate&#x60;コマンドを送る前、または&#x60;viewstate:null&#x60;, &#x60;viewstate:&#x60;を送信した後は、このセッションはどこのチャンネルも見ていないことになる。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更する。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ### &#x60;timeline_streaming&#x60;コマンド 全てのパブリックチャンネルの&#x60;MESSAGE_CREATED&#x60;イベントを受け取るかどうかを設定する。 初期状態は&#x60;off&#x60;です。  &#x60;timeline_streaming:(on|off|true|false)&#x60;  ## 受信 TextMessageとして各種イベントが&#x60;type&#x60;と&#x60;body&#x60;を持つJSONとして非同期に送られます。  例: &#x60;&#x60;&#x60;json {\&quot;type\&quot;:\&quot;USER_ONLINE\&quot;,\&quot;body\&quot;:{\&quot;id\&quot;:\&quot;7dd8e07f-7f5d-4331-9176-b56a4299768b\&quot;}} &#x60;&#x60;&#x60;  ## イベント一覧  ### &#x60;USER_JOINED&#x60; ユーザーが新規登録された。  対象: 全員  + &#x60;id&#x60;: 登録されたユーザーのId  ### &#x60;USER_UPDATED&#x60; ユーザーの情報が更新された。  対象: 全員  + &#x60;id&#x60;: 情報が更新されたユーザーのId  ### &#x60;USER_TAGS_UPDATED&#x60; ユーザーのタグが更新された。  対象: 全員  + &#x60;id&#x60;: タグが更新されたユーザーのId + &#x60;tag_id&#x60;: 更新されたタグのId  ### &#x60;USER_ICON_UPDATED&#x60; ユーザーのアイコンが更新された。  対象: 全員  + &#x60;id&#x60;: アイコンが更新されたユーザーのId  ### &#x60;USER_WEBRTC_STATE_CHANGED&#x60; ユーザーのWebRTCの状態が変化した  対象: 全員  + &#x60;user_id&#x60;: 変更があったユーザーのId + &#x60;channel_id&#x60;: ユーザーの変更後の接続チャンネルのId + &#x60;sessions&#x60;: ユーザーの変更後の状態(配列)   + &#x60;state&#x60;: 状態   + &#x60;sessionId&#x60;: セッションID  ### &#x60;USER_VIEWSTATE_CHANGED&#x60; ユーザーのチャンネルの閲覧状態が変化した  対象: 変化したWSセッションを含めた、該当ユーザーのWSセッション全て  + &#x60;view_states&#x60;: 変化したWSセッションを含めた、該当ユーザーの変更後の状態(配列)   + &#x60;key&#x60;: WSセッションの識別子   + &#x60;channel_id&#x60;: 閲覧しているチャンネルId   + &#x60;state&#x60;: 閲覧状態  ### &#x60;USER_ONLINE&#x60; ユーザーがオンラインになった。  対象: 全員  + &#x60;id&#x60;: オンラインになったユーザーのId  ### &#x60;USER_OFFLINE&#x60; ユーザーがオフラインになった。  対象: 全員  + &#x60;id&#x60;: オフラインになったユーザーのId  ### &#x60;USER_GROUP_CREATED&#x60; ユーザーグループが作成された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_UPDATED&#x60; ユーザーグループが更新された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_DELETED&#x60; ユーザーグループが削除された  対象: 全員  + &#x60;id&#x60;: 削除されたユーザーグループのId  ### &#x60;CHANNEL_CREATED&#x60; チャンネルが新規作成された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 作成されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_UPDATED&#x60; チャンネルの情報が変更された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 変更があったチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_DELETED&#x60; チャンネルが削除された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 削除されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_STARED&#x60; 自分がチャンネルをスターした。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_UNSTARED&#x60; 自分がチャンネルのスターを解除した。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_VIEWERS_CHANGED&#x60; チャンネルの閲覧者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId + &#x60;viewers&#x60;: 変化後の閲覧者(配列)   + &#x60;userId&#x60;: ユーザーId   + &#x60;state&#x60;: 閲覧状態   + &#x60;updatedAt&#x60;: 閲覧状態の更新日時  ### &#x60;CHANNEL_SUBSCRIBERS_CHANGED&#x60; チャンネルの購読者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId  ### &#x60;MESSAGE_CREATED&#x60; メッセージが投稿された。  対象: 投稿チャンネルを閲覧しているユーザー・投稿チャンネルに通知をつけているユーザー・メンションを受けたユーザー  + &#x60;id&#x60;: 投稿されたメッセージのId + &#x60;is_citing&#x60;: 投稿されたメッセージがWebSocketを接続しているユーザーの投稿を引用しているかどうか  ### &#x60;MESSAGE_UPDATED&#x60; メッセージが更新された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 更新されたメッセージのId  ### &#x60;MESSAGE_DELETED&#x60; メッセージが削除された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 削除されたメッセージのId  ### &#x60;MESSAGE_STAMPED&#x60; メッセージにスタンプが押された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId + &#x60;count&#x60;: そのユーザーが押した数 + &#x60;created_at&#x60;: そのユーザーがそのスタンプをそのメッセージに最初に押した日時  ### &#x60;MESSAGE_UNSTAMPED&#x60; メッセージからスタンプが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId  ### &#x60;MESSAGE_PINNED&#x60; メッセージがピン留めされた。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンされたメッセージのID + &#x60;channel_id&#x60;: ピンされたメッセージのチャンネルID  ### &#x60;MESSAGE_UNPINNED&#x60; ピン留めされたメッセージのピンが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンが外されたメッセージのID + &#x60;channel_id&#x60;: ピンが外されたメッセージのチャンネルID  ### &#x60;MESSAGE_READ&#x60; 自分があるチャンネルのメッセージを読んだ。  対象: 自分  + &#x60;id&#x60;: 読んだチャンネルId  ### &#x60;STAMP_CREATED&#x60; スタンプが新しく追加された。  対象: 全員  + &#x60;id&#x60;: 作成されたスタンプのId  ### &#x60;STAMP_UPDATED&#x60; スタンプが修正された。  対象: 全員  + &#x60;id&#x60;: 修正されたスタンプのId  ### &#x60;STAMP_DELETED&#x60; スタンプが削除された。  対象: 全員  + &#x60;id&#x60;: 削除されたスタンプのId  ### &#x60;STAMP_PALETTE_CREATED&#x60; スタンプパレットが新しく追加された。  対象: 自分  + &#x60;id&#x60;: 作成されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_UPDATED&#x60; スタンプパレットが修正された。  対象: 自分  + &#x60;id&#x60;: 修正されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_DELETED&#x60; スタンプパレットが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたスタンプパレットのId  ### &#x60;CLIP_FOLDER_CREATED&#x60; クリップフォルダーが作成された。  対象：自分  + &#x60;id&#x60;: 作成されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_UPDATED&#x60; クリップフォルダーが修正された。  対象: 自分  + &#x60;id&#x60;: 更新されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_DELETED&#x60; クリップフォルダーが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_MESSAGE_DELETED&#x60; クリップフォルダーからメッセージが除外された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが除外されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーから除外されたメッセージのId  ### &#x60;CLIP_FOLDER_MESSAGE_ADDED&#x60; クリップフォルダーにメッセージが追加された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが追加されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーに追加されたメッセージのId
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
         void Ws();
 
@@ -232,7 +232,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// # WebSocketプロトコル ## 送信 &#x60;コマンド:引数1:引数2:...&#x60;のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できる。 ### &#x60;viewstate&#x60;コマンド このWebSocketセッションが見ているチャンネル(イベントを受け取るチャンネル)を設定する。 現時点では1つのセッションに対して1つのチャンネルしか設定できない。  &#x60;viewstate:{チャンネルID}:{閲覧状態}&#x60; + チャンネルID: 対象のチャンネルID + 閲覧状態: &#x60;none&#x60;, &#x60;monitoring&#x60;, &#x60;editing&#x60;  最初の&#x60;viewstate&#x60;コマンドを送る前、または&#x60;viewstate:null&#x60;, &#x60;viewstate:&#x60;を送信した後は、このセッションはどこのチャンネルも見ていないことになる。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更する。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ### &#x60;timeline_streaming&#x60;コマンド 全てのパブリックチャンネルの&#x60;MESSAGE_CREATED&#x60;イベントを受け取るかどうかを設定する。 初期状態は&#x60;off&#x60;です。  &#x60;timeline_streaming:(on|off|true|false)&#x60;  ## 受信 TextMessageとして各種イベントが&#x60;type&#x60;と&#x60;body&#x60;を持つJSONとして非同期に送られます。  例: &#x60;&#x60;&#x60;json {\&quot;type\&quot;:\&quot;USER_ONLINE\&quot;,\&quot;body\&quot;:{\&quot;id\&quot;:\&quot;7dd8e07f-7f5d-4331-9176-b56a4299768b\&quot;}} &#x60;&#x60;&#x60;  ## イベント一覧  ### &#x60;USER_JOINED&#x60; ユーザーが新規登録された。  対象: 全員  + &#x60;id&#x60;: 登録されたユーザーのId  ### &#x60;USER_UPDATED&#x60; ユーザーの情報が更新された。  対象: 全員  + &#x60;id&#x60;: 情報が更新されたユーザーのId  ### &#x60;USER_TAGS_UPDATED&#x60; ユーザーのタグが更新された。  対象: 全員  + &#x60;id&#x60;: タグが更新されたユーザーのId + &#x60;tag_id&#x60;: 更新されたタグのId  ### &#x60;USER_ICON_UPDATED&#x60; ユーザーのアイコンが更新された。  対象: 全員  + &#x60;id&#x60;: アイコンが更新されたユーザーのId  ### &#x60;USER_WEBRTC_STATE_CHANGED&#x60; ユーザーのWebRTCの状態が変化した  対象: 全員  + &#x60;user_id&#x60;: 変更があったユーザーのId + &#x60;channel_id&#x60;: ユーザーの変更後の接続チャンネルのId + &#x60;sessions&#x60;: ユーザーの変更後の状態(配列)   + &#x60;state&#x60;: 状態   + &#x60;sessionId&#x60;: セッションID  ### &#x60;USER_VIEWSTATE_CHANGED&#x60; ユーザーのチャンネルの閲覧状態が変化した  対象: 変化したWSセッションを含めた、該当ユーザーのWSセッション全て  + &#x60;view_states&#x60;: 変化したWSセッションを含めた、該当ユーザーの変更後の状態(配列)   + &#x60;key&#x60;: WSセッションの識別子   + &#x60;channel_id&#x60;: 閲覧しているチャンネルId   + &#x60;state&#x60;: 閲覧状態  ### &#x60;USER_ONLINE&#x60; ユーザーがオンラインになった。  対象: 全員  + &#x60;id&#x60;: オンラインになったユーザーのId  ### &#x60;USER_OFFLINE&#x60; ユーザーがオフラインになった。  対象: 全員  + &#x60;id&#x60;: オフラインになったユーザーのId  ### &#x60;USER_GROUP_CREATED&#x60; ユーザーグループが作成された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_UPDATED&#x60; ユーザーグループが更新された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_DELETED&#x60; ユーザーグループが削除された  対象: 全員  + &#x60;id&#x60;: 削除されたユーザーグループのId  ### &#x60;CHANNEL_CREATED&#x60; チャンネルが新規作成された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 作成されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_UPDATED&#x60; チャンネルの情報が変更された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 変更があったチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_DELETED&#x60; チャンネルが削除された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 削除されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_STARED&#x60; 自分がチャンネルをスターした。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_UNSTARED&#x60; 自分がチャンネルのスターを解除した。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_VIEWERS_CHANGED&#x60; チャンネルの閲覧者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId + &#x60;viewers&#x60;: 変化後の閲覧者(配列)   + &#x60;userId&#x60;: ユーザーId   + &#x60;state&#x60;: 閲覧状態   + &#x60;updatedAt&#x60;: 閲覧状態の更新日時  ### &#x60;CHANNEL_SUBSCRIBERS_CHANGED&#x60; チャンネルの購読者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId  ### &#x60;MESSAGE_CREATED&#x60; メッセージが投稿された。  対象: 投稿チャンネルを閲覧しているユーザー・投稿チャンネルに通知をつけているユーザー・メンションを受けたユーザー  + &#x60;id&#x60;: 投稿されたメッセージのId + &#x60;is_citing&#x60;: 投稿されたメッセージがWebSocketを接続しているユーザーの投稿を引用しているかどうか  ### &#x60;MESSAGE_UPDATED&#x60; メッセージが更新された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 更新されたメッセージのId  ### &#x60;MESSAGE_DELETED&#x60; メッセージが削除された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 削除されたメッセージのId  ### &#x60;MESSAGE_STAMPED&#x60; メッセージにスタンプが押された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId + &#x60;count&#x60;: そのユーザーが押した数 + &#x60;created_at&#x60;: そのユーザーがそのスタンプをそのメッセージに最初に押した日時  ### &#x60;MESSAGE_UNSTAMPED&#x60; メッセージからスタンプが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId  ### &#x60;MESSAGE_PINNED&#x60; メッセージがピン留めされた。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンされたメッセージのID + &#x60;channel_id&#x60;: ピンされたメッセージのチャンネルID  ### &#x60;MESSAGE_UNPINNED&#x60; ピン留めされたメッセージのピンが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンが外されたメッセージのID + &#x60;channel_id&#x60;: ピンが外されたメッセージのチャンネルID  ### &#x60;MESSAGE_READ&#x60; 自分があるチャンネルのメッセージを読んだ。  対象: 自分  + &#x60;id&#x60;: 読んだチャンネルId  ### &#x60;STAMP_CREATED&#x60; スタンプが新しく追加された。  対象: 全員  + &#x60;id&#x60;: 作成されたスタンプのId  ### &#x60;STAMP_UPDATED&#x60; スタンプが修正された。  対象: 全員  + &#x60;id&#x60;: 修正されたスタンプのId  ### &#x60;STAMP_DELETED&#x60; スタンプが削除された。  対象: 全員  + &#x60;id&#x60;: 削除されたスタンプのId  ### &#x60;STAMP_PALETTE_CREATED&#x60; スタンプパレットが新しく追加された。  対象: 自分  + &#x60;id&#x60;: 作成されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_UPDATED&#x60; スタンプパレットが修正された。  対象: 自分  + &#x60;id&#x60;: 修正されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_DELETED&#x60; スタンプパレットが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたスタンプパレットのId  ### &#x60;CLIP_FOLDER_CREATED&#x60; クリップフォルダーが作成された。  対象：自分  + &#x60;id&#x60;: 作成されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_UPDATED&#x60; クリップフォルダーが修正された。  対象: 自分  + &#x60;id&#x60;: 更新されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_DELETED&#x60; クリップフォルダーが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_MESSAGE_DELETED&#x60; クリップフォルダーからメッセージが除外された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが除外されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーから除外されたメッセージのId  ### &#x60;CLIP_FOLDER_MESSAGE_ADDED&#x60; クリップフォルダーにメッセージが追加された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが追加されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーに追加されたメッセージのId
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> WsWithHttpInfo();
         #endregion Synchronous Operations
@@ -250,7 +250,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルの通知購読者を編集します。 リクエストに含めなかったユーザーの通知購読状態は変更しません。 また、存在しないユーザーを指定した場合は無視されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="patchChannelSubscribersRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -263,7 +263,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルの通知購読者を編集します。 リクエストに含めなかったユーザーの通知購読状態は変更しません。 また、存在しないユーザーを指定した場合は無視されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="patchChannelSubscribersRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -275,7 +275,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルを通知購読しているユーザーのUUIDのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
@@ -287,7 +287,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルを通知購読しているユーザーのUUIDのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
@@ -298,7 +298,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身のチャンネル購読状態を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;UserSubscribeState&gt;</returns>
         System.Threading.Tasks.Task<List<UserSubscribeState>> GetMyChannelSubscriptionsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -309,7 +309,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身のチャンネル購読状態を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;UserSubscribeState&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<UserSubscribeState>>> GetMyChannelSubscriptionsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -319,7 +319,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分が現在未読のチャンネルの未読情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;UnreadChannel&gt;</returns>
         System.Threading.Tasks.Task<List<UnreadChannel>> GetMyUnreadChannelsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -330,7 +330,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分が現在未読のチャンネルの未読情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;UnreadChannel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<UnreadChannel>>> GetMyUnreadChannelsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -340,7 +340,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身のチャンネル閲覧状態一覧を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MyChannelViewState&gt;</returns>
         System.Threading.Tasks.Task<List<MyChannelViewState>> GetMyViewStatesAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -351,7 +351,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身のチャンネル閲覧状態一覧を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MyChannelViewState&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<MyChannelViewState>>> GetMyViewStatesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -361,7 +361,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分が未読のチャンネルを既読にします。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -373,7 +373,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分が未読のチャンネルを既読にします。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -384,7 +384,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身のFCMデバイスを登録します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postMyFCMDeviceRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -396,7 +396,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身のFCMデバイスを登録します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postMyFCMDeviceRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -407,7 +407,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身の指定したチャンネルの購読レベルを設定します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribeLevelRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -420,7 +420,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身の指定したチャンネルの購読レベルを設定します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribeLevelRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -432,7 +432,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルの通知購読者を設定します。 リクエストに含めなかったユーザーの通知購読状態はオフになります。 また、存在しないユーザーを指定した場合は無視されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribersRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -445,7 +445,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルの通知購読者を設定します。 リクエストに含めなかったユーザーの通知購読状態はオフになります。 また、存在しないユーザーを指定した場合は無視されます。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribersRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -457,7 +457,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// # WebSocketプロトコル ## 送信 &#x60;コマンド:引数1:引数2:...&#x60;のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できる。 ### &#x60;viewstate&#x60;コマンド このWebSocketセッションが見ているチャンネル(イベントを受け取るチャンネル)を設定する。 現時点では1つのセッションに対して1つのチャンネルしか設定できない。  &#x60;viewstate:{チャンネルID}:{閲覧状態}&#x60; + チャンネルID: 対象のチャンネルID + 閲覧状態: &#x60;none&#x60;, &#x60;monitoring&#x60;, &#x60;editing&#x60;  最初の&#x60;viewstate&#x60;コマンドを送る前、または&#x60;viewstate:null&#x60;, &#x60;viewstate:&#x60;を送信した後は、このセッションはどこのチャンネルも見ていないことになる。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更する。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ### &#x60;timeline_streaming&#x60;コマンド 全てのパブリックチャンネルの&#x60;MESSAGE_CREATED&#x60;イベントを受け取るかどうかを設定する。 初期状態は&#x60;off&#x60;です。  &#x60;timeline_streaming:(on|off|true|false)&#x60;  ## 受信 TextMessageとして各種イベントが&#x60;type&#x60;と&#x60;body&#x60;を持つJSONとして非同期に送られます。  例: &#x60;&#x60;&#x60;json {\&quot;type\&quot;:\&quot;USER_ONLINE\&quot;,\&quot;body\&quot;:{\&quot;id\&quot;:\&quot;7dd8e07f-7f5d-4331-9176-b56a4299768b\&quot;}} &#x60;&#x60;&#x60;  ## イベント一覧  ### &#x60;USER_JOINED&#x60; ユーザーが新規登録された。  対象: 全員  + &#x60;id&#x60;: 登録されたユーザーのId  ### &#x60;USER_UPDATED&#x60; ユーザーの情報が更新された。  対象: 全員  + &#x60;id&#x60;: 情報が更新されたユーザーのId  ### &#x60;USER_TAGS_UPDATED&#x60; ユーザーのタグが更新された。  対象: 全員  + &#x60;id&#x60;: タグが更新されたユーザーのId + &#x60;tag_id&#x60;: 更新されたタグのId  ### &#x60;USER_ICON_UPDATED&#x60; ユーザーのアイコンが更新された。  対象: 全員  + &#x60;id&#x60;: アイコンが更新されたユーザーのId  ### &#x60;USER_WEBRTC_STATE_CHANGED&#x60; ユーザーのWebRTCの状態が変化した  対象: 全員  + &#x60;user_id&#x60;: 変更があったユーザーのId + &#x60;channel_id&#x60;: ユーザーの変更後の接続チャンネルのId + &#x60;sessions&#x60;: ユーザーの変更後の状態(配列)   + &#x60;state&#x60;: 状態   + &#x60;sessionId&#x60;: セッションID  ### &#x60;USER_VIEWSTATE_CHANGED&#x60; ユーザーのチャンネルの閲覧状態が変化した  対象: 変化したWSセッションを含めた、該当ユーザーのWSセッション全て  + &#x60;view_states&#x60;: 変化したWSセッションを含めた、該当ユーザーの変更後の状態(配列)   + &#x60;key&#x60;: WSセッションの識別子   + &#x60;channel_id&#x60;: 閲覧しているチャンネルId   + &#x60;state&#x60;: 閲覧状態  ### &#x60;USER_ONLINE&#x60; ユーザーがオンラインになった。  対象: 全員  + &#x60;id&#x60;: オンラインになったユーザーのId  ### &#x60;USER_OFFLINE&#x60; ユーザーがオフラインになった。  対象: 全員  + &#x60;id&#x60;: オフラインになったユーザーのId  ### &#x60;USER_GROUP_CREATED&#x60; ユーザーグループが作成された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_UPDATED&#x60; ユーザーグループが更新された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_DELETED&#x60; ユーザーグループが削除された  対象: 全員  + &#x60;id&#x60;: 削除されたユーザーグループのId  ### &#x60;CHANNEL_CREATED&#x60; チャンネルが新規作成された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 作成されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_UPDATED&#x60; チャンネルの情報が変更された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 変更があったチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_DELETED&#x60; チャンネルが削除された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 削除されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_STARED&#x60; 自分がチャンネルをスターした。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_UNSTARED&#x60; 自分がチャンネルのスターを解除した。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_VIEWERS_CHANGED&#x60; チャンネルの閲覧者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId + &#x60;viewers&#x60;: 変化後の閲覧者(配列)   + &#x60;userId&#x60;: ユーザーId   + &#x60;state&#x60;: 閲覧状態   + &#x60;updatedAt&#x60;: 閲覧状態の更新日時  ### &#x60;CHANNEL_SUBSCRIBERS_CHANGED&#x60; チャンネルの購読者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId  ### &#x60;MESSAGE_CREATED&#x60; メッセージが投稿された。  対象: 投稿チャンネルを閲覧しているユーザー・投稿チャンネルに通知をつけているユーザー・メンションを受けたユーザー  + &#x60;id&#x60;: 投稿されたメッセージのId + &#x60;is_citing&#x60;: 投稿されたメッセージがWebSocketを接続しているユーザーの投稿を引用しているかどうか  ### &#x60;MESSAGE_UPDATED&#x60; メッセージが更新された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 更新されたメッセージのId  ### &#x60;MESSAGE_DELETED&#x60; メッセージが削除された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 削除されたメッセージのId  ### &#x60;MESSAGE_STAMPED&#x60; メッセージにスタンプが押された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId + &#x60;count&#x60;: そのユーザーが押した数 + &#x60;created_at&#x60;: そのユーザーがそのスタンプをそのメッセージに最初に押した日時  ### &#x60;MESSAGE_UNSTAMPED&#x60; メッセージからスタンプが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId  ### &#x60;MESSAGE_PINNED&#x60; メッセージがピン留めされた。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンされたメッセージのID + &#x60;channel_id&#x60;: ピンされたメッセージのチャンネルID  ### &#x60;MESSAGE_UNPINNED&#x60; ピン留めされたメッセージのピンが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンが外されたメッセージのID + &#x60;channel_id&#x60;: ピンが外されたメッセージのチャンネルID  ### &#x60;MESSAGE_READ&#x60; 自分があるチャンネルのメッセージを読んだ。  対象: 自分  + &#x60;id&#x60;: 読んだチャンネルId  ### &#x60;STAMP_CREATED&#x60; スタンプが新しく追加された。  対象: 全員  + &#x60;id&#x60;: 作成されたスタンプのId  ### &#x60;STAMP_UPDATED&#x60; スタンプが修正された。  対象: 全員  + &#x60;id&#x60;: 修正されたスタンプのId  ### &#x60;STAMP_DELETED&#x60; スタンプが削除された。  対象: 全員  + &#x60;id&#x60;: 削除されたスタンプのId  ### &#x60;STAMP_PALETTE_CREATED&#x60; スタンプパレットが新しく追加された。  対象: 自分  + &#x60;id&#x60;: 作成されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_UPDATED&#x60; スタンプパレットが修正された。  対象: 自分  + &#x60;id&#x60;: 修正されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_DELETED&#x60; スタンプパレットが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたスタンプパレットのId  ### &#x60;CLIP_FOLDER_CREATED&#x60; クリップフォルダーが作成された。  対象：自分  + &#x60;id&#x60;: 作成されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_UPDATED&#x60; クリップフォルダーが修正された。  対象: 自分  + &#x60;id&#x60;: 更新されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_DELETED&#x60; クリップフォルダーが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_MESSAGE_DELETED&#x60; クリップフォルダーからメッセージが除外された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが除外されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーから除外されたメッセージのId  ### &#x60;CLIP_FOLDER_MESSAGE_ADDED&#x60; クリップフォルダーにメッセージが追加された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが追加されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーに追加されたメッセージのId
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task WsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -468,7 +468,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// # WebSocketプロトコル ## 送信 &#x60;コマンド:引数1:引数2:...&#x60;のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できる。 ### &#x60;viewstate&#x60;コマンド このWebSocketセッションが見ているチャンネル(イベントを受け取るチャンネル)を設定する。 現時点では1つのセッションに対して1つのチャンネルしか設定できない。  &#x60;viewstate:{チャンネルID}:{閲覧状態}&#x60; + チャンネルID: 対象のチャンネルID + 閲覧状態: &#x60;none&#x60;, &#x60;monitoring&#x60;, &#x60;editing&#x60;  最初の&#x60;viewstate&#x60;コマンドを送る前、または&#x60;viewstate:null&#x60;, &#x60;viewstate:&#x60;を送信した後は、このセッションはどこのチャンネルも見ていないことになる。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更する。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ### &#x60;timeline_streaming&#x60;コマンド 全てのパブリックチャンネルの&#x60;MESSAGE_CREATED&#x60;イベントを受け取るかどうかを設定する。 初期状態は&#x60;off&#x60;です。  &#x60;timeline_streaming:(on|off|true|false)&#x60;  ## 受信 TextMessageとして各種イベントが&#x60;type&#x60;と&#x60;body&#x60;を持つJSONとして非同期に送られます。  例: &#x60;&#x60;&#x60;json {\&quot;type\&quot;:\&quot;USER_ONLINE\&quot;,\&quot;body\&quot;:{\&quot;id\&quot;:\&quot;7dd8e07f-7f5d-4331-9176-b56a4299768b\&quot;}} &#x60;&#x60;&#x60;  ## イベント一覧  ### &#x60;USER_JOINED&#x60; ユーザーが新規登録された。  対象: 全員  + &#x60;id&#x60;: 登録されたユーザーのId  ### &#x60;USER_UPDATED&#x60; ユーザーの情報が更新された。  対象: 全員  + &#x60;id&#x60;: 情報が更新されたユーザーのId  ### &#x60;USER_TAGS_UPDATED&#x60; ユーザーのタグが更新された。  対象: 全員  + &#x60;id&#x60;: タグが更新されたユーザーのId + &#x60;tag_id&#x60;: 更新されたタグのId  ### &#x60;USER_ICON_UPDATED&#x60; ユーザーのアイコンが更新された。  対象: 全員  + &#x60;id&#x60;: アイコンが更新されたユーザーのId  ### &#x60;USER_WEBRTC_STATE_CHANGED&#x60; ユーザーのWebRTCの状態が変化した  対象: 全員  + &#x60;user_id&#x60;: 変更があったユーザーのId + &#x60;channel_id&#x60;: ユーザーの変更後の接続チャンネルのId + &#x60;sessions&#x60;: ユーザーの変更後の状態(配列)   + &#x60;state&#x60;: 状態   + &#x60;sessionId&#x60;: セッションID  ### &#x60;USER_VIEWSTATE_CHANGED&#x60; ユーザーのチャンネルの閲覧状態が変化した  対象: 変化したWSセッションを含めた、該当ユーザーのWSセッション全て  + &#x60;view_states&#x60;: 変化したWSセッションを含めた、該当ユーザーの変更後の状態(配列)   + &#x60;key&#x60;: WSセッションの識別子   + &#x60;channel_id&#x60;: 閲覧しているチャンネルId   + &#x60;state&#x60;: 閲覧状態  ### &#x60;USER_ONLINE&#x60; ユーザーがオンラインになった。  対象: 全員  + &#x60;id&#x60;: オンラインになったユーザーのId  ### &#x60;USER_OFFLINE&#x60; ユーザーがオフラインになった。  対象: 全員  + &#x60;id&#x60;: オフラインになったユーザーのId  ### &#x60;USER_GROUP_CREATED&#x60; ユーザーグループが作成された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_UPDATED&#x60; ユーザーグループが更新された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_DELETED&#x60; ユーザーグループが削除された  対象: 全員  + &#x60;id&#x60;: 削除されたユーザーグループのId  ### &#x60;CHANNEL_CREATED&#x60; チャンネルが新規作成された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 作成されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_UPDATED&#x60; チャンネルの情報が変更された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 変更があったチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_DELETED&#x60; チャンネルが削除された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 削除されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_STARED&#x60; 自分がチャンネルをスターした。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_UNSTARED&#x60; 自分がチャンネルのスターを解除した。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_VIEWERS_CHANGED&#x60; チャンネルの閲覧者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId + &#x60;viewers&#x60;: 変化後の閲覧者(配列)   + &#x60;userId&#x60;: ユーザーId   + &#x60;state&#x60;: 閲覧状態   + &#x60;updatedAt&#x60;: 閲覧状態の更新日時  ### &#x60;CHANNEL_SUBSCRIBERS_CHANGED&#x60; チャンネルの購読者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId  ### &#x60;MESSAGE_CREATED&#x60; メッセージが投稿された。  対象: 投稿チャンネルを閲覧しているユーザー・投稿チャンネルに通知をつけているユーザー・メンションを受けたユーザー  + &#x60;id&#x60;: 投稿されたメッセージのId + &#x60;is_citing&#x60;: 投稿されたメッセージがWebSocketを接続しているユーザーの投稿を引用しているかどうか  ### &#x60;MESSAGE_UPDATED&#x60; メッセージが更新された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 更新されたメッセージのId  ### &#x60;MESSAGE_DELETED&#x60; メッセージが削除された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 削除されたメッセージのId  ### &#x60;MESSAGE_STAMPED&#x60; メッセージにスタンプが押された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId + &#x60;count&#x60;: そのユーザーが押した数 + &#x60;created_at&#x60;: そのユーザーがそのスタンプをそのメッセージに最初に押した日時  ### &#x60;MESSAGE_UNSTAMPED&#x60; メッセージからスタンプが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId  ### &#x60;MESSAGE_PINNED&#x60; メッセージがピン留めされた。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンされたメッセージのID + &#x60;channel_id&#x60;: ピンされたメッセージのチャンネルID  ### &#x60;MESSAGE_UNPINNED&#x60; ピン留めされたメッセージのピンが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンが外されたメッセージのID + &#x60;channel_id&#x60;: ピンが外されたメッセージのチャンネルID  ### &#x60;MESSAGE_READ&#x60; 自分があるチャンネルのメッセージを読んだ。  対象: 自分  + &#x60;id&#x60;: 読んだチャンネルId  ### &#x60;STAMP_CREATED&#x60; スタンプが新しく追加された。  対象: 全員  + &#x60;id&#x60;: 作成されたスタンプのId  ### &#x60;STAMP_UPDATED&#x60; スタンプが修正された。  対象: 全員  + &#x60;id&#x60;: 修正されたスタンプのId  ### &#x60;STAMP_DELETED&#x60; スタンプが削除された。  対象: 全員  + &#x60;id&#x60;: 削除されたスタンプのId  ### &#x60;STAMP_PALETTE_CREATED&#x60; スタンプパレットが新しく追加された。  対象: 自分  + &#x60;id&#x60;: 作成されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_UPDATED&#x60; スタンプパレットが修正された。  対象: 自分  + &#x60;id&#x60;: 修正されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_DELETED&#x60; スタンプパレットが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたスタンプパレットのId  ### &#x60;CLIP_FOLDER_CREATED&#x60; クリップフォルダーが作成された。  対象：自分  + &#x60;id&#x60;: 作成されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_UPDATED&#x60; クリップフォルダーが修正された。  対象: 自分  + &#x60;id&#x60;: 更新されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_DELETED&#x60; クリップフォルダーが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_MESSAGE_DELETED&#x60; クリップフォルダーからメッセージが除外された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが除外されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーから除外されたメッセージのId  ### &#x60;CLIP_FOLDER_MESSAGE_ADDED&#x60; クリップフォルダーにメッセージが追加された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが追加されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーに追加されたメッセージのId
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> WsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -488,7 +488,7 @@ namespace DotnetTraq.Api
     /// </summary>
     public partial class NotificationApi : IDisposable, INotificationApi
     {
-        private DotnetTraq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Traq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NotificationApi"/> class.
@@ -510,14 +510,14 @@ namespace DotnetTraq.Api
         /// <returns></returns>
         public NotificationApi(string basePath)
         {
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -528,18 +528,18 @@ namespace DotnetTraq.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public NotificationApi(DotnetTraq.Client.Configuration configuration)
+        public NotificationApi(Traq.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -574,14 +574,14 @@ namespace DotnetTraq.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -596,19 +596,19 @@ namespace DotnetTraq.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public NotificationApi(HttpClient client, DotnetTraq.Client.Configuration configuration, HttpClientHandler handler = null)
+        public NotificationApi(HttpClient client, Traq.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -619,7 +619,7 @@ namespace DotnetTraq.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public NotificationApi(DotnetTraq.Client.ISynchronousClient client, DotnetTraq.Client.IAsynchronousClient asyncClient, DotnetTraq.Client.IReadableConfiguration configuration)
+        public NotificationApi(Traq.Client.ISynchronousClient client, Traq.Client.IAsynchronousClient asyncClient, Traq.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -628,7 +628,7 @@ namespace DotnetTraq.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -642,17 +642,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public DotnetTraq.Client.ApiClient ApiClient { get; set; } = null;
+        public Traq.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public DotnetTraq.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Traq.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public DotnetTraq.Client.ISynchronousClient Client { get; set; }
+        public Traq.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -667,12 +667,12 @@ namespace DotnetTraq.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public DotnetTraq.Client.IReadableConfiguration Configuration { get; set; }
+        public Traq.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public DotnetTraq.Client.ExceptionFactory ExceptionFactory
+        public Traq.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -688,7 +688,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルの通知購読者を編集 指定したチャンネルの通知購読者を編集します。 リクエストに含めなかったユーザーの通知購読状態は変更しません。 また、存在しないユーザーを指定した場合は無視されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="patchChannelSubscribersRequest"> (optional)</param>
         /// <returns></returns>
@@ -700,13 +700,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルの通知購読者を編集 指定したチャンネルの通知購読者を編集します。 リクエストに含めなかったユーザーの通知購読状態は変更しません。 また、存在しないユーザーを指定した場合は無視されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="patchChannelSubscribersRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> EditChannelSubscribersWithHttpInfo(Guid channelId, PatchChannelSubscribersRequest? patchChannelSubscribersRequest = default(PatchChannelSubscribersRequest?))
+        public Traq.Client.ApiResponse<Object> EditChannelSubscribersWithHttpInfo(Guid channelId, PatchChannelSubscribersRequest? patchChannelSubscribersRequest = default(PatchChannelSubscribersRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -716,13 +716,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
             localVarRequestOptions.Data = patchChannelSubscribersRequest;
 
             // authentication (OAuth2) required
@@ -753,7 +753,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルの通知購読者を編集 指定したチャンネルの通知購読者を編集します。 リクエストに含めなかったユーザーの通知購読状態は変更しません。 また、存在しないユーザーを指定した場合は無視されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="patchChannelSubscribersRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -766,15 +766,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルの通知購読者を編集 指定したチャンネルの通知購読者を編集します。 リクエストに含めなかったユーザーの通知購読状態は変更しません。 また、存在しないユーザーを指定した場合は無視されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="patchChannelSubscribersRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> EditChannelSubscribersWithHttpInfoAsync(Guid channelId, PatchChannelSubscribersRequest? patchChannelSubscribersRequest = default(PatchChannelSubscribersRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> EditChannelSubscribersWithHttpInfoAsync(Guid channelId, PatchChannelSubscribersRequest? patchChannelSubscribersRequest = default(PatchChannelSubscribersRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -785,13 +785,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
             localVarRequestOptions.Data = patchChannelSubscribersRequest;
 
             // authentication (OAuth2) required
@@ -823,24 +823,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルの通知購読者のリストを取得 指定したチャンネルを通知購読しているユーザーのUUIDのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns>List&lt;Guid&gt;</returns>
         public List<Guid> GetChannelSubscribers(Guid channelId)
         {
-            DotnetTraq.Client.ApiResponse<List<Guid>> localVarResponse = GetChannelSubscribersWithHttpInfo(channelId);
+            Traq.Client.ApiResponse<List<Guid>> localVarResponse = GetChannelSubscribersWithHttpInfo(channelId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// チャンネルの通知購読者のリストを取得 指定したチャンネルを通知購読しているユーザーのUUIDのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns>ApiResponse of List&lt;Guid&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<Guid>> GetChannelSubscribersWithHttpInfo(Guid channelId)
+        public Traq.Client.ApiResponse<List<Guid>> GetChannelSubscribersWithHttpInfo(Guid channelId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -850,13 +850,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -886,27 +886,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルの通知購読者のリストを取得 指定したチャンネルを通知購読しているユーザーのUUIDのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
         public async System.Threading.Tasks.Task<List<Guid>> GetChannelSubscribersAsync(Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<Guid>> localVarResponse = await GetChannelSubscribersWithHttpInfoAsync(channelId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<Guid>> localVarResponse = await GetChannelSubscribersWithHttpInfoAsync(channelId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// チャンネルの通知購読者のリストを取得 指定したチャンネルを通知購読しているユーザーのUUIDのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<Guid>>> GetChannelSubscribersWithHttpInfoAsync(Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<Guid>>> GetChannelSubscribersWithHttpInfoAsync(Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -917,13 +917,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -954,22 +954,22 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分のチャンネル購読状態を取得 自身のチャンネル購読状態を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;UserSubscribeState&gt;</returns>
         public List<UserSubscribeState> GetMyChannelSubscriptions()
         {
-            DotnetTraq.Client.ApiResponse<List<UserSubscribeState>> localVarResponse = GetMyChannelSubscriptionsWithHttpInfo();
+            Traq.Client.ApiResponse<List<UserSubscribeState>> localVarResponse = GetMyChannelSubscriptionsWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// 自分のチャンネル購読状態を取得 自身のチャンネル購読状態を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;UserSubscribeState&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<UserSubscribeState>> GetMyChannelSubscriptionsWithHttpInfo()
+        public Traq.Client.ApiResponse<List<UserSubscribeState>> GetMyChannelSubscriptionsWithHttpInfo()
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -979,10 +979,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1014,25 +1014,25 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自分のチャンネル購読状態を取得 自身のチャンネル購読状態を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;UserSubscribeState&gt;</returns>
         public async System.Threading.Tasks.Task<List<UserSubscribeState>> GetMyChannelSubscriptionsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<UserSubscribeState>> localVarResponse = await GetMyChannelSubscriptionsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<UserSubscribeState>> localVarResponse = await GetMyChannelSubscriptionsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// 自分のチャンネル購読状態を取得 自身のチャンネル購読状態を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;UserSubscribeState&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<UserSubscribeState>>> GetMyChannelSubscriptionsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<UserSubscribeState>>> GetMyChannelSubscriptionsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1043,10 +1043,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1079,22 +1079,22 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 未読チャンネルを取得 自分が現在未読のチャンネルの未読情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;UnreadChannel&gt;</returns>
         public List<UnreadChannel> GetMyUnreadChannels()
         {
-            DotnetTraq.Client.ApiResponse<List<UnreadChannel>> localVarResponse = GetMyUnreadChannelsWithHttpInfo();
+            Traq.Client.ApiResponse<List<UnreadChannel>> localVarResponse = GetMyUnreadChannelsWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// 未読チャンネルを取得 自分が現在未読のチャンネルの未読情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;UnreadChannel&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<UnreadChannel>> GetMyUnreadChannelsWithHttpInfo()
+        public Traq.Client.ApiResponse<List<UnreadChannel>> GetMyUnreadChannelsWithHttpInfo()
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1104,10 +1104,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1139,25 +1139,25 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 未読チャンネルを取得 自分が現在未読のチャンネルの未読情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;UnreadChannel&gt;</returns>
         public async System.Threading.Tasks.Task<List<UnreadChannel>> GetMyUnreadChannelsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<UnreadChannel>> localVarResponse = await GetMyUnreadChannelsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<UnreadChannel>> localVarResponse = await GetMyUnreadChannelsWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// 未読チャンネルを取得 自分が現在未読のチャンネルの未読情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;UnreadChannel&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<UnreadChannel>>> GetMyUnreadChannelsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<UnreadChannel>>> GetMyUnreadChannelsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1168,10 +1168,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1204,22 +1204,22 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自身のチャンネル閲覧状態一覧を取得 自身のチャンネル閲覧状態一覧を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;MyChannelViewState&gt;</returns>
         public List<MyChannelViewState> GetMyViewStates()
         {
-            DotnetTraq.Client.ApiResponse<List<MyChannelViewState>> localVarResponse = GetMyViewStatesWithHttpInfo();
+            Traq.Client.ApiResponse<List<MyChannelViewState>> localVarResponse = GetMyViewStatesWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// 自身のチャンネル閲覧状態一覧を取得 自身のチャンネル閲覧状態一覧を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;MyChannelViewState&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<MyChannelViewState>> GetMyViewStatesWithHttpInfo()
+        public Traq.Client.ApiResponse<List<MyChannelViewState>> GetMyViewStatesWithHttpInfo()
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1229,10 +1229,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1264,25 +1264,25 @@ namespace DotnetTraq.Api
         /// <summary>
         /// 自身のチャンネル閲覧状態一覧を取得 自身のチャンネル閲覧状態一覧を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MyChannelViewState&gt;</returns>
         public async System.Threading.Tasks.Task<List<MyChannelViewState>> GetMyViewStatesAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<MyChannelViewState>> localVarResponse = await GetMyViewStatesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<MyChannelViewState>> localVarResponse = await GetMyViewStatesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// 自身のチャンネル閲覧状態一覧を取得 自身のチャンネル閲覧状態一覧を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MyChannelViewState&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<MyChannelViewState>>> GetMyViewStatesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<MyChannelViewState>>> GetMyViewStatesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1293,10 +1293,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1329,7 +1329,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルを既読にする 自分が未読のチャンネルを既読にします。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns></returns>
         public void ReadChannel(Guid channelId)
@@ -1340,12 +1340,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルを既読にする 自分が未読のチャンネルを既読にします。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> ReadChannelWithHttpInfo(Guid channelId)
+        public Traq.Client.ApiResponse<Object> ReadChannelWithHttpInfo(Guid channelId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1354,13 +1354,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1390,7 +1390,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルを既読にする 自分が未読のチャンネルを既読にします。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -1402,14 +1402,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルを既読にする 自分が未読のチャンネルを既読にします。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> ReadChannelWithHttpInfoAsync(Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> ReadChannelWithHttpInfoAsync(Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1419,13 +1419,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1456,7 +1456,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// FCMデバイスを登録 自身のFCMデバイスを登録します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postMyFCMDeviceRequest"> (optional)</param>
         /// <returns></returns>
         public void RegisterFCMDevice(PostMyFCMDeviceRequest? postMyFCMDeviceRequest = default(PostMyFCMDeviceRequest?))
@@ -1467,12 +1467,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// FCMデバイスを登録 自身のFCMデバイスを登録します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postMyFCMDeviceRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> RegisterFCMDeviceWithHttpInfo(PostMyFCMDeviceRequest? postMyFCMDeviceRequest = default(PostMyFCMDeviceRequest?))
+        public Traq.Client.ApiResponse<Object> RegisterFCMDeviceWithHttpInfo(PostMyFCMDeviceRequest? postMyFCMDeviceRequest = default(PostMyFCMDeviceRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1482,10 +1482,10 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postMyFCMDeviceRequest;
@@ -1518,7 +1518,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// FCMデバイスを登録 自身のFCMデバイスを登録します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postMyFCMDeviceRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -1530,14 +1530,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// FCMデバイスを登録 自身のFCMデバイスを登録します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postMyFCMDeviceRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> RegisterFCMDeviceWithHttpInfoAsync(PostMyFCMDeviceRequest? postMyFCMDeviceRequest = default(PostMyFCMDeviceRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> RegisterFCMDeviceWithHttpInfoAsync(PostMyFCMDeviceRequest? postMyFCMDeviceRequest = default(PostMyFCMDeviceRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1548,10 +1548,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postMyFCMDeviceRequest;
@@ -1585,7 +1585,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネル購読レベルを設定 自身の指定したチャンネルの購読レベルを設定します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribeLevelRequest"> (optional)</param>
         /// <returns></returns>
@@ -1597,13 +1597,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネル購読レベルを設定 自身の指定したチャンネルの購読レベルを設定します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribeLevelRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> SetChannelSubscribeLevelWithHttpInfo(Guid channelId, PutChannelSubscribeLevelRequest? putChannelSubscribeLevelRequest = default(PutChannelSubscribeLevelRequest?))
+        public Traq.Client.ApiResponse<Object> SetChannelSubscribeLevelWithHttpInfo(Guid channelId, PutChannelSubscribeLevelRequest? putChannelSubscribeLevelRequest = default(PutChannelSubscribeLevelRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1613,13 +1613,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
             localVarRequestOptions.Data = putChannelSubscribeLevelRequest;
 
             // authentication (OAuth2) required
@@ -1650,7 +1650,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネル購読レベルを設定 自身の指定したチャンネルの購読レベルを設定します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribeLevelRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1663,15 +1663,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネル購読レベルを設定 自身の指定したチャンネルの購読レベルを設定します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribeLevelRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> SetChannelSubscribeLevelWithHttpInfoAsync(Guid channelId, PutChannelSubscribeLevelRequest? putChannelSubscribeLevelRequest = default(PutChannelSubscribeLevelRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> SetChannelSubscribeLevelWithHttpInfoAsync(Guid channelId, PutChannelSubscribeLevelRequest? putChannelSubscribeLevelRequest = default(PutChannelSubscribeLevelRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1682,13 +1682,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
             localVarRequestOptions.Data = putChannelSubscribeLevelRequest;
 
             // authentication (OAuth2) required
@@ -1720,7 +1720,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルの通知購読者を設定 指定したチャンネルの通知購読者を設定します。 リクエストに含めなかったユーザーの通知購読状態はオフになります。 また、存在しないユーザーを指定した場合は無視されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribersRequest"> (optional)</param>
         /// <returns></returns>
@@ -1732,13 +1732,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルの通知購読者を設定 指定したチャンネルの通知購読者を設定します。 リクエストに含めなかったユーザーの通知購読状態はオフになります。 また、存在しないユーザーを指定した場合は無視されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribersRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> SetChannelSubscribersWithHttpInfo(Guid channelId, PutChannelSubscribersRequest? putChannelSubscribersRequest = default(PutChannelSubscribersRequest?))
+        public Traq.Client.ApiResponse<Object> SetChannelSubscribersWithHttpInfo(Guid channelId, PutChannelSubscribersRequest? putChannelSubscribersRequest = default(PutChannelSubscribersRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1748,13 +1748,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
             localVarRequestOptions.Data = putChannelSubscribersRequest;
 
             // authentication (OAuth2) required
@@ -1785,7 +1785,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルの通知購読者を設定 指定したチャンネルの通知購読者を設定します。 リクエストに含めなかったユーザーの通知購読状態はオフになります。 また、存在しないユーザーを指定した場合は無視されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribersRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1798,15 +1798,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネルの通知購読者を設定 指定したチャンネルの通知購読者を設定します。 リクエストに含めなかったユーザーの通知購読状態はオフになります。 また、存在しないユーザーを指定した場合は無視されます。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="putChannelSubscribersRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> SetChannelSubscribersWithHttpInfoAsync(Guid channelId, PutChannelSubscribersRequest? putChannelSubscribersRequest = default(PutChannelSubscribersRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> SetChannelSubscribersWithHttpInfoAsync(Guid channelId, PutChannelSubscribersRequest? putChannelSubscribersRequest = default(PutChannelSubscribersRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1817,13 +1817,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
             localVarRequestOptions.Data = putChannelSubscribersRequest;
 
             // authentication (OAuth2) required
@@ -1855,7 +1855,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// WebSocket通知ストリームに接続します # WebSocketプロトコル ## 送信 &#x60;コマンド:引数1:引数2:...&#x60;のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できる。 ### &#x60;viewstate&#x60;コマンド このWebSocketセッションが見ているチャンネル(イベントを受け取るチャンネル)を設定する。 現時点では1つのセッションに対して1つのチャンネルしか設定できない。  &#x60;viewstate:{チャンネルID}:{閲覧状態}&#x60; + チャンネルID: 対象のチャンネルID + 閲覧状態: &#x60;none&#x60;, &#x60;monitoring&#x60;, &#x60;editing&#x60;  最初の&#x60;viewstate&#x60;コマンドを送る前、または&#x60;viewstate:null&#x60;, &#x60;viewstate:&#x60;を送信した後は、このセッションはどこのチャンネルも見ていないことになる。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更する。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ### &#x60;timeline_streaming&#x60;コマンド 全てのパブリックチャンネルの&#x60;MESSAGE_CREATED&#x60;イベントを受け取るかどうかを設定する。 初期状態は&#x60;off&#x60;です。  &#x60;timeline_streaming:(on|off|true|false)&#x60;  ## 受信 TextMessageとして各種イベントが&#x60;type&#x60;と&#x60;body&#x60;を持つJSONとして非同期に送られます。  例: &#x60;&#x60;&#x60;json {\&quot;type\&quot;:\&quot;USER_ONLINE\&quot;,\&quot;body\&quot;:{\&quot;id\&quot;:\&quot;7dd8e07f-7f5d-4331-9176-b56a4299768b\&quot;}} &#x60;&#x60;&#x60;  ## イベント一覧  ### &#x60;USER_JOINED&#x60; ユーザーが新規登録された。  対象: 全員  + &#x60;id&#x60;: 登録されたユーザーのId  ### &#x60;USER_UPDATED&#x60; ユーザーの情報が更新された。  対象: 全員  + &#x60;id&#x60;: 情報が更新されたユーザーのId  ### &#x60;USER_TAGS_UPDATED&#x60; ユーザーのタグが更新された。  対象: 全員  + &#x60;id&#x60;: タグが更新されたユーザーのId + &#x60;tag_id&#x60;: 更新されたタグのId  ### &#x60;USER_ICON_UPDATED&#x60; ユーザーのアイコンが更新された。  対象: 全員  + &#x60;id&#x60;: アイコンが更新されたユーザーのId  ### &#x60;USER_WEBRTC_STATE_CHANGED&#x60; ユーザーのWebRTCの状態が変化した  対象: 全員  + &#x60;user_id&#x60;: 変更があったユーザーのId + &#x60;channel_id&#x60;: ユーザーの変更後の接続チャンネルのId + &#x60;sessions&#x60;: ユーザーの変更後の状態(配列)   + &#x60;state&#x60;: 状態   + &#x60;sessionId&#x60;: セッションID  ### &#x60;USER_VIEWSTATE_CHANGED&#x60; ユーザーのチャンネルの閲覧状態が変化した  対象: 変化したWSセッションを含めた、該当ユーザーのWSセッション全て  + &#x60;view_states&#x60;: 変化したWSセッションを含めた、該当ユーザーの変更後の状態(配列)   + &#x60;key&#x60;: WSセッションの識別子   + &#x60;channel_id&#x60;: 閲覧しているチャンネルId   + &#x60;state&#x60;: 閲覧状態  ### &#x60;USER_ONLINE&#x60; ユーザーがオンラインになった。  対象: 全員  + &#x60;id&#x60;: オンラインになったユーザーのId  ### &#x60;USER_OFFLINE&#x60; ユーザーがオフラインになった。  対象: 全員  + &#x60;id&#x60;: オフラインになったユーザーのId  ### &#x60;USER_GROUP_CREATED&#x60; ユーザーグループが作成された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_UPDATED&#x60; ユーザーグループが更新された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_DELETED&#x60; ユーザーグループが削除された  対象: 全員  + &#x60;id&#x60;: 削除されたユーザーグループのId  ### &#x60;CHANNEL_CREATED&#x60; チャンネルが新規作成された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 作成されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_UPDATED&#x60; チャンネルの情報が変更された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 変更があったチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_DELETED&#x60; チャンネルが削除された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 削除されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_STARED&#x60; 自分がチャンネルをスターした。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_UNSTARED&#x60; 自分がチャンネルのスターを解除した。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_VIEWERS_CHANGED&#x60; チャンネルの閲覧者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId + &#x60;viewers&#x60;: 変化後の閲覧者(配列)   + &#x60;userId&#x60;: ユーザーId   + &#x60;state&#x60;: 閲覧状態   + &#x60;updatedAt&#x60;: 閲覧状態の更新日時  ### &#x60;CHANNEL_SUBSCRIBERS_CHANGED&#x60; チャンネルの購読者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId  ### &#x60;MESSAGE_CREATED&#x60; メッセージが投稿された。  対象: 投稿チャンネルを閲覧しているユーザー・投稿チャンネルに通知をつけているユーザー・メンションを受けたユーザー  + &#x60;id&#x60;: 投稿されたメッセージのId + &#x60;is_citing&#x60;: 投稿されたメッセージがWebSocketを接続しているユーザーの投稿を引用しているかどうか  ### &#x60;MESSAGE_UPDATED&#x60; メッセージが更新された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 更新されたメッセージのId  ### &#x60;MESSAGE_DELETED&#x60; メッセージが削除された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 削除されたメッセージのId  ### &#x60;MESSAGE_STAMPED&#x60; メッセージにスタンプが押された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId + &#x60;count&#x60;: そのユーザーが押した数 + &#x60;created_at&#x60;: そのユーザーがそのスタンプをそのメッセージに最初に押した日時  ### &#x60;MESSAGE_UNSTAMPED&#x60; メッセージからスタンプが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId  ### &#x60;MESSAGE_PINNED&#x60; メッセージがピン留めされた。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンされたメッセージのID + &#x60;channel_id&#x60;: ピンされたメッセージのチャンネルID  ### &#x60;MESSAGE_UNPINNED&#x60; ピン留めされたメッセージのピンが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンが外されたメッセージのID + &#x60;channel_id&#x60;: ピンが外されたメッセージのチャンネルID  ### &#x60;MESSAGE_READ&#x60; 自分があるチャンネルのメッセージを読んだ。  対象: 自分  + &#x60;id&#x60;: 読んだチャンネルId  ### &#x60;STAMP_CREATED&#x60; スタンプが新しく追加された。  対象: 全員  + &#x60;id&#x60;: 作成されたスタンプのId  ### &#x60;STAMP_UPDATED&#x60; スタンプが修正された。  対象: 全員  + &#x60;id&#x60;: 修正されたスタンプのId  ### &#x60;STAMP_DELETED&#x60; スタンプが削除された。  対象: 全員  + &#x60;id&#x60;: 削除されたスタンプのId  ### &#x60;STAMP_PALETTE_CREATED&#x60; スタンプパレットが新しく追加された。  対象: 自分  + &#x60;id&#x60;: 作成されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_UPDATED&#x60; スタンプパレットが修正された。  対象: 自分  + &#x60;id&#x60;: 修正されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_DELETED&#x60; スタンプパレットが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたスタンプパレットのId  ### &#x60;CLIP_FOLDER_CREATED&#x60; クリップフォルダーが作成された。  対象：自分  + &#x60;id&#x60;: 作成されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_UPDATED&#x60; クリップフォルダーが修正された。  対象: 自分  + &#x60;id&#x60;: 更新されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_DELETED&#x60; クリップフォルダーが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_MESSAGE_DELETED&#x60; クリップフォルダーからメッセージが除外された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが除外されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーから除外されたメッセージのId  ### &#x60;CLIP_FOLDER_MESSAGE_ADDED&#x60; クリップフォルダーにメッセージが追加された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが追加されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーに追加されたメッセージのId
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
         public void Ws()
         {
@@ -1865,11 +1865,11 @@ namespace DotnetTraq.Api
         /// <summary>
         /// WebSocket通知ストリームに接続します # WebSocketプロトコル ## 送信 &#x60;コマンド:引数1:引数2:...&#x60;のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できる。 ### &#x60;viewstate&#x60;コマンド このWebSocketセッションが見ているチャンネル(イベントを受け取るチャンネル)を設定する。 現時点では1つのセッションに対して1つのチャンネルしか設定できない。  &#x60;viewstate:{チャンネルID}:{閲覧状態}&#x60; + チャンネルID: 対象のチャンネルID + 閲覧状態: &#x60;none&#x60;, &#x60;monitoring&#x60;, &#x60;editing&#x60;  最初の&#x60;viewstate&#x60;コマンドを送る前、または&#x60;viewstate:null&#x60;, &#x60;viewstate:&#x60;を送信した後は、このセッションはどこのチャンネルも見ていないことになる。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更する。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ### &#x60;timeline_streaming&#x60;コマンド 全てのパブリックチャンネルの&#x60;MESSAGE_CREATED&#x60;イベントを受け取るかどうかを設定する。 初期状態は&#x60;off&#x60;です。  &#x60;timeline_streaming:(on|off|true|false)&#x60;  ## 受信 TextMessageとして各種イベントが&#x60;type&#x60;と&#x60;body&#x60;を持つJSONとして非同期に送られます。  例: &#x60;&#x60;&#x60;json {\&quot;type\&quot;:\&quot;USER_ONLINE\&quot;,\&quot;body\&quot;:{\&quot;id\&quot;:\&quot;7dd8e07f-7f5d-4331-9176-b56a4299768b\&quot;}} &#x60;&#x60;&#x60;  ## イベント一覧  ### &#x60;USER_JOINED&#x60; ユーザーが新規登録された。  対象: 全員  + &#x60;id&#x60;: 登録されたユーザーのId  ### &#x60;USER_UPDATED&#x60; ユーザーの情報が更新された。  対象: 全員  + &#x60;id&#x60;: 情報が更新されたユーザーのId  ### &#x60;USER_TAGS_UPDATED&#x60; ユーザーのタグが更新された。  対象: 全員  + &#x60;id&#x60;: タグが更新されたユーザーのId + &#x60;tag_id&#x60;: 更新されたタグのId  ### &#x60;USER_ICON_UPDATED&#x60; ユーザーのアイコンが更新された。  対象: 全員  + &#x60;id&#x60;: アイコンが更新されたユーザーのId  ### &#x60;USER_WEBRTC_STATE_CHANGED&#x60; ユーザーのWebRTCの状態が変化した  対象: 全員  + &#x60;user_id&#x60;: 変更があったユーザーのId + &#x60;channel_id&#x60;: ユーザーの変更後の接続チャンネルのId + &#x60;sessions&#x60;: ユーザーの変更後の状態(配列)   + &#x60;state&#x60;: 状態   + &#x60;sessionId&#x60;: セッションID  ### &#x60;USER_VIEWSTATE_CHANGED&#x60; ユーザーのチャンネルの閲覧状態が変化した  対象: 変化したWSセッションを含めた、該当ユーザーのWSセッション全て  + &#x60;view_states&#x60;: 変化したWSセッションを含めた、該当ユーザーの変更後の状態(配列)   + &#x60;key&#x60;: WSセッションの識別子   + &#x60;channel_id&#x60;: 閲覧しているチャンネルId   + &#x60;state&#x60;: 閲覧状態  ### &#x60;USER_ONLINE&#x60; ユーザーがオンラインになった。  対象: 全員  + &#x60;id&#x60;: オンラインになったユーザーのId  ### &#x60;USER_OFFLINE&#x60; ユーザーがオフラインになった。  対象: 全員  + &#x60;id&#x60;: オフラインになったユーザーのId  ### &#x60;USER_GROUP_CREATED&#x60; ユーザーグループが作成された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_UPDATED&#x60; ユーザーグループが更新された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_DELETED&#x60; ユーザーグループが削除された  対象: 全員  + &#x60;id&#x60;: 削除されたユーザーグループのId  ### &#x60;CHANNEL_CREATED&#x60; チャンネルが新規作成された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 作成されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_UPDATED&#x60; チャンネルの情報が変更された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 変更があったチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_DELETED&#x60; チャンネルが削除された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 削除されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_STARED&#x60; 自分がチャンネルをスターした。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_UNSTARED&#x60; 自分がチャンネルのスターを解除した。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_VIEWERS_CHANGED&#x60; チャンネルの閲覧者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId + &#x60;viewers&#x60;: 変化後の閲覧者(配列)   + &#x60;userId&#x60;: ユーザーId   + &#x60;state&#x60;: 閲覧状態   + &#x60;updatedAt&#x60;: 閲覧状態の更新日時  ### &#x60;CHANNEL_SUBSCRIBERS_CHANGED&#x60; チャンネルの購読者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId  ### &#x60;MESSAGE_CREATED&#x60; メッセージが投稿された。  対象: 投稿チャンネルを閲覧しているユーザー・投稿チャンネルに通知をつけているユーザー・メンションを受けたユーザー  + &#x60;id&#x60;: 投稿されたメッセージのId + &#x60;is_citing&#x60;: 投稿されたメッセージがWebSocketを接続しているユーザーの投稿を引用しているかどうか  ### &#x60;MESSAGE_UPDATED&#x60; メッセージが更新された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 更新されたメッセージのId  ### &#x60;MESSAGE_DELETED&#x60; メッセージが削除された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 削除されたメッセージのId  ### &#x60;MESSAGE_STAMPED&#x60; メッセージにスタンプが押された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId + &#x60;count&#x60;: そのユーザーが押した数 + &#x60;created_at&#x60;: そのユーザーがそのスタンプをそのメッセージに最初に押した日時  ### &#x60;MESSAGE_UNSTAMPED&#x60; メッセージからスタンプが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId  ### &#x60;MESSAGE_PINNED&#x60; メッセージがピン留めされた。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンされたメッセージのID + &#x60;channel_id&#x60;: ピンされたメッセージのチャンネルID  ### &#x60;MESSAGE_UNPINNED&#x60; ピン留めされたメッセージのピンが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンが外されたメッセージのID + &#x60;channel_id&#x60;: ピンが外されたメッセージのチャンネルID  ### &#x60;MESSAGE_READ&#x60; 自分があるチャンネルのメッセージを読んだ。  対象: 自分  + &#x60;id&#x60;: 読んだチャンネルId  ### &#x60;STAMP_CREATED&#x60; スタンプが新しく追加された。  対象: 全員  + &#x60;id&#x60;: 作成されたスタンプのId  ### &#x60;STAMP_UPDATED&#x60; スタンプが修正された。  対象: 全員  + &#x60;id&#x60;: 修正されたスタンプのId  ### &#x60;STAMP_DELETED&#x60; スタンプが削除された。  対象: 全員  + &#x60;id&#x60;: 削除されたスタンプのId  ### &#x60;STAMP_PALETTE_CREATED&#x60; スタンプパレットが新しく追加された。  対象: 自分  + &#x60;id&#x60;: 作成されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_UPDATED&#x60; スタンプパレットが修正された。  対象: 自分  + &#x60;id&#x60;: 修正されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_DELETED&#x60; スタンプパレットが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたスタンプパレットのId  ### &#x60;CLIP_FOLDER_CREATED&#x60; クリップフォルダーが作成された。  対象：自分  + &#x60;id&#x60;: 作成されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_UPDATED&#x60; クリップフォルダーが修正された。  対象: 自分  + &#x60;id&#x60;: 更新されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_DELETED&#x60; クリップフォルダーが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_MESSAGE_DELETED&#x60; クリップフォルダーからメッセージが除外された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが除外されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーから除外されたメッセージのId  ### &#x60;CLIP_FOLDER_MESSAGE_ADDED&#x60; クリップフォルダーにメッセージが追加された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが追加されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーに追加されたメッセージのId
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> WsWithHttpInfo()
+        public Traq.Client.ApiResponse<Object> WsWithHttpInfo()
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1878,10 +1878,10 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1913,7 +1913,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// WebSocket通知ストリームに接続します # WebSocketプロトコル ## 送信 &#x60;コマンド:引数1:引数2:...&#x60;のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できる。 ### &#x60;viewstate&#x60;コマンド このWebSocketセッションが見ているチャンネル(イベントを受け取るチャンネル)を設定する。 現時点では1つのセッションに対して1つのチャンネルしか設定できない。  &#x60;viewstate:{チャンネルID}:{閲覧状態}&#x60; + チャンネルID: 対象のチャンネルID + 閲覧状態: &#x60;none&#x60;, &#x60;monitoring&#x60;, &#x60;editing&#x60;  最初の&#x60;viewstate&#x60;コマンドを送る前、または&#x60;viewstate:null&#x60;, &#x60;viewstate:&#x60;を送信した後は、このセッションはどこのチャンネルも見ていないことになる。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更する。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ### &#x60;timeline_streaming&#x60;コマンド 全てのパブリックチャンネルの&#x60;MESSAGE_CREATED&#x60;イベントを受け取るかどうかを設定する。 初期状態は&#x60;off&#x60;です。  &#x60;timeline_streaming:(on|off|true|false)&#x60;  ## 受信 TextMessageとして各種イベントが&#x60;type&#x60;と&#x60;body&#x60;を持つJSONとして非同期に送られます。  例: &#x60;&#x60;&#x60;json {\&quot;type\&quot;:\&quot;USER_ONLINE\&quot;,\&quot;body\&quot;:{\&quot;id\&quot;:\&quot;7dd8e07f-7f5d-4331-9176-b56a4299768b\&quot;}} &#x60;&#x60;&#x60;  ## イベント一覧  ### &#x60;USER_JOINED&#x60; ユーザーが新規登録された。  対象: 全員  + &#x60;id&#x60;: 登録されたユーザーのId  ### &#x60;USER_UPDATED&#x60; ユーザーの情報が更新された。  対象: 全員  + &#x60;id&#x60;: 情報が更新されたユーザーのId  ### &#x60;USER_TAGS_UPDATED&#x60; ユーザーのタグが更新された。  対象: 全員  + &#x60;id&#x60;: タグが更新されたユーザーのId + &#x60;tag_id&#x60;: 更新されたタグのId  ### &#x60;USER_ICON_UPDATED&#x60; ユーザーのアイコンが更新された。  対象: 全員  + &#x60;id&#x60;: アイコンが更新されたユーザーのId  ### &#x60;USER_WEBRTC_STATE_CHANGED&#x60; ユーザーのWebRTCの状態が変化した  対象: 全員  + &#x60;user_id&#x60;: 変更があったユーザーのId + &#x60;channel_id&#x60;: ユーザーの変更後の接続チャンネルのId + &#x60;sessions&#x60;: ユーザーの変更後の状態(配列)   + &#x60;state&#x60;: 状態   + &#x60;sessionId&#x60;: セッションID  ### &#x60;USER_VIEWSTATE_CHANGED&#x60; ユーザーのチャンネルの閲覧状態が変化した  対象: 変化したWSセッションを含めた、該当ユーザーのWSセッション全て  + &#x60;view_states&#x60;: 変化したWSセッションを含めた、該当ユーザーの変更後の状態(配列)   + &#x60;key&#x60;: WSセッションの識別子   + &#x60;channel_id&#x60;: 閲覧しているチャンネルId   + &#x60;state&#x60;: 閲覧状態  ### &#x60;USER_ONLINE&#x60; ユーザーがオンラインになった。  対象: 全員  + &#x60;id&#x60;: オンラインになったユーザーのId  ### &#x60;USER_OFFLINE&#x60; ユーザーがオフラインになった。  対象: 全員  + &#x60;id&#x60;: オフラインになったユーザーのId  ### &#x60;USER_GROUP_CREATED&#x60; ユーザーグループが作成された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_UPDATED&#x60; ユーザーグループが更新された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_DELETED&#x60; ユーザーグループが削除された  対象: 全員  + &#x60;id&#x60;: 削除されたユーザーグループのId  ### &#x60;CHANNEL_CREATED&#x60; チャンネルが新規作成された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 作成されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_UPDATED&#x60; チャンネルの情報が変更された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 変更があったチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_DELETED&#x60; チャンネルが削除された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 削除されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_STARED&#x60; 自分がチャンネルをスターした。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_UNSTARED&#x60; 自分がチャンネルのスターを解除した。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_VIEWERS_CHANGED&#x60; チャンネルの閲覧者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId + &#x60;viewers&#x60;: 変化後の閲覧者(配列)   + &#x60;userId&#x60;: ユーザーId   + &#x60;state&#x60;: 閲覧状態   + &#x60;updatedAt&#x60;: 閲覧状態の更新日時  ### &#x60;CHANNEL_SUBSCRIBERS_CHANGED&#x60; チャンネルの購読者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId  ### &#x60;MESSAGE_CREATED&#x60; メッセージが投稿された。  対象: 投稿チャンネルを閲覧しているユーザー・投稿チャンネルに通知をつけているユーザー・メンションを受けたユーザー  + &#x60;id&#x60;: 投稿されたメッセージのId + &#x60;is_citing&#x60;: 投稿されたメッセージがWebSocketを接続しているユーザーの投稿を引用しているかどうか  ### &#x60;MESSAGE_UPDATED&#x60; メッセージが更新された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 更新されたメッセージのId  ### &#x60;MESSAGE_DELETED&#x60; メッセージが削除された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 削除されたメッセージのId  ### &#x60;MESSAGE_STAMPED&#x60; メッセージにスタンプが押された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId + &#x60;count&#x60;: そのユーザーが押した数 + &#x60;created_at&#x60;: そのユーザーがそのスタンプをそのメッセージに最初に押した日時  ### &#x60;MESSAGE_UNSTAMPED&#x60; メッセージからスタンプが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId  ### &#x60;MESSAGE_PINNED&#x60; メッセージがピン留めされた。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンされたメッセージのID + &#x60;channel_id&#x60;: ピンされたメッセージのチャンネルID  ### &#x60;MESSAGE_UNPINNED&#x60; ピン留めされたメッセージのピンが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンが外されたメッセージのID + &#x60;channel_id&#x60;: ピンが外されたメッセージのチャンネルID  ### &#x60;MESSAGE_READ&#x60; 自分があるチャンネルのメッセージを読んだ。  対象: 自分  + &#x60;id&#x60;: 読んだチャンネルId  ### &#x60;STAMP_CREATED&#x60; スタンプが新しく追加された。  対象: 全員  + &#x60;id&#x60;: 作成されたスタンプのId  ### &#x60;STAMP_UPDATED&#x60; スタンプが修正された。  対象: 全員  + &#x60;id&#x60;: 修正されたスタンプのId  ### &#x60;STAMP_DELETED&#x60; スタンプが削除された。  対象: 全員  + &#x60;id&#x60;: 削除されたスタンプのId  ### &#x60;STAMP_PALETTE_CREATED&#x60; スタンプパレットが新しく追加された。  対象: 自分  + &#x60;id&#x60;: 作成されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_UPDATED&#x60; スタンプパレットが修正された。  対象: 自分  + &#x60;id&#x60;: 修正されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_DELETED&#x60; スタンプパレットが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたスタンプパレットのId  ### &#x60;CLIP_FOLDER_CREATED&#x60; クリップフォルダーが作成された。  対象：自分  + &#x60;id&#x60;: 作成されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_UPDATED&#x60; クリップフォルダーが修正された。  対象: 自分  + &#x60;id&#x60;: 更新されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_DELETED&#x60; クリップフォルダーが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_MESSAGE_DELETED&#x60; クリップフォルダーからメッセージが除外された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが除外されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーから除外されたメッセージのId  ### &#x60;CLIP_FOLDER_MESSAGE_ADDED&#x60; クリップフォルダーにメッセージが追加された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが追加されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーに追加されたメッセージのId
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task WsAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
@@ -1924,13 +1924,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// WebSocket通知ストリームに接続します # WebSocketプロトコル ## 送信 &#x60;コマンド:引数1:引数2:...&#x60;のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できる。 ### &#x60;viewstate&#x60;コマンド このWebSocketセッションが見ているチャンネル(イベントを受け取るチャンネル)を設定する。 現時点では1つのセッションに対して1つのチャンネルしか設定できない。  &#x60;viewstate:{チャンネルID}:{閲覧状態}&#x60; + チャンネルID: 対象のチャンネルID + 閲覧状態: &#x60;none&#x60;, &#x60;monitoring&#x60;, &#x60;editing&#x60;  最初の&#x60;viewstate&#x60;コマンドを送る前、または&#x60;viewstate:null&#x60;, &#x60;viewstate:&#x60;を送信した後は、このセッションはどこのチャンネルも見ていないことになる。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更する。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ### &#x60;timeline_streaming&#x60;コマンド 全てのパブリックチャンネルの&#x60;MESSAGE_CREATED&#x60;イベントを受け取るかどうかを設定する。 初期状態は&#x60;off&#x60;です。  &#x60;timeline_streaming:(on|off|true|false)&#x60;  ## 受信 TextMessageとして各種イベントが&#x60;type&#x60;と&#x60;body&#x60;を持つJSONとして非同期に送られます。  例: &#x60;&#x60;&#x60;json {\&quot;type\&quot;:\&quot;USER_ONLINE\&quot;,\&quot;body\&quot;:{\&quot;id\&quot;:\&quot;7dd8e07f-7f5d-4331-9176-b56a4299768b\&quot;}} &#x60;&#x60;&#x60;  ## イベント一覧  ### &#x60;USER_JOINED&#x60; ユーザーが新規登録された。  対象: 全員  + &#x60;id&#x60;: 登録されたユーザーのId  ### &#x60;USER_UPDATED&#x60; ユーザーの情報が更新された。  対象: 全員  + &#x60;id&#x60;: 情報が更新されたユーザーのId  ### &#x60;USER_TAGS_UPDATED&#x60; ユーザーのタグが更新された。  対象: 全員  + &#x60;id&#x60;: タグが更新されたユーザーのId + &#x60;tag_id&#x60;: 更新されたタグのId  ### &#x60;USER_ICON_UPDATED&#x60; ユーザーのアイコンが更新された。  対象: 全員  + &#x60;id&#x60;: アイコンが更新されたユーザーのId  ### &#x60;USER_WEBRTC_STATE_CHANGED&#x60; ユーザーのWebRTCの状態が変化した  対象: 全員  + &#x60;user_id&#x60;: 変更があったユーザーのId + &#x60;channel_id&#x60;: ユーザーの変更後の接続チャンネルのId + &#x60;sessions&#x60;: ユーザーの変更後の状態(配列)   + &#x60;state&#x60;: 状態   + &#x60;sessionId&#x60;: セッションID  ### &#x60;USER_VIEWSTATE_CHANGED&#x60; ユーザーのチャンネルの閲覧状態が変化した  対象: 変化したWSセッションを含めた、該当ユーザーのWSセッション全て  + &#x60;view_states&#x60;: 変化したWSセッションを含めた、該当ユーザーの変更後の状態(配列)   + &#x60;key&#x60;: WSセッションの識別子   + &#x60;channel_id&#x60;: 閲覧しているチャンネルId   + &#x60;state&#x60;: 閲覧状態  ### &#x60;USER_ONLINE&#x60; ユーザーがオンラインになった。  対象: 全員  + &#x60;id&#x60;: オンラインになったユーザーのId  ### &#x60;USER_OFFLINE&#x60; ユーザーがオフラインになった。  対象: 全員  + &#x60;id&#x60;: オフラインになったユーザーのId  ### &#x60;USER_GROUP_CREATED&#x60; ユーザーグループが作成された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_UPDATED&#x60; ユーザーグループが更新された  対象: 全員  + &#x60;id&#x60;: 作成されたユーザーグループのId  ### &#x60;USER_GROUP_DELETED&#x60; ユーザーグループが削除された  対象: 全員  + &#x60;id&#x60;: 削除されたユーザーグループのId  ### &#x60;CHANNEL_CREATED&#x60; チャンネルが新規作成された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 作成されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_UPDATED&#x60; チャンネルの情報が変更された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 変更があったチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_DELETED&#x60; チャンネルが削除された。  対象: 該当チャンネルを閲覧可能な全員  + &#x60;id&#x60;: 削除されたチャンネルのId + &#x60;dm_user_id&#x60;: (DMの場合のみ) DM相手のユーザーId  ### &#x60;CHANNEL_STARED&#x60; 自分がチャンネルをスターした。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_UNSTARED&#x60; 自分がチャンネルのスターを解除した。  対象: 自分  + &#x60;id&#x60;: スターしたチャンネルのId  ### &#x60;CHANNEL_VIEWERS_CHANGED&#x60; チャンネルの閲覧者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId + &#x60;viewers&#x60;: 変化後の閲覧者(配列)   + &#x60;userId&#x60;: ユーザーId   + &#x60;state&#x60;: 閲覧状態   + &#x60;updatedAt&#x60;: 閲覧状態の更新日時  ### &#x60;CHANNEL_SUBSCRIBERS_CHANGED&#x60; チャンネルの購読者が変化した。  対象: 該当チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 変化したチャンネルのId  ### &#x60;MESSAGE_CREATED&#x60; メッセージが投稿された。  対象: 投稿チャンネルを閲覧しているユーザー・投稿チャンネルに通知をつけているユーザー・メンションを受けたユーザー  + &#x60;id&#x60;: 投稿されたメッセージのId + &#x60;is_citing&#x60;: 投稿されたメッセージがWebSocketを接続しているユーザーの投稿を引用しているかどうか  ### &#x60;MESSAGE_UPDATED&#x60; メッセージが更新された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 更新されたメッセージのId  ### &#x60;MESSAGE_DELETED&#x60; メッセージが削除された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;id&#x60;: 削除されたメッセージのId  ### &#x60;MESSAGE_STAMPED&#x60; メッセージにスタンプが押された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId + &#x60;count&#x60;: そのユーザーが押した数 + &#x60;created_at&#x60;: そのユーザーがそのスタンプをそのメッセージに最初に押した日時  ### &#x60;MESSAGE_UNSTAMPED&#x60; メッセージからスタンプが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: メッセージId + &#x60;user_id&#x60;: スタンプを押したユーザーのId + &#x60;stamp_id&#x60;: スタンプのId  ### &#x60;MESSAGE_PINNED&#x60; メッセージがピン留めされた。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンされたメッセージのID + &#x60;channel_id&#x60;: ピンされたメッセージのチャンネルID  ### &#x60;MESSAGE_UNPINNED&#x60; ピン留めされたメッセージのピンが外された。  対象: 投稿チャンネルを閲覧しているユーザー  + &#x60;message_id&#x60;: ピンが外されたメッセージのID + &#x60;channel_id&#x60;: ピンが外されたメッセージのチャンネルID  ### &#x60;MESSAGE_READ&#x60; 自分があるチャンネルのメッセージを読んだ。  対象: 自分  + &#x60;id&#x60;: 読んだチャンネルId  ### &#x60;STAMP_CREATED&#x60; スタンプが新しく追加された。  対象: 全員  + &#x60;id&#x60;: 作成されたスタンプのId  ### &#x60;STAMP_UPDATED&#x60; スタンプが修正された。  対象: 全員  + &#x60;id&#x60;: 修正されたスタンプのId  ### &#x60;STAMP_DELETED&#x60; スタンプが削除された。  対象: 全員  + &#x60;id&#x60;: 削除されたスタンプのId  ### &#x60;STAMP_PALETTE_CREATED&#x60; スタンプパレットが新しく追加された。  対象: 自分  + &#x60;id&#x60;: 作成されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_UPDATED&#x60; スタンプパレットが修正された。  対象: 自分  + &#x60;id&#x60;: 修正されたスタンプパレットのId  ### &#x60;STAMP_PALETTE_DELETED&#x60; スタンプパレットが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたスタンプパレットのId  ### &#x60;CLIP_FOLDER_CREATED&#x60; クリップフォルダーが作成された。  対象：自分  + &#x60;id&#x60;: 作成されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_UPDATED&#x60; クリップフォルダーが修正された。  対象: 自分  + &#x60;id&#x60;: 更新されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_DELETED&#x60; クリップフォルダーが削除された。  対象: 自分  + &#x60;id&#x60;: 削除されたクリップフォルダーのId  ### &#x60;CLIP_FOLDER_MESSAGE_DELETED&#x60; クリップフォルダーからメッセージが除外された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが除外されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーから除外されたメッセージのId  ### &#x60;CLIP_FOLDER_MESSAGE_ADDED&#x60; クリップフォルダーにメッセージが追加された。  対象: 自分  + &#x60;folder_id&#x60;: メッセージが追加されたクリップフォルダーのId + &#x60;message_id&#x60;: クリップフォルダーに追加されたメッセージのId
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> WsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> WsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1940,10 +1940,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 

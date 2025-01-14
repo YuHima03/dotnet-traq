@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using DotnetTraq.Client;
-using DotnetTraq.Model;
+using Traq.Client;
+using Traq.Model;
 
-namespace DotnetTraq.Api
+namespace Traq.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージに指定したスタンプを押します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="postMessageStampRequest"> (optional)</param>
@@ -46,7 +46,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージに指定したスタンプを押します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="postMessageStampRequest"> (optional)</param>
@@ -58,7 +58,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの画像を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <returns></returns>
@@ -70,7 +70,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの画像を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -81,7 +81,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// スタンプを新規作成します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">スタンプ名</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <returns>Stamp</returns>
@@ -93,7 +93,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// スタンプを新規作成します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">スタンプ名</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <returns>ApiResponse of Stamp</returns>
@@ -104,7 +104,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// スタンプパレットを作成します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStampPaletteRequest"> (optional)</param>
         /// <returns>StampPalette</returns>
         StampPalette CreateStampPalette(PostStampPaletteRequest? postStampPaletteRequest = default(PostStampPaletteRequest?));
@@ -115,7 +115,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// スタンプパレットを作成します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStampPaletteRequest"> (optional)</param>
         /// <returns>ApiResponse of StampPalette</returns>
         ApiResponse<StampPalette> CreateStampPaletteWithHttpInfo(PostStampPaletteRequest? postStampPaletteRequest = default(PostStampPaletteRequest?));
@@ -125,7 +125,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプを削除します。 対象のスタンプの削除権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns></returns>
         void DeleteStamp(Guid stampId);
@@ -136,7 +136,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプを削除します。 対象のスタンプの削除権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteStampWithHttpInfo(Guid stampId);
@@ -146,7 +146,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプパレットを削除します。 対象のスタンプパレットの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <returns></returns>
         void DeleteStampPalette(Guid paletteId);
@@ -157,7 +157,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプパレットを削除します。 対象のスタンプパレットの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteStampPaletteWithHttpInfo(Guid paletteId);
@@ -167,7 +167,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの情報を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="patchStampRequest"> (optional)</param>
         /// <returns></returns>
@@ -179,7 +179,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの情報を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="patchStampRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -190,7 +190,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプパレットを編集します。 リクエストのスタンプの配列の順番は保存されて変更されます。 対象のスタンプパレットの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="patchStampPaletteRequest"> (optional)</param>
         /// <returns></returns>
@@ -202,7 +202,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプパレットを編集します。 リクエストのスタンプの配列の順番は保存されて変更されます。 対象のスタンプパレットの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="patchStampPaletteRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -213,7 +213,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージに押されているスタンプのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <returns>List&lt;MessageStamp&gt;</returns>
         List<MessageStamp> GetMessageStamps(Guid messageId);
@@ -224,7 +224,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージに押されているスタンプのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <returns>ApiResponse of List&lt;MessageStamp&gt;</returns>
         ApiResponse<List<MessageStamp>> GetMessageStampsWithHttpInfo(Guid messageId);
@@ -234,7 +234,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分のスタンプ履歴を最大100件まで取得します。 結果は降順で返されます。  このAPIが返すスタンプ履歴は厳密な履歴ではありません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">件数 (optional, default to 100)</param>
         /// <returns>List&lt;StampHistoryEntry&gt;</returns>
         List<StampHistoryEntry> GetMyStampHistory(int? limit = default(int?));
@@ -245,7 +245,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分のスタンプ履歴を最大100件まで取得します。 結果は降順で返されます。  このAPIが返すスタンプ履歴は厳密な履歴ではありません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">件数 (optional, default to 100)</param>
         /// <returns>ApiResponse of List&lt;StampHistoryEntry&gt;</returns>
         ApiResponse<List<StampHistoryEntry>> GetMyStampHistoryWithHttpInfo(int? limit = default(int?));
@@ -255,7 +255,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>Stamp</returns>
         Stamp GetStamp(Guid stampId);
@@ -266,7 +266,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>ApiResponse of Stamp</returns>
         ApiResponse<Stamp> GetStampWithHttpInfo(Guid stampId);
@@ -276,7 +276,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したIDのスタンプ画像を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>FileParameter</returns>
         FileParameter GetStampImage(Guid stampId);
@@ -287,7 +287,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したIDのスタンプ画像を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> GetStampImageWithHttpInfo(Guid stampId);
@@ -297,7 +297,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプパレットの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <returns>StampPalette</returns>
         StampPalette GetStampPalette(Guid paletteId);
@@ -308,7 +308,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプパレットの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <returns>ApiResponse of StampPalette</returns>
         ApiResponse<StampPalette> GetStampPaletteWithHttpInfo(Guid paletteId);
@@ -318,7 +318,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身が所有しているスタンプパレットのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;StampPalette&gt;</returns>
         List<StampPalette> GetStampPalettes();
 
@@ -328,7 +328,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身が所有しているスタンプパレットのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;StampPalette&gt;</returns>
         ApiResponse<List<StampPalette>> GetStampPalettesWithHttpInfo();
         /// <summary>
@@ -337,7 +337,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの統計情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>StampStats</returns>
         StampStats GetStampStats(Guid stampId);
@@ -348,7 +348,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの統計情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>ApiResponse of StampStats</returns>
         ApiResponse<StampStats> GetStampStatsWithHttpInfo(Guid stampId);
@@ -358,7 +358,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// スタンプのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeUnicode">Unicode絵文字を含ませるかどうか Deprecated: typeクエリを指定しなければ全てのスタンプを取得できるため、そちらを利用してください  (optional, default to true) (deprecated)</param>
         /// <param name="type">取得するスタンプの種類 (optional)</param>
         /// <returns>List&lt;StampWithThumbnail&gt;</returns>
@@ -370,7 +370,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// スタンプのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeUnicode">Unicode絵文字を含ませるかどうか Deprecated: typeクエリを指定しなければ全てのスタンプを取得できるため、そちらを利用してください  (optional, default to true) (deprecated)</param>
         /// <param name="type">取得するスタンプの種類 (optional)</param>
         /// <returns>ApiResponse of List&lt;StampWithThumbnail&gt;</returns>
@@ -381,7 +381,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージから指定した自身が押したスタンプを削除します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns></returns>
@@ -393,7 +393,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージから指定した自身が押したスタンプを削除します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -413,7 +413,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージに指定したスタンプを押します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="postMessageStampRequest"> (optional)</param>
@@ -427,7 +427,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージに指定したスタンプを押します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="postMessageStampRequest"> (optional)</param>
@@ -440,7 +440,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの画像を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -453,7 +453,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの画像を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -465,7 +465,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// スタンプを新規作成します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">スタンプ名</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -478,7 +478,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// スタンプを新規作成します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">スタンプ名</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -490,7 +490,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// スタンプパレットを作成します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStampPaletteRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StampPalette</returns>
@@ -502,7 +502,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// スタンプパレットを作成します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStampPaletteRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StampPalette)</returns>
@@ -513,7 +513,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプを削除します。 対象のスタンプの削除権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -525,7 +525,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプを削除します。 対象のスタンプの削除権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -536,7 +536,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプパレットを削除します。 対象のスタンプパレットの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -548,7 +548,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプパレットを削除します。 対象のスタンプパレットの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -559,7 +559,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの情報を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="patchStampRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -572,7 +572,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの情報を変更します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="patchStampRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -584,7 +584,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプパレットを編集します。 リクエストのスタンプの配列の順番は保存されて変更されます。 対象のスタンプパレットの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="patchStampPaletteRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -597,7 +597,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプパレットを編集します。 リクエストのスタンプの配列の順番は保存されて変更されます。 対象のスタンプパレットの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="patchStampPaletteRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -609,7 +609,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージに押されているスタンプのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MessageStamp&gt;</returns>
@@ -621,7 +621,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージに押されているスタンプのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MessageStamp&gt;)</returns>
@@ -632,7 +632,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分のスタンプ履歴を最大100件まで取得します。 結果は降順で返されます。  このAPIが返すスタンプ履歴は厳密な履歴ではありません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">件数 (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;StampHistoryEntry&gt;</returns>
@@ -644,7 +644,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自分のスタンプ履歴を最大100件まで取得します。 結果は降順で返されます。  このAPIが返すスタンプ履歴は厳密な履歴ではありません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">件数 (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;StampHistoryEntry&gt;)</returns>
@@ -655,7 +655,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Stamp</returns>
@@ -667,7 +667,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Stamp)</returns>
@@ -678,7 +678,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したIDのスタンプ画像を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
@@ -690,7 +690,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したIDのスタンプ画像を返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
@@ -701,7 +701,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプパレットの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StampPalette</returns>
@@ -713,7 +713,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプパレットの情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StampPalette)</returns>
@@ -724,7 +724,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身が所有しているスタンプパレットのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;StampPalette&gt;</returns>
         System.Threading.Tasks.Task<List<StampPalette>> GetStampPalettesAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -735,7 +735,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 自身が所有しているスタンプパレットのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;StampPalette&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<StampPalette>>> GetStampPalettesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -745,7 +745,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの統計情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StampStats</returns>
@@ -757,7 +757,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したスタンプの統計情報を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StampStats)</returns>
@@ -768,7 +768,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// スタンプのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeUnicode">Unicode絵文字を含ませるかどうか Deprecated: typeクエリを指定しなければ全てのスタンプを取得できるため、そちらを利用してください  (optional, default to true) (deprecated)</param>
         /// <param name="type">取得するスタンプの種類 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -781,7 +781,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// スタンプのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeUnicode">Unicode絵文字を含ませるかどうか Deprecated: typeクエリを指定しなければ全てのスタンプを取得できるため、そちらを利用してください  (optional, default to true) (deprecated)</param>
         /// <param name="type">取得するスタンプの種類 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -793,7 +793,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージから指定した自身が押したスタンプを削除します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -806,7 +806,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したメッセージから指定した自身が押したスタンプを削除します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -828,7 +828,7 @@ namespace DotnetTraq.Api
     /// </summary>
     public partial class StampApi : IDisposable, IStampApi
     {
-        private DotnetTraq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Traq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StampApi"/> class.
@@ -850,14 +850,14 @@ namespace DotnetTraq.Api
         /// <returns></returns>
         public StampApi(string basePath)
         {
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -868,18 +868,18 @@ namespace DotnetTraq.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public StampApi(DotnetTraq.Client.Configuration configuration)
+        public StampApi(Traq.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -914,14 +914,14 @@ namespace DotnetTraq.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -936,19 +936,19 @@ namespace DotnetTraq.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public StampApi(HttpClient client, DotnetTraq.Client.Configuration configuration, HttpClientHandler handler = null)
+        public StampApi(HttpClient client, Traq.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -959,7 +959,7 @@ namespace DotnetTraq.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public StampApi(DotnetTraq.Client.ISynchronousClient client, DotnetTraq.Client.IAsynchronousClient asyncClient, DotnetTraq.Client.IReadableConfiguration configuration)
+        public StampApi(Traq.Client.ISynchronousClient client, Traq.Client.IAsynchronousClient asyncClient, Traq.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -968,7 +968,7 @@ namespace DotnetTraq.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -982,17 +982,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public DotnetTraq.Client.ApiClient ApiClient { get; set; } = null;
+        public Traq.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public DotnetTraq.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Traq.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public DotnetTraq.Client.ISynchronousClient Client { get; set; }
+        public Traq.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -1007,12 +1007,12 @@ namespace DotnetTraq.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public DotnetTraq.Client.IReadableConfiguration Configuration { get; set; }
+        public Traq.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public DotnetTraq.Client.ExceptionFactory ExceptionFactory
+        public Traq.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -1028,7 +1028,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプを押す 指定したメッセージに指定したスタンプを押します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="postMessageStampRequest"> (optional)</param>
@@ -1041,14 +1041,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプを押す 指定したメッセージに指定したスタンプを押します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="postMessageStampRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> AddMessageStampWithHttpInfo(Guid messageId, Guid stampId, PostMessageStampRequest? postMessageStampRequest = default(PostMessageStampRequest?))
+        public Traq.Client.ApiResponse<Object> AddMessageStampWithHttpInfo(Guid messageId, Guid stampId, PostMessageStampRequest? postMessageStampRequest = default(PostMessageStampRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1058,14 +1058,14 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("messageId", DotnetTraq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("messageId", Traq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
             localVarRequestOptions.Data = postMessageStampRequest;
 
             // authentication (OAuth2) required
@@ -1096,7 +1096,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプを押す 指定したメッセージに指定したスタンプを押します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="postMessageStampRequest"> (optional)</param>
@@ -1110,16 +1110,16 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプを押す 指定したメッセージに指定したスタンプを押します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="postMessageStampRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> AddMessageStampWithHttpInfoAsync(Guid messageId, Guid stampId, PostMessageStampRequest? postMessageStampRequest = default(PostMessageStampRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> AddMessageStampWithHttpInfoAsync(Guid messageId, Guid stampId, PostMessageStampRequest? postMessageStampRequest = default(PostMessageStampRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1130,14 +1130,14 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("messageId", DotnetTraq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("messageId", Traq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
             localVarRequestOptions.Data = postMessageStampRequest;
 
             // authentication (OAuth2) required
@@ -1169,7 +1169,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ画像を変更 指定したスタンプの画像を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <returns></returns>
@@ -1181,17 +1181,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ画像を変更 指定したスタンプの画像を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> ChangeStampImageWithHttpInfo(Guid stampId, FileParameter file)
+        public Traq.Client.ApiResponse<Object> ChangeStampImageWithHttpInfo(Guid stampId, FileParameter file)
         {
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'file' when calling StampApi->ChangeStampImage");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'file' when calling StampApi->ChangeStampImage");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -1201,13 +1201,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
             localVarRequestOptions.FileParameters.Add("file", file);
 
             // authentication (OAuth2) required
@@ -1238,7 +1238,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ画像を変更 指定したスタンプの画像を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1251,19 +1251,19 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ画像を変更 指定したスタンプの画像を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> ChangeStampImageWithHttpInfoAsync(Guid stampId, FileParameter file, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> ChangeStampImageWithHttpInfoAsync(Guid stampId, FileParameter file, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'file' when calling StampApi->ChangeStampImage");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'file' when calling StampApi->ChangeStampImage");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -1274,13 +1274,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
             localVarRequestOptions.FileParameters.Add("file", file);
 
             // authentication (OAuth2) required
@@ -1312,34 +1312,34 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプを作成 スタンプを新規作成します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">スタンプ名</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <returns>Stamp</returns>
         public Stamp CreateStamp(string name, FileParameter file)
         {
-            DotnetTraq.Client.ApiResponse<Stamp> localVarResponse = CreateStampWithHttpInfo(name, file);
+            Traq.Client.ApiResponse<Stamp> localVarResponse = CreateStampWithHttpInfo(name, file);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプを作成 スタンプを新規作成します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">スタンプ名</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <returns>ApiResponse of Stamp</returns>
-        public DotnetTraq.Client.ApiResponse<Stamp> CreateStampWithHttpInfo(string name, FileParameter file)
+        public Traq.Client.ApiResponse<Stamp> CreateStampWithHttpInfo(string name, FileParameter file)
         {
             // verify the required parameter 'name' is set
             if (name == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'name' when calling StampApi->CreateStamp");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'name' when calling StampApi->CreateStamp");
 
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'file' when calling StampApi->CreateStamp");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'file' when calling StampApi->CreateStamp");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -1350,13 +1350,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.FormParameters.Add("name", DotnetTraq.Client.ClientUtils.ParameterToString(name)); // form parameter
+            localVarRequestOptions.FormParameters.Add("name", Traq.Client.ClientUtils.ParameterToString(name)); // form parameter
             localVarRequestOptions.FileParameters.Add("file", file);
 
             // authentication (OAuth2) required
@@ -1387,37 +1387,37 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプを作成 スタンプを新規作成します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">スタンプ名</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Stamp</returns>
         public async System.Threading.Tasks.Task<Stamp> CreateStampAsync(string name, FileParameter file, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<Stamp> localVarResponse = await CreateStampWithHttpInfoAsync(name, file, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<Stamp> localVarResponse = await CreateStampWithHttpInfoAsync(name, file, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプを作成 スタンプを新規作成します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">スタンプ名</param>
         /// <param name="file">スタンプ画像(1MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Stamp)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Stamp>> CreateStampWithHttpInfoAsync(string name, FileParameter file, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Stamp>> CreateStampWithHttpInfoAsync(string name, FileParameter file, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'name' is set
             if (name == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'name' when calling StampApi->CreateStamp");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'name' when calling StampApi->CreateStamp");
 
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'file' when calling StampApi->CreateStamp");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'file' when calling StampApi->CreateStamp");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -1429,13 +1429,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.FormParameters.Add("name", DotnetTraq.Client.ClientUtils.ParameterToString(name)); // form parameter
+            localVarRequestOptions.FormParameters.Add("name", Traq.Client.ClientUtils.ParameterToString(name)); // form parameter
             localVarRequestOptions.FileParameters.Add("file", file);
 
             // authentication (OAuth2) required
@@ -1467,24 +1467,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプパレットを作成 スタンプパレットを作成します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStampPaletteRequest"> (optional)</param>
         /// <returns>StampPalette</returns>
         public StampPalette CreateStampPalette(PostStampPaletteRequest? postStampPaletteRequest = default(PostStampPaletteRequest?))
         {
-            DotnetTraq.Client.ApiResponse<StampPalette> localVarResponse = CreateStampPaletteWithHttpInfo(postStampPaletteRequest);
+            Traq.Client.ApiResponse<StampPalette> localVarResponse = CreateStampPaletteWithHttpInfo(postStampPaletteRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプパレットを作成 スタンプパレットを作成します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStampPaletteRequest"> (optional)</param>
         /// <returns>ApiResponse of StampPalette</returns>
-        public DotnetTraq.Client.ApiResponse<StampPalette> CreateStampPaletteWithHttpInfo(PostStampPaletteRequest? postStampPaletteRequest = default(PostStampPaletteRequest?))
+        public Traq.Client.ApiResponse<StampPalette> CreateStampPaletteWithHttpInfo(PostStampPaletteRequest? postStampPaletteRequest = default(PostStampPaletteRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1495,10 +1495,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postStampPaletteRequest;
@@ -1531,27 +1531,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプパレットを作成 スタンプパレットを作成します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStampPaletteRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StampPalette</returns>
         public async System.Threading.Tasks.Task<StampPalette> CreateStampPaletteAsync(PostStampPaletteRequest? postStampPaletteRequest = default(PostStampPaletteRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<StampPalette> localVarResponse = await CreateStampPaletteWithHttpInfoAsync(postStampPaletteRequest, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<StampPalette> localVarResponse = await CreateStampPaletteWithHttpInfoAsync(postStampPaletteRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプパレットを作成 スタンプパレットを作成します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postStampPaletteRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StampPalette)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<StampPalette>> CreateStampPaletteWithHttpInfoAsync(PostStampPaletteRequest? postStampPaletteRequest = default(PostStampPaletteRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<StampPalette>> CreateStampPaletteWithHttpInfoAsync(PostStampPaletteRequest? postStampPaletteRequest = default(PostStampPaletteRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1563,10 +1563,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postStampPaletteRequest;
@@ -1600,7 +1600,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプを削除 指定したスタンプを削除します。 対象のスタンプの削除権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns></returns>
         public void DeleteStamp(Guid stampId)
@@ -1611,12 +1611,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプを削除 指定したスタンプを削除します。 対象のスタンプの削除権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> DeleteStampWithHttpInfo(Guid stampId)
+        public Traq.Client.ApiResponse<Object> DeleteStampWithHttpInfo(Guid stampId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1625,13 +1625,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1661,7 +1661,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプを削除 指定したスタンプを削除します。 対象のスタンプの削除権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -1673,14 +1673,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプを削除 指定したスタンプを削除します。 対象のスタンプの削除権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> DeleteStampWithHttpInfoAsync(Guid stampId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> DeleteStampWithHttpInfoAsync(Guid stampId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1690,13 +1690,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1727,7 +1727,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプパレットを削除 指定したスタンプパレットを削除します。 対象のスタンプパレットの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <returns></returns>
         public void DeleteStampPalette(Guid paletteId)
@@ -1738,12 +1738,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプパレットを削除 指定したスタンプパレットを削除します。 対象のスタンプパレットの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> DeleteStampPaletteWithHttpInfo(Guid paletteId)
+        public Traq.Client.ApiResponse<Object> DeleteStampPaletteWithHttpInfo(Guid paletteId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1752,13 +1752,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("paletteId", DotnetTraq.Client.ClientUtils.ParameterToString(paletteId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("paletteId", Traq.Client.ClientUtils.ParameterToString(paletteId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1788,7 +1788,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプパレットを削除 指定したスタンプパレットを削除します。 対象のスタンプパレットの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -1800,14 +1800,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプパレットを削除 指定したスタンプパレットを削除します。 対象のスタンプパレットの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> DeleteStampPaletteWithHttpInfoAsync(Guid paletteId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> DeleteStampPaletteWithHttpInfoAsync(Guid paletteId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1817,13 +1817,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("paletteId", DotnetTraq.Client.ClientUtils.ParameterToString(paletteId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("paletteId", Traq.Client.ClientUtils.ParameterToString(paletteId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1854,7 +1854,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ情報を変更 指定したスタンプの情報を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="patchStampRequest"> (optional)</param>
         /// <returns></returns>
@@ -1866,13 +1866,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ情報を変更 指定したスタンプの情報を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="patchStampRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> EditStampWithHttpInfo(Guid stampId, PatchStampRequest? patchStampRequest = default(PatchStampRequest?))
+        public Traq.Client.ApiResponse<Object> EditStampWithHttpInfo(Guid stampId, PatchStampRequest? patchStampRequest = default(PatchStampRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1882,13 +1882,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
             localVarRequestOptions.Data = patchStampRequest;
 
             // authentication (OAuth2) required
@@ -1919,7 +1919,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ情報を変更 指定したスタンプの情報を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="patchStampRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1932,15 +1932,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ情報を変更 指定したスタンプの情報を変更します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="patchStampRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> EditStampWithHttpInfoAsync(Guid stampId, PatchStampRequest? patchStampRequest = default(PatchStampRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> EditStampWithHttpInfoAsync(Guid stampId, PatchStampRequest? patchStampRequest = default(PatchStampRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1951,13 +1951,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
             localVarRequestOptions.Data = patchStampRequest;
 
             // authentication (OAuth2) required
@@ -1989,7 +1989,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプパレットを編集 指定したスタンプパレットを編集します。 リクエストのスタンプの配列の順番は保存されて変更されます。 対象のスタンプパレットの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="patchStampPaletteRequest"> (optional)</param>
         /// <returns></returns>
@@ -2001,13 +2001,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプパレットを編集 指定したスタンプパレットを編集します。 リクエストのスタンプの配列の順番は保存されて変更されます。 対象のスタンプパレットの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="patchStampPaletteRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> EditStampPaletteWithHttpInfo(Guid paletteId, PatchStampPaletteRequest? patchStampPaletteRequest = default(PatchStampPaletteRequest?))
+        public Traq.Client.ApiResponse<Object> EditStampPaletteWithHttpInfo(Guid paletteId, PatchStampPaletteRequest? patchStampPaletteRequest = default(PatchStampPaletteRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -2017,13 +2017,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("paletteId", DotnetTraq.Client.ClientUtils.ParameterToString(paletteId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("paletteId", Traq.Client.ClientUtils.ParameterToString(paletteId)); // path parameter
             localVarRequestOptions.Data = patchStampPaletteRequest;
 
             // authentication (OAuth2) required
@@ -2054,7 +2054,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプパレットを編集 指定したスタンプパレットを編集します。 リクエストのスタンプの配列の順番は保存されて変更されます。 対象のスタンプパレットの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="patchStampPaletteRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -2067,15 +2067,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプパレットを編集 指定したスタンプパレットを編集します。 リクエストのスタンプの配列の順番は保存されて変更されます。 対象のスタンプパレットの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="patchStampPaletteRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> EditStampPaletteWithHttpInfoAsync(Guid paletteId, PatchStampPaletteRequest? patchStampPaletteRequest = default(PatchStampPaletteRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> EditStampPaletteWithHttpInfoAsync(Guid paletteId, PatchStampPaletteRequest? patchStampPaletteRequest = default(PatchStampPaletteRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -2086,13 +2086,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("paletteId", DotnetTraq.Client.ClientUtils.ParameterToString(paletteId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("paletteId", Traq.Client.ClientUtils.ParameterToString(paletteId)); // path parameter
             localVarRequestOptions.Data = patchStampPaletteRequest;
 
             // authentication (OAuth2) required
@@ -2124,24 +2124,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// メッセージのスタンプリストを取得 指定したメッセージに押されているスタンプのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <returns>List&lt;MessageStamp&gt;</returns>
         public List<MessageStamp> GetMessageStamps(Guid messageId)
         {
-            DotnetTraq.Client.ApiResponse<List<MessageStamp>> localVarResponse = GetMessageStampsWithHttpInfo(messageId);
+            Traq.Client.ApiResponse<List<MessageStamp>> localVarResponse = GetMessageStampsWithHttpInfo(messageId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// メッセージのスタンプリストを取得 指定したメッセージに押されているスタンプのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <returns>ApiResponse of List&lt;MessageStamp&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<MessageStamp>> GetMessageStampsWithHttpInfo(Guid messageId)
+        public Traq.Client.ApiResponse<List<MessageStamp>> GetMessageStampsWithHttpInfo(Guid messageId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2151,13 +2151,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("messageId", DotnetTraq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("messageId", Traq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2187,27 +2187,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// メッセージのスタンプリストを取得 指定したメッセージに押されているスタンプのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MessageStamp&gt;</returns>
         public async System.Threading.Tasks.Task<List<MessageStamp>> GetMessageStampsAsync(Guid messageId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<MessageStamp>> localVarResponse = await GetMessageStampsWithHttpInfoAsync(messageId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<MessageStamp>> localVarResponse = await GetMessageStampsWithHttpInfoAsync(messageId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// メッセージのスタンプリストを取得 指定したメッセージに押されているスタンプのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MessageStamp&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<MessageStamp>>> GetMessageStampsWithHttpInfoAsync(Guid messageId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<MessageStamp>>> GetMessageStampsWithHttpInfoAsync(Guid messageId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2218,13 +2218,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("messageId", DotnetTraq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("messageId", Traq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2255,24 +2255,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ履歴を取得 自分のスタンプ履歴を最大100件まで取得します。 結果は降順で返されます。  このAPIが返すスタンプ履歴は厳密な履歴ではありません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">件数 (optional, default to 100)</param>
         /// <returns>List&lt;StampHistoryEntry&gt;</returns>
         public List<StampHistoryEntry> GetMyStampHistory(int? limit = default(int?))
         {
-            DotnetTraq.Client.ApiResponse<List<StampHistoryEntry>> localVarResponse = GetMyStampHistoryWithHttpInfo(limit);
+            Traq.Client.ApiResponse<List<StampHistoryEntry>> localVarResponse = GetMyStampHistoryWithHttpInfo(limit);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプ履歴を取得 自分のスタンプ履歴を最大100件まで取得します。 結果は降順で返されます。  このAPIが返すスタンプ履歴は厳密な履歴ではありません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">件数 (optional, default to 100)</param>
         /// <returns>ApiResponse of List&lt;StampHistoryEntry&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<StampHistoryEntry>> GetMyStampHistoryWithHttpInfo(int? limit = default(int?))
+        public Traq.Client.ApiResponse<List<StampHistoryEntry>> GetMyStampHistoryWithHttpInfo(int? limit = default(int?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2282,15 +2282,15 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             // authentication (OAuth2) required
@@ -2321,27 +2321,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ履歴を取得 自分のスタンプ履歴を最大100件まで取得します。 結果は降順で返されます。  このAPIが返すスタンプ履歴は厳密な履歴ではありません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">件数 (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;StampHistoryEntry&gt;</returns>
         public async System.Threading.Tasks.Task<List<StampHistoryEntry>> GetMyStampHistoryAsync(int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<StampHistoryEntry>> localVarResponse = await GetMyStampHistoryWithHttpInfoAsync(limit, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<StampHistoryEntry>> localVarResponse = await GetMyStampHistoryWithHttpInfoAsync(limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプ履歴を取得 自分のスタンプ履歴を最大100件まで取得します。 結果は降順で返されます。  このAPIが返すスタンプ履歴は厳密な履歴ではありません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">件数 (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;StampHistoryEntry&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<StampHistoryEntry>>> GetMyStampHistoryWithHttpInfoAsync(int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<StampHistoryEntry>>> GetMyStampHistoryWithHttpInfoAsync(int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2352,15 +2352,15 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
 
             // authentication (OAuth2) required
@@ -2392,24 +2392,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ情報を取得 指定したスタンプの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>Stamp</returns>
         public Stamp GetStamp(Guid stampId)
         {
-            DotnetTraq.Client.ApiResponse<Stamp> localVarResponse = GetStampWithHttpInfo(stampId);
+            Traq.Client.ApiResponse<Stamp> localVarResponse = GetStampWithHttpInfo(stampId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプ情報を取得 指定したスタンプの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>ApiResponse of Stamp</returns>
-        public DotnetTraq.Client.ApiResponse<Stamp> GetStampWithHttpInfo(Guid stampId)
+        public Traq.Client.ApiResponse<Stamp> GetStampWithHttpInfo(Guid stampId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2419,13 +2419,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2455,27 +2455,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ情報を取得 指定したスタンプの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Stamp</returns>
         public async System.Threading.Tasks.Task<Stamp> GetStampAsync(Guid stampId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<Stamp> localVarResponse = await GetStampWithHttpInfoAsync(stampId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<Stamp> localVarResponse = await GetStampWithHttpInfoAsync(stampId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプ情報を取得 指定したスタンプの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Stamp)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Stamp>> GetStampWithHttpInfoAsync(Guid stampId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Stamp>> GetStampWithHttpInfoAsync(Guid stampId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2486,13 +2486,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2523,24 +2523,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ画像を取得 指定したIDのスタンプ画像を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>FileParameter</returns>
         public FileParameter GetStampImage(Guid stampId)
         {
-            DotnetTraq.Client.ApiResponse<FileParameter> localVarResponse = GetStampImageWithHttpInfo(stampId);
+            Traq.Client.ApiResponse<FileParameter> localVarResponse = GetStampImageWithHttpInfo(stampId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプ画像を取得 指定したIDのスタンプ画像を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>ApiResponse of FileParameter</returns>
-        public DotnetTraq.Client.ApiResponse<FileParameter> GetStampImageWithHttpInfo(Guid stampId)
+        public Traq.Client.ApiResponse<FileParameter> GetStampImageWithHttpInfo(Guid stampId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2552,13 +2552,13 @@ namespace DotnetTraq.Api
                 "image/jpeg"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2588,27 +2588,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ画像を取得 指定したIDのスタンプ画像を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> GetStampImageAsync(Guid stampId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<FileParameter> localVarResponse = await GetStampImageWithHttpInfoAsync(stampId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<FileParameter> localVarResponse = await GetStampImageWithHttpInfoAsync(stampId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプ画像を取得 指定したIDのスタンプ画像を返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<FileParameter>> GetStampImageWithHttpInfoAsync(Guid stampId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<FileParameter>> GetStampImageWithHttpInfoAsync(Guid stampId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2621,13 +2621,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2658,24 +2658,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプパレットを取得 指定したスタンプパレットの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <returns>StampPalette</returns>
         public StampPalette GetStampPalette(Guid paletteId)
         {
-            DotnetTraq.Client.ApiResponse<StampPalette> localVarResponse = GetStampPaletteWithHttpInfo(paletteId);
+            Traq.Client.ApiResponse<StampPalette> localVarResponse = GetStampPaletteWithHttpInfo(paletteId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプパレットを取得 指定したスタンプパレットの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <returns>ApiResponse of StampPalette</returns>
-        public DotnetTraq.Client.ApiResponse<StampPalette> GetStampPaletteWithHttpInfo(Guid paletteId)
+        public Traq.Client.ApiResponse<StampPalette> GetStampPaletteWithHttpInfo(Guid paletteId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2685,13 +2685,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("paletteId", DotnetTraq.Client.ClientUtils.ParameterToString(paletteId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("paletteId", Traq.Client.ClientUtils.ParameterToString(paletteId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2721,27 +2721,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプパレットを取得 指定したスタンプパレットの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StampPalette</returns>
         public async System.Threading.Tasks.Task<StampPalette> GetStampPaletteAsync(Guid paletteId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<StampPalette> localVarResponse = await GetStampPaletteWithHttpInfoAsync(paletteId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<StampPalette> localVarResponse = await GetStampPaletteWithHttpInfoAsync(paletteId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプパレットを取得 指定したスタンプパレットの情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="paletteId">スタンプパレットUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StampPalette)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<StampPalette>> GetStampPaletteWithHttpInfoAsync(Guid paletteId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<StampPalette>> GetStampPaletteWithHttpInfoAsync(Guid paletteId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2752,13 +2752,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("paletteId", DotnetTraq.Client.ClientUtils.ParameterToString(paletteId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("paletteId", Traq.Client.ClientUtils.ParameterToString(paletteId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2789,22 +2789,22 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプパレットのリストを取得 自身が所有しているスタンプパレットのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;StampPalette&gt;</returns>
         public List<StampPalette> GetStampPalettes()
         {
-            DotnetTraq.Client.ApiResponse<List<StampPalette>> localVarResponse = GetStampPalettesWithHttpInfo();
+            Traq.Client.ApiResponse<List<StampPalette>> localVarResponse = GetStampPalettesWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプパレットのリストを取得 自身が所有しているスタンプパレットのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;StampPalette&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<StampPalette>> GetStampPalettesWithHttpInfo()
+        public Traq.Client.ApiResponse<List<StampPalette>> GetStampPalettesWithHttpInfo()
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2814,10 +2814,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -2849,25 +2849,25 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプパレットのリストを取得 自身が所有しているスタンプパレットのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;StampPalette&gt;</returns>
         public async System.Threading.Tasks.Task<List<StampPalette>> GetStampPalettesAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<StampPalette>> localVarResponse = await GetStampPalettesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<StampPalette>> localVarResponse = await GetStampPalettesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプパレットのリストを取得 自身が所有しているスタンプパレットのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;StampPalette&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<StampPalette>>> GetStampPalettesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<StampPalette>>> GetStampPalettesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2878,10 +2878,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -2914,24 +2914,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ統計情報を取得 指定したスタンプの統計情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>StampStats</returns>
         public StampStats GetStampStats(Guid stampId)
         {
-            DotnetTraq.Client.ApiResponse<StampStats> localVarResponse = GetStampStatsWithHttpInfo(stampId);
+            Traq.Client.ApiResponse<StampStats> localVarResponse = GetStampStatsWithHttpInfo(stampId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプ統計情報を取得 指定したスタンプの統計情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>ApiResponse of StampStats</returns>
-        public DotnetTraq.Client.ApiResponse<StampStats> GetStampStatsWithHttpInfo(Guid stampId)
+        public Traq.Client.ApiResponse<StampStats> GetStampStatsWithHttpInfo(Guid stampId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2941,13 +2941,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2977,27 +2977,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプ統計情報を取得 指定したスタンプの統計情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StampStats</returns>
         public async System.Threading.Tasks.Task<StampStats> GetStampStatsAsync(Guid stampId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<StampStats> localVarResponse = await GetStampStatsWithHttpInfoAsync(stampId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<StampStats> localVarResponse = await GetStampStatsWithHttpInfoAsync(stampId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプ統計情報を取得 指定したスタンプの統計情報を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StampStats)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<StampStats>> GetStampStatsWithHttpInfoAsync(Guid stampId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<StampStats>> GetStampStatsWithHttpInfoAsync(Guid stampId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -3008,13 +3008,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -3045,26 +3045,26 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプリストを取得 スタンプのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeUnicode">Unicode絵文字を含ませるかどうか Deprecated: typeクエリを指定しなければ全てのスタンプを取得できるため、そちらを利用してください  (optional, default to true) (deprecated)</param>
         /// <param name="type">取得するスタンプの種類 (optional)</param>
         /// <returns>List&lt;StampWithThumbnail&gt;</returns>
         public List<StampWithThumbnail> GetStamps(bool? includeUnicode = default(bool?), string? type = default(string?))
         {
-            DotnetTraq.Client.ApiResponse<List<StampWithThumbnail>> localVarResponse = GetStampsWithHttpInfo(includeUnicode, type);
+            Traq.Client.ApiResponse<List<StampWithThumbnail>> localVarResponse = GetStampsWithHttpInfo(includeUnicode, type);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプリストを取得 スタンプのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeUnicode">Unicode絵文字を含ませるかどうか Deprecated: typeクエリを指定しなければ全てのスタンプを取得できるため、そちらを利用してください  (optional, default to true) (deprecated)</param>
         /// <param name="type">取得するスタンプの種類 (optional)</param>
         /// <returns>ApiResponse of List&lt;StampWithThumbnail&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<StampWithThumbnail>> GetStampsWithHttpInfo(bool? includeUnicode = default(bool?), string? type = default(string?))
+        public Traq.Client.ApiResponse<List<StampWithThumbnail>> GetStampsWithHttpInfo(bool? includeUnicode = default(bool?), string? type = default(string?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -3074,19 +3074,19 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (includeUnicode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "include-unicode", includeUnicode));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "include-unicode", includeUnicode));
             }
             if (type != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "type", type));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "type", type));
             }
 
             // authentication (OAuth2) required
@@ -3117,29 +3117,29 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプリストを取得 スタンプのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeUnicode">Unicode絵文字を含ませるかどうか Deprecated: typeクエリを指定しなければ全てのスタンプを取得できるため、そちらを利用してください  (optional, default to true) (deprecated)</param>
         /// <param name="type">取得するスタンプの種類 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;StampWithThumbnail&gt;</returns>
         public async System.Threading.Tasks.Task<List<StampWithThumbnail>> GetStampsAsync(bool? includeUnicode = default(bool?), string? type = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<StampWithThumbnail>> localVarResponse = await GetStampsWithHttpInfoAsync(includeUnicode, type, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<StampWithThumbnail>> localVarResponse = await GetStampsWithHttpInfoAsync(includeUnicode, type, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// スタンプリストを取得 スタンプのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeUnicode">Unicode絵文字を含ませるかどうか Deprecated: typeクエリを指定しなければ全てのスタンプを取得できるため、そちらを利用してください  (optional, default to true) (deprecated)</param>
         /// <param name="type">取得するスタンプの種類 (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;StampWithThumbnail&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<StampWithThumbnail>>> GetStampsWithHttpInfoAsync(bool? includeUnicode = default(bool?), string? type = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<StampWithThumbnail>>> GetStampsWithHttpInfoAsync(bool? includeUnicode = default(bool?), string? type = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -3150,19 +3150,19 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (includeUnicode != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "include-unicode", includeUnicode));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "include-unicode", includeUnicode));
             }
             if (type != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "type", type));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "type", type));
             }
 
             // authentication (OAuth2) required
@@ -3194,7 +3194,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプを消す 指定したメッセージから指定した自身が押したスタンプを削除します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns></returns>
@@ -3206,13 +3206,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプを消す 指定したメッセージから指定した自身が押したスタンプを削除します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> RemoveMessageStampWithHttpInfo(Guid messageId, Guid stampId)
+        public Traq.Client.ApiResponse<Object> RemoveMessageStampWithHttpInfo(Guid messageId, Guid stampId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -3221,14 +3221,14 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("messageId", DotnetTraq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("messageId", Traq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -3258,7 +3258,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプを消す 指定したメッセージから指定した自身が押したスタンプを削除します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -3271,15 +3271,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// スタンプを消す 指定したメッセージから指定した自身が押したスタンプを削除します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="messageId">メッセージUUID</param>
         /// <param name="stampId">スタンプUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> RemoveMessageStampWithHttpInfoAsync(Guid messageId, Guid stampId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> RemoveMessageStampWithHttpInfoAsync(Guid messageId, Guid stampId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -3289,14 +3289,14 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("messageId", DotnetTraq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("stampId", DotnetTraq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("messageId", Traq.Client.ClientUtils.ParameterToString(messageId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("stampId", Traq.Client.ClientUtils.ParameterToString(stampId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required

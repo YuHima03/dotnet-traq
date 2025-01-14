@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using DotnetTraq.Client;
-using DotnetTraq.Model;
+using Traq.Client;
+using Traq.Model;
 
-namespace DotnetTraq.Api
+namespace Traq.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイルを削除します。 指定したファイルの削除権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <returns></returns>
         void DeleteFile(Guid fileId);
@@ -44,7 +44,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイルを削除します。 指定したファイルの削除権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteFileWithHttpInfo(Guid fileId);
@@ -54,7 +54,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイル本体を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="dl">1を指定するとレスポンスにContent-Dispositionヘッダーが付与されます (optional)</param>
         /// <returns>FileParameter</returns>
@@ -66,7 +66,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイル本体を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="dl">1を指定するとレスポンスにContent-Dispositionヘッダーが付与されます (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
@@ -77,7 +77,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイルのメタ情報を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <returns>FileInfo</returns>
         FileInfo GetFileMeta(Guid fileId);
@@ -88,7 +88,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイルのメタ情報を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <returns>ApiResponse of FileInfo</returns>
         ApiResponse<FileInfo> GetFileMetaWithHttpInfo(Guid fileId);
@@ -98,7 +98,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクエリでファイルメタのリストを取得します。 クエリパラメータ&#x60;channelId&#x60;, &#x60;mine&#x60;の少なくともいずれかが必須です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">アップロード先チャンネルUUID (optional)</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -116,7 +116,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクエリでファイルメタのリストを取得します。 クエリパラメータ&#x60;channelId&#x60;, &#x60;mine&#x60;の少なくともいずれかが必須です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">アップロード先チャンネルUUID (optional)</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -133,7 +133,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイルのサムネイル画像を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="type">取得するサムネイルのタイプ (optional)</param>
         /// <returns>FileParameter</returns>
@@ -145,7 +145,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイルのサムネイル画像を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="type">取得するサムネイルのタイプ (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
@@ -156,7 +156,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルにファイルをアップロードします。 アーカイブされているチャンネルにはアップロード出来ません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file">ファイル本体</param>
         /// <param name="channelId">アップロード先チャンネルUUID</param>
         /// <returns>FileInfo</returns>
@@ -168,7 +168,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルにファイルをアップロードします。 アーカイブされているチャンネルにはアップロード出来ません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file">ファイル本体</param>
         /// <param name="channelId">アップロード先チャンネルUUID</param>
         /// <returns>ApiResponse of FileInfo</returns>
@@ -188,7 +188,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイルを削除します。 指定したファイルの削除権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -200,7 +200,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイルを削除します。 指定したファイルの削除権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -211,7 +211,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイル本体を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="dl">1を指定するとレスポンスにContent-Dispositionヘッダーが付与されます (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -224,7 +224,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイル本体を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="dl">1を指定するとレスポンスにContent-Dispositionヘッダーが付与されます (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -236,7 +236,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイルのメタ情報を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileInfo</returns>
@@ -248,7 +248,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイルのメタ情報を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileInfo)</returns>
@@ -259,7 +259,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクエリでファイルメタのリストを取得します。 クエリパラメータ&#x60;channelId&#x60;, &#x60;mine&#x60;の少なくともいずれかが必須です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">アップロード先チャンネルUUID (optional)</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -278,7 +278,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したクエリでファイルメタのリストを取得します。 クエリパラメータ&#x60;channelId&#x60;, &#x60;mine&#x60;の少なくともいずれかが必須です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">アップロード先チャンネルUUID (optional)</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -296,7 +296,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイルのサムネイル画像を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="type">取得するサムネイルのタイプ (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -309,7 +309,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したファイルのサムネイル画像を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="type">取得するサムネイルのタイプ (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -321,7 +321,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルにファイルをアップロードします。 アーカイブされているチャンネルにはアップロード出来ません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file">ファイル本体</param>
         /// <param name="channelId">アップロード先チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -334,7 +334,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルにファイルをアップロードします。 アーカイブされているチャンネルにはアップロード出来ません。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file">ファイル本体</param>
         /// <param name="channelId">アップロード先チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -356,7 +356,7 @@ namespace DotnetTraq.Api
     /// </summary>
     public partial class FileApi : IDisposable, IFileApi
     {
-        private DotnetTraq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Traq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FileApi"/> class.
@@ -378,14 +378,14 @@ namespace DotnetTraq.Api
         /// <returns></returns>
         public FileApi(string basePath)
         {
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -396,18 +396,18 @@ namespace DotnetTraq.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public FileApi(DotnetTraq.Client.Configuration configuration)
+        public FileApi(Traq.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -442,14 +442,14 @@ namespace DotnetTraq.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -464,19 +464,19 @@ namespace DotnetTraq.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public FileApi(HttpClient client, DotnetTraq.Client.Configuration configuration, HttpClientHandler handler = null)
+        public FileApi(HttpClient client, Traq.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -487,7 +487,7 @@ namespace DotnetTraq.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public FileApi(DotnetTraq.Client.ISynchronousClient client, DotnetTraq.Client.IAsynchronousClient asyncClient, DotnetTraq.Client.IReadableConfiguration configuration)
+        public FileApi(Traq.Client.ISynchronousClient client, Traq.Client.IAsynchronousClient asyncClient, Traq.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -496,7 +496,7 @@ namespace DotnetTraq.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -510,17 +510,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public DotnetTraq.Client.ApiClient ApiClient { get; set; } = null;
+        public Traq.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public DotnetTraq.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Traq.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public DotnetTraq.Client.ISynchronousClient Client { get; set; }
+        public Traq.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -535,12 +535,12 @@ namespace DotnetTraq.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public DotnetTraq.Client.IReadableConfiguration Configuration { get; set; }
+        public Traq.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public DotnetTraq.Client.ExceptionFactory ExceptionFactory
+        public Traq.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -556,7 +556,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ファイルを削除 指定したファイルを削除します。 指定したファイルの削除権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <returns></returns>
         public void DeleteFile(Guid fileId)
@@ -567,12 +567,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ファイルを削除 指定したファイルを削除します。 指定したファイルの削除権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> DeleteFileWithHttpInfo(Guid fileId)
+        public Traq.Client.ApiResponse<Object> DeleteFileWithHttpInfo(Guid fileId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -581,13 +581,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("fileId", DotnetTraq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("fileId", Traq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -617,7 +617,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ファイルを削除 指定したファイルを削除します。 指定したファイルの削除権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -629,14 +629,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ファイルを削除 指定したファイルを削除します。 指定したファイルの削除権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> DeleteFileWithHttpInfoAsync(Guid fileId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> DeleteFileWithHttpInfoAsync(Guid fileId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -646,13 +646,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("fileId", DotnetTraq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("fileId", Traq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -683,26 +683,26 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ファイルをダウンロード 指定したファイル本体を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="dl">1を指定するとレスポンスにContent-Dispositionヘッダーが付与されます (optional)</param>
         /// <returns>FileParameter</returns>
         public FileParameter GetFile(Guid fileId, int? dl = default(int?))
         {
-            DotnetTraq.Client.ApiResponse<FileParameter> localVarResponse = GetFileWithHttpInfo(fileId, dl);
+            Traq.Client.ApiResponse<FileParameter> localVarResponse = GetFileWithHttpInfo(fileId, dl);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ファイルをダウンロード 指定したファイル本体を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="dl">1を指定するとレスポンスにContent-Dispositionヘッダーが付与されます (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
-        public DotnetTraq.Client.ApiResponse<FileParameter> GetFileWithHttpInfo(Guid fileId, int? dl = default(int?))
+        public Traq.Client.ApiResponse<FileParameter> GetFileWithHttpInfo(Guid fileId, int? dl = default(int?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -712,16 +712,16 @@ namespace DotnetTraq.Api
                 "application/octet-stream"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("fileId", DotnetTraq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("fileId", Traq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
             if (dl != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "dl", dl));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "dl", dl));
             }
 
             // authentication (OAuth2) required
@@ -752,29 +752,29 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ファイルをダウンロード 指定したファイル本体を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="dl">1を指定するとレスポンスにContent-Dispositionヘッダーが付与されます (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> GetFileAsync(Guid fileId, int? dl = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<FileParameter> localVarResponse = await GetFileWithHttpInfoAsync(fileId, dl, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<FileParameter> localVarResponse = await GetFileWithHttpInfoAsync(fileId, dl, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ファイルをダウンロード 指定したファイル本体を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="dl">1を指定するとレスポンスにContent-Dispositionヘッダーが付与されます (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<FileParameter>> GetFileWithHttpInfoAsync(Guid fileId, int? dl = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<FileParameter>> GetFileWithHttpInfoAsync(Guid fileId, int? dl = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -785,16 +785,16 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("fileId", DotnetTraq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("fileId", Traq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
             if (dl != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "dl", dl));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "dl", dl));
             }
 
             // authentication (OAuth2) required
@@ -826,24 +826,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ファイルメタを取得 指定したファイルのメタ情報を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <returns>FileInfo</returns>
         public FileInfo GetFileMeta(Guid fileId)
         {
-            DotnetTraq.Client.ApiResponse<FileInfo> localVarResponse = GetFileMetaWithHttpInfo(fileId);
+            Traq.Client.ApiResponse<FileInfo> localVarResponse = GetFileMetaWithHttpInfo(fileId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ファイルメタを取得 指定したファイルのメタ情報を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <returns>ApiResponse of FileInfo</returns>
-        public DotnetTraq.Client.ApiResponse<FileInfo> GetFileMetaWithHttpInfo(Guid fileId)
+        public Traq.Client.ApiResponse<FileInfo> GetFileMetaWithHttpInfo(Guid fileId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -853,13 +853,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("fileId", DotnetTraq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("fileId", Traq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -889,27 +889,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ファイルメタを取得 指定したファイルのメタ情報を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileInfo</returns>
         public async System.Threading.Tasks.Task<FileInfo> GetFileMetaAsync(Guid fileId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<FileInfo> localVarResponse = await GetFileMetaWithHttpInfoAsync(fileId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<FileInfo> localVarResponse = await GetFileMetaWithHttpInfoAsync(fileId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ファイルメタを取得 指定したファイルのメタ情報を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileInfo)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<FileInfo>> GetFileMetaWithHttpInfoAsync(Guid fileId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<FileInfo>> GetFileMetaWithHttpInfoAsync(Guid fileId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -920,13 +920,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("fileId", DotnetTraq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("fileId", Traq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -957,7 +957,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ファイルメタのリストを取得 指定したクエリでファイルメタのリストを取得します。 クエリパラメータ&#x60;channelId&#x60;, &#x60;mine&#x60;の少なくともいずれかが必須です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">アップロード先チャンネルUUID (optional)</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -969,14 +969,14 @@ namespace DotnetTraq.Api
         /// <returns>List&lt;FileInfo&gt;</returns>
         public List<FileInfo> GetFiles(Guid? channelId = default(Guid?), int? limit = default(int?), int? offset = default(int?), DateTimeOffset? since = default(DateTimeOffset?), DateTimeOffset? until = default(DateTimeOffset?), bool? inclusive = default(bool?), string? order = default(string?), bool? mine = default(bool?))
         {
-            DotnetTraq.Client.ApiResponse<List<FileInfo>> localVarResponse = GetFilesWithHttpInfo(channelId, limit, offset, since, until, inclusive, order, mine);
+            Traq.Client.ApiResponse<List<FileInfo>> localVarResponse = GetFilesWithHttpInfo(channelId, limit, offset, since, until, inclusive, order, mine);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ファイルメタのリストを取得 指定したクエリでファイルメタのリストを取得します。 クエリパラメータ&#x60;channelId&#x60;, &#x60;mine&#x60;の少なくともいずれかが必須です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">アップロード先チャンネルUUID (optional)</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -986,9 +986,9 @@ namespace DotnetTraq.Api
         /// <param name="order">昇順か降順か (optional, default to desc)</param>
         /// <param name="mine">アップロード者が自分のファイルのみを取得するか (optional, default to false)</param>
         /// <returns>ApiResponse of List&lt;FileInfo&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<FileInfo>> GetFilesWithHttpInfo(Guid? channelId = default(Guid?), int? limit = default(int?), int? offset = default(int?), DateTimeOffset? since = default(DateTimeOffset?), DateTimeOffset? until = default(DateTimeOffset?), bool? inclusive = default(bool?), string? order = default(string?), bool? mine = default(bool?))
+        public Traq.Client.ApiResponse<List<FileInfo>> GetFilesWithHttpInfo(Guid? channelId = default(Guid?), int? limit = default(int?), int? offset = default(int?), DateTimeOffset? since = default(DateTimeOffset?), DateTimeOffset? until = default(DateTimeOffset?), bool? inclusive = default(bool?), string? order = default(string?), bool? mine = default(bool?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -998,43 +998,43 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (channelId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "channelId", channelId));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "channelId", channelId));
             }
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (offset != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
             }
             if (since != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "since", since));
             }
             if (until != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "until", until));
             }
             if (inclusive != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "inclusive", inclusive));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "inclusive", inclusive));
             }
             if (order != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "order", order));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "order", order));
             }
             if (mine != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "mine", mine));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "mine", mine));
             }
 
             // authentication (OAuth2) required
@@ -1065,7 +1065,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ファイルメタのリストを取得 指定したクエリでファイルメタのリストを取得します。 クエリパラメータ&#x60;channelId&#x60;, &#x60;mine&#x60;の少なくともいずれかが必須です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">アップロード先チャンネルUUID (optional)</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -1078,14 +1078,14 @@ namespace DotnetTraq.Api
         /// <returns>Task of List&lt;FileInfo&gt;</returns>
         public async System.Threading.Tasks.Task<List<FileInfo>> GetFilesAsync(Guid? channelId = default(Guid?), int? limit = default(int?), int? offset = default(int?), DateTimeOffset? since = default(DateTimeOffset?), DateTimeOffset? until = default(DateTimeOffset?), bool? inclusive = default(bool?), string? order = default(string?), bool? mine = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<FileInfo>> localVarResponse = await GetFilesWithHttpInfoAsync(channelId, limit, offset, since, until, inclusive, order, mine, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<FileInfo>> localVarResponse = await GetFilesWithHttpInfoAsync(channelId, limit, offset, since, until, inclusive, order, mine, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ファイルメタのリストを取得 指定したクエリでファイルメタのリストを取得します。 クエリパラメータ&#x60;channelId&#x60;, &#x60;mine&#x60;の少なくともいずれかが必須です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">アップロード先チャンネルUUID (optional)</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -1096,10 +1096,10 @@ namespace DotnetTraq.Api
         /// <param name="mine">アップロード者が自分のファイルのみを取得するか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;FileInfo&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<FileInfo>>> GetFilesWithHttpInfoAsync(Guid? channelId = default(Guid?), int? limit = default(int?), int? offset = default(int?), DateTimeOffset? since = default(DateTimeOffset?), DateTimeOffset? until = default(DateTimeOffset?), bool? inclusive = default(bool?), string? order = default(string?), bool? mine = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<FileInfo>>> GetFilesWithHttpInfoAsync(Guid? channelId = default(Guid?), int? limit = default(int?), int? offset = default(int?), DateTimeOffset? since = default(DateTimeOffset?), DateTimeOffset? until = default(DateTimeOffset?), bool? inclusive = default(bool?), string? order = default(string?), bool? mine = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1110,43 +1110,43 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (channelId != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "channelId", channelId));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "channelId", channelId));
             }
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (offset != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
             }
             if (since != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "since", since));
             }
             if (until != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "until", until));
             }
             if (inclusive != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "inclusive", inclusive));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "inclusive", inclusive));
             }
             if (order != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "order", order));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "order", order));
             }
             if (mine != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "mine", mine));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "mine", mine));
             }
 
             // authentication (OAuth2) required
@@ -1178,26 +1178,26 @@ namespace DotnetTraq.Api
         /// <summary>
         /// サムネイル画像を取得 指定したファイルのサムネイル画像を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="type">取得するサムネイルのタイプ (optional)</param>
         /// <returns>FileParameter</returns>
         public FileParameter GetThumbnailImage(Guid fileId, ThumbnailType? type = default(ThumbnailType?))
         {
-            DotnetTraq.Client.ApiResponse<FileParameter> localVarResponse = GetThumbnailImageWithHttpInfo(fileId, type);
+            Traq.Client.ApiResponse<FileParameter> localVarResponse = GetThumbnailImageWithHttpInfo(fileId, type);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// サムネイル画像を取得 指定したファイルのサムネイル画像を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="type">取得するサムネイルのタイプ (optional)</param>
         /// <returns>ApiResponse of FileParameter</returns>
-        public DotnetTraq.Client.ApiResponse<FileParameter> GetThumbnailImageWithHttpInfo(Guid fileId, ThumbnailType? type = default(ThumbnailType?))
+        public Traq.Client.ApiResponse<FileParameter> GetThumbnailImageWithHttpInfo(Guid fileId, ThumbnailType? type = default(ThumbnailType?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1208,16 +1208,16 @@ namespace DotnetTraq.Api
                 "image/jpeg"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("fileId", DotnetTraq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("fileId", Traq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
             if (type != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "type", type));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "type", type));
             }
 
             // authentication (OAuth2) required
@@ -1248,29 +1248,29 @@ namespace DotnetTraq.Api
         /// <summary>
         /// サムネイル画像を取得 指定したファイルのサムネイル画像を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="type">取得するサムネイルのタイプ (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> GetThumbnailImageAsync(Guid fileId, ThumbnailType? type = default(ThumbnailType?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<FileParameter> localVarResponse = await GetThumbnailImageWithHttpInfoAsync(fileId, type, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<FileParameter> localVarResponse = await GetThumbnailImageWithHttpInfoAsync(fileId, type, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// サムネイル画像を取得 指定したファイルのサムネイル画像を取得します。 指定したファイルへのアクセス権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId">ファイルUUID</param>
         /// <param name="type">取得するサムネイルのタイプ (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<FileParameter>> GetThumbnailImageWithHttpInfoAsync(Guid fileId, ThumbnailType? type = default(ThumbnailType?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<FileParameter>> GetThumbnailImageWithHttpInfoAsync(Guid fileId, ThumbnailType? type = default(ThumbnailType?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1282,16 +1282,16 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("fileId", DotnetTraq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("fileId", Traq.Client.ClientUtils.ParameterToString(fileId)); // path parameter
             if (type != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "type", type));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "type", type));
             }
 
             // authentication (OAuth2) required
@@ -1323,30 +1323,30 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ファイルをアップロード 指定したチャンネルにファイルをアップロードします。 アーカイブされているチャンネルにはアップロード出来ません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file">ファイル本体</param>
         /// <param name="channelId">アップロード先チャンネルUUID</param>
         /// <returns>FileInfo</returns>
         public FileInfo PostFile(FileParameter file, Guid channelId)
         {
-            DotnetTraq.Client.ApiResponse<FileInfo> localVarResponse = PostFileWithHttpInfo(file, channelId);
+            Traq.Client.ApiResponse<FileInfo> localVarResponse = PostFileWithHttpInfo(file, channelId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ファイルをアップロード 指定したチャンネルにファイルをアップロードします。 アーカイブされているチャンネルにはアップロード出来ません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file">ファイル本体</param>
         /// <param name="channelId">アップロード先チャンネルUUID</param>
         /// <returns>ApiResponse of FileInfo</returns>
-        public DotnetTraq.Client.ApiResponse<FileInfo> PostFileWithHttpInfo(FileParameter file, Guid channelId)
+        public Traq.Client.ApiResponse<FileInfo> PostFileWithHttpInfo(FileParameter file, Guid channelId)
         {
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'file' when calling FileApi->PostFile");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'file' when calling FileApi->PostFile");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -1357,14 +1357,14 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.FileParameters.Add("file", file);
-            localVarRequestOptions.FormParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // form parameter
+            localVarRequestOptions.FormParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // form parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1394,33 +1394,33 @@ namespace DotnetTraq.Api
         /// <summary>
         /// ファイルをアップロード 指定したチャンネルにファイルをアップロードします。 アーカイブされているチャンネルにはアップロード出来ません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file">ファイル本体</param>
         /// <param name="channelId">アップロード先チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileInfo</returns>
         public async System.Threading.Tasks.Task<FileInfo> PostFileAsync(FileParameter file, Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<FileInfo> localVarResponse = await PostFileWithHttpInfoAsync(file, channelId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<FileInfo> localVarResponse = await PostFileWithHttpInfoAsync(file, channelId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// ファイルをアップロード 指定したチャンネルにファイルをアップロードします。 アーカイブされているチャンネルにはアップロード出来ません。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file">ファイル本体</param>
         /// <param name="channelId">アップロード先チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileInfo)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<FileInfo>> PostFileWithHttpInfoAsync(FileParameter file, Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<FileInfo>> PostFileWithHttpInfoAsync(FileParameter file, Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'file' when calling FileApi->PostFile");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'file' when calling FileApi->PostFile");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -1432,14 +1432,14 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.FileParameters.Add("file", file);
-            localVarRequestOptions.FormParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // form parameter
+            localVarRequestOptions.FormParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // form parameter
 
             // authentication (OAuth2) required
             // oauth required

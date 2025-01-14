@@ -15,10 +15,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
-using DotnetTraq.Client;
-using DotnetTraq.Model;
+using Traq.Client;
+using Traq.Model;
 
-namespace DotnetTraq.Api
+namespace Traq.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを有効化します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns></returns>
         void ActivateBot(Guid botId);
@@ -44,7 +44,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを有効化します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ActivateBotWithHttpInfo(Guid botId);
@@ -54,7 +54,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのアイコン画像を変更を変更します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <returns></returns>
@@ -66,7 +66,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのアイコン画像を変更を変更します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -77,7 +77,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// # BOT WebSocketプロトコル  ## 送信  &#x60;コマンド:引数1:引数2:...&#x60; のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できます。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更します。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  チャンネルIDにnullもしくは空文字を指定するか、状態にnullもしくは空文字を指定した場合、WebRTC状態はリセットされます。  &#x60;rtcstate:null&#x60;, &#x60;rtcstate:&#x60;, &#x60;rtcstate:channelId:null&#x60;, &#x60;rtcstate:channelId:&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ## 受信  TextMessageとして各種イベントが&#x60;type&#x60;、&#x60;reqId&#x60;、&#x60;body&#x60;を持つJSONとして非同期に送られます。 &#x60;body&#x60;の内容はHTTP Modeの場合のRequest Bodyと同様です。 例外として&#x60;ERROR&#x60;イベントは&#x60;reqId&#x60;を持ちません。  例: PINGイベント &#x60;{\&quot;type\&quot;:\&quot;PING\&quot;,\&quot;reqId\&quot;:\&quot;requestId\&quot;,\&quot;body\&quot;:{\&quot;eventTime\&quot;:\&quot;2019-05-07T04:50:48.582586882Z\&quot;}}&#x60;  ### &#x60;ERROR&#x60;  コマンドの引数が不正などの理由でコマンドが受理されなかった場合に送られます。 非同期に送られるため、必ずしもコマンドとの対応関係を確定できないことに注意してください。 本番環境ではERRORが送られないようにすることが望ましいです。  &#x60;{\&quot;type\&quot;:\&quot;ERROR\&quot;,\&quot;body\&quot;:\&quot;message\&quot;}&#x60;
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
         void ConnectBotWS();
 
@@ -87,7 +87,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// # BOT WebSocketプロトコル  ## 送信  &#x60;コマンド:引数1:引数2:...&#x60; のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できます。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更します。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  チャンネルIDにnullもしくは空文字を指定するか、状態にnullもしくは空文字を指定した場合、WebRTC状態はリセットされます。  &#x60;rtcstate:null&#x60;, &#x60;rtcstate:&#x60;, &#x60;rtcstate:channelId:null&#x60;, &#x60;rtcstate:channelId:&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ## 受信  TextMessageとして各種イベントが&#x60;type&#x60;、&#x60;reqId&#x60;、&#x60;body&#x60;を持つJSONとして非同期に送られます。 &#x60;body&#x60;の内容はHTTP Modeの場合のRequest Bodyと同様です。 例外として&#x60;ERROR&#x60;イベントは&#x60;reqId&#x60;を持ちません。  例: PINGイベント &#x60;{\&quot;type\&quot;:\&quot;PING\&quot;,\&quot;reqId\&quot;:\&quot;requestId\&quot;,\&quot;body\&quot;:{\&quot;eventTime\&quot;:\&quot;2019-05-07T04:50:48.582586882Z\&quot;}}&#x60;  ### &#x60;ERROR&#x60;  コマンドの引数が不正などの理由でコマンドが受理されなかった場合に送られます。 非同期に送られるため、必ずしもコマンドとの対応関係を確定できないことに注意してください。 本番環境ではERRORが送られないようにすることが望ましいです。  &#x60;{\&quot;type\&quot;:\&quot;ERROR\&quot;,\&quot;body\&quot;:\&quot;message\&quot;}&#x60;
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ConnectBotWSWithHttpInfo();
         /// <summary>
@@ -96,7 +96,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// BOTを作成します。 作成後に購読イベントの設定を行う必要があります。 さらにHTTP Modeの場合はアクティベーションを行う必要があります。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postBotRequest"> (optional)</param>
         /// <returns>BotDetail</returns>
         BotDetail CreateBot(PostBotRequest? postBotRequest = default(PostBotRequest?));
@@ -107,7 +107,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// BOTを作成します。 作成後に購読イベントの設定を行う必要があります。 さらにHTTP Modeの場合はアクティベーションを行う必要があります。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postBotRequest"> (optional)</param>
         /// <returns>ApiResponse of BotDetail</returns>
         ApiResponse<BotDetail> CreateBotWithHttpInfo(PostBotRequest? postBotRequest = default(PostBotRequest?));
@@ -117,7 +117,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを削除します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns></returns>
         void DeleteBot(Guid botId);
@@ -128,7 +128,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを削除します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteBotWithHttpInfo(Guid botId);
@@ -138,7 +138,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTの情報を変更します。 対象のBOTの管理権限が必要です。 BOT開発者UUIDを変更した場合は、変更先ユーザーにBOT管理権限が移譲され、自分自身は権限を失います。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="patchBotRequest"> (optional)</param>
         /// <returns></returns>
@@ -150,7 +150,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTの情報を変更します。 対象のBOTの管理権限が必要です。 BOT開発者UUIDを変更した場合は、変更先ユーザーにBOT管理権限が移譲され、自分自身は権限を失います。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="patchBotRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -161,7 +161,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのBOT情報を取得します。 BOT詳細情報を取得する場合は、対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <returns>GetBot200Response</returns>
@@ -173,7 +173,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのBOT情報を取得します。 BOT詳細情報を取得する場合は、対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <returns>ApiResponse of GetBot200Response</returns>
@@ -184,7 +184,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのアイコン画像を取得を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns>FileParameter</returns>
         FileParameter GetBotIcon(Guid botId);
@@ -195,7 +195,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのアイコン画像を取得を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns>ApiResponse of FileParameter</returns>
         ApiResponse<FileParameter> GetBotIconWithHttpInfo(Guid botId);
@@ -205,7 +205,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのイベントログを取得します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -218,7 +218,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのイベントログを取得します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -230,7 +230,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// BOT情報のリストを取得します。 allを指定しない場合、自分が開発者のBOTのみを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのBOTを取得するかどうか (optional, default to false)</param>
         /// <returns>List&lt;Bot&gt;</returns>
         List<Bot> GetBots(bool? all = default(bool?));
@@ -241,7 +241,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// BOT情報のリストを取得します。 allを指定しない場合、自分が開発者のBOTのみを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのBOTを取得するかどうか (optional, default to false)</param>
         /// <returns>ApiResponse of List&lt;Bot&gt;</returns>
         ApiResponse<List<Bot>> GetBotsWithHttpInfo(bool? all = default(bool?));
@@ -251,7 +251,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルに参加しているBOTのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns>List&lt;BotUser&gt;</returns>
         List<BotUser> GetChannelBots(Guid channelId);
@@ -262,7 +262,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルに参加しているBOTのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns>ApiResponse of List&lt;BotUser&gt;</returns>
         ApiResponse<List<BotUser>> GetChannelBotsWithHttpInfo(Guid channelId);
@@ -272,7 +272,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを無効化します。対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns></returns>
         void InactivateBot(Guid botId);
@@ -283,7 +283,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを無効化します。対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> InactivateBotWithHttpInfo(Guid botId);
@@ -293,7 +293,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを指定したチャンネルに参加させます。 チャンネルに参加したBOTは、そのチャンネルの各種イベントを受け取るようになります。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionJoinRequest"> (optional)</param>
         /// <returns></returns>
@@ -305,7 +305,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを指定したチャンネルに参加させます。 チャンネルに参加したBOTは、そのチャンネルの各種イベントを受け取るようになります。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionJoinRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -316,7 +316,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを指定したチャンネルから退出させます。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionLeaveRequest"> (optional)</param>
         /// <returns></returns>
@@ -328,7 +328,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを指定したチャンネルから退出させます。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionLeaveRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -339,7 +339,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTの現在の各種トークンを無効化し、再発行を行います。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns>BotTokens</returns>
         BotTokens ReissueBot(Guid botId);
@@ -350,7 +350,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTの現在の各種トークンを無効化し、再発行を行います。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns>ApiResponse of BotTokens</returns>
         ApiResponse<BotTokens> ReissueBotWithHttpInfo(Guid botId);
@@ -369,7 +369,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを有効化します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -381,7 +381,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを有効化します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -392,7 +392,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのアイコン画像を変更を変更します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -405,7 +405,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのアイコン画像を変更を変更します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -417,7 +417,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// # BOT WebSocketプロトコル  ## 送信  &#x60;コマンド:引数1:引数2:...&#x60; のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できます。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更します。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  チャンネルIDにnullもしくは空文字を指定するか、状態にnullもしくは空文字を指定した場合、WebRTC状態はリセットされます。  &#x60;rtcstate:null&#x60;, &#x60;rtcstate:&#x60;, &#x60;rtcstate:channelId:null&#x60;, &#x60;rtcstate:channelId:&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ## 受信  TextMessageとして各種イベントが&#x60;type&#x60;、&#x60;reqId&#x60;、&#x60;body&#x60;を持つJSONとして非同期に送られます。 &#x60;body&#x60;の内容はHTTP Modeの場合のRequest Bodyと同様です。 例外として&#x60;ERROR&#x60;イベントは&#x60;reqId&#x60;を持ちません。  例: PINGイベント &#x60;{\&quot;type\&quot;:\&quot;PING\&quot;,\&quot;reqId\&quot;:\&quot;requestId\&quot;,\&quot;body\&quot;:{\&quot;eventTime\&quot;:\&quot;2019-05-07T04:50:48.582586882Z\&quot;}}&#x60;  ### &#x60;ERROR&#x60;  コマンドの引数が不正などの理由でコマンドが受理されなかった場合に送られます。 非同期に送られるため、必ずしもコマンドとの対応関係を確定できないことに注意してください。 本番環境ではERRORが送られないようにすることが望ましいです。  &#x60;{\&quot;type\&quot;:\&quot;ERROR\&quot;,\&quot;body\&quot;:\&quot;message\&quot;}&#x60;
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task ConnectBotWSAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -428,7 +428,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// # BOT WebSocketプロトコル  ## 送信  &#x60;コマンド:引数1:引数2:...&#x60; のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できます。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更します。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  チャンネルIDにnullもしくは空文字を指定するか、状態にnullもしくは空文字を指定した場合、WebRTC状態はリセットされます。  &#x60;rtcstate:null&#x60;, &#x60;rtcstate:&#x60;, &#x60;rtcstate:channelId:null&#x60;, &#x60;rtcstate:channelId:&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ## 受信  TextMessageとして各種イベントが&#x60;type&#x60;、&#x60;reqId&#x60;、&#x60;body&#x60;を持つJSONとして非同期に送られます。 &#x60;body&#x60;の内容はHTTP Modeの場合のRequest Bodyと同様です。 例外として&#x60;ERROR&#x60;イベントは&#x60;reqId&#x60;を持ちません。  例: PINGイベント &#x60;{\&quot;type\&quot;:\&quot;PING\&quot;,\&quot;reqId\&quot;:\&quot;requestId\&quot;,\&quot;body\&quot;:{\&quot;eventTime\&quot;:\&quot;2019-05-07T04:50:48.582586882Z\&quot;}}&#x60;  ### &#x60;ERROR&#x60;  コマンドの引数が不正などの理由でコマンドが受理されなかった場合に送られます。 非同期に送られるため、必ずしもコマンドとの対応関係を確定できないことに注意してください。 本番環境ではERRORが送られないようにすることが望ましいです。  &#x60;{\&quot;type\&quot;:\&quot;ERROR\&quot;,\&quot;body\&quot;:\&quot;message\&quot;}&#x60;
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ConnectBotWSWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
@@ -438,7 +438,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// BOTを作成します。 作成後に購読イベントの設定を行う必要があります。 さらにHTTP Modeの場合はアクティベーションを行う必要があります。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postBotRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BotDetail</returns>
@@ -450,7 +450,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// BOTを作成します。 作成後に購読イベントの設定を行う必要があります。 さらにHTTP Modeの場合はアクティベーションを行う必要があります。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postBotRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BotDetail)</returns>
@@ -461,7 +461,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを削除します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -473,7 +473,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを削除します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -484,7 +484,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTの情報を変更します。 対象のBOTの管理権限が必要です。 BOT開発者UUIDを変更した場合は、変更先ユーザーにBOT管理権限が移譲され、自分自身は権限を失います。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="patchBotRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -497,7 +497,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTの情報を変更します。 対象のBOTの管理権限が必要です。 BOT開発者UUIDを変更した場合は、変更先ユーザーにBOT管理権限が移譲され、自分自身は権限を失います。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="patchBotRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -509,7 +509,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのBOT情報を取得します。 BOT詳細情報を取得する場合は、対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -522,7 +522,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのBOT情報を取得します。 BOT詳細情報を取得する場合は、対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -534,7 +534,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのアイコン画像を取得を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
@@ -546,7 +546,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのアイコン画像を取得を取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
@@ -557,7 +557,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのイベントログを取得します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -571,7 +571,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTのイベントログを取得します。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -584,7 +584,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// BOT情報のリストを取得します。 allを指定しない場合、自分が開発者のBOTのみを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのBOTを取得するかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Bot&gt;</returns>
@@ -596,7 +596,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// BOT情報のリストを取得します。 allを指定しない場合、自分が開発者のBOTのみを返します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのBOTを取得するかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Bot&gt;)</returns>
@@ -607,7 +607,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルに参加しているBOTのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;BotUser&gt;</returns>
@@ -619,7 +619,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したチャンネルに参加しているBOTのリストを取得します。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;BotUser&gt;)</returns>
@@ -630,7 +630,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを無効化します。対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -642,7 +642,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを無効化します。対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -653,7 +653,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを指定したチャンネルに参加させます。 チャンネルに参加したBOTは、そのチャンネルの各種イベントを受け取るようになります。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionJoinRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -666,7 +666,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを指定したチャンネルに参加させます。 チャンネルに参加したBOTは、そのチャンネルの各種イベントを受け取るようになります。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionJoinRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -678,7 +678,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを指定したチャンネルから退出させます。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionLeaveRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -691,7 +691,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTを指定したチャンネルから退出させます。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionLeaveRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -703,7 +703,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTの現在の各種トークンを無効化し、再発行を行います。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BotTokens</returns>
@@ -715,7 +715,7 @@ namespace DotnetTraq.Api
         /// <remarks>
         /// 指定したBOTの現在の各種トークンを無効化し、再発行を行います。 対象のBOTの管理権限が必要です。
         /// </remarks>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BotTokens)</returns>
@@ -736,7 +736,7 @@ namespace DotnetTraq.Api
     /// </summary>
     public partial class BotApi : IDisposable, IBotApi
     {
-        private DotnetTraq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Traq.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BotApi"/> class.
@@ -758,14 +758,14 @@ namespace DotnetTraq.Api
         /// <returns></returns>
         public BotApi(string basePath)
         {
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -776,18 +776,18 @@ namespace DotnetTraq.Api
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public BotApi(DotnetTraq.Client.Configuration configuration)
+        public BotApi(Traq.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(this.Configuration.BasePath);
+            this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -822,14 +822,14 @@ namespace DotnetTraq.Api
         {
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
-                new DotnetTraq.Client.Configuration { BasePath = basePath }
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
+                new Traq.Client.Configuration { BasePath = basePath }
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client =  this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -844,19 +844,19 @@ namespace DotnetTraq.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public BotApi(HttpClient client, DotnetTraq.Client.Configuration configuration, HttpClientHandler handler = null)
+        public BotApi(HttpClient client, Traq.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
 
-            this.Configuration = DotnetTraq.Client.Configuration.MergeConfigurations(
-                DotnetTraq.Client.GlobalConfiguration.Instance,
+            this.Configuration = Traq.Client.Configuration.MergeConfigurations(
+                Traq.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.ApiClient = new DotnetTraq.Client.ApiClient(client, this.Configuration.BasePath, handler);
+            this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
             this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
-            ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -867,7 +867,7 @@ namespace DotnetTraq.Api
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public BotApi(DotnetTraq.Client.ISynchronousClient client, DotnetTraq.Client.IAsynchronousClient asyncClient, DotnetTraq.Client.IReadableConfiguration configuration)
+        public BotApi(Traq.Client.ISynchronousClient client, Traq.Client.IAsynchronousClient asyncClient, Traq.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -876,7 +876,7 @@ namespace DotnetTraq.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = DotnetTraq.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -890,17 +890,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// Holds the ApiClient if created
         /// </summary>
-        public DotnetTraq.Client.ApiClient ApiClient { get; set; } = null;
+        public Traq.Client.ApiClient ApiClient { get; set; } = null;
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public DotnetTraq.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Traq.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public DotnetTraq.Client.ISynchronousClient Client { get; set; }
+        public Traq.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -915,12 +915,12 @@ namespace DotnetTraq.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public DotnetTraq.Client.IReadableConfiguration Configuration { get; set; }
+        public Traq.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public DotnetTraq.Client.ExceptionFactory ExceptionFactory
+        public Traq.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -936,7 +936,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをアクティベート 指定したBOTを有効化します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns></returns>
         public void ActivateBot(Guid botId)
@@ -947,12 +947,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをアクティベート 指定したBOTを有効化します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> ActivateBotWithHttpInfo(Guid botId)
+        public Traq.Client.ApiResponse<Object> ActivateBotWithHttpInfo(Guid botId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -961,13 +961,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -997,7 +997,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをアクティベート 指定したBOTを有効化します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -1009,14 +1009,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをアクティベート 指定したBOTを有効化します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> ActivateBotWithHttpInfoAsync(Guid botId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> ActivateBotWithHttpInfoAsync(Guid botId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1026,13 +1026,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1063,7 +1063,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTのアイコン画像を変更 指定したBOTのアイコン画像を変更を変更します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <returns></returns>
@@ -1075,17 +1075,17 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTのアイコン画像を変更 指定したBOTのアイコン画像を変更を変更します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> ChangeBotIconWithHttpInfo(Guid botId, FileParameter file)
+        public Traq.Client.ApiResponse<Object> ChangeBotIconWithHttpInfo(Guid botId, FileParameter file)
         {
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'file' when calling BotApi->ChangeBotIcon");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'file' when calling BotApi->ChangeBotIcon");
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -1095,13 +1095,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
             localVarRequestOptions.FileParameters.Add("file", file);
 
             // authentication (OAuth2) required
@@ -1132,7 +1132,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTのアイコン画像を変更 指定したBOTのアイコン画像を変更を変更します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1145,19 +1145,19 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTのアイコン画像を変更 指定したBOTのアイコン画像を変更を変更します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="file">アイコン画像(2MBまでのpng, jpeg, gif)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> ChangeBotIconWithHttpInfoAsync(Guid botId, FileParameter file, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> ChangeBotIconWithHttpInfoAsync(Guid botId, FileParameter file, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new DotnetTraq.Client.ApiException(400, "Missing required parameter 'file' when calling BotApi->ChangeBotIcon");
+                throw new Traq.Client.ApiException(400, "Missing required parameter 'file' when calling BotApi->ChangeBotIcon");
 
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "multipart/form-data"
@@ -1168,13 +1168,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
             localVarRequestOptions.FileParameters.Add("file", file);
 
             // authentication (OAuth2) required
@@ -1206,7 +1206,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// WebSocket Mode BOT用通知ストリームに接続します # BOT WebSocketプロトコル  ## 送信  &#x60;コマンド:引数1:引数2:...&#x60; のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できます。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更します。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  チャンネルIDにnullもしくは空文字を指定するか、状態にnullもしくは空文字を指定した場合、WebRTC状態はリセットされます。  &#x60;rtcstate:null&#x60;, &#x60;rtcstate:&#x60;, &#x60;rtcstate:channelId:null&#x60;, &#x60;rtcstate:channelId:&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ## 受信  TextMessageとして各種イベントが&#x60;type&#x60;、&#x60;reqId&#x60;、&#x60;body&#x60;を持つJSONとして非同期に送られます。 &#x60;body&#x60;の内容はHTTP Modeの場合のRequest Bodyと同様です。 例外として&#x60;ERROR&#x60;イベントは&#x60;reqId&#x60;を持ちません。  例: PINGイベント &#x60;{\&quot;type\&quot;:\&quot;PING\&quot;,\&quot;reqId\&quot;:\&quot;requestId\&quot;,\&quot;body\&quot;:{\&quot;eventTime\&quot;:\&quot;2019-05-07T04:50:48.582586882Z\&quot;}}&#x60;  ### &#x60;ERROR&#x60;  コマンドの引数が不正などの理由でコマンドが受理されなかった場合に送られます。 非同期に送られるため、必ずしもコマンドとの対応関係を確定できないことに注意してください。 本番環境ではERRORが送られないようにすることが望ましいです。  &#x60;{\&quot;type\&quot;:\&quot;ERROR\&quot;,\&quot;body\&quot;:\&quot;message\&quot;}&#x60;
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
         public void ConnectBotWS()
         {
@@ -1216,11 +1216,11 @@ namespace DotnetTraq.Api
         /// <summary>
         /// WebSocket Mode BOT用通知ストリームに接続します # BOT WebSocketプロトコル  ## 送信  &#x60;コマンド:引数1:引数2:...&#x60; のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できます。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更します。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  チャンネルIDにnullもしくは空文字を指定するか、状態にnullもしくは空文字を指定した場合、WebRTC状態はリセットされます。  &#x60;rtcstate:null&#x60;, &#x60;rtcstate:&#x60;, &#x60;rtcstate:channelId:null&#x60;, &#x60;rtcstate:channelId:&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ## 受信  TextMessageとして各種イベントが&#x60;type&#x60;、&#x60;reqId&#x60;、&#x60;body&#x60;を持つJSONとして非同期に送られます。 &#x60;body&#x60;の内容はHTTP Modeの場合のRequest Bodyと同様です。 例外として&#x60;ERROR&#x60;イベントは&#x60;reqId&#x60;を持ちません。  例: PINGイベント &#x60;{\&quot;type\&quot;:\&quot;PING\&quot;,\&quot;reqId\&quot;:\&quot;requestId\&quot;,\&quot;body\&quot;:{\&quot;eventTime\&quot;:\&quot;2019-05-07T04:50:48.582586882Z\&quot;}}&#x60;  ### &#x60;ERROR&#x60;  コマンドの引数が不正などの理由でコマンドが受理されなかった場合に送られます。 非同期に送られるため、必ずしもコマンドとの対応関係を確定できないことに注意してください。 本番環境ではERRORが送られないようにすることが望ましいです。  &#x60;{\&quot;type\&quot;:\&quot;ERROR\&quot;,\&quot;body\&quot;:\&quot;message\&quot;}&#x60;
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> ConnectBotWSWithHttpInfo()
+        public Traq.Client.ApiResponse<Object> ConnectBotWSWithHttpInfo()
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1229,10 +1229,10 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1264,7 +1264,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// WebSocket Mode BOT用通知ストリームに接続します # BOT WebSocketプロトコル  ## 送信  &#x60;コマンド:引数1:引数2:...&#x60; のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できます。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更します。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  チャンネルIDにnullもしくは空文字を指定するか、状態にnullもしくは空文字を指定した場合、WebRTC状態はリセットされます。  &#x60;rtcstate:null&#x60;, &#x60;rtcstate:&#x60;, &#x60;rtcstate:channelId:null&#x60;, &#x60;rtcstate:channelId:&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ## 受信  TextMessageとして各種イベントが&#x60;type&#x60;、&#x60;reqId&#x60;、&#x60;body&#x60;を持つJSONとして非同期に送られます。 &#x60;body&#x60;の内容はHTTP Modeの場合のRequest Bodyと同様です。 例外として&#x60;ERROR&#x60;イベントは&#x60;reqId&#x60;を持ちません。  例: PINGイベント &#x60;{\&quot;type\&quot;:\&quot;PING\&quot;,\&quot;reqId\&quot;:\&quot;requestId\&quot;,\&quot;body\&quot;:{\&quot;eventTime\&quot;:\&quot;2019-05-07T04:50:48.582586882Z\&quot;}}&#x60;  ### &#x60;ERROR&#x60;  コマンドの引数が不正などの理由でコマンドが受理されなかった場合に送られます。 非同期に送られるため、必ずしもコマンドとの対応関係を確定できないことに注意してください。 本番環境ではERRORが送られないようにすることが望ましいです。  &#x60;{\&quot;type\&quot;:\&quot;ERROR\&quot;,\&quot;body\&quot;:\&quot;message\&quot;}&#x60;
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task ConnectBotWSAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
@@ -1275,13 +1275,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// WebSocket Mode BOT用通知ストリームに接続します # BOT WebSocketプロトコル  ## 送信  &#x60;コマンド:引数1:引数2:...&#x60; のような形式のTextMessageをサーバーに送信することで、このWebSocketセッションに対する設定が実行できます。  ### &#x60;rtcstate&#x60;コマンド 自分のWebRTC状態を変更します。 他のコネクションが既に状態を保持している場合、変更することができません。  &#x60;rtcstate:{チャンネルID}:({状態}:{セッションID})*&#x60;  チャンネルIDにnullもしくは空文字を指定するか、状態にnullもしくは空文字を指定した場合、WebRTC状態はリセットされます。  &#x60;rtcstate:null&#x60;, &#x60;rtcstate:&#x60;, &#x60;rtcstate:channelId:null&#x60;, &#x60;rtcstate:channelId:&#x60;  コネクションが切断された場合、自分のWebRTC状態はリセットされます。  ## 受信  TextMessageとして各種イベントが&#x60;type&#x60;、&#x60;reqId&#x60;、&#x60;body&#x60;を持つJSONとして非同期に送られます。 &#x60;body&#x60;の内容はHTTP Modeの場合のRequest Bodyと同様です。 例外として&#x60;ERROR&#x60;イベントは&#x60;reqId&#x60;を持ちません。  例: PINGイベント &#x60;{\&quot;type\&quot;:\&quot;PING\&quot;,\&quot;reqId\&quot;:\&quot;requestId\&quot;,\&quot;body\&quot;:{\&quot;eventTime\&quot;:\&quot;2019-05-07T04:50:48.582586882Z\&quot;}}&#x60;  ### &#x60;ERROR&#x60;  コマンドの引数が不正などの理由でコマンドが受理されなかった場合に送られます。 非同期に送られるため、必ずしもコマンドとの対応関係を確定できないことに注意してください。 本番環境ではERRORが送られないようにすることが望ましいです。  &#x60;{\&quot;type\&quot;:\&quot;ERROR\&quot;,\&quot;body\&quot;:\&quot;message\&quot;}&#x60;
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> ConnectBotWSWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> ConnectBotWSWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1291,10 +1291,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -1327,24 +1327,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTを作成 BOTを作成します。 作成後に購読イベントの設定を行う必要があります。 さらにHTTP Modeの場合はアクティベーションを行う必要があります。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postBotRequest"> (optional)</param>
         /// <returns>BotDetail</returns>
         public BotDetail CreateBot(PostBotRequest? postBotRequest = default(PostBotRequest?))
         {
-            DotnetTraq.Client.ApiResponse<BotDetail> localVarResponse = CreateBotWithHttpInfo(postBotRequest);
+            Traq.Client.ApiResponse<BotDetail> localVarResponse = CreateBotWithHttpInfo(postBotRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// BOTを作成 BOTを作成します。 作成後に購読イベントの設定を行う必要があります。 さらにHTTP Modeの場合はアクティベーションを行う必要があります。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postBotRequest"> (optional)</param>
         /// <returns>ApiResponse of BotDetail</returns>
-        public DotnetTraq.Client.ApiResponse<BotDetail> CreateBotWithHttpInfo(PostBotRequest? postBotRequest = default(PostBotRequest?))
+        public Traq.Client.ApiResponse<BotDetail> CreateBotWithHttpInfo(PostBotRequest? postBotRequest = default(PostBotRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1355,10 +1355,10 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postBotRequest;
@@ -1391,27 +1391,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTを作成 BOTを作成します。 作成後に購読イベントの設定を行う必要があります。 さらにHTTP Modeの場合はアクティベーションを行う必要があります。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postBotRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BotDetail</returns>
         public async System.Threading.Tasks.Task<BotDetail> CreateBotAsync(PostBotRequest? postBotRequest = default(PostBotRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<BotDetail> localVarResponse = await CreateBotWithHttpInfoAsync(postBotRequest, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<BotDetail> localVarResponse = await CreateBotWithHttpInfoAsync(postBotRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// BOTを作成 BOTを作成します。 作成後に購読イベントの設定を行う必要があります。 さらにHTTP Modeの場合はアクティベーションを行う必要があります。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postBotRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BotDetail)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<BotDetail>> CreateBotWithHttpInfoAsync(PostBotRequest? postBotRequest = default(PostBotRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<BotDetail>> CreateBotWithHttpInfoAsync(PostBotRequest? postBotRequest = default(PostBotRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1423,10 +1423,10 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = postBotRequest;
@@ -1460,7 +1460,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTを削除 指定したBOTを削除します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns></returns>
         public void DeleteBot(Guid botId)
@@ -1471,12 +1471,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTを削除 指定したBOTを削除します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> DeleteBotWithHttpInfo(Guid botId)
+        public Traq.Client.ApiResponse<Object> DeleteBotWithHttpInfo(Guid botId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1485,13 +1485,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1521,7 +1521,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTを削除 指定したBOTを削除します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -1533,14 +1533,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTを削除 指定したBOTを削除します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> DeleteBotWithHttpInfoAsync(Guid botId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> DeleteBotWithHttpInfoAsync(Guid botId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1550,13 +1550,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1587,7 +1587,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOT情報を変更 指定したBOTの情報を変更します。 対象のBOTの管理権限が必要です。 BOT開発者UUIDを変更した場合は、変更先ユーザーにBOT管理権限が移譲され、自分自身は権限を失います。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="patchBotRequest"> (optional)</param>
         /// <returns></returns>
@@ -1599,13 +1599,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOT情報を変更 指定したBOTの情報を変更します。 対象のBOTの管理権限が必要です。 BOT開発者UUIDを変更した場合は、変更先ユーザーにBOT管理権限が移譲され、自分自身は権限を失います。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="patchBotRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> EditBotWithHttpInfo(Guid botId, PatchBotRequest? patchBotRequest = default(PatchBotRequest?))
+        public Traq.Client.ApiResponse<Object> EditBotWithHttpInfo(Guid botId, PatchBotRequest? patchBotRequest = default(PatchBotRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1615,13 +1615,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
             localVarRequestOptions.Data = patchBotRequest;
 
             // authentication (OAuth2) required
@@ -1652,7 +1652,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOT情報を変更 指定したBOTの情報を変更します。 対象のBOTの管理権限が必要です。 BOT開発者UUIDを変更した場合は、変更先ユーザーにBOT管理権限が移譲され、自分自身は権限を失います。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="patchBotRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1665,15 +1665,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOT情報を変更 指定したBOTの情報を変更します。 対象のBOTの管理権限が必要です。 BOT開発者UUIDを変更した場合は、変更先ユーザーにBOT管理権限が移譲され、自分自身は権限を失います。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="patchBotRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> EditBotWithHttpInfoAsync(Guid botId, PatchBotRequest? patchBotRequest = default(PatchBotRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> EditBotWithHttpInfoAsync(Guid botId, PatchBotRequest? patchBotRequest = default(PatchBotRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -1684,13 +1684,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
             localVarRequestOptions.Data = patchBotRequest;
 
             // authentication (OAuth2) required
@@ -1722,26 +1722,26 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOT情報を取得 指定したBOTのBOT情報を取得します。 BOT詳細情報を取得する場合は、対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <returns>GetBot200Response</returns>
         public GetBot200Response GetBot(Guid botId, bool? detail = default(bool?))
         {
-            DotnetTraq.Client.ApiResponse<GetBot200Response> localVarResponse = GetBotWithHttpInfo(botId, detail);
+            Traq.Client.ApiResponse<GetBot200Response> localVarResponse = GetBotWithHttpInfo(botId, detail);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// BOT情報を取得 指定したBOTのBOT情報を取得します。 BOT詳細情報を取得する場合は、対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <returns>ApiResponse of GetBot200Response</returns>
-        public DotnetTraq.Client.ApiResponse<GetBot200Response> GetBotWithHttpInfo(Guid botId, bool? detail = default(bool?))
+        public Traq.Client.ApiResponse<GetBot200Response> GetBotWithHttpInfo(Guid botId, bool? detail = default(bool?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1751,16 +1751,16 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
             if (detail != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "detail", detail));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "detail", detail));
             }
 
             // authentication (OAuth2) required
@@ -1791,29 +1791,29 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOT情報を取得 指定したBOTのBOT情報を取得します。 BOT詳細情報を取得する場合は、対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetBot200Response</returns>
         public async System.Threading.Tasks.Task<GetBot200Response> GetBotAsync(Guid botId, bool? detail = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<GetBot200Response> localVarResponse = await GetBotWithHttpInfoAsync(botId, detail, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<GetBot200Response> localVarResponse = await GetBotWithHttpInfoAsync(botId, detail, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// BOT情報を取得 指定したBOTのBOT情報を取得します。 BOT詳細情報を取得する場合は、対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="detail">詳細情報を含めるかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetBot200Response)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<GetBot200Response>> GetBotWithHttpInfoAsync(Guid botId, bool? detail = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<GetBot200Response>> GetBotWithHttpInfoAsync(Guid botId, bool? detail = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1824,16 +1824,16 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
             if (detail != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "detail", detail));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "detail", detail));
             }
 
             // authentication (OAuth2) required
@@ -1865,24 +1865,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTのアイコン画像を取得 指定したBOTのアイコン画像を取得を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns>FileParameter</returns>
         public FileParameter GetBotIcon(Guid botId)
         {
-            DotnetTraq.Client.ApiResponse<FileParameter> localVarResponse = GetBotIconWithHttpInfo(botId);
+            Traq.Client.ApiResponse<FileParameter> localVarResponse = GetBotIconWithHttpInfo(botId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// BOTのアイコン画像を取得 指定したBOTのアイコン画像を取得を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns>ApiResponse of FileParameter</returns>
-        public DotnetTraq.Client.ApiResponse<FileParameter> GetBotIconWithHttpInfo(Guid botId)
+        public Traq.Client.ApiResponse<FileParameter> GetBotIconWithHttpInfo(Guid botId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1894,13 +1894,13 @@ namespace DotnetTraq.Api
                 "image/png"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -1930,27 +1930,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTのアイコン画像を取得 指定したBOTのアイコン画像を取得を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FileParameter</returns>
         public async System.Threading.Tasks.Task<FileParameter> GetBotIconAsync(Guid botId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<FileParameter> localVarResponse = await GetBotIconWithHttpInfoAsync(botId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<FileParameter> localVarResponse = await GetBotIconWithHttpInfoAsync(botId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// BOTのアイコン画像を取得 指定したBOTのアイコン画像を取得を取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FileParameter)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<FileParameter>> GetBotIconWithHttpInfoAsync(Guid botId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<FileParameter>> GetBotIconWithHttpInfoAsync(Guid botId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1963,13 +1963,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2000,28 +2000,28 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTのイベントログを取得 指定したBOTのイベントログを取得します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
         /// <returns>List&lt;BotEventLog&gt;</returns>
         public List<BotEventLog> GetBotLogs(Guid botId, int? limit = default(int?), int? offset = default(int?))
         {
-            DotnetTraq.Client.ApiResponse<List<BotEventLog>> localVarResponse = GetBotLogsWithHttpInfo(botId, limit, offset);
+            Traq.Client.ApiResponse<List<BotEventLog>> localVarResponse = GetBotLogsWithHttpInfo(botId, limit, offset);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// BOTのイベントログを取得 指定したBOTのイベントログを取得します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
         /// <returns>ApiResponse of List&lt;BotEventLog&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<BotEventLog>> GetBotLogsWithHttpInfo(Guid botId, int? limit = default(int?), int? offset = default(int?))
+        public Traq.Client.ApiResponse<List<BotEventLog>> GetBotLogsWithHttpInfo(Guid botId, int? limit = default(int?), int? offset = default(int?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2031,20 +2031,20 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (offset != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
             }
 
             // authentication (OAuth2) required
@@ -2075,7 +2075,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTのイベントログを取得 指定したBOTのイベントログを取得します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
@@ -2083,23 +2083,23 @@ namespace DotnetTraq.Api
         /// <returns>Task of List&lt;BotEventLog&gt;</returns>
         public async System.Threading.Tasks.Task<List<BotEventLog>> GetBotLogsAsync(Guid botId, int? limit = default(int?), int? offset = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<BotEventLog>> localVarResponse = await GetBotLogsWithHttpInfoAsync(botId, limit, offset, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<BotEventLog>> localVarResponse = await GetBotLogsWithHttpInfoAsync(botId, limit, offset, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// BOTのイベントログを取得 指定したBOTのイベントログを取得します。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="limit">取得する件数 (optional)</param>
         /// <param name="offset">取得するオフセット (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;BotEventLog&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<BotEventLog>>> GetBotLogsWithHttpInfoAsync(Guid botId, int? limit = default(int?), int? offset = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<BotEventLog>>> GetBotLogsWithHttpInfoAsync(Guid botId, int? limit = default(int?), int? offset = default(int?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2110,20 +2110,20 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (offset != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "offset", offset));
             }
 
             // authentication (OAuth2) required
@@ -2155,24 +2155,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTリストを取得 BOT情報のリストを取得します。 allを指定しない場合、自分が開発者のBOTのみを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのBOTを取得するかどうか (optional, default to false)</param>
         /// <returns>List&lt;Bot&gt;</returns>
         public List<Bot> GetBots(bool? all = default(bool?))
         {
-            DotnetTraq.Client.ApiResponse<List<Bot>> localVarResponse = GetBotsWithHttpInfo(all);
+            Traq.Client.ApiResponse<List<Bot>> localVarResponse = GetBotsWithHttpInfo(all);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// BOTリストを取得 BOT情報のリストを取得します。 allを指定しない場合、自分が開発者のBOTのみを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのBOTを取得するかどうか (optional, default to false)</param>
         /// <returns>ApiResponse of List&lt;Bot&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<Bot>> GetBotsWithHttpInfo(bool? all = default(bool?))
+        public Traq.Client.ApiResponse<List<Bot>> GetBotsWithHttpInfo(bool? all = default(bool?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2182,15 +2182,15 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (all != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
             }
 
             // authentication (OAuth2) required
@@ -2221,27 +2221,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTリストを取得 BOT情報のリストを取得します。 allを指定しない場合、自分が開発者のBOTのみを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのBOTを取得するかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Bot&gt;</returns>
         public async System.Threading.Tasks.Task<List<Bot>> GetBotsAsync(bool? all = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<Bot>> localVarResponse = await GetBotsWithHttpInfoAsync(all, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<Bot>> localVarResponse = await GetBotsWithHttpInfoAsync(all, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// BOTリストを取得 BOT情報のリストを取得します。 allを指定しない場合、自分が開発者のBOTのみを返します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="all">全てのBOTを取得するかどうか (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Bot&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<Bot>>> GetBotsWithHttpInfoAsync(bool? all = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<Bot>>> GetBotsWithHttpInfoAsync(bool? all = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2252,15 +2252,15 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (all != null)
             {
-                localVarRequestOptions.QueryParameters.Add(DotnetTraq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "all", all));
             }
 
             // authentication (OAuth2) required
@@ -2292,24 +2292,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネル参加中のBOTのリストを取得 指定したチャンネルに参加しているBOTのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns>List&lt;BotUser&gt;</returns>
         public List<BotUser> GetChannelBots(Guid channelId)
         {
-            DotnetTraq.Client.ApiResponse<List<BotUser>> localVarResponse = GetChannelBotsWithHttpInfo(channelId);
+            Traq.Client.ApiResponse<List<BotUser>> localVarResponse = GetChannelBotsWithHttpInfo(channelId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// チャンネル参加中のBOTのリストを取得 指定したチャンネルに参加しているBOTのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns>ApiResponse of List&lt;BotUser&gt;</returns>
-        public DotnetTraq.Client.ApiResponse<List<BotUser>> GetChannelBotsWithHttpInfo(Guid channelId)
+        public Traq.Client.ApiResponse<List<BotUser>> GetChannelBotsWithHttpInfo(Guid channelId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2319,13 +2319,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2355,27 +2355,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// チャンネル参加中のBOTのリストを取得 指定したチャンネルに参加しているBOTのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;BotUser&gt;</returns>
         public async System.Threading.Tasks.Task<List<BotUser>> GetChannelBotsAsync(Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<List<BotUser>> localVarResponse = await GetChannelBotsWithHttpInfoAsync(channelId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<List<BotUser>> localVarResponse = await GetChannelBotsWithHttpInfoAsync(channelId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// チャンネル参加中のBOTのリストを取得 指定したチャンネルに参加しているBOTのリストを取得します。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;BotUser&gt;)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<List<BotUser>>> GetChannelBotsWithHttpInfoAsync(Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<List<BotUser>>> GetChannelBotsWithHttpInfoAsync(Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2386,13 +2386,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("channelId", DotnetTraq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2423,7 +2423,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをインアクティベート 指定したBOTを無効化します。対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns></returns>
         public void InactivateBot(Guid botId)
@@ -2434,12 +2434,12 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをインアクティベート 指定したBOTを無効化します。対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> InactivateBotWithHttpInfo(Guid botId)
+        public Traq.Client.ApiResponse<Object> InactivateBotWithHttpInfo(Guid botId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2448,13 +2448,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2484,7 +2484,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをインアクティベート 指定したBOTを無効化します。対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -2496,14 +2496,14 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをインアクティベート 指定したBOTを無効化します。対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> InactivateBotWithHttpInfoAsync(Guid botId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> InactivateBotWithHttpInfoAsync(Guid botId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2513,13 +2513,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2550,7 +2550,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをチャンネルに参加させる 指定したBOTを指定したチャンネルに参加させます。 チャンネルに参加したBOTは、そのチャンネルの各種イベントを受け取るようになります。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionJoinRequest"> (optional)</param>
         /// <returns></returns>
@@ -2562,13 +2562,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをチャンネルに参加させる 指定したBOTを指定したチャンネルに参加させます。 チャンネルに参加したBOTは、そのチャンネルの各種イベントを受け取るようになります。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionJoinRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> LetBotJoinChannelWithHttpInfo(Guid botId, PostBotActionJoinRequest? postBotActionJoinRequest = default(PostBotActionJoinRequest?))
+        public Traq.Client.ApiResponse<Object> LetBotJoinChannelWithHttpInfo(Guid botId, PostBotActionJoinRequest? postBotActionJoinRequest = default(PostBotActionJoinRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -2578,13 +2578,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
             localVarRequestOptions.Data = postBotActionJoinRequest;
 
             // authentication (OAuth2) required
@@ -2615,7 +2615,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをチャンネルに参加させる 指定したBOTを指定したチャンネルに参加させます。 チャンネルに参加したBOTは、そのチャンネルの各種イベントを受け取るようになります。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionJoinRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -2628,15 +2628,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをチャンネルに参加させる 指定したBOTを指定したチャンネルに参加させます。 チャンネルに参加したBOTは、そのチャンネルの各種イベントを受け取るようになります。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionJoinRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> LetBotJoinChannelWithHttpInfoAsync(Guid botId, PostBotActionJoinRequest? postBotActionJoinRequest = default(PostBotActionJoinRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> LetBotJoinChannelWithHttpInfoAsync(Guid botId, PostBotActionJoinRequest? postBotActionJoinRequest = default(PostBotActionJoinRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -2647,13 +2647,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
             localVarRequestOptions.Data = postBotActionJoinRequest;
 
             // authentication (OAuth2) required
@@ -2685,7 +2685,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをチャンネルから退出させる 指定したBOTを指定したチャンネルから退出させます。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionLeaveRequest"> (optional)</param>
         /// <returns></returns>
@@ -2697,13 +2697,13 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをチャンネルから退出させる 指定したBOTを指定したチャンネルから退出させます。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionLeaveRequest"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public DotnetTraq.Client.ApiResponse<Object> LetBotLeaveChannelWithHttpInfo(Guid botId, PostBotActionLeaveRequest? postBotActionLeaveRequest = default(PostBotActionLeaveRequest?))
+        public Traq.Client.ApiResponse<Object> LetBotLeaveChannelWithHttpInfo(Guid botId, PostBotActionLeaveRequest? postBotActionLeaveRequest = default(PostBotActionLeaveRequest?))
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -2713,13 +2713,13 @@ namespace DotnetTraq.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
             localVarRequestOptions.Data = postBotActionLeaveRequest;
 
             // authentication (OAuth2) required
@@ -2750,7 +2750,7 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをチャンネルから退出させる 指定したBOTを指定したチャンネルから退出させます。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionLeaveRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -2763,15 +2763,15 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTをチャンネルから退出させる 指定したBOTを指定したチャンネルから退出させます。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="postBotActionLeaveRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<Object>> LetBotLeaveChannelWithHttpInfoAsync(Guid botId, PostBotActionLeaveRequest? postBotActionLeaveRequest = default(PostBotActionLeaveRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<Object>> LetBotLeaveChannelWithHttpInfoAsync(Guid botId, PostBotActionLeaveRequest? postBotActionLeaveRequest = default(PostBotActionLeaveRequest?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -2782,13 +2782,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
             localVarRequestOptions.Data = postBotActionLeaveRequest;
 
             // authentication (OAuth2) required
@@ -2820,24 +2820,24 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTのトークンを再発行 指定したBOTの現在の各種トークンを無効化し、再発行を行います。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns>BotTokens</returns>
         public BotTokens ReissueBot(Guid botId)
         {
-            DotnetTraq.Client.ApiResponse<BotTokens> localVarResponse = ReissueBotWithHttpInfo(botId);
+            Traq.Client.ApiResponse<BotTokens> localVarResponse = ReissueBotWithHttpInfo(botId);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// BOTのトークンを再発行 指定したBOTの現在の各種トークンを無効化し、再発行を行います。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <returns>ApiResponse of BotTokens</returns>
-        public DotnetTraq.Client.ApiResponse<BotTokens> ReissueBotWithHttpInfo(Guid botId)
+        public Traq.Client.ApiResponse<BotTokens> ReissueBotWithHttpInfo(Guid botId)
         {
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2847,13 +2847,13 @@ namespace DotnetTraq.Api
                 "application/json"
             };
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required
@@ -2883,27 +2883,27 @@ namespace DotnetTraq.Api
         /// <summary>
         /// BOTのトークンを再発行 指定したBOTの現在の各種トークンを無効化し、再発行を行います。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BotTokens</returns>
         public async System.Threading.Tasks.Task<BotTokens> ReissueBotAsync(Guid botId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            DotnetTraq.Client.ApiResponse<BotTokens> localVarResponse = await ReissueBotWithHttpInfoAsync(botId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<BotTokens> localVarResponse = await ReissueBotWithHttpInfoAsync(botId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// BOTのトークンを再発行 指定したBOTの現在の各種トークンを無効化し、再発行を行います。 対象のBOTの管理権限が必要です。
         /// </summary>
-        /// <exception cref="DotnetTraq.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="botId">BOTUUID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BotTokens)</returns>
-        public async System.Threading.Tasks.Task<DotnetTraq.Client.ApiResponse<BotTokens>> ReissueBotWithHttpInfoAsync(Guid botId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<BotTokens>> ReissueBotWithHttpInfoAsync(Guid botId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
-            DotnetTraq.Client.RequestOptions localVarRequestOptions = new DotnetTraq.Client.RequestOptions();
+            Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -2914,13 +2914,13 @@ namespace DotnetTraq.Api
             };
 
 
-            var localVarContentType = DotnetTraq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Traq.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = DotnetTraq.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Traq.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("botId", DotnetTraq.Client.ClientUtils.ParameterToString(botId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("botId", Traq.Client.ClientUtils.ParameterToString(botId)); // path parameter
 
             // authentication (OAuth2) required
             // oauth required

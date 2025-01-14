@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 
-namespace DotnetTraq
+namespace Traq
 {
     internal interface IAuthenticationConfigurator
     {

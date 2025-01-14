@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 
-namespace DotnetTraq
+namespace Traq
 {
     /// <summary>
     /// Represents a client used to access the traQ API.

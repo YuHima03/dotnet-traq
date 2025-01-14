@@ -10,7 +10,7 @@
 
 using System;
 
-namespace DotnetTraq.Client
+namespace Traq.Client
 {
     /// <summary>
     /// A delegate to ExceptionFactory method

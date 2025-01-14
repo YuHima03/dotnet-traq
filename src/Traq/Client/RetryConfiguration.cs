@@ -11,7 +11,7 @@
 using Polly;
 using System.Net.Http;
 
-namespace DotnetTraq.Client
+namespace Traq.Client
 {
     /// <summary>
     /// Configuration class to set the polly retry policies to be applied to the requests.
