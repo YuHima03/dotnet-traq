@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetTraq", "src\DotnetTraq\DotnetTraq.csproj", "{7D6324A1-7737-43E3-9E3A-77D85D653CF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Traq", "src\Traq\Traq.csproj", "{7D6324A1-7737-43E3-9E3A-77D85D653CF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
