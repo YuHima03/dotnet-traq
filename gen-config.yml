@@ -1,6 +1,6 @@
 apiName: Api
 library: httpclient
-packageName: DotnetTraq
+packageName: Traq
 packageVersion: 0.1.0
 targetFramework: net8.0
 useDateTimeOffset: true
