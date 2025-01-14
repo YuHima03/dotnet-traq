@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  api-gen:
+    cmds:
+      - |
+        docker run --rm -v ${PWD}:/local \
+        openapitools/openapi-generator-cli generate \
+          --config         /local/gen-config.yml \
+          --generator-name csharp \
+          --input-spec     https://raw.githubusercontent.com/traPtitech/traQ/master/docs/v3-api.yaml \
+          --output         /local
