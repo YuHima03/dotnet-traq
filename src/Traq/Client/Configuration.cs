@@ -548,7 +548,7 @@ namespace Traq.Client
         /// </summary>
         public static string ToDebugReport()
         {
-            string report = "C# SDK (DotnetTraq) Debug Report:\n";
+            string report = "C# SDK (Traq) Debug Report:\n";
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 3.0\n";
