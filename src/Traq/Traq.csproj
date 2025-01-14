@@ -43,6 +43,13 @@
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <TiredCompilation>True</TiredCompilation>
+    <TiredCompilationQuickJit>True</TiredCompilationQuickJit>
+    <TiredCompilationQuickJitForLoops>True</TiredCompilationQuickJitForLoops>
+    <TiredPGO>True</TiredPGO>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Include="..\..\README.md">
       <Pack>True</Pack>
