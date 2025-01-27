@@ -2,10 +2,24 @@
 
 namespace Traq
 {
+    /// <summary>
+    /// Represents a preference of authentication method for the traQ API.
+    /// </summary>
     public enum TraqAuthMethodPreference
     {
+        /// <summary>
+        /// Preference is not specified.
+        /// </summary>
         NotSpecified = 0,
+
+        /// <summary>
+        /// Prefer bearer authentication.
+        /// </summary>
         PreferBearerAuth,
+
+        /// <summary>
+        /// Prefer cookie authentication.
+        /// </summary>
         PreferCookieAuth,
     }
 
@@ -14,6 +28,10 @@ namespace Traq
     /// </summary>
     public interface IReadOnlyTraqApiClientOptions
     {
+        /// <summary>
+        /// Gets the preference of authentication method for the traQ API.
+        /// </summary>
+        /// <returns>The preference of authentication method for the traQ API.</returns>
         public abstract TraqAuthMethodPreference AuthMethodPreference { get; }
 
         /// <summary>
@@ -44,6 +62,13 @@ namespace Traq
     {
         Uri? _baseUri = null;
 
+        /// <summary>
+        /// Gets or sets the preference of authentication method for the traQ API.
+        /// </summary>
+        /// <remarks>
+        /// If the value is set to <see cref="TraqAuthMethodPreference.NotSpecified"/>, this method tries to use bearer authentication in preference.
+        /// </remarks>
+        /// <value>The preference of authentication method for the traQ API.</value>
         public TraqAuthMethodPreference AuthMethodPreference { get; set; } = TraqAuthMethodPreference.NotSpecified;
         
         /// <summary>
