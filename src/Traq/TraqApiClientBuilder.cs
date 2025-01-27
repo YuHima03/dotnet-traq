@@ -75,7 +75,8 @@ namespace Traq
         /// <inheritdoc cref="ITraqApiClientBuilder.SetBaseAddress(string)"/>
         public TraqApiClientBuilder SetBaseAddress(string baseAddress)
         {
-            _baseAddress = baseAddress;
+            ArgumentNullException.ThrowIfNull(baseAddress);
+            _baseAddress = (baseAddress.Length > 0 && baseAddress[^1] != '/') ? $"{baseAddress}/" : baseAddress;
             return this;
         }
 

@@ -22,7 +22,7 @@ namespace Traq.Client
             private string _query = "?";
             public WebRequestPathBuilder(string baseUrl, string path)
             {
-                _baseUrl = baseUrl;
+                _baseUrl = (baseUrl[^1]=='/') ? baseUrl[..^1] : baseUrl;
                 _path = path;
             }
 
