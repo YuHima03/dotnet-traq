@@ -32,7 +32,7 @@ namespace Traq
         {
             return services
                 .Configure(configure)
-                .AddSingleton<ITraqApiClient>();
+                .AddSingleton<ITraqApiClient, TraqApiClient>();
         }
     }
 }
