@@ -24,6 +24,7 @@ namespace Traq
         /// <summary>
         /// Gets the configuration for this client.
         /// </summary>
+        [Obsolete("Use Options property instead.")]
         public Client.IReadableConfiguration Configuration { get; }
 
         /// <summary>
@@ -146,6 +147,7 @@ namespace Traq
         public HttpClientHandler? ClientHandler { get; }
 
         /// <inheritdoc/>
+        [Obsolete("Use Options property instead.")]
         public Client.IReadableConfiguration Configuration { get; }
 
         /// <inheritdoc/>
@@ -297,6 +299,7 @@ namespace Traq
             _webRtcApi = new(() => new(client, clientHandler));
         }
 
+        [Obsolete]
         internal TraqApiClient(HttpClient client, Configuration conf, HttpClientHandler? clientHandler = null)
         {
             Client = client;
@@ -324,7 +327,7 @@ namespace Traq
             _webhookApi = new(() => new(client, conf, clientHandler));
             _webRtcApi = new(() => new(client, conf, clientHandler));
         }
-        
+
         /// <inheritdoc/>
         public void Dispose()
         {

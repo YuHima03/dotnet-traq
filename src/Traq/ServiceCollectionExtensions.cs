@@ -14,6 +14,7 @@ namespace Traq
         /// <param name="services">The <see cref="IServiceCollection"/> to add.</param>
         /// <param name="configure">The configurator for a new instance of the <see cref="ITraqApiClient"/> interface.</param>
         /// <returns></returns>
+        [Obsolete("Use other methods that take configurator of TraqApiClientOptions.")]
         public static IServiceCollection AddTraqApiClient(this IServiceCollection services, Action<ITraqApiClientBuilder> configure)
         {
             TraqApiClientBuilder builder = new();
