@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Traq", "src\Traq\Traq.csproj", "{7D6324A1-7737-43E3-9E3A-77D85D653CF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Traq.Tests", "src\Traq.Tests\Traq.Tests.csproj", "{D2B6E44B-E33D-40BF-BB06-59B59AACCA12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7D6324A1-7737-43E3-9E3A-77D85D653CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D6324A1-7737-43E3-9E3A-77D85D653CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D6324A1-7737-43E3-9E3A-77D85D653CF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2B6E44B-E33D-40BF-BB06-59B59AACCA12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2B6E44B-E33D-40BF-BB06-59B59AACCA12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2B6E44B-E33D-40BF-BB06-59B59AACCA12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2B6E44B-E33D-40BF-BB06-59B59AACCA12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

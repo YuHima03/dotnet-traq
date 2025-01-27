@@ -6,6 +6,7 @@ namespace Traq
     /// <summary>
     /// Provides methods to build configured <see cref="ITraqApiClient"/>s.
     /// </summary>
+    [Obsolete("Use ITraqApiClientOptions interface instead.")]
     public interface ITraqApiClientBuilder
     {
         /// <summary>
@@ -39,6 +40,7 @@ namespace Traq
     /// <summary>
     /// Provides methods to build configured <see cref="TraqApiClient"/>s.
     /// </summary>
+    [Obsolete("Use TraqApiClientOptions class instead.")]
     public sealed class TraqApiClientBuilder : ITraqApiClientBuilder
     {
         IAuthenticationConfigurator? _auth;
@@ -75,7 +77,8 @@ namespace Traq
         /// <inheritdoc cref="ITraqApiClientBuilder.SetBaseAddress(string)"/>
         public TraqApiClientBuilder SetBaseAddress(string baseAddress)
         {
-            _baseAddress = baseAddress;
+            ArgumentNullException.ThrowIfNull(baseAddress);
+            _baseAddress = (baseAddress.Length > 0 && baseAddress[^1] != '/') ? $"{baseAddress}/" : baseAddress;
             return this;
         }
 

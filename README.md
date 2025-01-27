@@ -11,13 +11,16 @@ An extension method for the `IServiceCollection` type can be used.
 In this case, a singleton instance of the `ITraqApiClient` type is provided by an `IServiceProvider` instance.
 
 ```cs
-var builder = Host.CreateApplicationBuilder();
+var host = Host.CreateDefaultApplication()
+    .ConfigureServices(services =>
+    {
+        services.AddTraqApiClient(option =>
+        {
+            option.BaseAddress = Environment.GetEnvironmentVariable("TRAQ_BASE_ADDRESS");
+            option.BearerAuthToken = Environment.GetEnvironmentVariable("TRAQ_ACCESS_TOKEN");
+        });
+    })
+    .Build();
 
-builder.Services
-    .AddTraqApiClient(conf => {
-        conf.SetBaseAddress("http://****.com/api")
-            .UseBearerAuthentication("sample_access_token")
-    });
-
-builder.Build().Run();
+host.Run();
 ```

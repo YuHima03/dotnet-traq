@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.Extensions.Options;
+using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using Traq.Client;
 
 namespace Traq
 {
@@ -21,7 +24,13 @@ namespace Traq
         /// <summary>
         /// Gets the configuration for this client.
         /// </summary>
+        [Obsolete("Use Options property instead.")]
         public Client.IReadableConfiguration Configuration { get; }
+
+        /// <summary>
+        /// Gets the options for this client.
+        /// </summary>
+        public IReadOnlyTraqApiClientOptions Options { get; }
 
         /// <summary>
         /// Gets the client for Activity API.
@@ -129,6 +138,8 @@ namespace Traq
     /// </summary>
     public sealed class TraqApiClient : ITraqApiClient
     {
+        readonly TraqApiClientOptions _options;
+
         /// <inheritdoc/>
         public HttpClient Client { get; }
 
@@ -136,7 +147,11 @@ namespace Traq
         public HttpClientHandler? ClientHandler { get; }
 
         /// <inheritdoc/>
+        [Obsolete("Use Options property instead.")]
         public Client.IReadableConfiguration Configuration { get; }
+
+        /// <inheritdoc/>
+        public IReadOnlyTraqApiClientOptions Options => _options;
 
         #region Lazy initialized APIs
 
@@ -249,7 +264,43 @@ namespace Traq
 
         #endregion
 
-        internal TraqApiClient(HttpClient client, Client.Configuration conf, HttpClientHandler? clientHandler = null)
+        /// <summary>
+        /// Initialize a new instance of the <see cref="TraqApiClient"/> class with configurated options for the instance.
+        /// </summary>
+        /// <param name="options"></param>
+        public TraqApiClient(IOptions<TraqApiClientOptions> options)
+        {
+            TraqApiClientOptions o = options.Value;
+            var (client, clientHandler) = CreateHttpClient(o);
+
+            Client = client;
+            ClientHandler = clientHandler;
+            _options = o;
+
+            _activityApi = new(() => new(client, clientHandler));
+            _authenticationApi = new(() => new(client, clientHandler));
+            _botApi = new(() => new(client, clientHandler));
+            _channelApi = new(() => new(client, clientHandler));
+            _clipApi = new(() => new(client, clientHandler));
+            _fileApi = new(() => new(client, clientHandler));
+            _groupApi = new(() => new(client, clientHandler));
+            _meApi = new(() => new(client, clientHandler));
+            _messageApi = new(() => new(client, clientHandler));
+            _notificationApi = new(() => new(client, clientHandler));
+            _oAuth2Api = new(() => new(client, clientHandler));
+            _ogpApi = new(() => new(client, clientHandler));
+            _pinApi = new(() => new(client, clientHandler));
+            _publicApi = new(() => new(client, clientHandler));
+            _stampApi = new(() => new(client, clientHandler));
+            _starApi = new(() => new(client, clientHandler));
+            _userApi = new(() => new(client, clientHandler));
+            _userTagApi = new(() => new(client, clientHandler));
+            _webhookApi = new(() => new(client, clientHandler));
+            _webRtcApi = new(() => new(client, clientHandler));
+        }
+
+        [Obsolete]
+        internal TraqApiClient(HttpClient client, Configuration conf, HttpClientHandler? clientHandler = null)
         {
             Client = client;
             ClientHandler = clientHandler;
@@ -276,12 +327,60 @@ namespace Traq
             _webhookApi = new(() => new(client, conf, clientHandler));
             _webRtcApi = new(() => new(client, conf, clientHandler));
         }
-        
+
         /// <inheritdoc/>
         public void Dispose()
         {
             Client?.Dispose();
             ClientHandler?.Dispose();
+        }
+
+        static (HttpClient, HttpClientHandler) CreateHttpClient(TraqApiClientOptions options)
+        {
+            HttpClientHandler handler = new();
+            HttpClient client = new(handler);
+
+            if (options.BaseAddress is null)
+            {
+                throw new ArgumentException("Base address must be set.", nameof(options));
+            }
+
+            switch ((options.BearerAuthToken, options.CookieAuthToken))
+            {
+                case (null, null):
+                    break;
+                case (_, null):
+                    configureBearer(options, client);
+                    break;
+                case (null, _):
+                    configureCookie(options, handler);
+                    break;
+                default:
+                    if (options.AuthMethodPreference == TraqAuthMethodPreference.PreferCookieAuth)
+                        configureCookie(options, handler);
+                    else
+                        configureBearer(options, client);
+                    break;
+            }
+
+            return (client, handler);
+
+            static void configureBearer(TraqApiClientOptions o, HttpClient c)
+            {
+                c.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", o.BearerAuthToken);
+            }
+            static void configureCookie(TraqApiClientOptions o, HttpClientHandler h)
+            {
+                h.CookieContainer.Add(new System.Net.Cookie()
+                {
+                    Domain = o.BaseAddressUri.Host,
+                    HttpOnly = true,
+                    Name = "r_session",
+                    Path = "/",
+                    Secure = o.BaseAddressUri.Scheme == Uri.UriSchemeHttps,
+                    Value = o.CookieAuthToken,
+                });
+            }
         }
     }
 }
