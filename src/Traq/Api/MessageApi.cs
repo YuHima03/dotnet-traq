@@ -381,7 +381,7 @@ namespace Traq.Api
         /// <param name="offset">検索結果から取得するメッセージのオフセット (optional)</param>
         /// <param name="sort">ソート順 (作成日時が新しい &#x60;createdAt&#x60;, 作成日時が古い &#x60;-createdAt&#x60;, 更新日時が新しい &#x60;updatedAt&#x60;, 更新日時が古い &#x60;-updatedAt&#x60;) (optional, default to -createdAt)</param>
         /// <returns>MessageSearchResult</returns>
-        MessageSearchResult SearchMessages(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), Guid? to = default(Guid?), Guid? from = default(Guid?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?));
+        MessageSearchResult SearchMessages(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), List<Guid>? to = default(List<Guid>?), List<Guid>? from = default(List<Guid>?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?));
 
         /// <summary>
         /// メッセージを検索
@@ -407,7 +407,7 @@ namespace Traq.Api
         /// <param name="offset">検索結果から取得するメッセージのオフセット (optional)</param>
         /// <param name="sort">ソート順 (作成日時が新しい &#x60;createdAt&#x60;, 作成日時が古い &#x60;-createdAt&#x60;, 更新日時が新しい &#x60;updatedAt&#x60;, 更新日時が古い &#x60;-updatedAt&#x60;) (optional, default to -createdAt)</param>
         /// <returns>ApiResponse of MessageSearchResult</returns>
-        ApiResponse<MessageSearchResult> SearchMessagesWithHttpInfo(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), Guid? to = default(Guid?), Guid? from = default(Guid?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?));
+        ApiResponse<MessageSearchResult> SearchMessagesWithHttpInfo(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), List<Guid>? to = default(List<Guid>?), List<Guid>? from = default(List<Guid>?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?));
         #endregion Synchronous Operations
     }
 
@@ -800,7 +800,7 @@ namespace Traq.Api
         /// <param name="sort">ソート順 (作成日時が新しい &#x60;createdAt&#x60;, 作成日時が古い &#x60;-createdAt&#x60;, 更新日時が新しい &#x60;updatedAt&#x60;, 更新日時が古い &#x60;-updatedAt&#x60;) (optional, default to -createdAt)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessageSearchResult</returns>
-        System.Threading.Tasks.Task<MessageSearchResult> SearchMessagesAsync(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), Guid? to = default(Guid?), Guid? from = default(Guid?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<MessageSearchResult> SearchMessagesAsync(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), List<Guid>? to = default(List<Guid>?), List<Guid>? from = default(List<Guid>?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// メッセージを検索
@@ -827,7 +827,7 @@ namespace Traq.Api
         /// <param name="sort">ソート順 (作成日時が新しい &#x60;createdAt&#x60;, 作成日時が古い &#x60;-createdAt&#x60;, 更新日時が新しい &#x60;updatedAt&#x60;, 更新日時が古い &#x60;-updatedAt&#x60;) (optional, default to -createdAt)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageSearchResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<MessageSearchResult>> SearchMessagesWithHttpInfoAsync(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), Guid? to = default(Guid?), Guid? from = default(Guid?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<MessageSearchResult>> SearchMessagesWithHttpInfoAsync(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), List<Guid>? to = default(List<Guid>?), List<Guid>? from = default(List<Guid>?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -3064,7 +3064,7 @@ namespace Traq.Api
         /// <param name="offset">検索結果から取得するメッセージのオフセット (optional)</param>
         /// <param name="sort">ソート順 (作成日時が新しい &#x60;createdAt&#x60;, 作成日時が古い &#x60;-createdAt&#x60;, 更新日時が新しい &#x60;updatedAt&#x60;, 更新日時が古い &#x60;-updatedAt&#x60;) (optional, default to -createdAt)</param>
         /// <returns>MessageSearchResult</returns>
-        public MessageSearchResult SearchMessages(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), Guid? to = default(Guid?), Guid? from = default(Guid?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?))
+        public MessageSearchResult SearchMessages(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), List<Guid>? to = default(List<Guid>?), List<Guid>? from = default(List<Guid>?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?))
         {
             Traq.Client.ApiResponse<MessageSearchResult> localVarResponse = SearchMessagesWithHttpInfo(word, after, before, varIn, to, from, citation, bot, hasURL, hasAttachments, hasImage, hasVideo, hasAudio, limit, offset, sort);
             return localVarResponse.Data;
@@ -3091,7 +3091,7 @@ namespace Traq.Api
         /// <param name="offset">検索結果から取得するメッセージのオフセット (optional)</param>
         /// <param name="sort">ソート順 (作成日時が新しい &#x60;createdAt&#x60;, 作成日時が古い &#x60;-createdAt&#x60;, 更新日時が新しい &#x60;updatedAt&#x60;, 更新日時が古い &#x60;-updatedAt&#x60;) (optional, default to -createdAt)</param>
         /// <returns>ApiResponse of MessageSearchResult</returns>
-        public Traq.Client.ApiResponse<MessageSearchResult> SearchMessagesWithHttpInfo(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), Guid? to = default(Guid?), Guid? from = default(Guid?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?))
+        public Traq.Client.ApiResponse<MessageSearchResult> SearchMessagesWithHttpInfo(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), List<Guid>? to = default(List<Guid>?), List<Guid>? from = default(List<Guid>?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?))
         {
             Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
@@ -3127,11 +3127,11 @@ namespace Traq.Api
             }
             if (to != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "to", to));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("multi", "to", to));
             }
             if (from != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "from", from));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("multi", "from", from));
             }
             if (citation != null)
             {
@@ -3221,7 +3221,7 @@ namespace Traq.Api
         /// <param name="sort">ソート順 (作成日時が新しい &#x60;createdAt&#x60;, 作成日時が古い &#x60;-createdAt&#x60;, 更新日時が新しい &#x60;updatedAt&#x60;, 更新日時が古い &#x60;-updatedAt&#x60;) (optional, default to -createdAt)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessageSearchResult</returns>
-        public async System.Threading.Tasks.Task<MessageSearchResult> SearchMessagesAsync(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), Guid? to = default(Guid?), Guid? from = default(Guid?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MessageSearchResult> SearchMessagesAsync(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), List<Guid>? to = default(List<Guid>?), List<Guid>? from = default(List<Guid>?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Traq.Client.ApiResponse<MessageSearchResult> localVarResponse = await SearchMessagesWithHttpInfoAsync(word, after, before, varIn, to, from, citation, bot, hasURL, hasAttachments, hasImage, hasVideo, hasAudio, limit, offset, sort, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -3249,7 +3249,7 @@ namespace Traq.Api
         /// <param name="sort">ソート順 (作成日時が新しい &#x60;createdAt&#x60;, 作成日時が古い &#x60;-createdAt&#x60;, 更新日時が新しい &#x60;updatedAt&#x60;, 更新日時が古い &#x60;-updatedAt&#x60;) (optional, default to -createdAt)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageSearchResult)</returns>
-        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<MessageSearchResult>> SearchMessagesWithHttpInfoAsync(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), Guid? to = default(Guid?), Guid? from = default(Guid?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<MessageSearchResult>> SearchMessagesWithHttpInfoAsync(string? word = default(string?), DateTimeOffset? after = default(DateTimeOffset?), DateTimeOffset? before = default(DateTimeOffset?), Guid? varIn = default(Guid?), List<Guid>? to = default(List<Guid>?), List<Guid>? from = default(List<Guid>?), Guid? citation = default(Guid?), bool? bot = default(bool?), bool? hasURL = default(bool?), bool? hasAttachments = default(bool?), bool? hasImage = default(bool?), bool? hasVideo = default(bool?), bool? hasAudio = default(bool?), int? limit = default(int?), int? offset = default(int?), string? sort = default(string?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
@@ -3287,11 +3287,11 @@ namespace Traq.Api
             }
             if (to != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "to", to));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("multi", "to", to));
             }
             if (from != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "from", from));
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("multi", "from", from));
             }
             if (citation != null)
             {

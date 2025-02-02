@@ -25,9 +25,11 @@
 .gitignore
 api/*
 appveyor.yml
-docs/*.md
 *.sln
 src/**/*.csproj
 src/*.Test/**
 git_push.sh
 README.md
+
+# Modified files:
+src/Traq/Client/WebRequestPathBuilder.cs
