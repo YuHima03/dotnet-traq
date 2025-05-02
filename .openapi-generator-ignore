@@ -33,3 +33,4 @@ README.md
 
 # Modified files:
 src/Traq/Client/WebRequestPathBuilder.cs
+src/Traq/Client/ClientUtils.cs
