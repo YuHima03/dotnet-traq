@@ -195,9 +195,6 @@ namespace Traq.Api
         /// <summary>
         /// 指定したチャンネルパスを取得
         /// </summary>
-        /// <remarks>
-        /// 指定したチャンネルのパスを取得します。
-        /// </remarks>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
         /// <returns>ChannelPath</returns>
@@ -207,7 +204,7 @@ namespace Traq.Api
         /// 指定したチャンネルパスを取得
         /// </summary>
         /// <remarks>
-        /// 指定したチャンネルのパスを取得します。
+        /// 
         /// </remarks>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
@@ -242,8 +239,9 @@ namespace Traq.Api
         /// </remarks>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
+        /// <param name="excludeDeletedMessages">削除されたメッセージを除外するかどうか(デフォルト false) (optional)</param>
         /// <returns>ChannelStats</returns>
-        ChannelStats GetChannelStats(Guid channelId);
+        ChannelStats GetChannelStats(Guid channelId, bool? excludeDeletedMessages = default(bool?));
 
         /// <summary>
         /// チャンネル統計情報を取得
@@ -253,8 +251,9 @@ namespace Traq.Api
         /// </remarks>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
+        /// <param name="excludeDeletedMessages">削除されたメッセージを除外するかどうか(デフォルト false) (optional)</param>
         /// <returns>ApiResponse of ChannelStats</returns>
-        ApiResponse<ChannelStats> GetChannelStatsWithHttpInfo(Guid channelId);
+        ApiResponse<ChannelStats> GetChannelStatsWithHttpInfo(Guid channelId, bool? excludeDeletedMessages = default(bool?));
         /// <summary>
         /// チャンネルの通知購読者のリストを取得
         /// </summary>
@@ -633,7 +632,7 @@ namespace Traq.Api
         /// 指定したチャンネルパスを取得
         /// </summary>
         /// <remarks>
-        /// 指定したチャンネルのパスを取得します。
+        /// 
         /// </remarks>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
@@ -645,7 +644,7 @@ namespace Traq.Api
         /// 指定したチャンネルパスを取得
         /// </summary>
         /// <remarks>
-        /// 指定したチャンネルのパスを取得します。
+        /// 
         /// </remarks>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
@@ -683,9 +682,10 @@ namespace Traq.Api
         /// </remarks>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
+        /// <param name="excludeDeletedMessages">削除されたメッセージを除外するかどうか(デフォルト false) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ChannelStats</returns>
-        System.Threading.Tasks.Task<ChannelStats> GetChannelStatsAsync(Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ChannelStats> GetChannelStatsAsync(Guid channelId, bool? excludeDeletedMessages = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// チャンネル統計情報を取得
@@ -695,9 +695,10 @@ namespace Traq.Api
         /// </remarks>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
+        /// <param name="excludeDeletedMessages">削除されたメッセージを除外するかどうか(デフォルト false) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ChannelStats)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ChannelStats>> GetChannelStatsWithHttpInfoAsync(Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ChannelStats>> GetChannelStatsWithHttpInfoAsync(Guid channelId, bool? excludeDeletedMessages = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// チャンネルの通知購読者のリストを取得
         /// </summary>
@@ -2117,7 +2118,7 @@ namespace Traq.Api
         }
 
         /// <summary>
-        /// 指定したチャンネルパスを取得 指定したチャンネルのパスを取得します。
+        /// 指定したチャンネルパスを取得 
         /// </summary>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
@@ -2129,7 +2130,7 @@ namespace Traq.Api
         }
 
         /// <summary>
-        /// 指定したチャンネルパスを取得 指定したチャンネルのパスを取得します。
+        /// 指定したチャンネルパスを取得 
         /// </summary>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
@@ -2180,7 +2181,7 @@ namespace Traq.Api
         }
 
         /// <summary>
-        /// 指定したチャンネルパスを取得 指定したチャンネルのパスを取得します。
+        /// 指定したチャンネルパスを取得 
         /// </summary>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
@@ -2193,7 +2194,7 @@ namespace Traq.Api
         }
 
         /// <summary>
-        /// 指定したチャンネルパスを取得 指定したチャンネルのパスを取得します。
+        /// 指定したチャンネルパスを取得 
         /// </summary>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
@@ -2383,10 +2384,11 @@ namespace Traq.Api
         /// </summary>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
+        /// <param name="excludeDeletedMessages">削除されたメッセージを除外するかどうか(デフォルト false) (optional)</param>
         /// <returns>ChannelStats</returns>
-        public ChannelStats GetChannelStats(Guid channelId)
+        public ChannelStats GetChannelStats(Guid channelId, bool? excludeDeletedMessages = default(bool?))
         {
-            Traq.Client.ApiResponse<ChannelStats> localVarResponse = GetChannelStatsWithHttpInfo(channelId);
+            Traq.Client.ApiResponse<ChannelStats> localVarResponse = GetChannelStatsWithHttpInfo(channelId, excludeDeletedMessages);
             return localVarResponse.Data;
         }
 
@@ -2395,8 +2397,9 @@ namespace Traq.Api
         /// </summary>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
+        /// <param name="excludeDeletedMessages">削除されたメッセージを除外するかどうか(デフォルト false) (optional)</param>
         /// <returns>ApiResponse of ChannelStats</returns>
-        public Traq.Client.ApiResponse<ChannelStats> GetChannelStatsWithHttpInfo(Guid channelId)
+        public Traq.Client.ApiResponse<ChannelStats> GetChannelStatsWithHttpInfo(Guid channelId, bool? excludeDeletedMessages = default(bool?))
         {
             Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
 
@@ -2415,6 +2418,10 @@ namespace Traq.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            if (excludeDeletedMessages != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "exclude-deleted-messages", excludeDeletedMessages));
+            }
 
             // authentication (OAuth2) required
             // oauth required
@@ -2446,11 +2453,12 @@ namespace Traq.Api
         /// </summary>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
+        /// <param name="excludeDeletedMessages">削除されたメッセージを除外するかどうか(デフォルト false) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ChannelStats</returns>
-        public async System.Threading.Tasks.Task<ChannelStats> GetChannelStatsAsync(Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ChannelStats> GetChannelStatsAsync(Guid channelId, bool? excludeDeletedMessages = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Traq.Client.ApiResponse<ChannelStats> localVarResponse = await GetChannelStatsWithHttpInfoAsync(channelId, cancellationToken).ConfigureAwait(false);
+            Traq.Client.ApiResponse<ChannelStats> localVarResponse = await GetChannelStatsWithHttpInfoAsync(channelId, excludeDeletedMessages, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2459,9 +2467,10 @@ namespace Traq.Api
         /// </summary>
         /// <exception cref="Traq.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="channelId">チャンネルUUID</param>
+        /// <param name="excludeDeletedMessages">削除されたメッセージを除外するかどうか(デフォルト false) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ChannelStats)</returns>
-        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<ChannelStats>> GetChannelStatsWithHttpInfoAsync(Guid channelId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Traq.Client.ApiResponse<ChannelStats>> GetChannelStatsWithHttpInfoAsync(Guid channelId, bool? excludeDeletedMessages = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Traq.Client.RequestOptions localVarRequestOptions = new Traq.Client.RequestOptions();
@@ -2482,6 +2491,10 @@ namespace Traq.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("channelId", Traq.Client.ClientUtils.ParameterToString(channelId)); // path parameter
+            if (excludeDeletedMessages != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Traq.Client.ClientUtils.ParameterToMultiMap("", "exclude-deleted-messages", excludeDeletedMessages));
+            }
 
             // authentication (OAuth2) required
             // oauth required
