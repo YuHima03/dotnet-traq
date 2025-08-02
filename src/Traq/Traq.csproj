@@ -37,6 +37,11 @@
     <PackageTags>traq</PackageTags>
     <PackageProjectUrl>https://github.com/YuHima03/dotnet-traq</PackageProjectUrl>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <IsAotCompatible>true</IsAotCompatible>
+    <JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>
+  </PropertyGroup>
   
   <PropertyGroup>
     <RepositoryUrl>https://github.com/YuHima03/dotnet-traq</RepositoryUrl>
