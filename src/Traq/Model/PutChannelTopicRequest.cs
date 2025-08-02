@@ -90,7 +90,7 @@ namespace Traq.Model
             // Topic (string) maxLength
             if (this.Topic != null && this.Topic.Length > 200)
             {
-                yield return new ValidationResult("Invalid value for Topic, length must be less than 200.", new [] { "Topic" });
+                yield return new ValidationResult("Invalid value for Topic, length must be less than 200.", new[] { "Topic" });
             }
 
             yield break;

@@ -87,12 +87,13 @@ namespace Traq.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            if (this.NewPassword != null) {
+            if (this.NewPassword != null)
+            {
                 // NewPassword (string) pattern
                 Regex regexNewPassword = new Regex(@"^[\x20-\x7E]{10,32}$", RegexOptions.CultureInvariant);
                 if (!regexNewPassword.Match(this.NewPassword).Success)
                 {
-                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NewPassword, must match a pattern of " + regexNewPassword, new [] { "NewPassword" });
+                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NewPassword, must match a pattern of " + regexNewPassword, new[] { "NewPassword" });
                 }
             }
 

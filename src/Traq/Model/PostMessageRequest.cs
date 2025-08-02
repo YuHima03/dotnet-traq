@@ -100,13 +100,13 @@ namespace Traq.Model
             // Content (string) maxLength
             if (this.Content != null && this.Content.Length > 10000)
             {
-                yield return new ValidationResult("Invalid value for Content, length must be less than 10000.", new [] { "Content" });
+                yield return new ValidationResult("Invalid value for Content, length must be less than 10000.", new[] { "Content" });
             }
 
             // Content (string) minLength
             if (this.Content != null && this.Content.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Content, length must be greater than 1.", new [] { "Content" });
+                yield return new ValidationResult("Invalid value for Content, length must be greater than 1.", new[] { "Content" });
             }
 
             yield break;

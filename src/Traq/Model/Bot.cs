@@ -173,7 +173,7 @@ namespace Traq.Model
             // Description (string) maxLength
             if (this.Description != null && this.Description.Length > 1000)
             {
-                yield return new ValidationResult("Invalid value for Description, length must be less than 1000.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be less than 1000.", new[] { "Description" });
             }
 
             yield break;

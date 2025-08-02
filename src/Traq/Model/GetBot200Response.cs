@@ -42,7 +42,7 @@ namespace Traq.Model
         public GetBot200Response(Bot actualInstance)
         {
             this.IsNullable = false;
-            this.SchemaType= "oneOf";
+            this.SchemaType = "oneOf";
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
@@ -54,7 +54,7 @@ namespace Traq.Model
         public GetBot200Response(BotDetail actualInstance)
         {
             this.IsNullable = false;
-            this.SchemaType= "oneOf";
+            this.SchemaType = "oneOf";
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
@@ -236,7 +236,7 @@ namespace Traq.Model
         /// <returns>The object converted from the JSON string</returns>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            switch(reader.TokenType) 
+            switch (reader.TokenType)
             {
                 case JsonToken.StartObject:
                     return GetBot200Response.FromJson(JObject.Load(reader).ToString(Formatting.None));

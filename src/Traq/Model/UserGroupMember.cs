@@ -100,7 +100,7 @@ namespace Traq.Model
             // Role (string) maxLength
             if (this.Role != null && this.Role.Length > 100)
             {
-                yield return new ValidationResult("Invalid value for Role, length must be less than 100.", new [] { "Role" });
+                yield return new ValidationResult("Invalid value for Role, length must be less than 100.", new[] { "Role" });
             }
 
             yield break;

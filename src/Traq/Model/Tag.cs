@@ -115,13 +115,13 @@ namespace Traq.Model
             // VarTag (string) maxLength
             if (this.VarTag != null && this.VarTag.Length > 30)
             {
-                yield return new ValidationResult("Invalid value for VarTag, length must be less than 30.", new [] { "VarTag" });
+                yield return new ValidationResult("Invalid value for VarTag, length must be less than 30.", new[] { "VarTag" });
             }
 
             // VarTag (string) minLength
             if (this.VarTag != null && this.VarTag.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for VarTag, length must be greater than 1.", new [] { "VarTag" });
+                yield return new ValidationResult("Invalid value for VarTag, length must be greater than 1.", new[] { "VarTag" });
             }
 
             yield break;

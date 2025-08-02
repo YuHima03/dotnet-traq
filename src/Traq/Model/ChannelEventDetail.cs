@@ -42,7 +42,7 @@ namespace Traq.Model
         public ChannelEventDetail(TopicChangedEvent actualInstance)
         {
             this.IsNullable = false;
-            this.SchemaType= "oneOf";
+            this.SchemaType = "oneOf";
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
@@ -54,7 +54,7 @@ namespace Traq.Model
         public ChannelEventDetail(SubscribersChangedEvent actualInstance)
         {
             this.IsNullable = false;
-            this.SchemaType= "oneOf";
+            this.SchemaType = "oneOf";
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
@@ -66,7 +66,7 @@ namespace Traq.Model
         public ChannelEventDetail(PinAddedEvent actualInstance)
         {
             this.IsNullable = false;
-            this.SchemaType= "oneOf";
+            this.SchemaType = "oneOf";
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
@@ -78,7 +78,7 @@ namespace Traq.Model
         public ChannelEventDetail(PinRemovedEvent actualInstance)
         {
             this.IsNullable = false;
-            this.SchemaType= "oneOf";
+            this.SchemaType = "oneOf";
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
@@ -90,7 +90,7 @@ namespace Traq.Model
         public ChannelEventDetail(NameChangedEvent actualInstance)
         {
             this.IsNullable = false;
-            this.SchemaType= "oneOf";
+            this.SchemaType = "oneOf";
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
@@ -102,7 +102,7 @@ namespace Traq.Model
         public ChannelEventDetail(ParentChangedEvent actualInstance)
         {
             this.IsNullable = false;
-            this.SchemaType= "oneOf";
+            this.SchemaType = "oneOf";
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
@@ -114,7 +114,7 @@ namespace Traq.Model
         public ChannelEventDetail(VisibilityChangedEvent actualInstance)
         {
             this.IsNullable = false;
-            this.SchemaType= "oneOf";
+            this.SchemaType = "oneOf";
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
@@ -126,7 +126,7 @@ namespace Traq.Model
         public ChannelEventDetail(ForcedNotificationChangedEvent actualInstance)
         {
             this.IsNullable = false;
-            this.SchemaType= "oneOf";
+            this.SchemaType = "oneOf";
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
@@ -138,7 +138,7 @@ namespace Traq.Model
         public ChannelEventDetail(ChildCreatedEvent actualInstance)
         {
             this.IsNullable = false;
-            this.SchemaType= "oneOf";
+            this.SchemaType = "oneOf";
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
@@ -558,7 +558,7 @@ namespace Traq.Model
         /// <returns>The object converted from the JSON string</returns>
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            switch(reader.TokenType) 
+            switch (reader.TokenType)
             {
                 case JsonToken.StartObject:
                     return ChannelEventDetail.FromJson(JObject.Load(reader).ToString(Formatting.None));

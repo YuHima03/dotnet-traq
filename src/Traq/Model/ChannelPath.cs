@@ -87,12 +87,13 @@ namespace Traq.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            if (this.Path != null) {
+            if (this.Path != null)
+            {
                 // Path (string) pattern
                 Regex regexPath = new Regex(@"^(\/[a-zA-Z0-9-_]+)+$", RegexOptions.CultureInvariant);
                 if (!regexPath.Match(this.Path).Success)
                 {
-                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Path, must match a pattern of " + regexPath, new [] { "Path" });
+                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Path, must match a pattern of " + regexPath, new[] { "Path" });
                 }
             }
 

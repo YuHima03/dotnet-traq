@@ -85,13 +85,13 @@ namespace Traq.Model
             // Count (int) maximum
             if (this.Count > (int)100)
             {
-                yield return new ValidationResult("Invalid value for Count, must be a value less than or equal to 100.", new [] { "Count" });
+                yield return new ValidationResult("Invalid value for Count, must be a value less than or equal to 100.", new[] { "Count" });
             }
 
             // Count (int) minimum
             if (this.Count < (int)1)
             {
-                yield return new ValidationResult("Invalid value for Count, must be a value greater than or equal to 1.", new [] { "Count" });
+                yield return new ValidationResult("Invalid value for Count, must be a value greater than or equal to 1.", new[] { "Count" });
             }
 
             yield break;

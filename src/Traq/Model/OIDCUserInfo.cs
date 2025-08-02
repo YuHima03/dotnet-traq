@@ -146,21 +146,23 @@ namespace Traq.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            if (this.Name != null) {
+            if (this.Name != null)
+            {
                 // Name (string) pattern
                 Regex regexName = new Regex(@"^[a-zA-Z0-9_-]{1,32}$", RegexOptions.CultureInvariant);
                 if (!regexName.Match(this.Name).Success)
                 {
-                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, must match a pattern of " + regexName, new [] { "Name" });
+                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, must match a pattern of " + regexName, new[] { "Name" });
                 }
             }
 
-            if (this.PreferredUsername != null) {
+            if (this.PreferredUsername != null)
+            {
                 // PreferredUsername (string) pattern
                 Regex regexPreferredUsername = new Regex(@"^[a-zA-Z0-9_-]{1,32}$", RegexOptions.CultureInvariant);
                 if (!regexPreferredUsername.Match(this.PreferredUsername).Success)
                 {
-                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PreferredUsername, must match a pattern of " + regexPreferredUsername, new [] { "PreferredUsername" });
+                    yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PreferredUsername, must match a pattern of " + regexPreferredUsername, new[] { "PreferredUsername" });
                 }
             }
 

@@ -100,7 +100,7 @@ namespace Traq.Model
             // Description (string) maxLength
             if (this.Description != null && this.Description.Length > 100)
             {
-                yield return new ValidationResult("Invalid value for Description, length must be less than 100.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be less than 100.", new[] { "Description" });
             }
 
             yield break;

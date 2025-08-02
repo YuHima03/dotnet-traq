@@ -70,7 +70,7 @@ namespace Traq
         /// </remarks>
         /// <value>The preference of authentication method for the traQ API.</value>
         public TraqAuthMethodPreference AuthMethodPreference { get; set; } = TraqAuthMethodPreference.NotSpecified;
-        
+
         /// <summary>
         /// Gets or sets the base address of the traQ API.
         /// </summary>

@@ -90,13 +90,13 @@ namespace Traq.Model
             // Tag (string) maxLength
             if (this.Tag != null && this.Tag.Length > 30)
             {
-                yield return new ValidationResult("Invalid value for Tag, length must be less than 30.", new [] { "Tag" });
+                yield return new ValidationResult("Invalid value for Tag, length must be less than 30.", new[] { "Tag" });
             }
 
             // Tag (string) minLength
             if (this.Tag != null && this.Tag.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Tag, length must be greater than 1.", new [] { "Tag" });
+                yield return new ValidationResult("Invalid value for Tag, length must be greater than 1.", new[] { "Tag" });
             }
 
             yield break;

@@ -120,25 +120,25 @@ namespace Traq.Model
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 32)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be less than 32.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 32.", new[] { "Name" });
             }
 
             // Name (string) minLength
             if (this.Name != null && this.Name.Length < 1)
             {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new[] { "Name" });
             }
 
             // Description (string) maxLength
             if (this.Description != null && this.Description.Length > 1000)
             {
-                yield return new ValidationResult("Invalid value for Description, length must be less than 1000.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be less than 1000.", new[] { "Description" });
             }
 
             // Secret (string) maxLength
             if (this.Secret != null && this.Secret.Length > 50)
             {
-                yield return new ValidationResult("Invalid value for Secret, length must be less than 50.", new [] { "Secret" });
+                yield return new ValidationResult("Invalid value for Secret, length must be less than 50.", new[] { "Secret" });
             }
 
             yield break;

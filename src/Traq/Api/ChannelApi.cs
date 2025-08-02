@@ -944,7 +944,7 @@ namespace Traq.Api
                 new Traq.Client.Configuration { BasePath = basePath }
             );
             this.ApiClient = new Traq.Client.ApiClient(this.Configuration.BasePath);
-            this.Client =  this.ApiClient;
+            this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
             this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
@@ -1008,7 +1008,7 @@ namespace Traq.Api
                 new Traq.Client.Configuration { BasePath = basePath }
             );
             this.ApiClient = new Traq.Client.ApiClient(client, this.Configuration.BasePath, handler);
-            this.Client =  this.ApiClient;
+            this.Client = this.ApiClient;
             this.AsynchronousClient = this.ApiClient;
             this.ExceptionFactory = Traq.Client.Configuration.DefaultExceptionFactory;
         }
