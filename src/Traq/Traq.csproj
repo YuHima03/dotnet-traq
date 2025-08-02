@@ -37,6 +37,11 @@
     <PackageTags>traq</PackageTags>
     <PackageProjectUrl>https://github.com/YuHima03/dotnet-traq</PackageProjectUrl>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <IsAotCompatible>true</IsAotCompatible>
+    <JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>
+  </PropertyGroup>
   
   <PropertyGroup>
     <RepositoryUrl>https://github.com/YuHima03/dotnet-traq</RepositoryUrl>
@@ -58,9 +63,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="JsonSubTypes" Version="2.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.4" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Polly" Version="8.5.2" />
+    <PackageReference Include="Microsoft.Kiota.Bundle" Version="1.19.0" />
   </ItemGroup>
 </Project>

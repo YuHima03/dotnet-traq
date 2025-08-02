@@ -751,8 +751,6 @@ catch (ApiException e)
 
 指定したチャンネルパスを取得
 
-指定したチャンネルのパスを取得します。
-
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -949,7 +947,7 @@ catch (ApiException e)
 
 <a id="getchannelstats"></a>
 # **GetChannelStats**
-> ChannelStats GetChannelStats (Guid channelId)
+> ChannelStats GetChannelStats (Guid channelId, bool? excludeDeletedMessages = null)
 
 チャンネル統計情報を取得
 
@@ -982,11 +980,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ChannelApi(httpClient, config, httpClientHandler);
             var channelId = "channelId_example";  // Guid | チャンネルUUID
+            var excludeDeletedMessages = true;  // bool? | 削除されたメッセージを除外するかどうか(デフォルト false) (optional) 
 
             try
             {
                 // チャンネル統計情報を取得
-                ChannelStats result = apiInstance.GetChannelStats(channelId);
+                ChannelStats result = apiInstance.GetChannelStats(channelId, excludeDeletedMessages);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1007,7 +1006,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // チャンネル統計情報を取得
-    ApiResponse<ChannelStats> response = apiInstance.GetChannelStatsWithHttpInfo(channelId);
+    ApiResponse<ChannelStats> response = apiInstance.GetChannelStatsWithHttpInfo(channelId, excludeDeletedMessages);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1025,6 +1024,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **channelId** | **Guid** | チャンネルUUID |  |
+| **excludeDeletedMessages** | **bool?** | 削除されたメッセージを除外するかどうか(デフォルト false) | [optional]  |
 
 ### Return type
 
