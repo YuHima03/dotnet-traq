@@ -19,62 +19,6 @@ All URIs are relative to *https://q.trap.jp/api/v3*
 
 指定したファイルを削除します。 指定したファイルの削除権限が必要です。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class DeleteFileExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new FileApi(config);
-            var fileId = "fileId_example";  // Guid | ファイルUUID
-
-            try
-            {
-                // ファイルを削除
-                apiInstance.DeleteFile(fileId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling FileApi.DeleteFile: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the DeleteFileWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // ファイルを削除
-    apiInstance.DeleteFileWithHttpInfo(fileId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling FileApi.DeleteFileWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -113,67 +57,6 @@ void (empty response body)
 
 指定したファイル本体を取得します。 指定したファイルへのアクセス権限が必要です。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetFileExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new FileApi(config);
-            var fileId = "fileId_example";  // Guid | ファイルUUID
-            var dl = 56;  // int | 1を指定するとレスポンスにContent-Dispositionヘッダーが付与されます (optional) 
-
-            try
-            {
-                // ファイルをダウンロード
-                System.IO.Stream result = apiInstance.GetFile(fileId, dl);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling FileApi.GetFile: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetFileWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // ファイルをダウンロード
-    ApiResponse<System.IO.Stream> response = apiInstance.GetFileWithHttpInfo(fileId, dl);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling FileApi.GetFileWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -213,66 +96,6 @@ catch (ApiException e)
 
 指定したファイルのメタ情報を取得します。 指定したファイルへのアクセス権限が必要です。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetFileMetaExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new FileApi(config);
-            var fileId = "fileId_example";  // Guid | ファイルUUID
-
-            try
-            {
-                // ファイルメタを取得
-                FileInfo result = apiInstance.GetFileMeta(fileId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling FileApi.GetFileMeta: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetFileMetaWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // ファイルメタを取得
-    ApiResponse<FileInfo> response = apiInstance.GetFileMetaWithHttpInfo(fileId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling FileApi.GetFileMetaWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -311,73 +134,6 @@ catch (ApiException e)
 
 指定したクエリでファイルメタのリストを取得します。 クエリパラメータ`channelId`, `mine`の少なくともいずれかが必須です。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetFilesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new FileApi(config);
-            var channelId = "channelId_example";  // Guid | アップロード先チャンネルUUID (optional) 
-            var limit = 50;  // int | 取得する件数 (optional) 
-            var offset = 150;  // int | 取得するオフセット (optional)  (default to 0)
-            var since = 2016-10-12T11:00:00.000000Z;  // DateTimeOffset | 取得する時間範囲の開始日時 (optional)  (default to "0000-01-01T00:00Z")
-            var until = 2016-10-12T11:00:00.0000000Z;  // DateTimeOffset | 取得する時間範囲の終了日時 (optional) 
-            var inclusive = false;  // bool | 範囲の端を含めるかどうか (optional)  (default to false)
-            var order = "asc";  // string | 昇順か降順か (optional)  (default to desc)
-            var mine = false;  // bool | アップロード者が自分のファイルのみを取得するか (optional)  (default to false)
-
-            try
-            {
-                // ファイルメタのリストを取得
-                List<FileInfo> result = apiInstance.GetFiles(channelId, limit, offset, since, until, inclusive, order, mine);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling FileApi.GetFiles: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetFilesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // ファイルメタのリストを取得
-    ApiResponse<List<FileInfo>> response = apiInstance.GetFilesWithHttpInfo(channelId, limit, offset, since, until, inclusive, order, mine);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling FileApi.GetFilesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -422,67 +178,6 @@ catch (ApiException e)
 
 指定したファイルのサムネイル画像を取得します。 指定したファイルへのアクセス権限が必要です。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetThumbnailImageExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new FileApi(config);
-            var fileId = "fileId_example";  // Guid | ファイルUUID
-            var type = (ThumbnailType) "image";  // ThumbnailType | 取得するサムネイルのタイプ (optional) 
-
-            try
-            {
-                // サムネイル画像を取得
-                System.IO.Stream result = apiInstance.GetThumbnailImage(fileId, type);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling FileApi.GetThumbnailImage: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetThumbnailImageWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // サムネイル画像を取得
-    ApiResponse<System.IO.Stream> response = apiInstance.GetThumbnailImageWithHttpInfo(fileId, type);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling FileApi.GetThumbnailImageWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -522,67 +217,6 @@ catch (ApiException e)
 
 指定したチャンネルにファイルをアップロードします。 アーカイブされているチャンネルにはアップロード出来ません。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class PostFileExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new FileApi(config);
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | ファイル本体
-            var channelId = "channelId_example";  // Guid | アップロード先チャンネルUUID
-
-            try
-            {
-                // ファイルをアップロード
-                FileInfo result = apiInstance.PostFile(file, channelId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling FileApi.PostFile: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostFileWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // ファイルをアップロード
-    ApiResponse<FileInfo> response = apiInstance.PostFileWithHttpInfo(file, channelId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling FileApi.PostFileWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 

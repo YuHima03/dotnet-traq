@@ -22,63 +22,6 @@ Webhookのアイコンを変更
 
 指定したWebhookのアイコン画像を変更します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class ChangeWebhookIconExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new WebhookApi(config);
-            var webhookId = "webhookId_example";  // Guid | WebhookUUID
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | アイコン画像(2MBまでのpng, jpeg, gif)
-
-            try
-            {
-                // Webhookのアイコンを変更
-                apiInstance.ChangeWebhookIcon(webhookId, file);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WebhookApi.ChangeWebhookIcon: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ChangeWebhookIconWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Webhookのアイコンを変更
-    apiInstance.ChangeWebhookIconWithHttpInfo(webhookId, file);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WebhookApi.ChangeWebhookIconWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -119,66 +62,6 @@ Webhookを新規作成
 
 Webhookを新規作成します。 `secret`が空文字の場合、insecureウェブフックが作成されます。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class CreateWebhookExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new WebhookApi(config);
-            var postWebhookRequest = new PostWebhookRequest(); // PostWebhookRequest |  (optional) 
-
-            try
-            {
-                // Webhookを新規作成
-                Webhook result = apiInstance.CreateWebhook(postWebhookRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WebhookApi.CreateWebhook: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the CreateWebhookWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Webhookを新規作成
-    ApiResponse<Webhook> response = apiInstance.CreateWebhookWithHttpInfo(postWebhookRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WebhookApi.CreateWebhookWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -216,62 +99,6 @@ Webhookを削除
 
 指定したWebhookを削除します。 Webhookによって投稿されたメッセージは削除されません。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class DeleteWebhookExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new WebhookApi(config);
-            var webhookId = "webhookId_example";  // Guid | WebhookUUID
-
-            try
-            {
-                // Webhookを削除
-                apiInstance.DeleteWebhook(webhookId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WebhookApi.DeleteWebhook: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the DeleteWebhookWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Webhookを削除
-    apiInstance.DeleteWebhookWithHttpInfo(webhookId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WebhookApi.DeleteWebhookWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -309,63 +136,6 @@ Webhook情報を変更
 
 指定したWebhookの情報を変更します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class EditWebhookExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new WebhookApi(config);
-            var webhookId = "webhookId_example";  // Guid | WebhookUUID
-            var patchWebhookRequest = new PatchWebhookRequest(); // PatchWebhookRequest |  (optional) 
-
-            try
-            {
-                // Webhook情報を変更
-                apiInstance.EditWebhook(webhookId, patchWebhookRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WebhookApi.EditWebhook: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the EditWebhookWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Webhook情報を変更
-    apiInstance.EditWebhookWithHttpInfo(webhookId, patchWebhookRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WebhookApi.EditWebhookWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -405,66 +175,6 @@ Webhook情報を取得
 
 指定したWebhookの詳細を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetWebhookExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new WebhookApi(config);
-            var webhookId = "webhookId_example";  // Guid | WebhookUUID
-
-            try
-            {
-                // Webhook情報を取得
-                Webhook result = apiInstance.GetWebhook(webhookId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WebhookApi.GetWebhook: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetWebhookWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Webhook情報を取得
-    ApiResponse<Webhook> response = apiInstance.GetWebhookWithHttpInfo(webhookId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WebhookApi.GetWebhookWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -502,66 +212,6 @@ Webhookのアイコンを取得
 
 指定したWebhookのアイコン画像を取得します
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetWebhookIconExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new WebhookApi(config);
-            var webhookId = "webhookId_example";  // Guid | WebhookUUID
-
-            try
-            {
-                // Webhookのアイコンを取得
-                System.IO.Stream result = apiInstance.GetWebhookIcon(webhookId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WebhookApi.GetWebhookIcon: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetWebhookIconWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Webhookのアイコンを取得
-    ApiResponse<System.IO.Stream> response = apiInstance.GetWebhookIconWithHttpInfo(webhookId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WebhookApi.GetWebhookIconWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -599,72 +249,6 @@ Webhookの投稿メッセージのリストを取得
 
 指定されたWebhookが投稿したメッセージのリストを返します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetWebhookMessagesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new WebhookApi(config);
-            var webhookId = "webhookId_example";  // Guid | WebhookUUID
-            var limit = 50;  // int | 取得する件数 (optional) 
-            var offset = 150;  // int | 取得するオフセット (optional)  (default to 0)
-            var since = 2016-10-12T11:00:00.000000Z;  // DateTimeOffset | 取得する時間範囲の開始日時 (optional)  (default to "0000-01-01T00:00Z")
-            var until = 2016-10-12T11:00:00.0000000Z;  // DateTimeOffset | 取得する時間範囲の終了日時 (optional) 
-            var inclusive = false;  // bool | 範囲の端を含めるかどうか (optional)  (default to false)
-            var order = "asc";  // string | 昇順か降順か (optional)  (default to desc)
-
-            try
-            {
-                // Webhookの投稿メッセージのリストを取得
-                List<Message> result = apiInstance.GetWebhookMessages(webhookId, limit, offset, since, until, inclusive, order);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WebhookApi.GetWebhookMessages: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetWebhookMessagesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Webhookの投稿メッセージのリストを取得
-    ApiResponse<List<Message>> response = apiInstance.GetWebhookMessagesWithHttpInfo(webhookId, limit, offset, since, until, inclusive, order);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WebhookApi.GetWebhookMessagesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -709,66 +293,6 @@ Webhook情報のリストを取得します
 
 Webhookのリストを取得します。 allがtrueで無い場合は、自分がオーナーのWebhookのリストを返します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetWebhooksExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new WebhookApi(config);
-            var all = false;  // bool | 全てのWebhookを取得します。権限が必要です。 (optional)  (default to false)
-
-            try
-            {
-                // Webhook情報のリストを取得します
-                List<Webhook> result = apiInstance.GetWebhooks(all);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WebhookApi.GetWebhooks: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetWebhooksWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Webhook情報のリストを取得します
-    ApiResponse<List<Webhook>> response = apiInstance.GetWebhooksWithHttpInfo(all);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WebhookApi.GetWebhooksWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -805,66 +329,6 @@ Webhookを送信
 
 Webhookにメッセージを投稿します。 secureなウェブフックに対しては`X-TRAQ-Signature`ヘッダーが必須です。 アーカイブされているチャンネルには投稿できません。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class PostWebhookExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new WebhookApi(config);
-            var webhookId = "webhookId_example";  // Guid | WebhookUUID
-            var xTRAQSignature = "xTRAQSignature_example";  // string | リクエストボディシグネチャ(Secretが設定されている場合は必須) (optional) 
-            var xTRAQChannelId = "xTRAQChannelId_example";  // string | 投稿先のチャンネルID(変更する場合) (optional) 
-            var embed = 0;  // int | メンション・チャンネルリンクを自動埋め込みする場合に1を指定する (optional)  (default to 0)
-            var body = "body_example";  // string |  (optional) 
-
-            try
-            {
-                // Webhookを送信
-                apiInstance.PostWebhook(webhookId, xTRAQSignature, xTRAQChannelId, embed, body);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WebhookApi.PostWebhook: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostWebhookWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Webhookを送信
-    apiInstance.PostWebhookWithHttpInfo(webhookId, xTRAQSignature, xTRAQChannelId, embed, body);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WebhookApi.PostWebhookWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 

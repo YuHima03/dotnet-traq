@@ -15,65 +15,6 @@ WebRTC状態を取得
 
 現在のWebRTC状態を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetWebRTCStateExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new WebrtcApi(config);
-
-            try
-            {
-                // WebRTC状態を取得
-                List<WebRTCUserState> result = apiInstance.GetWebRTCState();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WebrtcApi.GetWebRTCState: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetWebRTCStateWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // WebRTC状態を取得
-    ApiResponse<List<WebRTCUserState>> response = apiInstance.GetWebRTCStateWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WebrtcApi.GetWebRTCStateWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -106,66 +47,6 @@ Skyway用認証API
 
 Skyway WebRTC用の認証API
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class PostWebRTCAuthenticateExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new WebrtcApi(config);
-            var postWebRTCAuthenticateRequest = new PostWebRTCAuthenticateRequest(); // PostWebRTCAuthenticateRequest |  (optional) 
-
-            try
-            {
-                // Skyway用認証API
-                WebRTCAuthenticateResult result = apiInstance.PostWebRTCAuthenticate(postWebRTCAuthenticateRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WebrtcApi.PostWebRTCAuthenticate: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostWebRTCAuthenticateWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Skyway用認証API
-    ApiResponse<WebRTCAuthenticateResult> response = apiInstance.PostWebRTCAuthenticateWithHttpInfo(postWebRTCAuthenticateRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WebrtcApi.PostWebRTCAuthenticateWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 

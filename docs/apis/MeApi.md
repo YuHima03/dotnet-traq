@@ -44,62 +44,6 @@ All URIs are relative to *https://q.trap.jp/api/v3*
 
 指定したチャンネルをスターチャンネルに追加します。 スター済みのチャンネルIDを指定した場合、204を返します。 不正なチャンネルIDを指定した場合、400を返します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class AddMyStarExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var postStarRequest = new PostStarRequest(); // PostStarRequest |  (optional) 
-
-            try
-            {
-                // チャンネルをスターに追加
-                apiInstance.AddMyStar(postStarRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.AddMyStar: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the AddMyStarWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルをスターに追加
-    apiInstance.AddMyStarWithHttpInfo(postStarRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.AddMyStarWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -137,66 +81,6 @@ void (empty response body)
 
 自分に新しくタグを追加します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class AddMyUserTagExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var postUserTagRequest = new PostUserTagRequest(); // PostUserTagRequest |  (optional) 
-
-            try
-            {
-                // 自分にタグを追加
-                UserTag result = apiInstance.AddMyUserTag(postUserTagRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.AddMyUserTag: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the AddMyUserTagWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 自分にタグを追加
-    ApiResponse<UserTag> response = apiInstance.AddMyUserTagWithHttpInfo(postUserTagRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.AddMyUserTagWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -235,62 +119,6 @@ catch (ApiException e)
 
 自分のアイコン画像を変更します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class ChangeMyIconExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | アイコン画像(2MBまでのpng, jpeg, gif)
-
-            try
-            {
-                // 自分のアイコン画像を変更
-                apiInstance.ChangeMyIcon(file);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.ChangeMyIcon: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ChangeMyIconWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 自分のアイコン画像を変更
-    apiInstance.ChangeMyIconWithHttpInfo(file);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.ChangeMyIconWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -329,62 +157,6 @@ void (empty response body)
 
 メッセージ引用通知の設定情報を変更します
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class ChangeMyNotifyCitationExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var putNotifyCitationRequest = new PutNotifyCitationRequest(); // PutNotifyCitationRequest |  (optional) 
-
-            try
-            {
-                // メッセージ引用通知の設定情報を変更
-                apiInstance.ChangeMyNotifyCitation(putNotifyCitationRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.ChangeMyNotifyCitation: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ChangeMyNotifyCitationWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // メッセージ引用通知の設定情報を変更
-    apiInstance.ChangeMyNotifyCitationWithHttpInfo(putNotifyCitationRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.ChangeMyNotifyCitationWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -422,62 +194,6 @@ void (empty response body)
 
 自身のパスワードを変更します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class ChangeMyPasswordExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var putMyPasswordRequest = new PutMyPasswordRequest(); // PutMyPasswordRequest |  (optional) 
-
-            try
-            {
-                // 自分のパスワードを変更
-                apiInstance.ChangeMyPassword(putMyPasswordRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.ChangeMyPassword: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ChangeMyPasswordWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 自分のパスワードを変更
-    apiInstance.ChangeMyPasswordWithHttpInfo(putMyPasswordRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.ChangeMyPasswordWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -516,62 +232,6 @@ void (empty response body)
 
 自身のユーザー情報を変更します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class EditMeExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var patchMeRequest = new PatchMeRequest(); // PatchMeRequest |  (optional) 
-
-            try
-            {
-                // 自分のユーザー情報を変更
-                apiInstance.EditMe(patchMeRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.EditMe: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the EditMeWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 自分のユーザー情報を変更
-    apiInstance.EditMeWithHttpInfo(patchMeRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.EditMeWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -609,63 +269,6 @@ void (empty response body)
 
 自分の指定したタグの状態を変更します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class EditMyUserTagExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var tagId = "tagId_example";  // Guid | タグUUID
-            var patchUserTagRequest = new PatchUserTagRequest(); // PatchUserTagRequest |  (optional) 
-
-            try
-            {
-                // 自分のタグを編集
-                apiInstance.EditMyUserTag(tagId, patchUserTagRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.EditMyUserTag: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the EditMyUserTagWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 自分のタグを編集
-    apiInstance.EditMyUserTagWithHttpInfo(tagId, patchUserTagRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.EditMyUserTagWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -705,65 +308,6 @@ void (empty response body)
 
 自身のユーザー詳細情報を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMeExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-
-            try
-            {
-                // 自分のユーザー詳細を取得
-                MyUserDetail result = apiInstance.GetMe();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetMe: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMeWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 自分のユーザー詳細を取得
-    ApiResponse<MyUserDetail> response = apiInstance.GetMeWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetMeWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -796,65 +340,6 @@ This endpoint does not need any parameter.
 
 自身のチャンネル購読状態を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMyChannelSubscriptionsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-
-            try
-            {
-                // 自分のチャンネル購読状態を取得
-                List<UserSubscribeState> result = apiInstance.GetMyChannelSubscriptions();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetMyChannelSubscriptions: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMyChannelSubscriptionsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 自分のチャンネル購読状態を取得
-    ApiResponse<List<UserSubscribeState>> response = apiInstance.GetMyChannelSubscriptionsWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetMyChannelSubscriptionsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -887,65 +372,6 @@ This endpoint does not need any parameter.
 
 自分に紐付けられている外部ログインアカウント一覧を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMyExternalAccountsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-
-            try
-            {
-                // 外部ログインアカウント一覧を取得
-                List<ExternalProviderUser> result = apiInstance.GetMyExternalAccounts();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetMyExternalAccounts: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMyExternalAccountsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 外部ログインアカウント一覧を取得
-    ApiResponse<List<ExternalProviderUser>> response = apiInstance.GetMyExternalAccountsWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetMyExternalAccountsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -978,65 +404,6 @@ This endpoint does not need any parameter.
 
 自分のアイコン画像を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMyIconExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-
-            try
-            {
-                // 自分のアイコン画像を取得
-                System.IO.Stream result = apiInstance.GetMyIcon();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetMyIcon: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMyIconWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 自分のアイコン画像を取得
-    ApiResponse<System.IO.Stream> response = apiInstance.GetMyIconWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetMyIconWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -1070,65 +437,6 @@ This endpoint does not need any parameter.
 
 メッセージ引用通知の設定情報を変更します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMyNotifyCitationExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-
-            try
-            {
-                // メッセージ引用通知の設定情報を取得
-                GetNotifyCitation result = apiInstance.GetMyNotifyCitation();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetMyNotifyCitation: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMyNotifyCitationWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // メッセージ引用通知の設定情報を取得
-    ApiResponse<GetNotifyCitation> response = apiInstance.GetMyNotifyCitationWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetMyNotifyCitationWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -1161,66 +469,6 @@ QRコードを取得
 
 自身のQRコードを取得します。 返されたQRコードまたはトークンは、発行後の5分間のみ有効です
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMyQRCodeExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var token = false;  // bool | 画像でなくトークン文字列で返すかどうか (optional)  (default to false)
-
-            try
-            {
-                // QRコードを取得
-                System.IO.Stream result = apiInstance.GetMyQRCode(token);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetMyQRCode: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMyQRCodeWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // QRコードを取得
-    ApiResponse<System.IO.Stream> response = apiInstance.GetMyQRCodeWithHttpInfo(token);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetMyQRCodeWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1257,65 +505,6 @@ catch (ApiException e)
 
 自分のログインセッションのリストを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMySessionsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-
-            try
-            {
-                // 自分のログインセッションリストを取得
-                List<LoginSession> result = apiInstance.GetMySessions();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetMySessions: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMySessionsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 自分のログインセッションリストを取得
-    ApiResponse<List<LoginSession>> response = apiInstance.GetMySessionsWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetMySessionsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -1348,66 +537,6 @@ This endpoint does not need any parameter.
 
 自分のスタンプ履歴を最大100件まで取得します。 結果は降順で返されます。  このAPIが返すスタンプ履歴は厳密な履歴ではありません。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMyStampHistoryExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var limit = 100;  // int | 件数 (optional)  (default to 100)
-
-            try
-            {
-                // スタンプ履歴を取得
-                List<StampHistoryEntry> result = apiInstance.GetMyStampHistory(limit);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetMyStampHistory: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMyStampHistoryWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // スタンプ履歴を取得
-    ApiResponse<List<StampHistoryEntry>> response = apiInstance.GetMyStampHistoryWithHttpInfo(limit);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetMyStampHistoryWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1444,65 +573,6 @@ catch (ApiException e)
 
 自分がスターしているチャンネルのUUIDの配列を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMyStarsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-
-            try
-            {
-                // スターチャンネルリストを取得
-                List<Guid> result = apiInstance.GetMyStars();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetMyStars: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMyStarsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // スターチャンネルリストを取得
-    ApiResponse<List<Guid>> response = apiInstance.GetMyStarsWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetMyStarsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -1535,65 +605,6 @@ This endpoint does not need any parameter.
 
 有効な自分に発行されたOAuth2トークンのリストを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMyTokensExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-
-            try
-            {
-                // 有効トークンのリストを取得
-                List<ActiveOAuth2Token> result = apiInstance.GetMyTokens();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetMyTokens: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMyTokensWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 有効トークンのリストを取得
-    ApiResponse<List<ActiveOAuth2Token>> response = apiInstance.GetMyTokensWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetMyTokensWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -1626,65 +637,6 @@ This endpoint does not need any parameter.
 
 自分が現在未読のチャンネルの未読情報を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMyUnreadChannelsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-
-            try
-            {
-                // 未読チャンネルを取得
-                List<UnreadChannel> result = apiInstance.GetMyUnreadChannels();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetMyUnreadChannels: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMyUnreadChannelsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 未読チャンネルを取得
-    ApiResponse<List<UnreadChannel>> response = apiInstance.GetMyUnreadChannelsWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetMyUnreadChannelsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -1717,65 +669,6 @@ This endpoint does not need any parameter.
 
 自分に付けられているタグの配列を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMyUserTagsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-
-            try
-            {
-                // 自分のタグリストを取得
-                List<UserTag> result = apiInstance.GetMyUserTags();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetMyUserTags: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMyUserTagsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 自分のタグリストを取得
-    ApiResponse<List<UserTag>> response = apiInstance.GetMyUserTagsWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetMyUserTagsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -1808,65 +701,6 @@ This endpoint does not need any parameter.
 
 自身のチャンネル閲覧状態一覧を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMyViewStatesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-
-            try
-            {
-                // 自身のチャンネル閲覧状態一覧を取得
-                List<MyChannelViewState> result = apiInstance.GetMyViewStates();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetMyViewStates: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMyViewStatesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 自身のチャンネル閲覧状態一覧を取得
-    ApiResponse<List<MyChannelViewState>> response = apiInstance.GetMyViewStatesWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetMyViewStatesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -1899,65 +733,6 @@ This endpoint does not need any parameter.
 
 OIDCトークンを用いてユーザー詳細を取得します。 OIDC UserInfo Endpointです。 
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetOIDCUserInfoExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-
-            try
-            {
-                // 自分のユーザー詳細を取得 (OIDC UserInfo)
-                OIDCUserInfo result = apiInstance.GetOIDCUserInfo();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetOIDCUserInfo: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetOIDCUserInfoWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 自分のユーザー詳細を取得 (OIDC UserInfo)
-    ApiResponse<OIDCUserInfo> response = apiInstance.GetOIDCUserInfoWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetOIDCUserInfoWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -1990,65 +765,6 @@ This endpoint does not need any parameter.
 
 ユーザー設定を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetUserSettingsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-
-            try
-            {
-                // ユーザー設定を取得
-                UserSettings result = apiInstance.GetUserSettings();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.GetUserSettings: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetUserSettingsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // ユーザー設定を取得
-    ApiResponse<UserSettings> response = apiInstance.GetUserSettingsWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.GetUserSettingsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -2081,62 +797,6 @@ This endpoint does not need any parameter.
 
 自分に外部ログインアカウントを紐付けます。 指定した`providerName`がサーバー側で有効である必要があります。 リクエストが受理された場合、外部サービスの認証画面にリダイレクトされ、認証される必要があります。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class LinkExternalAccountExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var postLinkExternalAccount = new PostLinkExternalAccount(); // PostLinkExternalAccount |  (optional) 
-
-            try
-            {
-                // 外部ログインアカウントを紐付ける
-                apiInstance.LinkExternalAccount(postLinkExternalAccount);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.LinkExternalAccount: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the LinkExternalAccountWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 外部ログインアカウントを紐付ける
-    apiInstance.LinkExternalAccountWithHttpInfo(postLinkExternalAccount);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.LinkExternalAccountWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -2174,62 +834,6 @@ void (empty response body)
 
 自分が未読のチャンネルを既読にします。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class ReadChannelExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-
-            try
-            {
-                // チャンネルを既読にする
-                apiInstance.ReadChannel(channelId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.ReadChannel: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ReadChannelWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルを既読にする
-    apiInstance.ReadChannelWithHttpInfo(channelId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.ReadChannelWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -2266,62 +870,6 @@ FCMデバイスを登録
 
 自身のFCMデバイスを登録します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class RegisterFCMDeviceExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var postMyFCMDeviceRequest = new PostMyFCMDeviceRequest(); // PostMyFCMDeviceRequest |  (optional) 
-
-            try
-            {
-                // FCMデバイスを登録
-                apiInstance.RegisterFCMDevice(postMyFCMDeviceRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.RegisterFCMDevice: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RegisterFCMDeviceWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // FCMデバイスを登録
-    apiInstance.RegisterFCMDeviceWithHttpInfo(postMyFCMDeviceRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.RegisterFCMDeviceWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -2359,62 +907,6 @@ void (empty response body)
 
 既にスターから削除されているチャンネルを指定した場合は204を返します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class RemoveMyStarExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-
-            try
-            {
-                // チャンネルをスターから削除します
-                apiInstance.RemoveMyStar(channelId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.RemoveMyStar: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RemoveMyStarWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルをスターから削除します
-    apiInstance.RemoveMyStarWithHttpInfo(channelId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.RemoveMyStarWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -2451,62 +943,6 @@ void (empty response body)
 
 既に存在しないタグを削除しようとした場合は204を返します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class RemoveMyUserTagExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var tagId = "tagId_example";  // Guid | タグUUID
-
-            try
-            {
-                // 自分からタグを削除します
-                apiInstance.RemoveMyUserTag(tagId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.RemoveMyUserTag: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RemoveMyUserTagWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 自分からタグを削除します
-    apiInstance.RemoveMyUserTagWithHttpInfo(tagId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.RemoveMyUserTagWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -2544,62 +980,6 @@ void (empty response body)
 
 指定した自分のセッションを無効化(ログアウト)します。 既に存在しない・無効化されているセッションを指定した場合も`204`を返します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class RevokeMySessionExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var sessionId = "sessionId_example";  // Guid | セッションUUID
-
-            try
-            {
-                // セッションを無効化
-                apiInstance.RevokeMySession(sessionId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.RevokeMySession: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RevokeMySessionWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // セッションを無効化
-    apiInstance.RevokeMySessionWithHttpInfo(sessionId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.RevokeMySessionWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -2636,62 +1016,6 @@ void (empty response body)
 
 自分の指定したトークンの認可を取り消します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class RevokeMyTokenExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var tokenId = "tokenId_example";  // Guid | OAuth2トークンUUID
-
-            try
-            {
-                // トークンの認可を取り消す
-                apiInstance.RevokeMyToken(tokenId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.RevokeMyToken: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RevokeMyTokenWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // トークンの認可を取り消す
-    apiInstance.RevokeMyTokenWithHttpInfo(tokenId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.RevokeMyTokenWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -2729,63 +1053,6 @@ void (empty response body)
 
 自身の指定したチャンネルの購読レベルを設定します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class SetChannelSubscribeLevelExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-            var putChannelSubscribeLevelRequest = new PutChannelSubscribeLevelRequest(); // PutChannelSubscribeLevelRequest |  (optional) 
-
-            try
-            {
-                // チャンネル購読レベルを設定
-                apiInstance.SetChannelSubscribeLevel(channelId, putChannelSubscribeLevelRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.SetChannelSubscribeLevel: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the SetChannelSubscribeLevelWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネル購読レベルを設定
-    apiInstance.SetChannelSubscribeLevelWithHttpInfo(channelId, putChannelSubscribeLevelRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.SetChannelSubscribeLevelWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -2826,62 +1093,6 @@ void (empty response body)
 
 自分に紐付けられている外部ログインアカウントの紐付けを解除します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class UnlinkExternalAccountExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new MeApi(config);
-            var postUnlinkExternalAccount = new PostUnlinkExternalAccount(); // PostUnlinkExternalAccount |  (optional) 
-
-            try
-            {
-                // 外部ログインアカウントの紐付けを解除
-                apiInstance.UnlinkExternalAccount(postUnlinkExternalAccount);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MeApi.UnlinkExternalAccount: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the UnlinkExternalAccountWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 外部ログインアカウントの紐付けを解除
-    apiInstance.UnlinkExternalAccountWithHttpInfo(postUnlinkExternalAccount);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MeApi.UnlinkExternalAccountWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 

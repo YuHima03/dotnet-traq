@@ -31,66 +31,6 @@ All URIs are relative to *https://q.trap.jp/api/v3*
 
 チャンネルを作成します。 階層が6以上になるチャンネルは作成できません。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class CreateChannelExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var postChannelRequest = new PostChannelRequest(); // PostChannelRequest |  (optional) 
-
-            try
-            {
-                // チャンネルを作成
-                Channel result = apiInstance.CreateChannel(postChannelRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.CreateChannel: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the CreateChannelWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルを作成
-    ApiResponse<Channel> response = apiInstance.CreateChannelWithHttpInfo(postChannelRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.CreateChannelWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -130,63 +70,6 @@ catch (ApiException e)
 
 指定したチャンネルの情報を変更します。 変更には権限が必要です。 ルートチャンネルに移動させる場合は、`parent`に`00000000-0000-0000-0000-000000000000`を指定してください。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class EditChannelExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-            var patchChannelRequest = new PatchChannelRequest(); // PatchChannelRequest |  (optional) 
-
-            try
-            {
-                // チャンネル情報を変更
-                apiInstance.EditChannel(channelId, patchChannelRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.EditChannel: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the EditChannelWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネル情報を変更
-    apiInstance.EditChannelWithHttpInfo(channelId, patchChannelRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.EditChannelWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -228,63 +111,6 @@ void (empty response body)
 
 指定したチャンネルの通知購読者を編集します。 リクエストに含めなかったユーザーの通知購読状態は変更しません。 また、存在しないユーザーを指定した場合は無視されます。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class EditChannelSubscribersExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-            var patchChannelSubscribersRequest = new PatchChannelSubscribersRequest(); // PatchChannelSubscribersRequest |  (optional) 
-
-            try
-            {
-                // チャンネルの通知購読者を編集
-                apiInstance.EditChannelSubscribers(channelId, patchChannelSubscribersRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.EditChannelSubscribers: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the EditChannelSubscribersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルの通知購読者を編集
-    apiInstance.EditChannelSubscribersWithHttpInfo(channelId, patchChannelSubscribersRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.EditChannelSubscribersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -325,63 +151,6 @@ void (empty response body)
 
 指定したチャンネルのトピックを編集します。 アーカイブされているチャンネルのトピックは編集できません。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class EditChannelTopicExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-            var putChannelTopicRequest = new PutChannelTopicRequest(); // PutChannelTopicRequest |  (optional) 
-
-            try
-            {
-                // チャンネルトピックを編集
-                apiInstance.EditChannelTopic(channelId, putChannelTopicRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.EditChannelTopic: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the EditChannelTopicWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルトピックを編集
-    apiInstance.EditChannelTopicWithHttpInfo(channelId, putChannelTopicRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.EditChannelTopicWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -421,66 +190,6 @@ void (empty response body)
 
 指定したチャンネルの情報を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetChannelExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-
-            try
-            {
-                // チャンネル情報を取得
-                Channel result = apiInstance.GetChannel(channelId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.GetChannel: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetChannelWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネル情報を取得
-    ApiResponse<Channel> response = apiInstance.GetChannelWithHttpInfo(channelId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.GetChannelWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -518,66 +227,6 @@ catch (ApiException e)
 
 指定したチャンネルに参加しているBOTのリストを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetChannelBotsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-
-            try
-            {
-                // チャンネル参加中のBOTのリストを取得
-                List<BotUser> result = apiInstance.GetChannelBots(channelId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.GetChannelBots: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetChannelBotsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネル参加中のBOTのリストを取得
-    ApiResponse<List<BotUser>> response = apiInstance.GetChannelBotsWithHttpInfo(channelId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.GetChannelBotsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -615,72 +264,6 @@ catch (ApiException e)
 
 指定したチャンネルのイベントリストを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetChannelEventsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-            var limit = 50;  // int | 取得する件数 (optional) 
-            var offset = 150;  // int | 取得するオフセット (optional)  (default to 0)
-            var since = 2016-10-12T11:00:00.000000Z;  // DateTimeOffset | 取得する時間範囲の開始日時 (optional)  (default to "0000-01-01T00:00Z")
-            var until = 2016-10-12T11:00:00.0000000Z;  // DateTimeOffset | 取得する時間範囲の終了日時 (optional) 
-            var inclusive = false;  // bool | 範囲の端を含めるかどうか (optional)  (default to false)
-            var order = "asc";  // string | 昇順か降順か (optional)  (default to desc)
-
-            try
-            {
-                // チャンネルイベントのリストを取得
-                List<ChannelEvent> result = apiInstance.GetChannelEvents(channelId, limit, offset, since, until, inclusive, order);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.GetChannelEvents: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetChannelEventsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルイベントのリストを取得
-    ApiResponse<List<ChannelEvent>> response = apiInstance.GetChannelEventsWithHttpInfo(channelId, limit, offset, since, until, inclusive, order);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.GetChannelEventsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -723,66 +306,6 @@ catch (ApiException e)
 
 指定したチャンネルパスを取得
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetChannelPathExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-
-            try
-            {
-                // 指定したチャンネルパスを取得
-                ChannelPath result = apiInstance.GetChannelPath(channelId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.GetChannelPath: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetChannelPathWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 指定したチャンネルパスを取得
-    ApiResponse<ChannelPath> response = apiInstance.GetChannelPathWithHttpInfo(channelId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.GetChannelPathWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -820,66 +343,6 @@ catch (ApiException e)
 
 指定したチャンネルにピン留めされているピンメッセージのリストを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetChannelPinsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-
-            try
-            {
-                // チャンネルピンのリストを取得
-                List<Pin> result = apiInstance.GetChannelPins(channelId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.GetChannelPins: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetChannelPinsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルピンのリストを取得
-    ApiResponse<List<Pin>> response = apiInstance.GetChannelPinsWithHttpInfo(channelId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.GetChannelPinsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -917,67 +380,6 @@ catch (ApiException e)
 
 指定したチャンネルの統計情報を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetChannelStatsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-            var excludeDeletedMessages = true;  // bool | 削除されたメッセージを除外するかどうか(デフォルト false) (optional) 
-
-            try
-            {
-                // チャンネル統計情報を取得
-                ChannelStats result = apiInstance.GetChannelStats(channelId, excludeDeletedMessages);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.GetChannelStats: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetChannelStatsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネル統計情報を取得
-    ApiResponse<ChannelStats> response = apiInstance.GetChannelStatsWithHttpInfo(channelId, excludeDeletedMessages);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.GetChannelStatsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1016,66 +418,6 @@ catch (ApiException e)
 
 指定したチャンネルを通知購読しているユーザーのUUIDのリストを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetChannelSubscribersExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-
-            try
-            {
-                // チャンネルの通知購読者のリストを取得
-                List<Guid> result = apiInstance.GetChannelSubscribers(channelId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.GetChannelSubscribers: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetChannelSubscribersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルの通知購読者のリストを取得
-    ApiResponse<List<Guid>> response = apiInstance.GetChannelSubscribersWithHttpInfo(channelId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.GetChannelSubscribersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1114,66 +456,6 @@ catch (ApiException e)
 
 指定したチャンネルのトピックを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetChannelTopicExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-
-            try
-            {
-                // チャンネルトピックを取得
-                ChannelTopic result = apiInstance.GetChannelTopic(channelId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.GetChannelTopic: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetChannelTopicWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルトピックを取得
-    ApiResponse<ChannelTopic> response = apiInstance.GetChannelTopicWithHttpInfo(channelId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.GetChannelTopicWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1211,66 +493,6 @@ catch (ApiException e)
 
 指定したチャンネルの閲覧者のリストを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetChannelViewersExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-
-            try
-            {
-                // チャンネル閲覧者リストを取得
-                List<ChannelViewer> result = apiInstance.GetChannelViewers(channelId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.GetChannelViewers: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetChannelViewersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネル閲覧者リストを取得
-    ApiResponse<List<ChannelViewer>> response = apiInstance.GetChannelViewersWithHttpInfo(channelId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.GetChannelViewersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1308,67 +530,6 @@ catch (ApiException e)
 
 チャンネルのリストを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetChannelsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var includeDm = false;  // bool | ダイレクトメッセージチャンネルをレスポンスに含めるかどうか (optional)  (default to false)
-            var path = "path_example";  // string | パスが一致するチャンネルのみを取得する (optional) 
-
-            try
-            {
-                // チャンネルリストを取得
-                ChannelList result = apiInstance.GetChannels(includeDm, path);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.GetChannels: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetChannelsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルリストを取得
-    ApiResponse<ChannelList> response = apiInstance.GetChannelsWithHttpInfo(includeDm, path);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.GetChannelsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1406,72 +567,6 @@ catch (ApiException e)
 
 指定したチャンネルのメッセージのリストを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMessagesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-            var limit = 50;  // int | 取得する件数 (optional) 
-            var offset = 150;  // int | 取得するオフセット (optional)  (default to 0)
-            var since = 2016-10-12T11:00:00.000000Z;  // DateTimeOffset | 取得する時間範囲の開始日時 (optional)  (default to "0000-01-01T00:00Z")
-            var until = 2016-10-12T11:00:00.0000000Z;  // DateTimeOffset | 取得する時間範囲の終了日時 (optional) 
-            var inclusive = false;  // bool | 範囲の端を含めるかどうか (optional)  (default to false)
-            var order = "asc";  // string | 昇順か降順か (optional)  (default to desc)
-
-            try
-            {
-                // チャンネルメッセージのリストを取得
-                List<Message> result = apiInstance.GetMessages(channelId, limit, offset, since, until, inclusive, order);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.GetMessages: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMessagesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルメッセージのリストを取得
-    ApiResponse<List<Message>> response = apiInstance.GetMessagesWithHttpInfo(channelId, limit, offset, since, until, inclusive, order);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.GetMessagesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1516,66 +611,6 @@ DMチャンネル情報を取得
 
 指定したユーザーとのダイレクトメッセージチャンネルの情報を返します。 ダイレクトメッセージチャンネルが存在しなかった場合、自動的に作成されます。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetUserDMChannelExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var userId = "userId_example";  // Guid | 
-
-            try
-            {
-                // DMチャンネル情報を取得
-                DMChannel result = apiInstance.GetUserDMChannel(userId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.GetUserDMChannel: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetUserDMChannelWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // DMチャンネル情報を取得
-    ApiResponse<DMChannel> response = apiInstance.GetUserDMChannelWithHttpInfo(userId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.GetUserDMChannelWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1613,67 +648,6 @@ catch (ApiException e)
 
 指定したチャンネルにメッセージを投稿します。 embedをtrueに指定すると、メッセージ埋め込みが自動で行われます。 アーカイブされているチャンネルに投稿することはできません。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class PostMessageExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-            var postMessageRequest = new PostMessageRequest(); // PostMessageRequest |  (optional) 
-
-            try
-            {
-                // チャンネルにメッセージを投稿
-                Message result = apiInstance.PostMessage(channelId, postMessageRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.PostMessage: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostMessageWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルにメッセージを投稿
-    ApiResponse<Message> response = apiInstance.PostMessageWithHttpInfo(channelId, postMessageRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.PostMessageWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1713,63 +687,6 @@ catch (ApiException e)
 
 指定したチャンネルの通知購読者を設定します。 リクエストに含めなかったユーザーの通知購読状態はオフになります。 また、存在しないユーザーを指定した場合は無視されます。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class SetChannelSubscribersExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new ChannelApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-            var putChannelSubscribersRequest = new PutChannelSubscribersRequest(); // PutChannelSubscribersRequest |  (optional) 
-
-            try
-            {
-                // チャンネルの通知購読者を設定
-                apiInstance.SetChannelSubscribers(channelId, putChannelSubscribersRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ChannelApi.SetChannelSubscribers: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the SetChannelSubscribersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルの通知購読者を設定
-    apiInstance.SetChannelSubscribersWithHttpInfo(channelId, putChannelSubscribersRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ChannelApi.SetChannelSubscribersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 

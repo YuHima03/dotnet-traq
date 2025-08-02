@@ -27,63 +27,6 @@ All URIs are relative to *https://q.trap.jp/api/v3*
 
 指定したグループに管理者を追加します。 対象のユーザーグループの管理者権限が必要です。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class AddUserGroupAdminExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new GroupApi(config);
-            var groupId = "groupId_example";  // Guid | ユーザーグループUUID
-            var postUserGroupAdminRequest = new PostUserGroupAdminRequest(); // PostUserGroupAdminRequest |  (optional) 
-
-            try
-            {
-                // グループ管理者を追加
-                apiInstance.AddUserGroupAdmin(groupId, postUserGroupAdminRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling GroupApi.AddUserGroupAdmin: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the AddUserGroupAdminWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // グループ管理者を追加
-    apiInstance.AddUserGroupAdminWithHttpInfo(groupId, postUserGroupAdminRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GroupApi.AddUserGroupAdminWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -124,63 +67,6 @@ void (empty response body)
 
 指定したグループにメンバーを追加します。 対象のユーザーグループの管理者権限が必要です。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class AddUserGroupMemberExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new GroupApi(config);
-            var groupId = "groupId_example";  // Guid | ユーザーグループUUID
-            var addUserGroupMemberRequest = new AddUserGroupMemberRequest(); // AddUserGroupMemberRequest |  (optional) 
-
-            try
-            {
-                // グループメンバーを追加
-                apiInstance.AddUserGroupMember(groupId, addUserGroupMemberRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling GroupApi.AddUserGroupMember: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the AddUserGroupMemberWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // グループメンバーを追加
-    apiInstance.AddUserGroupMemberWithHttpInfo(groupId, addUserGroupMemberRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GroupApi.AddUserGroupMemberWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -221,63 +107,6 @@ void (empty response body)
 
 ユーザーグループのアイコンを変更します。 対象のユーザーグループの管理者権限が必要です。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class ChangeUserGroupIconExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new GroupApi(config);
-            var groupId = "groupId_example";  // Guid | ユーザーグループUUID
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | アイコン画像(2MBまでのpng, jpeg, gif)
-
-            try
-            {
-                // ユーザーグループのアイコンを変更
-                apiInstance.ChangeUserGroupIcon(groupId, file);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling GroupApi.ChangeUserGroupIcon: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ChangeUserGroupIconWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // ユーザーグループのアイコンを変更
-    apiInstance.ChangeUserGroupIconWithHttpInfo(groupId, file);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GroupApi.ChangeUserGroupIconWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -318,66 +147,6 @@ void (empty response body)
 
 ユーザーグループを作成します。 作成者は自動的にグループ管理者になります。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class CreateUserGroupExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new GroupApi(config);
-            var postUserGroupRequest = new PostUserGroupRequest(); // PostUserGroupRequest |  (optional) 
-
-            try
-            {
-                // ユーザーグループを作成
-                UserGroup result = apiInstance.CreateUserGroup(postUserGroupRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling GroupApi.CreateUserGroup: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the CreateUserGroupWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // ユーザーグループを作成
-    ApiResponse<UserGroup> response = apiInstance.CreateUserGroupWithHttpInfo(postUserGroupRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GroupApi.CreateUserGroupWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -417,62 +186,6 @@ catch (ApiException e)
 
 指定したユーザーグループを削除します。 対象のユーザーグループの管理者権限が必要です。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class DeleteUserGroupExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new GroupApi(config);
-            var groupId = "groupId_example";  // Guid | ユーザーグループUUID
-
-            try
-            {
-                // ユーザーグループを削除
-                apiInstance.DeleteUserGroup(groupId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling GroupApi.DeleteUserGroup: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the DeleteUserGroupWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // ユーザーグループを削除
-    apiInstance.DeleteUserGroupWithHttpInfo(groupId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GroupApi.DeleteUserGroupWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -511,63 +224,6 @@ void (empty response body)
 
 指定したユーザーグループの情報を編集します。 対象のユーザーグループの管理者権限が必要です。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class EditUserGroupExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new GroupApi(config);
-            var groupId = "groupId_example";  // Guid | ユーザーグループUUID
-            var patchUserGroupRequest = new PatchUserGroupRequest(); // PatchUserGroupRequest |  (optional) 
-
-            try
-            {
-                // ユーザーグループを編集
-                apiInstance.EditUserGroup(groupId, patchUserGroupRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling GroupApi.EditUserGroup: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the EditUserGroupWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // ユーザーグループを編集
-    apiInstance.EditUserGroupWithHttpInfo(groupId, patchUserGroupRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GroupApi.EditUserGroupWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -609,64 +265,6 @@ void (empty response body)
 
 指定したユーザーグループ内の指定したユーザーの属性を編集します。 対象のユーザーグループの管理者権限が必要です。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class EditUserGroupMemberExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new GroupApi(config);
-            var groupId = "groupId_example";  // Guid | ユーザーグループUUID
-            var userId = "userId_example";  // Guid | ユーザーUUID
-            var patchGroupMemberRequest = new PatchGroupMemberRequest(); // PatchGroupMemberRequest |  (optional) 
-
-            try
-            {
-                // グループメンバーを編集
-                apiInstance.EditUserGroupMember(groupId, userId, patchGroupMemberRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling GroupApi.EditUserGroupMember: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the EditUserGroupMemberWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // グループメンバーを編集
-    apiInstance.EditUserGroupMemberWithHttpInfo(groupId, userId, patchGroupMemberRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GroupApi.EditUserGroupMemberWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -708,66 +306,6 @@ void (empty response body)
 
 指定したユーザーグループの情報を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetUserGroupExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new GroupApi(config);
-            var groupId = "groupId_example";  // Guid | ユーザーグループUUID
-
-            try
-            {
-                // ユーザーグループを取得
-                UserGroup result = apiInstance.GetUserGroup(groupId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling GroupApi.GetUserGroup: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetUserGroupWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // ユーザーグループを取得
-    ApiResponse<UserGroup> response = apiInstance.GetUserGroupWithHttpInfo(groupId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GroupApi.GetUserGroupWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -805,66 +343,6 @@ catch (ApiException e)
 
 指定したグループの管理者のリストを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetUserGroupAdminsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new GroupApi(config);
-            var groupId = "groupId_example";  // Guid | ユーザーグループUUID
-
-            try
-            {
-                // グループ管理者を取得
-                List<Guid> result = apiInstance.GetUserGroupAdmins(groupId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling GroupApi.GetUserGroupAdmins: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetUserGroupAdminsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // グループ管理者を取得
-    ApiResponse<List<Guid>> response = apiInstance.GetUserGroupAdminsWithHttpInfo(groupId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GroupApi.GetUserGroupAdminsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -902,66 +380,6 @@ catch (ApiException e)
 
 指定したグループのメンバーのリストを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetUserGroupMembersExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new GroupApi(config);
-            var groupId = "groupId_example";  // Guid | ユーザーグループUUID
-
-            try
-            {
-                // グループメンバーを取得
-                List<UserGroupMember> result = apiInstance.GetUserGroupMembers(groupId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling GroupApi.GetUserGroupMembers: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetUserGroupMembersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // グループメンバーを取得
-    ApiResponse<List<UserGroupMember>> response = apiInstance.GetUserGroupMembersWithHttpInfo(groupId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GroupApi.GetUserGroupMembersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -999,65 +417,6 @@ catch (ApiException e)
 
 ユーザーグループのリストを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetUserGroupsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new GroupApi(config);
-
-            try
-            {
-                // ユーザーグループのリストを取得
-                List<UserGroup> result = apiInstance.GetUserGroups();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling GroupApi.GetUserGroups: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetUserGroupsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // ユーザーグループのリストを取得
-    ApiResponse<List<UserGroup>> response = apiInstance.GetUserGroupsWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GroupApi.GetUserGroupsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -1090,63 +449,6 @@ This endpoint does not need any parameter.
 
 指定したユーザーグループから指定した管理者を削除します。 対象のユーザーグループの管理者権限が必要です。 グループから管理者が存在しなくなる場合は400エラーを返します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class RemoveUserGroupAdminExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new GroupApi(config);
-            var groupId = "groupId_example";  // Guid | ユーザーグループUUID
-            var userId = "userId_example";  // Guid | ユーザーUUID
-
-            try
-            {
-                // グループ管理者を削除
-                apiInstance.RemoveUserGroupAdmin(groupId, userId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling GroupApi.RemoveUserGroupAdmin: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RemoveUserGroupAdminWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // グループ管理者を削除
-    apiInstance.RemoveUserGroupAdminWithHttpInfo(groupId, userId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GroupApi.RemoveUserGroupAdminWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1187,63 +489,6 @@ void (empty response body)
 
 指定したユーザーグループから指定したユーザーを削除します。 既にグループから削除されているメンバーを指定した場合は204を返します。 対象のユーザーグループの管理者権限が必要です。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class RemoveUserGroupMemberExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new GroupApi(config);
-            var groupId = "groupId_example";  // Guid | ユーザーグループUUID
-            var userId = "userId_example";  // Guid | ユーザーUUID
-
-            try
-            {
-                // グループメンバーを削除
-                apiInstance.RemoveUserGroupMember(groupId, userId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling GroupApi.RemoveUserGroupMember: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RemoveUserGroupMemberWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // グループメンバーを削除
-    apiInstance.RemoveUserGroupMemberWithHttpInfo(groupId, userId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GroupApi.RemoveUserGroupMemberWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1283,62 +528,6 @@ void (empty response body)
 
 指定したグループから全てのメンバーを削除します。 対象のユーザーグループの管理者権限が必要です。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class RemoveUserGroupMembersExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new GroupApi(config);
-            var groupId = "groupId_example";  // Guid | ユーザーグループUUID
-
-            try
-            {
-                // グループメンバーを一括削除
-                apiInstance.RemoveUserGroupMembers(groupId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling GroupApi.RemoveUserGroupMembers: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RemoveUserGroupMembersWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // グループメンバーを一括削除
-    apiInstance.RemoveUserGroupMembersWithHttpInfo(groupId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling GroupApi.RemoveUserGroupMembersWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 

@@ -26,66 +26,6 @@ OAuth2クライアントを作成
 
 OAuth2クライアントを作成します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class CreateClientExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new Oauth2Api(config);
-            var postClientRequest = new PostClientRequest(); // PostClientRequest |  (optional) 
-
-            try
-            {
-                // OAuth2クライアントを作成
-                OAuth2ClientDetail result = apiInstance.CreateClient(postClientRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling Oauth2Api.CreateClient: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the CreateClientWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // OAuth2クライアントを作成
-    ApiResponse<OAuth2ClientDetail> response = apiInstance.CreateClientWithHttpInfo(postClientRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling Oauth2Api.CreateClientWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -123,62 +63,6 @@ OAuth2クライアントを削除
 
 指定したOAuth2クライアントを削除します。 対象のクライアントの管理権限が必要です。正常に削除された場合、このクライアントに対する認可は全て取り消されます。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class DeleteClientExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new Oauth2Api(config);
-            var clientId = "clientId_example";  // string | OAuth2クライアントUUID
-
-            try
-            {
-                // OAuth2クライアントを削除
-                apiInstance.DeleteClient(clientId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling Oauth2Api.DeleteClient: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the DeleteClientWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // OAuth2クライアントを削除
-    apiInstance.DeleteClientWithHttpInfo(clientId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling Oauth2Api.DeleteClientWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -217,63 +101,6 @@ OAuth2クライアント情報を変更
 
 指定したOAuth2クライアントの情報を変更します。 対象のクライアントの管理権限が必要です。 クライアント開発者UUIDを変更した場合は、変更先ユーザーにクライアント管理権限が移譲され、自分自身は権限を失います。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class EditClientExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new Oauth2Api(config);
-            var clientId = "clientId_example";  // string | OAuth2クライアントUUID
-            var patchClientRequest = new PatchClientRequest(); // PatchClientRequest |  (optional) 
-
-            try
-            {
-                // OAuth2クライアント情報を変更
-                apiInstance.EditClient(clientId, patchClientRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling Oauth2Api.EditClient: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the EditClientWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // OAuth2クライアント情報を変更
-    apiInstance.EditClientWithHttpInfo(clientId, patchClientRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling Oauth2Api.EditClientWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -314,67 +141,6 @@ OAuth2クライアント情報を取得
 
 指定したOAuth2クライアントの情報を取得します。 詳細情報の取得には対象のクライアントの管理権限が必要です。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetClientExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new Oauth2Api(config);
-            var clientId = "clientId_example";  // string | OAuth2クライアントUUID
-            var detail = false;  // bool | 詳細情報を含めるかどうか (optional)  (default to false)
-
-            try
-            {
-                // OAuth2クライアント情報を取得
-                GetClient200Response result = apiInstance.GetClient(clientId, detail);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling Oauth2Api.GetClient: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetClientWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // OAuth2クライアント情報を取得
-    ApiResponse<GetClient200Response> response = apiInstance.GetClientWithHttpInfo(clientId, detail);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling Oauth2Api.GetClientWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -414,66 +180,6 @@ OAuth2クライアントのリストを取得
 
 自身が開発者のOAuth2クライアントのリストを取得します。 `all`が`true`の場合、全開発者の全クライアントのリストを返します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetClientsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new Oauth2Api(config);
-            var all = false;  // bool | 全てのクライアントを取得するかどうか (optional)  (default to false)
-
-            try
-            {
-                // OAuth2クライアントのリストを取得
-                List<OAuth2Client> result = apiInstance.GetClients(all);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling Oauth2Api.GetClients: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetClientsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // OAuth2クライアントのリストを取得
-    ApiResponse<List<OAuth2Client>> response = apiInstance.GetClientsWithHttpInfo(all);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling Oauth2Api.GetClientsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -510,65 +216,6 @@ catch (ApiException e)
 
 有効な自分に発行されたOAuth2トークンのリストを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMyTokensExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new Oauth2Api(config);
-
-            try
-            {
-                // 有効トークンのリストを取得
-                List<ActiveOAuth2Token> result = apiInstance.GetMyTokens();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling Oauth2Api.GetMyTokens: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMyTokensWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 有効トークンのリストを取得
-    ApiResponse<List<ActiveOAuth2Token>> response = apiInstance.GetMyTokensWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling Oauth2Api.GetMyTokensWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -601,70 +248,6 @@ OAuth2 認可エンドポイント
 
 OAuth2 認可エンドポイント
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetOAuth2AuthorizeExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new Oauth2Api(config);
-            var clientId = "clientId_example";  // string | 
-            var responseType = (OAuth2ResponseType) "code";  // OAuth2ResponseType |  (optional) 
-            var redirectUri = "redirectUri_example";  // string |  (optional) 
-            var scope = "scope_example";  // string |  (optional) 
-            var state = "state_example";  // string |  (optional) 
-            var codeChallenge = "codeChallenge_example";  // string |  (optional) 
-            var codeChallengeMethod = "codeChallengeMethod_example";  // string |  (optional) 
-            var nonce = "nonce_example";  // string |  (optional) 
-            var prompt = (OAuth2Prompt) "none";  // OAuth2Prompt |  (optional) 
-
-            try
-            {
-                // OAuth2 認可エンドポイント
-                apiInstance.GetOAuth2Authorize(clientId, responseType, redirectUri, scope, state, codeChallenge, codeChallengeMethod, nonce, prompt);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling Oauth2Api.GetOAuth2Authorize: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetOAuth2AuthorizeWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // OAuth2 認可エンドポイント
-    apiInstance.GetOAuth2AuthorizeWithHttpInfo(clientId, responseType, redirectUri, scope, state, codeChallenge, codeChallengeMethod, nonce, prompt);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling Oauth2Api.GetOAuth2AuthorizeWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -711,70 +294,6 @@ OAuth2 認可エンドポイント
 
 OAuth2 認可エンドポイント
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class PostOAuth2AuthorizeExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new Oauth2Api(config);
-            var clientId = "clientId_example";  // string | 
-            var responseType = (OAuth2ResponseType) "code";  // OAuth2ResponseType |  (optional) 
-            var redirectUri = "redirectUri_example";  // string |  (optional) 
-            var scope = "scope_example";  // string |  (optional) 
-            var state = "state_example";  // string |  (optional) 
-            var codeChallenge = "codeChallenge_example";  // string |  (optional) 
-            var codeChallengeMethod = "codeChallengeMethod_example";  // string |  (optional) 
-            var nonce = "nonce_example";  // string |  (optional) 
-            var prompt = (OAuth2Prompt) "none";  // OAuth2Prompt |  (optional) 
-
-            try
-            {
-                // OAuth2 認可エンドポイント
-                apiInstance.PostOAuth2Authorize(clientId, responseType, redirectUri, scope, state, codeChallenge, codeChallengeMethod, nonce, prompt);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling Oauth2Api.PostOAuth2Authorize: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostOAuth2AuthorizeWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // OAuth2 認可エンドポイント
-    apiInstance.PostOAuth2AuthorizeWithHttpInfo(clientId, responseType, redirectUri, scope, state, codeChallenge, codeChallengeMethod, nonce, prompt);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling Oauth2Api.PostOAuth2AuthorizeWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -821,62 +340,6 @@ OAuth2 認可承諾API
 
 OAuth2 認可承諾
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class PostOAuth2AuthorizeDecideExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new Oauth2Api(config);
-            var submit = "submit_example";  // string | 承諾する場合は\\\"approve\\\"
-
-            try
-            {
-                // OAuth2 認可承諾API
-                apiInstance.PostOAuth2AuthorizeDecide(submit);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling Oauth2Api.PostOAuth2AuthorizeDecide: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostOAuth2AuthorizeDecideWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // OAuth2 認可承諾API
-    apiInstance.PostOAuth2AuthorizeDecideWithHttpInfo(submit);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling Oauth2Api.PostOAuth2AuthorizeDecideWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -915,75 +378,6 @@ OAuth2 トークンエンドポイント
 
 OAuth2 トークンエンドポイント
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class PostOAuth2TokenExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new Oauth2Api(config);
-            var grantType = "grantType_example";  // string | 
-            var code = "code_example";  // string |  (optional) 
-            var redirectUri = "redirectUri_example";  // string |  (optional) 
-            var clientId = "clientId_example";  // string |  (optional) 
-            var codeVerifier = "codeVerifier_example";  // string |  (optional) 
-            var username = "username_example";  // string |  (optional) 
-            var password = "password_example";  // string |  (optional) 
-            var scope = "scope_example";  // string |  (optional) 
-            var refreshToken = "refreshToken_example";  // string |  (optional) 
-            var clientSecret = "clientSecret_example";  // string |  (optional) 
-
-            try
-            {
-                // OAuth2 トークンエンドポイント
-                OAuth2Token result = apiInstance.PostOAuth2Token(grantType, code, redirectUri, clientId, codeVerifier, username, password, scope, refreshToken, clientSecret);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling Oauth2Api.PostOAuth2Token: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PostOAuth2TokenWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // OAuth2 トークンエンドポイント
-    ApiResponse<OAuth2Token> response = apiInstance.PostOAuth2TokenWithHttpInfo(grantType, code, redirectUri, clientId, codeVerifier, username, password, scope, refreshToken, clientSecret);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling Oauth2Api.PostOAuth2TokenWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1031,62 +425,6 @@ OAuthクライアントのトークンを削除
 
 自分が許可している指定したOAuthクライアントのアクセストークンを全てRevokeします。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class RevokeClientTokensExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new Oauth2Api(config);
-            var clientId = "clientId_example";  // string | OAuth2クライアントUUID
-
-            try
-            {
-                // OAuthクライアントのトークンを削除
-                apiInstance.RevokeClientTokens(clientId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling Oauth2Api.RevokeClientTokens: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RevokeClientTokensWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // OAuthクライアントのトークンを削除
-    apiInstance.RevokeClientTokensWithHttpInfo(clientId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling Oauth2Api.RevokeClientTokensWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1124,62 +462,6 @@ void (empty response body)
 
 自分の指定したトークンの認可を取り消します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class RevokeMyTokenExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new Oauth2Api(config);
-            var tokenId = "tokenId_example";  // Guid | OAuth2トークンUUID
-
-            try
-            {
-                // トークンの認可を取り消す
-                apiInstance.RevokeMyToken(tokenId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling Oauth2Api.RevokeMyToken: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RevokeMyTokenWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // トークンの認可を取り消す
-    apiInstance.RevokeMyTokenWithHttpInfo(tokenId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling Oauth2Api.RevokeMyTokenWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -1217,62 +499,6 @@ OAuth2 トークン無効化エンドポイント
 
 OAuth2 トークン無効化エンドポイント
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class RevokeOAuth2TokenExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new Oauth2Api(config);
-            var token = "token_example";  // string | 無効化するOAuth2トークンまたはOAuth2リフレッシュトークン
-
-            try
-            {
-                // OAuth2 トークン無効化エンドポイント
-                apiInstance.RevokeOAuth2Token(token);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling Oauth2Api.RevokeOAuth2Token: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RevokeOAuth2TokenWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // OAuth2 トークン無効化エンドポイント
-    apiInstance.RevokeOAuth2TokenWithHttpInfo(token);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling Oauth2Api.RevokeOAuth2TokenWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 

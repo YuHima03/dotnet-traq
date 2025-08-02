@@ -20,65 +20,6 @@ All URIs are relative to *https://q.trap.jp/api/v3*
 
 自分に紐付けられている外部ログインアカウント一覧を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMyExternalAccountsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new AuthenticationApi(config);
-
-            try
-            {
-                // 外部ログインアカウント一覧を取得
-                List<ExternalProviderUser> result = apiInstance.GetMyExternalAccounts();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling AuthenticationApi.GetMyExternalAccounts: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMyExternalAccountsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 外部ログインアカウント一覧を取得
-    ApiResponse<List<ExternalProviderUser>> response = apiInstance.GetMyExternalAccountsWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling AuthenticationApi.GetMyExternalAccountsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -111,65 +52,6 @@ This endpoint does not need any parameter.
 
 自分のログインセッションのリストを取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMySessionsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new AuthenticationApi(config);
-
-            try
-            {
-                // 自分のログインセッションリストを取得
-                List<LoginSession> result = apiInstance.GetMySessions();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling AuthenticationApi.GetMySessions: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMySessionsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 自分のログインセッションリストを取得
-    ApiResponse<List<LoginSession>> response = apiInstance.GetMySessionsWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling AuthenticationApi.GetMySessionsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -202,62 +84,6 @@ This endpoint does not need any parameter.
 
 自分に外部ログインアカウントを紐付けます。 指定した`providerName`がサーバー側で有効である必要があります。 リクエストが受理された場合、外部サービスの認証画面にリダイレクトされ、認証される必要があります。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class LinkExternalAccountExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new AuthenticationApi(config);
-            var postLinkExternalAccount = new PostLinkExternalAccount(); // PostLinkExternalAccount |  (optional) 
-
-            try
-            {
-                // 外部ログインアカウントを紐付ける
-                apiInstance.LinkExternalAccount(postLinkExternalAccount);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling AuthenticationApi.LinkExternalAccount: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the LinkExternalAccountWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 外部ログインアカウントを紐付ける
-    apiInstance.LinkExternalAccountWithHttpInfo(postLinkExternalAccount);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling AuthenticationApi.LinkExternalAccountWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -295,63 +121,6 @@ void (empty response body)
 
 ログインします。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class LoginExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new AuthenticationApi(config);
-            var redirect = "redirect_example";  // string | リダイレクト先 (optional) 
-            var postLoginRequest = new PostLoginRequest(); // PostLoginRequest |  (optional) 
-
-            try
-            {
-                // ログイン
-                apiInstance.Login(redirect, postLoginRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling AuthenticationApi.Login: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the LoginWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // ログイン
-    apiInstance.LoginWithHttpInfo(redirect, postLoginRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling AuthenticationApi.LoginWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -393,63 +162,6 @@ void (empty response body)
 
 ログアウトします。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class LogoutExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new AuthenticationApi(config);
-            var redirect = "redirect_example";  // string | リダイレクト先 (optional) 
-            var all = false;  // bool | 全てのセッションでログアウトするかどうか (optional)  (default to false)
-
-            try
-            {
-                // ログアウト
-                apiInstance.Logout(redirect, all);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling AuthenticationApi.Logout: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the LogoutWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // ログアウト
-    apiInstance.LogoutWithHttpInfo(redirect, all);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling AuthenticationApi.LogoutWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -488,62 +200,6 @@ void (empty response body)
 
 指定した自分のセッションを無効化(ログアウト)します。 既に存在しない・無効化されているセッションを指定した場合も`204`を返します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class RevokeMySessionExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new AuthenticationApi(config);
-            var sessionId = "sessionId_example";  // Guid | セッションUUID
-
-            try
-            {
-                // セッションを無効化
-                apiInstance.RevokeMySession(sessionId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling AuthenticationApi.RevokeMySession: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RevokeMySessionWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // セッションを無効化
-    apiInstance.RevokeMySessionWithHttpInfo(sessionId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling AuthenticationApi.RevokeMySessionWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -580,62 +236,6 @@ void (empty response body)
 
 自分に紐付けられている外部ログインアカウントの紐付けを解除します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class UnlinkExternalAccountExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new AuthenticationApi(config);
-            var postUnlinkExternalAccount = new PostUnlinkExternalAccount(); // PostUnlinkExternalAccount |  (optional) 
-
-            try
-            {
-                // 外部ログインアカウントの紐付けを解除
-                apiInstance.UnlinkExternalAccount(postUnlinkExternalAccount);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling AuthenticationApi.UnlinkExternalAccount: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the UnlinkExternalAccountWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // 外部ログインアカウントの紐付けを解除
-    apiInstance.UnlinkExternalAccountWithHttpInfo(postUnlinkExternalAccount);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling AuthenticationApi.UnlinkExternalAccountWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 

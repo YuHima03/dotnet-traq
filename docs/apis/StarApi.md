@@ -16,62 +16,6 @@ All URIs are relative to *https://q.trap.jp/api/v3*
 
 指定したチャンネルをスターチャンネルに追加します。 スター済みのチャンネルIDを指定した場合、204を返します。 不正なチャンネルIDを指定した場合、400を返します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class AddMyStarExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new StarApi(config);
-            var postStarRequest = new PostStarRequest(); // PostStarRequest |  (optional) 
-
-            try
-            {
-                // チャンネルをスターに追加
-                apiInstance.AddMyStar(postStarRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling StarApi.AddMyStar: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the AddMyStarWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルをスターに追加
-    apiInstance.AddMyStarWithHttpInfo(postStarRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling StarApi.AddMyStarWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -109,65 +53,6 @@ void (empty response body)
 
 自分がスターしているチャンネルのUUIDの配列を取得します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class GetMyStarsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new StarApi(config);
-
-            try
-            {
-                // スターチャンネルリストを取得
-                List<Guid> result = apiInstance.GetMyStars();
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling StarApi.GetMyStars: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMyStarsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // スターチャンネルリストを取得
-    ApiResponse<List<Guid>> response = apiInstance.GetMyStarsWithHttpInfo();
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling StarApi.GetMyStarsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 This endpoint does not need any parameter.
@@ -200,62 +85,6 @@ This endpoint does not need any parameter.
 
 既にスターから削除されているチャンネルを指定した場合は204を返します。
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Traq.Api;
-using Traq.Client;
-using Traq.Model;
-
-namespace Example
-{
-    public class RemoveMyStarExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://q.trap.jp/api/v3";
-            // Configure OAuth2 access token for authorization: OAuth2
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new StarApi(config);
-            var channelId = "channelId_example";  // Guid | チャンネルUUID
-
-            try
-            {
-                // チャンネルをスターから削除します
-                apiInstance.RemoveMyStar(channelId);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling StarApi.RemoveMyStar: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the RemoveMyStarWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // チャンネルをスターから削除します
-    apiInstance.RemoveMyStarWithHttpInfo(channelId);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling StarApi.RemoveMyStarWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
