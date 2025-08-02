@@ -1,7 +1,13 @@
 version: '3'
 
 tasks:
-  api-gen:
+  default:
+    - task: generate-client
+
+  generate-client:
+    aliases:
+      - gen
+    desc: Generate C# client for the traQ API from OpenAPI spec
     cmds:
       - |
         docker run --rm -v ${PWD}:/local \
@@ -10,3 +16,4 @@ tasks:
           --generator-name csharp \
           --input-spec     https://raw.githubusercontent.com/traPtitech/traQ/master/docs/v3-api.yaml \
           --output         /local
+      - dotnet format
