@@ -30,7 +30,7 @@ jobs:
           version: 3.x
       
       - name: Run Task (Generate API client)
-        run: task gen
+        run: GITHUB_TAG_NAME=${{ github.event.inputs.tag_name }} task gen
 
       - name: New PullRequest
         uses: peter-evans/create-pull-request@v7
