@@ -22,20 +22,25 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>0.4.0</Version>
-    <AssemblyVersion>0.4.0</AssemblyVersion>
-    <FileVersion>0.4.0.0</FileVersion>
+    <Version>1.0.0-alpha.1</Version>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup>
     <PackageId>Traq</PackageId>
     <NeutralLanguage>ja</NeutralLanguage>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>Fix bugs when handling DateTime/DateTimeOffset and add supports for traQ v3.24.9.</PackageReleaseNotes> <!--Set release notes here-->
+    <PackageReleaseNotes>Switch API client generator from OpenAPI Generator to Microsoft Kiota and add support for Native AOT. This release contains breaking changes.</PackageReleaseNotes> <!--Set release notes here-->
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageTags>traq</PackageTags>
     <PackageProjectUrl>https://github.com/YuHima03/dotnet-traq</PackageProjectUrl>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsAotCompatible>true</IsAotCompatible>
+    <JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>
   </PropertyGroup>
   
   <PropertyGroup>
@@ -58,9 +63,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="JsonSubTypes" Version="2.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.4" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Polly" Version="8.5.2" />
+    <PackageReference Include="Microsoft.Kiota.Bundle" Version="1.19.0" />
   </ItemGroup>
 </Project>
