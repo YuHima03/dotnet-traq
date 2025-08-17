@@ -1,0 +1,36 @@
+name: Generate API client with Microsoft Kiota
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: Git tag name to use for the OpenAPI spec
+        required: false
+        default: master
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: New branch
+        run: git checkout -b actions/gen-{{ github.event.inputs.tag_name }}
+
+      - name: Install Task
+        uses: arduino/setup-task@v2
+        with:
+          version: 3.x
+      
+      - name: Run Task (Generate API client)
+        run: task gen
+
+      - name: New PullRequest
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "🪄 Generate API client for traQ ({{ github.event.inputs.tag_name }})"
+          branch: actions/gen-{{ github.event.inputs.tag_name }}
+          title: "🪄 traQ ({{ github.event.inputs.tag_name }})"
+          reviewers: YuHima03
