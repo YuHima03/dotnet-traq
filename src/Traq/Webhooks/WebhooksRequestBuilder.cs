@@ -10,6 +10,7 @@ using System.Threading;
 using System;
 using Traq.Models;
 using Traq.Webhooks.Item;
+using Traq.Webhooks.WebhookID;
 namespace Traq.Webhooks
 {
     /// <summary>
@@ -18,6 +19,11 @@ namespace Traq.Webhooks
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WebhooksRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The WebhookID property</summary>
+        public global::Traq.Webhooks.WebhookID.WebhookIDRequestBuilder WebhookID
+        {
+            get => new global::Traq.Webhooks.WebhookID.WebhookIDRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Traq.webhooks.item collection</summary>
         /// <param name="position">WebhookUUID</param>
         /// <returns>A <see cref="global::Traq.Webhooks.Item.WithWebhookItemRequestBuilder"/></returns>

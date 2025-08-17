@@ -34,7 +34,7 @@ namespace Traq.Qall.Token
         {
         }
         /// <summary>
-        /// 指定したルームに参加するためのLiveKitトークンを取得します。  
+        /// 指定したルームに参加するためのLiveKitトークンを取得します。
         /// </summary>
         /// <returns>A <see cref="global::Traq.Models.QallTokenResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Traq.Qall.Token
             return await RequestAdapter.SendAsync<global::Traq.Models.QallTokenResponse>(requestInfo, global::Traq.Models.QallTokenResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// 指定したルームに参加するためのLiveKitトークンを取得します。  
+        /// 指定したルームに参加するためのLiveKitトークンを取得します。
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Traq.Qall.Token
             return new global::Traq.Qall.Token.TokenRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// 指定したルームに参加するためのLiveKitトークンを取得します。  
+        /// 指定したルームに参加するためのLiveKitトークンを取得します。
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TokenRequestBuilderGetQueryParameters 
