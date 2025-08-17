@@ -48,10 +48,7 @@ namespace Traq
                 AllowAutoRedirect = false,
                 UseCookies = !authenticationMethod, // Enable when using cookie authentication.
             };
-            HttpClient client = new(clientHandler)
-            {
-                BaseAddress = baseAddress
-            };
+            HttpClient client = new(clientHandler);
 
             if (authenticationMethod)
             {
@@ -69,7 +66,7 @@ namespace Traq
                     Value = options.CookieAuthToken,
                 });
             }
-            return new(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider(), httpClient: client));
+            return new(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider(), httpClient: client) { BaseUrl = options.BaseAddress });
         }
     }
 
