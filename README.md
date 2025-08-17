@@ -62,7 +62,7 @@ For more information, please check [Kiota Official Documentation](https://learn.
 
 ## Source Generation
 
-[Docker](https://www.docker.com) and [Task](https://taskfile.dev) is required for source generation.
+[Docker](https://www.docker.com) and [Task](https://taskfile.dev) are required for source generation.
 
 To generate API client for certain version of traQ, set it to the `GITHUB_TAG_NAME` variable and run `task`, `task gen` or `task generate-client`.
 
