@@ -42,3 +42,32 @@ var host = Host.CreateDefaultApplication(args)
 
 host.Run();
 ```
+
+### Create API Client Manually
+
+The `CreateFromOptions` method in the `TraqApiClientHelper` class is useful to create a new instance of the `TraqApiClient` class with specified options.
+
+```cs
+TraqApiClientOptions options = new()
+{
+    BaseAddress = "Base address of the traQ API",
+    BearerAuthToken = "Bearer authentication token"
+}
+var client = TraqApiClientHelper.CreateFromOptions(options);
+```
+
+The `TraqApiClient` class implements `Microsoft.Kiota.Abstractions.BaseRequestBuilder` so that you can manually manage methods to access the traQ API.
+
+For more information, please check [Kiota Official Documentation](https://learn.microsoft.com/en-us/openapi/kiota/overview).
+
+## Source Generation
+
+[Docker](https://www.docker.com) and [Task](https://taskfile.dev) is required for source generation.
+
+To generate API client for certain version of traQ, set it to the `GITHUB_TAG_NAME` variable and run `task`, `task gen` or `task generate-client`.
+
+The following command generate API client for traQ v3.25.0.
+
+```shell
+GITHUB_TAG_NAME=v3.25.0 task
+```
