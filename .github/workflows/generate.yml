@@ -12,12 +12,18 @@ jobs:
   generate:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+      pull-requests: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         
       - name: New branch
-        run: git checkout -b actions/gen-{{ github.event.inputs.tag_name }}
+        run: |
+          git config user.name ${{ github.triggering_actor }}
+          git checkout -b actions/gen-${{ github.event.inputs.tag_name }}
 
       - name: Install Task
         uses: arduino/setup-task@v2
@@ -30,7 +36,7 @@ jobs:
       - name: New PullRequest
         uses: peter-evans/create-pull-request@v7
         with:
-          commit-message: "🪄 Generate API client for traQ ({{ github.event.inputs.tag_name }})"
-          branch: actions/gen-{{ github.event.inputs.tag_name }}
-          title: "🪄 traQ ({{ github.event.inputs.tag_name }})"
+          commit-message: "🪄 Generate API client for traQ (${{ github.event.inputs.tag_name }})"
+          branch: actions/gen-${{ github.event.inputs.tag_name }}
+          title: "🪄 traQ (${{ github.event.inputs.tag_name }})"
           reviewers: YuHima03
