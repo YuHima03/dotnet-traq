@@ -16,6 +16,7 @@ namespace Traq
         /// <param name="services">The <see cref="IServiceCollection"/> to add.</param>
         public static IServiceCollection AddTraqApiClient(this IServiceCollection services)
         {
+            ArgumentNullException.ThrowIfNull(services);
             services.TryAddSingleton(sp => TraqApiClientHelper.CreateFromOptions(sp.GetRequiredService<IOptions<TraqApiClientOptions>>().Value));
             return services;
         }
@@ -27,9 +28,25 @@ namespace Traq
         /// <param name="configureOptions">The action to configure the options.</param>
         public static IServiceCollection AddTraqApiClient(this IServiceCollection services, Action<TraqApiClientOptions> configureOptions)
         {
+            ArgumentNullException.ThrowIfNull(services);
             ArgumentNullException.ThrowIfNull(configureOptions);
-            services.Configure(configureOptions);
-            return AddTraqApiClient(services);
+            return services
+                .Configure(configureOptions)
+                .AddTraqApiClient();
+        }
+
+        /// <summary>
+        /// Add a singleton instance of the <see cref="TraqApiClient"/> class configured by the <paramref name="configureOptions"/> to the service collection.
+        /// </summary>
+        /// <param name="services">The <see cref="IServiceCollection"/> to add.</param>
+        /// <param name="configureOptions">The action to configure the options.</param>
+        public static IServiceCollection AddTraqApiClient(this IServiceCollection services, Action<IServiceProvider, TraqApiClientOptions> configureOptions)
+        {
+            ArgumentNullException.ThrowIfNull(services);
+            ArgumentNullException.ThrowIfNull(configureOptions);
+            return services
+                .AddSingleton<IConfigureOptions<TraqApiClientOptions>>(sp => new ConfigureOptions<TraqApiClientOptions>(options => configureOptions(sp, options)))
+                .AddTraqApiClient();
         }
     }
 }
