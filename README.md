@@ -66,7 +66,7 @@ For more information, please check [Kiota Official Documentation](https://learn.
 
 To generate API client for certain version of traQ, set it to the `GITHUB_TAG_NAME` variable and run `task`, `task gen` or `task generate-client`.
 
-The following command generate API client for traQ v3.25.0.
+The following command generates API client for traQ v3.25.0.
 
 ```shell
 GITHUB_TAG_NAME=v3.25.0 task
