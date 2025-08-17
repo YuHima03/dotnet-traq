@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Traq
 {
@@ -100,7 +101,7 @@ namespace Traq
 
                     if (!Uri.IsWellFormedUriString(_baseAddressString, UriKind.Absolute))
                     {
-                        throw new UriFormatException($"The provided base address is not a valid absolute URI.");
+                        ThrowHelper.ThrowUriFormatException("The provided base address is not a valid absolute URI.");
                     }
                 }
             }
@@ -139,5 +140,14 @@ namespace Traq
         /// </summary>
         /// <value>The token used in cookie authentication to access the traQ API.</value>
         public string? CookieAuthToken { get; set; } = null;
+    }
+
+    file static class ThrowHelper
+    {
+        [DoesNotReturn]
+        public static void ThrowUriFormatException(string message)
+        {
+            throw new UriFormatException(message);
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace Traq
             var cookieIsAvailable = !string.IsNullOrWhiteSpace(options.CookieAuthToken);
             if (!bearerIsAvailable && !cookieIsAvailable)
             {
-                ThrowInvalidOperationException("At least one authentication method must be available.");
+                ThrowHelper.ThrowInvalidOperationException("At least one authentication method must be available.");
             }
 
             // true when use bearer authentication; otherwise, cookie.
@@ -71,9 +71,12 @@ namespace Traq
             }
             return new(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider(), httpClient: client));
         }
+    }
 
+    file static class ThrowHelper
+    {
         [DoesNotReturn]
-        static void ThrowInvalidOperationException(string message)
+        public static void ThrowInvalidOperationException(string message)
         {
             throw new InvalidOperationException(message);
         }
