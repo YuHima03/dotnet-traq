@@ -1,8 +1,0 @@
-apiName: Api
-library: generichost
-packageName: Traq
-packageVersion: 0.1.0
-targetFramework: net8.0
-useDateTimeOffset: true
-optionalProjectFile: false
-useSourceGeneration: true
