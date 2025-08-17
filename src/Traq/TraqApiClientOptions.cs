@@ -5,7 +5,6 @@ namespace Traq
     /// <summary>
     /// Represents a preference of authentication method for the traQ API.
     /// </summary>
-    [Obsolete("Use Microsoft.Kiota.Abstractions.IRequestAdapter for configuring API clients instead.")]
     public enum TraqAuthMethodPreference
     {
         /// <summary>
@@ -25,9 +24,8 @@ namespace Traq
     }
 
     /// <summary>
-    /// Represents read-only options for the default service that implements the <see cref="ITraqApiClient"/> interface.
+    /// Represents read-only options for the <see cref="TraqApiClient"/> service.
     /// </summary>
-    [Obsolete("Use Microsoft.Kiota.Abstractions.IRequestAdapter for configuring API clients instead.")]
     public interface IReadOnlyTraqApiClientOptions
     {
         /// <summary>
@@ -58,9 +56,8 @@ namespace Traq
     }
 
     /// <summary>
-    /// Options for the default service that implements the <see cref="ITraqApiClient"/> interface.
+    /// Options for the <see cref="TraqApiClient"/> service.
     /// </summary>
-    [Obsolete("Use Microsoft.Kiota.Abstractions.IRequestAdapter for configuring API clients instead.")]
     public sealed class TraqApiClientOptions : IReadOnlyTraqApiClientOptions
     {
         Uri? _baseUri = null;
