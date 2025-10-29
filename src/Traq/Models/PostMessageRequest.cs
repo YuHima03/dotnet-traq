@@ -25,6 +25,14 @@ namespace Traq.Models
 #endif
         /// <summary>メンション・チャンネルリンクを自動埋め込みするか</summary>
         public bool? Embed { get; set; }
+        /// <summary>メッセージ送信の確認に使うことができる任意の識別子(投稿でのみ使用可)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Nonce { get; set; }
+#nullable restore
+#else
+        public string Nonce { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Traq.Models.PostMessageRequest"/> and sets the default values.
         /// </summary>
@@ -52,6 +60,7 @@ namespace Traq.Models
             {
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "embed", n => { Embed = n.GetBoolValue(); } },
+                { "nonce", n => { Nonce = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -63,6 +72,7 @@ namespace Traq.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
             writer.WriteBoolValue("embed", Embed);
+            writer.WriteStringValue("nonce", Nonce);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -1,6 +1,6 @@
 # dotnet-traq
 
-.NET client library for the traQ API.
+.NET client library for the [traQ](https://github.com/traPtitech/traQ) API.
 
 The source code is generated from the [OpenAPI Spec for the traQ API](https://github.com/traPtitech/traQ/blob/master/docs/v3-api.yaml) by [Microsoft Kiota](https://github.com/microsoft/kiota).
 
@@ -64,10 +64,10 @@ For more information, please check [Kiota Official Documentation](https://learn.
 
 [Docker](https://www.docker.com) and [Task](https://taskfile.dev) are required for source generation.
 
-To generate API client for certain version of traQ, set it to the `GITHUB_TAG_NAME` variable and run `task`, `task gen` or `task generate-client`.
+To generate API client for certain version of traQ, set it to the `TRAQ_TAG_NAME` variable and run `task`, `task gen` or `task generate-client`.
 
-The following command generates API client for traQ v3.25.0.
+The following command generates API client for traQ v3.26.0.
 
-```shell
-GITHUB_TAG_NAME=v3.25.0 task
+```bash
+TRAQ_TAG_NAME="v3.26.0" task
 ```
