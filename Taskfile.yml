@@ -10,17 +10,17 @@ tasks:
     desc: Generates C# API client
     summary: Generates C# client for traQ API from OpenAPI spec with Microsoft Kiota
     env:
-      GITHUB_TAG_NAME: master
+      TRAQ_TAG_NAME: master
       CLIENT_NAMESPACE: Traq
       CLIENT_CLASS_NAME: TraqApiClient
     vars:
-      OPENAPI_SPEC_URL: https://raw.githubusercontent.com/traPtitech/traQ/${GITHUB_TAG_NAME}/docs/v3-api.yaml
+      OPENAPI_SPEC_URL: https://raw.githubusercontent.com/traPtitech/traQ/${TRAQ_TAG_NAME}/docs/v3-api.yaml
     preconditions:
       - sh: "[[ $(curl -w \"%{http_code}\" {{.OPENAPI_SPEC_URL}}) = *200 ]]"
         msg: Checks if OpenAPI spec is available
     cmds:
       - |
-        echo "TargetTagName: ${GITHUB_TAG_NAME}"
+        echo "TargetTagName: ${TRAQ_TAG_NAME}"
       - |
         docker run -u 0:0 --rm -v "${PWD}/src/${CLIENT_NAMESPACE}":/local \
         mcr.microsoft.com/openapi/kiota generate \
