@@ -29,6 +29,14 @@ namespace Traq.Models
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>メッセージUUID</summary>
         public Guid? Id { get; set; }
+        /// <summary>メッセージ送信の確認に使うことができる任意の識別子(投稿でのみ使用可)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Nonce { get; set; }
+#nullable restore
+#else
+        public string Nonce { get; set; }
+#endif
         /// <summary>ピン留めされているかどうか</summary>
         public bool? Pinned { get; set; }
         /// <summary>押されているスタンプの配列</summary>
@@ -74,6 +82,7 @@ namespace Traq.Models
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
+                { "nonce", n => { Nonce = n.GetStringValue(); } },
                 { "pinned", n => { Pinned = n.GetBoolValue(); } },
                 { "stamps", n => { Stamps = n.GetCollectionOfObjectValues<global::Traq.Models.MessageStamp>(global::Traq.Models.MessageStamp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "threadId", n => { ThreadId = n.GetGuidValue(); } },
@@ -92,6 +101,7 @@ namespace Traq.Models
             writer.WriteStringValue("content", Content);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteGuidValue("id", Id);
+            writer.WriteStringValue("nonce", Nonce);
             writer.WriteBoolValue("pinned", Pinned);
             writer.WriteCollectionOfObjectValues<global::Traq.Models.MessageStamp>("stamps", Stamps);
             writer.WriteGuidValue("threadId", ThreadId);

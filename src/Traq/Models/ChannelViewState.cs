@@ -11,6 +11,10 @@ namespace Traq.Models
         #pragma warning disable CS1591
         None,
         #pragma warning restore CS1591
+        [EnumMember(Value = "stale_viewing")]
+        #pragma warning disable CS1591
+        Stale_viewing,
+        #pragma warning restore CS1591
         [EnumMember(Value = "monitoring")]
         #pragma warning disable CS1591
         Monitoring,
