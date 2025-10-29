@@ -1,6 +1,6 @@
 # dotnet-traq
 
-.NET client library for the traQ API.
+.NET client library for the [traQ](https://github.com/traPtitech/traQ) API.
 
 The source code is generated from the [OpenAPI Spec for the traQ API](https://github.com/traPtitech/traQ/blob/master/docs/v3-api.yaml) by [Microsoft Kiota](https://github.com/microsoft/kiota).
 
