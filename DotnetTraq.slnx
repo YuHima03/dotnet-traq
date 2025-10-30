@@ -1,3 +1,6 @@
 <Solution>
+  <Folder Name="/SolutionItems/">
+    <File Path=".editorconfig" />
+  </Folder>
   <Project Path="src/Traq/Traq.csproj" />
 </Solution>
