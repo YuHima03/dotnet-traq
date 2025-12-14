@@ -43,7 +43,7 @@ var host = Host.CreateDefaultApplication(args)
 host.Run();
 ```
 
-### Configurate Options
+### Configure Options
 
 The `TraqApiClientOptions` class is used to configure the `TraqApiClient` instance.
 
