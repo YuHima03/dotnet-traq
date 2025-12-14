@@ -2,7 +2,14 @@ version: '3'
 
 tasks:
   default:
-    - task: generate-client
+    desc: Print all available tasks
+    cmd: task -l
+  
+  format:
+    aliases:
+      - fmt
+    desc: Formats the codebase
+    cmd: dotnet format --severity info
   
   generate-client:
     aliases:
@@ -30,3 +37,9 @@ tasks:
           -c ${CLIENT_CLASS_NAME} \
           -n ${CLIENT_NAMESPACE} \
           --clear-cache
+      - ignore_error: true
+        cmd: dotnet format --severity info
+  
+  lint:
+    desc: Analyzes the codebase for potential issues
+    cmd: dotnet format --verify-no-changes --severity info
