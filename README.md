@@ -43,6 +43,14 @@ var host = Host.CreateDefaultApplication(args)
 host.Run();
 ```
 
+### Configurate Options
+
+The `TraqApiClientOptions` class is used to configure the `TraqApiClient` instance.
+
+You must fill the `BaseAddress` property to access the traQ API.
+
+You can also set the `BearerAuthToken`, `CookieAuthToken`, and `AuthMethodPreference` properties to configure authentication.
+
 ### Create API Client Manually
 
 The `CreateFromOptions` method in the `TraqApiClientHelper` class is useful to create a new instance of the `TraqApiClient` class with specified options.
@@ -64,10 +72,10 @@ For more information, please check [Kiota Official Documentation](https://learn.
 
 [Docker](https://www.docker.com) and [Task](https://taskfile.dev) are required for source generation.
 
-To generate API client for certain version of traQ, set it to the `TRAQ_TAG_NAME` variable and run `task`, `task gen` or `task generate-client`.
+To generate API client for certain version of traQ, set it to the `TRAQ_TAG_NAME` variable and run `task gen` or `task generate-client`.
 
-The following command generates API client for traQ v3.26.0.
+The following command generates API client for traQ v3.27.0.
 
 ```bash
-TRAQ_TAG_NAME="v3.26.0" task
+TRAQ_TAG_NAME="v3.27.0" task gen
 ```
