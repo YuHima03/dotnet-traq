@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CommunityToolkit.Diagnostics;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using System;
@@ -16,7 +17,7 @@ namespace Traq
         /// <param name="services">The <see cref="IServiceCollection"/> to add.</param>
         public static IServiceCollection AddTraqApiClient(this IServiceCollection services)
         {
-            ArgumentNullException.ThrowIfNull(services);
+            Guard.IsNotNull(services);
             services.TryAddSingleton(sp => TraqApiClientHelper.CreateFromOptions(sp.GetRequiredService<IOptions<TraqApiClientOptions>>().Value));
             return services;
         }
@@ -28,8 +29,8 @@ namespace Traq
         /// <param name="configureOptions">The action to configure the options.</param>
         public static IServiceCollection AddTraqApiClient(this IServiceCollection services, Action<TraqApiClientOptions> configureOptions)
         {
-            ArgumentNullException.ThrowIfNull(services);
-            ArgumentNullException.ThrowIfNull(configureOptions);
+            Guard.IsNotNull(services);
+            Guard.IsNotNull(configureOptions);
             return services
                 .Configure(configureOptions)
                 .AddTraqApiClient();
@@ -42,8 +43,8 @@ namespace Traq
         /// <param name="configureOptions">The action to configure the options.</param>
         public static IServiceCollection AddTraqApiClient(this IServiceCollection services, Action<IServiceProvider, TraqApiClientOptions> configureOptions)
         {
-            ArgumentNullException.ThrowIfNull(services);
-            ArgumentNullException.ThrowIfNull(configureOptions);
+            Guard.IsNotNull(services);
+            Guard.IsNotNull(configureOptions);
             return services
                 .AddSingleton<IConfigureOptions<TraqApiClientOptions>>(sp => new ConfigureOptions<TraqApiClientOptions>(options => configureOptions(sp, options)))
                 .AddTraqApiClient();

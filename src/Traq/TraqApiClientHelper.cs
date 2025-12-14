@@ -1,4 +1,5 @@
-﻿using Microsoft.Kiota.Abstractions.Authentication;
+﻿using CommunityToolkit.Diagnostics;
+using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 using System;
 using System.Net.Http;
@@ -21,8 +22,8 @@ namespace Traq
         /// <returns>A configured <see cref="TraqApiClient"/> instance ready for use.</returns>
         public static TraqApiClient CreateFromOptions(IReadOnlyTraqApiClientOptions options)
         {
-            ArgumentNullException.ThrowIfNull(options);
-            ArgumentException.ThrowIfNullOrWhiteSpace(options.BaseAddress);
+            Guard.IsNotNull(options);
+            Guard.IsNotNullOrWhiteSpace(options.BaseAddress);
 
             var bearerIsAvailable = !string.IsNullOrWhiteSpace(options.BearerAuthToken);
             var cookieIsAvailable = !string.IsNullOrWhiteSpace(options.CookieAuthToken);
