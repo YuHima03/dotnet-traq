@@ -1,9 +1,7 @@
 ﻿using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
-using System.Runtime.CompilerServices;
 
 namespace Traq
 {
@@ -21,21 +19,29 @@ namespace Traq
         /// Options for configuring the <see cref="TraqApiClient"/>.
         /// </param>
         /// <returns>A configured <see cref="TraqApiClient"/> instance ready for use.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TraqApiClient CreateFromOptions(IReadOnlyTraqApiClientOptions options)
         {
             ArgumentNullException.ThrowIfNull(options);
-            ArgumentNullException.ThrowIfNullOrWhiteSpace(options.BaseAddress);
+            ArgumentException.ThrowIfNullOrWhiteSpace(options.BaseAddress);
 
             var bearerIsAvailable = !string.IsNullOrWhiteSpace(options.BearerAuthToken);
             var cookieIsAvailable = !string.IsNullOrWhiteSpace(options.CookieAuthToken);
             if (!bearerIsAvailable && !cookieIsAvailable)
             {
-                ThrowHelper.ThrowInvalidOperationException("At least one authentication method must be available.");
+                return new(new HttpClientRequestAdapter(
+                    authenticationProvider: new AnonymousAuthenticationProvider(),
+                    httpClient: new(new HttpClientHandler()
+                    {
+                        AllowAutoRedirect = false,
+                        UseCookies = true,
+                    }))
+                {
+                    BaseUrl = options.BaseAddress
+                });
             }
 
             // true when use bearer authentication; otherwise, cookie.
-            var authenticationMethod = options.AuthMethodPreference switch
+            var useBearer = options.AuthMethodPreference switch
             {
                 TraqAuthMethodPreference.PreferBearerAuth => bearerIsAvailable,
                 TraqAuthMethodPreference.PreferCookieAuth => !cookieIsAvailable,
@@ -46,11 +52,11 @@ namespace Traq
             HttpClientHandler clientHandler = new()
             {
                 AllowAutoRedirect = false,
-                UseCookies = !authenticationMethod, // Enable when using cookie authentication.
+                UseCookies = !useBearer, // Enable when using cookie authentication.
             };
             HttpClient client = new(clientHandler);
 
-            if (authenticationMethod)
+            if (useBearer)
             {
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", options.BearerAuthToken);
             }
@@ -67,15 +73,6 @@ namespace Traq
                 });
             }
             return new(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider(), httpClient: client) { BaseUrl = options.BaseAddress });
-        }
-    }
-
-    file static class ThrowHelper
-    {
-        [DoesNotReturn]
-        public static void ThrowInvalidOperationException(string message)
-        {
-            throw new InvalidOperationException(message);
         }
     }
 }
