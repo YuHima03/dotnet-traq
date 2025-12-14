@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 
 namespace Traq
 {
@@ -95,9 +96,9 @@ namespace Traq
                 else
                 {
                     var address = value.AsSpan().Trim();
-                    _baseAddressString = (address[^1] == '/')
+                    _baseAddressString = address.EndsWith("/")
                         ? ((value.Length == address.Length) ? value : address.ToString())
-                        : $"{address}/";
+                        : StringExtension.Concat(address, "/");
 
                     if (!Uri.IsWellFormedUriString(_baseAddressString, UriKind.Absolute))
                     {
@@ -142,9 +143,32 @@ namespace Traq
         public string? CookieAuthToken { get; set; } = null;
     }
 
+    file static class StringExtension
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static string Concat(ReadOnlySpan<char> s0, ReadOnlySpan<char> s1)
+        {
+#if NET
+            return string.Concat(s0, s1);
+#else
+            Span<char> s = stackalloc char[s0.Length + s1.Length];
+            s0.CopyTo(s);
+#if NETSTANDARD2_1_OR_GREATER
+            s1.CopyTo(s[s0.Length..]);
+            return new(s);
+#else
+            s1.CopyTo(s.Slice(s0.Length));
+            return s.ToString();
+#endif
+#endif
+        }
+    }
+
     file static class ThrowHelper
     {
+#if NETSTANDARD2_1_OR_GREATER
         [DoesNotReturn]
+#endif
         public static void ThrowUriFormatException(string message)
         {
             throw new UriFormatException(message);
