@@ -1,10 +1,7 @@
-﻿using CommunityToolkit.Diagnostics;
-using Microsoft.Kiota.Abstractions.Authentication;
+﻿using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
-using System.Runtime.CompilerServices;
 
 namespace Traq
 {
@@ -31,7 +28,16 @@ namespace Traq
             var cookieIsAvailable = !string.IsNullOrWhiteSpace(options.CookieAuthToken);
             if (!bearerIsAvailable && !cookieIsAvailable)
             {
-                ThrowHelper.ThrowInvalidOperationException("At least one authentication method must be available.");
+                return new(new HttpClientRequestAdapter(
+                    authenticationProvider: new AnonymousAuthenticationProvider(),
+                    httpClient: new(new HttpClientHandler()
+                    {
+                        AllowAutoRedirect = false,
+                        UseCookies = true,
+                    }))
+                {
+                    BaseUrl = options.BaseAddress
+                });
             }
 
             // true when use bearer authentication; otherwise, cookie.
@@ -67,15 +73,6 @@ namespace Traq
                 });
             }
             return new(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider(), httpClient: client) { BaseUrl = options.BaseAddress });
-        }
-    }
-
-    file static class ThrowHelper
-    {
-        [DoesNotReturn]
-        public static void ThrowInvalidOperationException(string message)
-        {
-            throw new InvalidOperationException(message);
         }
     }
 }
