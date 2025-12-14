@@ -2,9 +2,9 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using System;
 using System.Collections.Generic;
 using System.IO;
+using System;
 namespace Traq.Models
 {
     /// <summary>
@@ -157,39 +157,39 @@ namespace Traq.Models
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Traq.Models.ChannelEvent.ChannelEvent_detail();
-                if ("ChildCreatedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("ChildCreatedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ChildCreatedEvent = new global::Traq.Models.ChildCreatedEvent();
                 }
-                else if ("ForcedNotificationChangedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("ForcedNotificationChangedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ForcedNotificationChangedEvent = new global::Traq.Models.ForcedNotificationChangedEvent();
                 }
-                else if ("NameChangedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("NameChangedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.NameChangedEvent = new global::Traq.Models.NameChangedEvent();
                 }
-                else if ("ParentChangedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("ParentChangedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ParentChangedEvent = new global::Traq.Models.ParentChangedEvent();
                 }
-                else if ("PinAddedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("PinAddedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.PinAddedEvent = new global::Traq.Models.PinAddedEvent();
                 }
-                else if ("PinRemovedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("PinRemovedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.PinRemovedEvent = new global::Traq.Models.PinRemovedEvent();
                 }
-                else if ("SubscribersChangedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("SubscribersChangedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.SubscribersChangedEvent = new global::Traq.Models.SubscribersChangedEvent();
                 }
-                else if ("TopicChangedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("TopicChangedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.TopicChangedEvent = new global::Traq.Models.TopicChangedEvent();
                 }
-                else if ("VisibilityChangedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("VisibilityChangedEvent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.VisibilityChangedEvent = new global::Traq.Models.VisibilityChangedEvent();
                 }
@@ -201,39 +201,39 @@ namespace Traq.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if (ChildCreatedEvent != null)
+                if(ChildCreatedEvent != null)
                 {
                     return ChildCreatedEvent.GetFieldDeserializers();
                 }
-                else if (ForcedNotificationChangedEvent != null)
+                else if(ForcedNotificationChangedEvent != null)
                 {
                     return ForcedNotificationChangedEvent.GetFieldDeserializers();
                 }
-                else if (NameChangedEvent != null)
+                else if(NameChangedEvent != null)
                 {
                     return NameChangedEvent.GetFieldDeserializers();
                 }
-                else if (ParentChangedEvent != null)
+                else if(ParentChangedEvent != null)
                 {
                     return ParentChangedEvent.GetFieldDeserializers();
                 }
-                else if (PinAddedEvent != null)
+                else if(PinAddedEvent != null)
                 {
                     return PinAddedEvent.GetFieldDeserializers();
                 }
-                else if (PinRemovedEvent != null)
+                else if(PinRemovedEvent != null)
                 {
                     return PinRemovedEvent.GetFieldDeserializers();
                 }
-                else if (SubscribersChangedEvent != null)
+                else if(SubscribersChangedEvent != null)
                 {
                     return SubscribersChangedEvent.GetFieldDeserializers();
                 }
-                else if (TopicChangedEvent != null)
+                else if(TopicChangedEvent != null)
                 {
                     return TopicChangedEvent.GetFieldDeserializers();
                 }
-                else if (VisibilityChangedEvent != null)
+                else if(VisibilityChangedEvent != null)
                 {
                     return VisibilityChangedEvent.GetFieldDeserializers();
                 }
@@ -246,39 +246,39 @@ namespace Traq.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if (ChildCreatedEvent != null)
+                if(ChildCreatedEvent != null)
                 {
                     writer.WriteObjectValue<global::Traq.Models.ChildCreatedEvent>(null, ChildCreatedEvent);
                 }
-                else if (ForcedNotificationChangedEvent != null)
+                else if(ForcedNotificationChangedEvent != null)
                 {
                     writer.WriteObjectValue<global::Traq.Models.ForcedNotificationChangedEvent>(null, ForcedNotificationChangedEvent);
                 }
-                else if (NameChangedEvent != null)
+                else if(NameChangedEvent != null)
                 {
                     writer.WriteObjectValue<global::Traq.Models.NameChangedEvent>(null, NameChangedEvent);
                 }
-                else if (ParentChangedEvent != null)
+                else if(ParentChangedEvent != null)
                 {
                     writer.WriteObjectValue<global::Traq.Models.ParentChangedEvent>(null, ParentChangedEvent);
                 }
-                else if (PinAddedEvent != null)
+                else if(PinAddedEvent != null)
                 {
                     writer.WriteObjectValue<global::Traq.Models.PinAddedEvent>(null, PinAddedEvent);
                 }
-                else if (PinRemovedEvent != null)
+                else if(PinRemovedEvent != null)
                 {
                     writer.WriteObjectValue<global::Traq.Models.PinRemovedEvent>(null, PinRemovedEvent);
                 }
-                else if (SubscribersChangedEvent != null)
+                else if(SubscribersChangedEvent != null)
                 {
                     writer.WriteObjectValue<global::Traq.Models.SubscribersChangedEvent>(null, SubscribersChangedEvent);
                 }
-                else if (TopicChangedEvent != null)
+                else if(TopicChangedEvent != null)
                 {
                     writer.WriteObjectValue<global::Traq.Models.TopicChangedEvent>(null, TopicChangedEvent);
                 }
-                else if (VisibilityChangedEvent != null)
+                else if(VisibilityChangedEvent != null)
                 {
                     writer.WriteObjectValue<global::Traq.Models.VisibilityChangedEvent>(null, VisibilityChangedEvent);
                 }

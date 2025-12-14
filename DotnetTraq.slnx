@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/SolutionItems/">
     <File Path=".editorconfig" />
+    <File Path="Taskfile.yml" />
   </Folder>
   <Project Path="src/Traq/Traq.csproj" />
 </Solution>
