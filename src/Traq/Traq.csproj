@@ -23,16 +23,17 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>1.0.0-alpha.1</Version>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <Version>3.27.1-0.rc.0</Version>
+    <PackageVersion>3.27.1.0-rc.0</PackageVersion>
+    <AssemblyVersion>3.27.1</AssemblyVersion>
+    <FileVersion>3.27.1.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup>
     <PackageId>Traq</PackageId>
     <NeutralLanguage>ja</NeutralLanguage>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>Switch API client generator from OpenAPI Generator to Microsoft Kiota and add support for Native AOT. This release contains breaking changes.</PackageReleaseNotes> <!--Set release notes here-->
+    <PackageReleaseNotes>Add support for NET Standard 2.0 and 2.1.</PackageReleaseNotes> <!--Set release notes here-->
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageTags>traq</PackageTags>
