@@ -23,8 +23,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>3.27.1-0.rc.0</Version>
-    <PackageVersion>3.27.1.0-rc.0</PackageVersion>
+    <Version>3.27.1-0</Version>
+    <PackageVersion>3.27.1.0</PackageVersion>
     <AssemblyVersion>3.27.1</AssemblyVersion>
     <FileVersion>3.27.1.0</FileVersion>
   </PropertyGroup>
