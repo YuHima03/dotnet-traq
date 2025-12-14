@@ -35,7 +35,7 @@ namespace Traq
             }
 
             // true when use bearer authentication; otherwise, cookie.
-            var authenticationMethod = options.AuthMethodPreference switch
+            var useBearer = options.AuthMethodPreference switch
             {
                 TraqAuthMethodPreference.PreferBearerAuth => bearerIsAvailable,
                 TraqAuthMethodPreference.PreferCookieAuth => !cookieIsAvailable,
@@ -46,11 +46,11 @@ namespace Traq
             HttpClientHandler clientHandler = new()
             {
                 AllowAutoRedirect = false,
-                UseCookies = !authenticationMethod, // Enable when using cookie authentication.
+                UseCookies = !useBearer, // Enable when using cookie authentication.
             };
             HttpClient client = new(clientHandler);
 
-            if (authenticationMethod)
+            if (useBearer)
             {
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", options.BearerAuthToken);
             }
