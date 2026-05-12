@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "8901D5D5DD42811BFA95719F13A64BFEE2AC079FEC49822374072CCFF211D0247CD2C8D1583086C42F9EE251E41784A33E485EA37CD04E427078E9058A6D9AF3",
-  "descriptionLocation": "https://raw.githubusercontent.com/traPtitech/traQ/v3.27.1/docs/v3-api.yaml",
+  "descriptionHash": "BCC67F3A7CD70B594B32E7994B9A1D2638D105B3E214FF2A7B4B6C90A477DB3B9CB03845D716D2A5117937A09BB9FA905A1BF039BBC1B7A86C262397534688EA",
+  "descriptionLocation": "https://raw.githubusercontent.com/traPtitech/traQ/v3.28.1/docs/v3-api.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.28.0",
+  "kiotaVersion": "1.31.1",
   "clientClassName": "TraqApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Traq",

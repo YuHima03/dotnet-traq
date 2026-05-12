@@ -100,7 +100,7 @@ namespace Traq.Users
         public async Task<global::Traq.Models.UserDetail> PostAsync(global::Traq.Models.PostUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Traq.Models.UserDetail>(requestInfo, global::Traq.Models.UserDetail.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -138,7 +138,7 @@ namespace Traq.Users
         public RequestInformation ToPostRequestInformation(global::Traq.Models.PostUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

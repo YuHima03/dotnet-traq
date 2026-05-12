@@ -32,7 +32,7 @@ namespace Traq.Users.Me.StampRecommendations
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Traq.Users.Me.StampRecommendations.StampRecommendations CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Traq.Users.Me.StampRecommendations.StampRecommendations();
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Traq.Users.Me.StampRecommendations
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("score", Score);
             writer.WriteGuidValue("stampId", StampId);
             writer.WriteAdditionalData(AdditionalData);

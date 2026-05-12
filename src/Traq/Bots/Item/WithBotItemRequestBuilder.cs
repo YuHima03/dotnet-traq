@@ -120,7 +120,7 @@ namespace Traq.Bots.Item
         public async Task PatchAsync(global::Traq.Models.PatchBotRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
@@ -176,7 +176,7 @@ namespace Traq.Bots.Item
         public RequestInformation ToPatchRequestInformation(global::Traq.Models.PatchBotRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -220,7 +220,7 @@ namespace Traq.Bots.Item
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Traq.Bots.Item.WithBotItemRequestBuilder.WithBotGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Traq.Bots.Item.WithBotItemRequestBuilder.WithBotGetResponse();
                 if("Bot".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -255,7 +255,7 @@ namespace Traq.Bots.Item
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(Bot != null)
                 {
                     writer.WriteObjectValue<global::Traq.Models.Bot>(null, Bot);
@@ -329,7 +329,7 @@ namespace Traq.Bots.Item
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Traq.Bots.Item.WithBotItemRequestBuilder.WithBotResponse CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Traq.Bots.Item.WithBotItemRequestBuilder.WithBotResponse();
                 if("Bot".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -364,7 +364,7 @@ namespace Traq.Bots.Item
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(Bot != null)
                 {
                     writer.WriteObjectValue<global::Traq.Models.Bot>(null, Bot);

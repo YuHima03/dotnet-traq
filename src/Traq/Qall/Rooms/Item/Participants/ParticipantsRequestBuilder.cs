@@ -49,7 +49,7 @@ namespace Traq.Qall.Rooms.Item.Participants
         public async Task<global::Traq.Models.QallParticipantResponse> PatchAsync(List<global::Traq.Models.QallParticipantRequest> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Traq.Models.QallParticipantResponse>(requestInfo, global::Traq.Models.QallParticipantResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -68,7 +68,7 @@ namespace Traq.Qall.Rooms.Item.Participants
         public RequestInformation ToPatchRequestInformation(List<global::Traq.Models.QallParticipantRequest> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
