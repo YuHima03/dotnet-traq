@@ -110,7 +110,7 @@ namespace Traq.Groups.Item.Members
         public async Task PostAsync(global::Traq.Groups.Item.Members.MembersRequestBuilder.MembersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
@@ -166,7 +166,7 @@ namespace Traq.Groups.Item.Members
         public RequestInformation ToPostRequestInformation(global::Traq.Groups.Item.Members.MembersRequestBuilder.MembersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -210,7 +210,7 @@ namespace Traq.Groups.Item.Members
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Traq.Groups.Item.Members.MembersRequestBuilder.MembersPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Traq.Groups.Item.Members.MembersRequestBuilder.MembersPostRequestBody();
                 if("UserGroupMember".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -241,7 +241,7 @@ namespace Traq.Groups.Item.Members
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(MembersPostRequestBodyUserGroupMember != null)
                 {
                     writer.WriteObjectValue<global::Traq.Models.UserGroupMember>(null, MembersPostRequestBodyUserGroupMember);

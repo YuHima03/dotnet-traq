@@ -211,6 +211,10 @@ namespace Traq.Models
         #pragma warning disable CS1591
         Get_my_stamp_history,
         #pragma warning restore CS1591
+        [EnumMember(Value = "get_my_stamp_recommendations")]
+        #pragma warning disable CS1591
+        Get_my_stamp_recommendations,
+        #pragma warning restore CS1591
         [EnumMember(Value = "get_stamp_palette")]
         #pragma warning disable CS1591
         Get_stamp_palette,
