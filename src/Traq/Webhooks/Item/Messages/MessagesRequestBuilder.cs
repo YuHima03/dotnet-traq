@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System;
 using Traq.Models;
+using Traq.Webhooks.Item.Messages.Item;
 namespace Traq.Webhooks.Item.Messages
 {
     /// <summary>
@@ -17,6 +18,31 @@ namespace Traq.Webhooks.Item.Messages
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MessagesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Traq.webhooks.item.messages.item collection</summary>
+        /// <param name="position">メッセージUUID</param>
+        /// <returns>A <see cref="global::Traq.Webhooks.Item.Messages.Item.WithMessageItemRequestBuilder"/></returns>
+        public global::Traq.Webhooks.Item.Messages.Item.WithMessageItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("messageId", position);
+                return new global::Traq.Webhooks.Item.Messages.Item.WithMessageItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
+        /// <summary>Gets an item from the Traq.webhooks.item.messages.item collection</summary>
+        /// <param name="position">メッセージUUID</param>
+        /// <returns>A <see cref="global::Traq.Webhooks.Item.Messages.Item.WithMessageItemRequestBuilder"/></returns>
+        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
+        public global::Traq.Webhooks.Item.Messages.Item.WithMessageItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("messageId", position);
+                return new global::Traq.Webhooks.Item.Messages.Item.WithMessageItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Traq.Webhooks.Item.Messages.MessagesRequestBuilder"/> and sets the default values.
         /// </summary>

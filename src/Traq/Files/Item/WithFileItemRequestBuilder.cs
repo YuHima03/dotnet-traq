@@ -139,7 +139,8 @@ namespace Traq.Files.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithFileItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>1を指定するとレスポンスにContent-Dispositionヘッダーが付与されます</summary>
+            /// <summary>このクエリパラメータは廃止されており、意味を持ちません（現在、このパラメータが0の場合も1の場合もレスポンスにはContent-Dispositionヘッダーが付与されます）</summary>
+            [Obsolete("")]
             [QueryParameter("dl")]
             public int? Dl { get; set; }
         }

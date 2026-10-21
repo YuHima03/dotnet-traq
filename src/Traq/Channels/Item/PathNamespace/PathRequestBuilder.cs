@@ -34,7 +34,7 @@ namespace Traq.Channels.Item.PathNamespace
         {
         }
         /// <summary>
-        /// 指定したチャンネルパスを取得
+        /// 指定されたチャンネルのパスを取得します。
         /// </summary>
         /// <returns>A <see cref="global::Traq.Models.ChannelPath"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Traq.Channels.Item.PathNamespace
             return await RequestAdapter.SendAsync<global::Traq.Models.ChannelPath>(requestInfo, global::Traq.Models.ChannelPath.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// 指定したチャンネルパスを取得
+        /// 指定されたチャンネルのパスを取得します。
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

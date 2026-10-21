@@ -27,5 +27,9 @@ namespace Traq.Models
         #pragma warning disable CS1591
         Manage_bot,
         #pragma warning restore CS1591
+        [EnumMember(Value = "qall")]
+        #pragma warning disable CS1591
+        Qall,
+        #pragma warning restore CS1591
     }
 }

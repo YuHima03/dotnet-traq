@@ -169,10 +169,10 @@ namespace Traq.Messages
             /// <summary>メッセージが投稿されたチャンネル</summary>
             [QueryParameter("in")]
             public Guid? In { get; set; }
-            /// <summary>検索結果から取得するメッセージの最大件数</summary>
+            /// <summary>検索結果から取得するメッセージの最大件数limitとoffsetの合計は10000以下である必要があります</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>検索結果から取得するメッセージのオフセット</summary>
+            /// <summary>検索結果から取得するメッセージのオフセットlimitとoffsetの合計は10000以下である必要があります (limitを省略した場合は20として計算されます)</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
             /// <summary>ソート順 (作成日時が新しい `createdAt`, 作成日時が古い `-createdAt`, 更新日時が新しい `updatedAt`, 更新日時が古い `-updatedAt`)</summary>
