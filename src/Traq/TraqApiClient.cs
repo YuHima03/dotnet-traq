@@ -20,6 +20,7 @@ using Traq.Groups;
 using Traq.Login;
 using Traq.Logout;
 using Traq.Messages;
+using Traq.Meta;
 using Traq.Oauth2;
 using Traq.Ogp;
 using Traq.Public;
@@ -89,6 +90,11 @@ namespace Traq
         public global::Traq.Messages.MessagesRequestBuilder Messages
         {
             get => new global::Traq.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The meta property</summary>
+        public global::Traq.Meta.MetaRequestBuilder Meta
+        {
+            get => new global::Traq.Meta.MetaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The oauth2 property</summary>
         public global::Traq.Oauth2.Oauth2RequestBuilder Oauth2

@@ -21,6 +21,8 @@ namespace Traq.Models
 #else
         public string AccessToken { get; set; }
 #endif
+        /// <summary>BOTアクセストークンが無効化されているかどうか</summary>
+        public bool? AccessTokenRevoked { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Verification Token</summary>
@@ -57,6 +59,7 @@ namespace Traq.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accessToken", n => { AccessToken = n.GetStringValue(); } },
+                { "accessTokenRevoked", n => { AccessTokenRevoked = n.GetBoolValue(); } },
                 { "verificationToken", n => { VerificationToken = n.GetStringValue(); } },
             };
         }
@@ -68,6 +71,7 @@ namespace Traq.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accessToken", AccessToken);
+            writer.WriteBoolValue("accessTokenRevoked", AccessTokenRevoked);
             writer.WriteStringValue("verificationToken", VerificationToken);
             writer.WriteAdditionalData(AdditionalData);
         }
