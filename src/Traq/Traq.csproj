@@ -34,7 +34,7 @@
     <PackageId>Traq</PackageId>
     <NeutralLanguage>ja</NeutralLanguage>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>Add support for NET Standard 2.0 and 2.1.</PackageReleaseNotes> <!--Set release notes here-->
+    <PackageReleaseNotes>Add support for traQ API v3.30.0.</PackageReleaseNotes> <!--Set release notes here-->
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageTags>traq</PackageTags>
